@@ -2,4 +2,23 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  
+  menue: 
+    about: About
+    blog: Blog
+    wiki: Wiki
+    forum: Forum
+    support: Support
+    tof: Terms of Use
+    legal: Legal
+    signin: Sign In
+    signup: Sing Up
+    signout: Sign Out
+     
+  home_page:
+    email: Email
+    password: Password
+    
+    switchbar:
+      teaser: Wanna know more about the game?
+

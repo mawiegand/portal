@@ -1,0 +1,23 @@
+# Sample localization file for German. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+de:
+  
+  menue: 
+    about: Info
+    blog: Blog
+    wiki: Wiki
+    forum: Forum
+    support: Hilfe
+    tof: Nutzungsbedingungen
+    legal: Datenschutzerklärung
+    signin: Anmelden
+    signup: Registrieren
+    signout: Abmelden
+     
+  home_page:
+    email: Email
+    password: Passwort
+    
+    switchbar:
+      teaser: Willst Du mehr über das Spiel wissen?
