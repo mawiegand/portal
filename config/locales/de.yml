@@ -24,3 +24,85 @@ de:
     
     switchbar:
       teaser: Willst Du mehr über das Spiel wissen?
+      
+    about:
+      box1:
+        title: Wack-a-was?!
+        body: |-
+          Wack-a-Doo ist ein MMO Strategiespiel, mit
+          leicht durchgedrehten
+          Höhlenmenschen. Hilf Deinem Stamm sich auszubreiten; ob friedlich oder
+          kriegerisch entscheidest allein Du. In naher Zukunft wirst Du die Spielwelt
+          von überall zu jederzeit betreten können; mit einem Browser, iPhone oder iPad.
+          
+      box2:
+        title: Was ist anders?
+        body: |-
+          Bei uns sind die Einheiten auf der Karte sichtbar  und teleportieren
+          nicht einfach von A nach B wie bei anderen MMO Spielen. Es ist
+          mehr wie ein Brettspiel. Außerdem entwickeln wir Wack-a-Doo
+          als ein echtes Cross-Plattform-Spiel für Browser und iOS; keine
+          faulen Kompromisse! Und: Wir haben Dinosaurier. Niemand
+          schlägt Dinosaurier!
+          
+      box3:
+        title: Was mach' ich im Spiel?
+          
+      box4:
+        title: Ok. Aber wie sieht es aus?
+
+      box5:
+        title: Überzeugt. Was kostet das?
+        body: |-
+          Spielen kostet bei uns <b>NIX</b>. 
+          Um es klar zu machen: Wack-a-Doo zu spielen war kostenlos, ist kostenlos
+          und wird kostenlos sein. Es kostet: gar nichts, nada, zero. </p>
+          <p>Nichtsdestotrotz müssen auch wir irgendwie unsere Dinosaurier füttern.
+          Das ist der Grund, warum es einen <b>optionalen</b> Premium-Zugang mit einigen
+          nicht unbedingt notwendigen, aber praktischen Funktionen gibt. Außerdem kannst
+          Du mit kleinen Geldbeträgen Zeit sparen und kleine Boni erhalten.
+          Eine faire Balance zwischen diesen Vorteilen und der kostenlosen Teilnahme ist
+          dabei unser Leitmotiv.
+
+      more_details: "Yeah, alright, I still wanna know more details..."
+
+      box6:
+        title: Armies on the world map
+        body: |-
+            Armies are always visible on the world map. No more giving orders
+            through interfaces that look like spreadsheets! They actually
+            exist on the world map, too, so they can't just teleport through
+            enemy territory like they do in other games in this genre. This
+            adds a new strategic gameplay dimension, because for the first
+            time, location affects more than just travel time. So it's more
+            like board games and RTS games.
+
+      box7:
+        title: True cross-platform
+        body: |-
+              Whack-a-doo is being developed as a true cross-platform game
+              from the very beginning. Command your
+              tribe from any device anywhere using the HTML5 client. No plugins necessary! 
+              </p>
+              <p>Furthermore, we will offer native clients for a number of platforms.
+              We take extra 
+              care that each platform's
+              interface is specifically tailored to its individual properties, 
+              so that it'll always feel just right.
+
+      box8:
+        title: What do I need to play?
+        body: |-
+            The current release of Whack-a-doo it as a html5 browser game
+            (Internet Explorer, Firefox, Chrome, Safari). A native iOS
+            Client is next.
+
+      box9:
+        title: Who are you guys, anyway?
+        body: |-
+              We're avid fans of the genre and some of us were heavily
+              involved in one of its first games, Uga-Agga, which even today,
+              after many, many years, still has a loyal, active fanbase. Now
+              we want to take it one step further and already have a bunch of
+              revolutionary innovations planned that we will announce soon.
+              Stay put!

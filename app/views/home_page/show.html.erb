@@ -50,33 +50,24 @@
       <div id="panel">
         <div class="panel-row">
           <div class="panel-column" id="column-r1c1">
-            <h1>Wack-a-what?!</h1>
-            <p>Wack-a-doo is a MMO strategy game in which you take care of a
-              tribe of wacky cavemen. Help them prosper and grow and lead them
-              into battle or make friends with other tribes. You will be able
-              to enter their persistent world anytime and anywhere, using a
-              browser, an iPhone or iPad. </p>
+            <h1><%= I18n.t 'home_page.about.box1.title' %></h1>
+            <p><%= raw(I18n.t 'home_page.about.box1.body') %></p>
           </div><div class="panel-column" id="column-r1c2">
-            <h1>So, what's different?</h1>
-            <p>Unlike other MMO strategy games, our units are actually visible
-              on the world map, and don't just teleport around invisibly. More
-              like a board game, really. Whack-a-doo is being developed as a
-              true cross-platform game from the start. There will be no lousy
-              platform-inappropriate interfaces! And: We have dinosaurs! Can't beat
-              dinosaurs.</p>
+            <h1><%= I18n.t 'home_page.about.box2.title' %></h1>
+            <p><%=raw(I18n.t 'home_page.about.box2.body') %></p>
           </div><div class="panel-column" id="column-r1c3">
             <img src="<%= asset_path 'about/dooer.png' %>"  alt="" />
           </div>
         </div>
         <div class="panel-row">
           <div class="panel-column" id="column-r2c1">
-            <h1>What do I do, then?</h1>
+            <h1><%= I18n.t 'home_page.about.box3.title' %></h1>
             <img alt="" src="<%= asset_path 'about/github.png' %>" />
           </div>
         </div>
         <div class="panel-row panel-top-ruler">
           <div class="panel-column" id="column-r3c1">
-            <h1>Great! Let me see the game!</h2>
+            <h1><%= I18n.t 'home_page.about.box4.title' %></h2>
             <img alt="" src="<%= asset_path 'about/screenshot1.png' %>" />
             <img alt="" src="<%= asset_path 'about/screenshot2.png' %>" />
             <img alt="" src="<%= asset_path 'about/screenshot4.png' %>" />
@@ -84,29 +75,16 @@
             <img alt="" src="<%= asset_path 'about/screenshot1.png' %>" />
             <img alt="" src="<%= asset_path 'about/screenshot2.png' %>" />
           </div><div class="panel-column" id="column-r3c2">
-            <h1>How much does it cost?</h1>
-            <p>You can play for the great price of <b>free</b>. To make this clear: playing wack-a-doo was free of charge, is free of charge and will be free of charge; it costs nothing, nada, zero.</p>
-            <p> However, we, too, have
-              to feed our dinosaurs somehow. That's the why there's an optional premium account 
-              offering comfort features and why you'll also have the
-              opportunity to give us small amounts of money and benefit from
-              convenience features, time-savers and small boosts. We are
-              however firm believers that multiplayer games should always be
-              balanced and should never turn into auctions.</p>
+            <h1><%= I18n.t 'home_page.about.box5.title' %></h1>
+            <p><%=raw(I18n.t 'home_page.about.box5.body') %></p>
           </div>
         </div>
         <div class="panel-row panel-top-ruler">
-          <p style="margin-top:-20px;">Yeah, alright, I still wanna know more details...</p>
+          <p style="margin-top:-20px;"><%= I18n.t 'home_page.about.more_details' %></p>
 
           <div class="panel-column" id="column-r4c1">
-            <h1>Armies on the world map</h1>
-            <p>Armies are always visible on the world map. No more giving orders
-              through interfaces that look like spreadsheets! They actually
-              exist on the world map, too, so they can't just teleport through
-              enemy territory like they do in other games in this genre. This
-              adds a new strategic gameplay dimension, because for the first
-              time, location affects more than just travel time. So it's more
-              like board games and RTS games.</p>
+            <h1><%= I18n.t 'home_page.about.box6.title' %></h1>
+            <p><%=raw(I18n.t 'home_page.about.box6.body') %></p>
           </div><div class="panel-column" id="column-r4c2">
             <img src="<%= asset_path 'about/items.png' %>" alt="" />
           </div>
@@ -114,25 +92,15 @@
         <div class="panel-row panel-top-ruler larger-font"><div class="panel-column" id="column-r5c2">
             <img src="<%= asset_path 'about/devices.png' %>" alt="" />
           </div><div class="panel-column" id="column-r5c1">
-            <h1>True cross-platform</h1>
-            <p>Whack-a-doo is being developed as a true cross-platform game
-              from the very beginning. Command your
-              tribe from any device anywhere using the HTML5 client. No plugins necessary! 
-            </p>
-            <p>Furthermore, we will offer native clients for a number of platforms.
-              We take extra 
-              care that each platform's
-              interface is specifically tailored to its individual properties, 
-              so that it'll always feel just right.</p>
+            <h1><%= I18n.t 'home_page.about.box7.title' %></h1>
+            <p><%=raw(I18n.t 'home_page.about.box7.body') %></p>
           </div>
         </div>
         <!--
         <div class="panel-row panel-top-ruler">
           <div class="panel-column" id="column-r6c1">
-            <h1>What do I need to play?</h1>
-            <p>The current release of Whack-a-doo it as a html5 browser game
-              (Internet Explorer, Firefox, Chrome, Safari). A native iOS
-              Client is next.</p>
+            <h1><%= I18n.t 'home_page.about.box7.title' %></h1>
+            <p><%=raw(I18n.t 'home_page.about.box7.body') %></p>
           </div>
         </div>
         -->
@@ -141,13 +109,8 @@
             <img src="<%= asset_path 'about/profil.png' %>" alt="" />
           </div>
           <div class="panel-column" id="column-r7c2">
-            <h1>Who are you guys, anyway?</h1>
-            <p>We're avid fans of the genre and some of us were heavily
-              involved in one of its first games, Uga-Agga, which even today,
-              after many, many years, still has a loyal, active fanbase. Now
-              we want to take it one step further and already have a bunch of
-              revolutionary innovations planned that we will announce soon.
-              Stay put!</p>
+            <h1><%= I18n.t 'home_page.about.box9.title' %></h1>
+            <p><%=raw(I18n.t 'home_page.about.box9.body') %></p>
           </div>
         </div>
       </div>
