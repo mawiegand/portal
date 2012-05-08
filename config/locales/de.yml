@@ -18,6 +18,9 @@ de:
   home_page:
     email: Email
     password: Passwort
+    signup: Anmelden
+    signin: Login
+
     
     switchbar:
       teaser: Willst Du mehr über das Spiel wissen?

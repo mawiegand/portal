@@ -18,6 +18,8 @@ en:
   home_page:
     email: Email
     password: Password
+    signup: Sign Up
+    signin: Sign In
     
     switchbar:
       teaser: Wanna know more about the game?
