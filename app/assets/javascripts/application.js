@@ -7,6 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require ember
+//= require ember-rest
 //= require ember/portal
 //= require_tree .
 

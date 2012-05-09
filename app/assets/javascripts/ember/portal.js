@@ -50,5 +50,82 @@ Portal = Ember.Application.create({
         detailsVisible = false;
       }
     });
+    
+
+    Portal.SignupBarView.appendTo('#loginbar');
   },
 });
+
+Portal.PasswordCredentials = Ember.Object.extend({
+  email: null,
+  password: null,
+  
+  validate: function() {
+    if (this.get('email') === undefined || this.get('email') === '' ||
+        this.get('password') === undefined  || this.get('password') === null || this.get('password').length < 4) {
+      alert ('Please provide a valid email and a password of at least 4 characters.');
+      return false;
+    }
+    return true;
+  },
+});
+
+
+Portal.SignupBarView = Ember.View.create({
+  templateName: 'signup-form',
+  credentials: Portal.PasswordCredentials.create(),
+      
+  submit: function(view) {
+    var self = this;
+    var credentials = this.get('credentials');
+    
+    if (credentials.validate()) {
+      
+      var params = [
+        { name: 'username',
+          value: credentials.email },
+        { name: 'password',
+          value: credentials.password },
+        { name: 'client_id',
+          value: 'XYZ' },
+        { name: 'scope',
+          value: '5dentity wackadoo' },
+        { name: 'grant_type',
+          value: 'password' }
+      ];
+    
+      $.ajax({
+        type: 'POST',
+        url: Portal.Config.identityProviderBase + '/oauth2/access_token',
+        data: params,
+        success: function(data, textStatus, jqXHR) {
+          switch(jqXHR.status) {
+          case 200:
+            if (data['access_token']) {
+              alert('AccessToken: ' + data);
+            }
+            break;
+          default:
+            msgObj = $.parseJSON(jqXHR.responseText);
+            alert(msgObj.error_description);
+          }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          switch(jqXHR.status) {
+            case 400:
+            default:
+              errObj = $.parseJSON(jqXHR.responseText);
+              alert(errObj.error_description);
+          }                          
+        }
+      });      
+      
+    }
+  },
+      
+});
+
+
+Portal.Config = {
+  identityProviderBase: 'https://localhost:3000/identity_provider/',
+};

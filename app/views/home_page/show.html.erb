@@ -14,9 +14,6 @@
 <div id="inbetween">
   
   <div id="loginbar">
-    <input type="text" value="E-Mail"/>
-    <input type="text" value="<%= I18n.t 'home_page.password' %>"/>
-    <input type="submit" value="<%= I18n.t 'home_page.signup' %>"/>
   </div>
 
   
@@ -149,5 +146,11 @@
     </div>  
   
 </div>
+
+<script type="text/x-handlebars" data-template-name="signup-form">
+  {{view Ember.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="credentials.email"}}
+  {{view Ember.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="credentials.password"}}
+  {{#view Ember.Button target="parentView" class="submit-button" action="submit"}}<%= I18n.t 'home_page.signup' %>{{/view}}
+</script>
 
 

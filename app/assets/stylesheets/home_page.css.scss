@@ -168,7 +168,7 @@ a.minor-link:link,a.minor-link:visited{color:#388da2}
 a:hover,a.minor-link:hover{color:#d79035;cursor:pointer}
 
 
-input {
+input, .submit-button {
   border: #333 solid 1px;
   box-shadow: inset 0px 1px 0px rgba(0,0,0,.6), 0px 1px 0px rgba(255,255,255,.2);
   background-color: #DEF;
@@ -192,6 +192,15 @@ input[type=submit] {
 
 input[type=submit]#hover {
   background-color: #FAA;
+}
+
+.submit-button {
+  box-shadow: inset 0px 1px 0px rgba(255,255,255,.4), 0px 1px 0px rgba(255,255,255,.2);  
+  background-color: #F80;
+  color: #444;
+  text-shadow: rgba(255,255,255,.5) 0px 1px 0px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 
