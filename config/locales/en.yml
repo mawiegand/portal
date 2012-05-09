@@ -20,6 +20,7 @@ en:
     password: Password
     signup: Sign Up
     signin: Sign In
+    email_or_nickname: Email or Nickname
     
     switchbar:
       teaser: Wanna know more about the game?

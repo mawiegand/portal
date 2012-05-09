@@ -20,6 +20,7 @@ de:
     password: Passwort
     signup: Anmelden
     signin: Login
+    email_or_nickname: Email oder Name
 
     
     switchbar:

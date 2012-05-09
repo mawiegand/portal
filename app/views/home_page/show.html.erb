@@ -154,3 +154,9 @@
 </script>
 
 
+<script type="text/x-handlebars" data-template-name="signin-form">
+  {{view Ember.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="credentials.email"}}
+  {{view Ember.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="credentials.password"}}
+  {{#view Ember.Button target="parentView" class="submit-button" action="submit"}}<%= I18n.t 'home_page.signin' %>{{/view}}
+</script>
+
