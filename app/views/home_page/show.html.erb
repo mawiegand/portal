@@ -2,7 +2,7 @@
 
 <div id="mainbar">
   <div class="center">
-    <div id="signin"><%= I18n.t 'home_page.signin' %></div>
+    <div id="togglebar"></div>
   </div>
   
   <div id="figures">
@@ -18,15 +18,6 @@
 
   
   <div id="menubar">
-    <ul>
-      <li><a href="#"><%= I18n.t 'menue.about' %></a></li>
-      <li><a href="#"><%= I18n.t 'menue.blog' %></a></li>
-      <li><a href="#"><%= I18n.t 'menue.forum' %></a></li>
-      <li><a href="#"><%= I18n.t 'menue.wiki' %></a></li>
-      <li><a href="#"><%= I18n.t 'menue.tof' %></a></li>
-      <li><a href="#"><%= I18n.t 'menue.legal' %></a></li>
-      <li><a href="#"><%= I18n.t 'menue.signin' %></a></li>
-    </ul>
   </div>
 
       
@@ -147,16 +138,69 @@
   
 </div>
 
+<script type="text/x-handlebars" data-template-name="menue">
+  <ul>
+    <li><a href="#"><%= I18n.t 'menue.about' %></a></li>
+    <li><a href="#"><%= I18n.t 'menue.blog' %></a></li>
+    <li><a href="#"><%= I18n.t 'menue.forum' %></a></li>
+    <li><a href="#"><%= I18n.t 'menue.wiki' %></a></li>
+    <li><a href="#"><%= I18n.t 'menue.tof' %></a></li>
+    <li><a href="#"><%= I18n.t 'menue.legal' %></a></li>
+    <li><a href="#">
+      {{#if controller.bartype }}
+        <%= I18n.t 'menue.signup' %>
+      {{else}}
+        <%= I18n.t 'menue.signin' %>
+      {{/if}}
+    </a></li>
+  </ul>
+</script>
+
+<script type="text/x-handlebars" data-template-name="toggle-view">
+  {{#if controller.context}}
+    <%= I18n.t 'home_page.togglebar.signup' %>
+  {{else}}
+    <%= I18n.t 'home_page.togglebar.signin' %>
+  {{/if}}
+</script>
+
+<script type="text/x-handlebars" data-template-name="bar-view">
+ {{#if visible}}
+   {{#if type }}
+     {{ view Portal.SigninBarView }}
+   {{else}}
+     {{ view Portal.SignupBarView }}   
+   {{/if}}
+ {{/if}}
+</script>
+
 <script type="text/x-handlebars" data-template-name="signup-form">
+<div class="form-fields-group">
   {{view Ember.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="credentials.email"}}
   {{view Ember.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="credentials.password"}}
-  {{#view Ember.Button target="parentView" class="submit-button" action="submit"}}<%= I18n.t 'home_page.signup' %>{{/view}}
+  <button type="submit" class="submit-button">
+    <%= I18n.t 'home_page.signup' %>
+  </button>
+</div>
 </script>
 
 
 <script type="text/x-handlebars" data-template-name="signin-form">
+<div class="form-fields-group">
   {{view Ember.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="credentials.email"}}
   {{view Ember.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="credentials.password"}}
-  {{#view Ember.Button target="parentView" class="submit-button" action="submit"}}<%= I18n.t 'home_page.signin' %>{{/view}}
+  <button type="submit" class="submit-button">
+    <%= I18n.t 'home_page.signin' %>
+  </button>
+</div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="signin-dialog">
+<div class="modal-dialog-background"></div>
+<div class="dialog-wrapper">
+  <div class="dialog">
+    {{view Portal.SigninBarView}}
+  </div>
+</div>
 </script>
 

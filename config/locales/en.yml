@@ -25,6 +25,9 @@ en:
     switchbar:
       teaser: Wanna know more about the game?
       
+    togglebar:
+      signup: Sign Up
+      signin: Sign In    
       
     about:
       box1:

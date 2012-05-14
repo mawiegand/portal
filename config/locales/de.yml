@@ -11,17 +11,20 @@ de:
     support: Hilfe
     tof: Nutzungsbedingungen
     legal: Datenschutzerklärung
-    signin: Anmelden
-    signup: Registrieren
+    signin: Login
+    signup: Anmelden
     signout: Abmelden
      
   home_page:
     email: Email
     password: Passwort
-    signup: Anmelden
+    signup: Neu Anmelden
     signin: Login
     email_or_nickname: Email oder Name
 
+    togglebar:
+      signup: Anmelden
+      signin: Login
     
     switchbar:
       teaser: Willst Du mehr über das Spiel wissen?
