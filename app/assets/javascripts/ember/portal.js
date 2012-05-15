@@ -9,6 +9,14 @@
 Portal = Ember.Application.create({
   ready: function() {
     
+    // setting up controller
+    
+    var username = Portal.Cookie.restoreEmail();
+    if (username) {  // returning customer, let him login
+      Portal.DialogController.set('bartype', Portal.DIALOG_TYPE_SIGNIN);
+      Portal.DialogController.set('dialogtype', Portal.DIALOG_TYPE_SIGNIN);
+    }
+    
     // connect non-ember view object to the dialog controller
     $('#togglebar').click(function() {
       Portal.DialogController.toggleViewClicked();
@@ -56,6 +64,39 @@ Portal.DIALOG_STATE_VISIBLE = 1;
 Portal.DIALOG_TYPE_SIGNUP  = 0;
 Portal.DIALOG_TYPE_SIGNIN  = 1;
 
+
+Portal.Cookie = Ember.Object.create({
+  email: null,
+  
+  init: function() {
+    this._super();
+    this.set('email', this.restoreEmail());
+  },
+  
+  restoreEmail: function() {
+    var i,x,y, cookies=document.cookie.split(";");
+    for (i=0; i< cookies.length; i++) {
+      x=cookies[i].substr(0,cookies[i].indexOf("="));
+      y=cookies[i].substr(cookies[i].indexOf("=")+1);
+      x=x.replace(/^\s+|\s+$/g,"");
+      if (x=='wackadoo_email') {
+        var email = unescape(y);
+        this.set('email', email)
+        return email;
+      }
+    }
+    return null;
+  },
+
+  saveEmail: function(email, days) {
+    var expires = new Date();
+    expires.setDate(expires.getDate() + days);
+    var value = escape(email) + ((expires==null) ? "" : "; expires="+expires.toUTCString());
+    document.cookie= "wackadoo_email=" + value;
+    this.set('email', email);
+  }, 
+
+});
 
 Portal.Config = {
   identityProviderBase: 'https://localhost/identity_provider/',

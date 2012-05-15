@@ -3,6 +3,9 @@
 
 en:
   
+  error: error
+  Error: Error
+  
   menue: 
     about: About
     blog: Blog
@@ -16,6 +19,7 @@ en:
     signout: Sign Out
      
   home_page:
+    welcome: Welcome!
     email: Email
     password: Password
     signup: Sign Up

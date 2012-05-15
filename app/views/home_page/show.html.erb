@@ -185,8 +185,8 @@
 
 <script type="text/x-handlebars" data-template-name="signup-form">
 <div class="form-fields-group">
-  {{view Ember.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="credentials.email"}}
-  {{view Ember.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="credentials.password"}}
+  {{view Ember.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="Portal.DialogController.credentials.email"}}
+  {{view Ember.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
   <button {{action "submit"}} title="<%= I18n.t 'home_page.signup_tooltip' %>" type="submit" class="submit-button">
     <%= I18n.t 'home_page.signup' %>
   </button>
@@ -221,6 +221,9 @@
     </div>
     <div class="dialog-right-column">
       <ul>
+        {{#if Portal.DialogController.lastError}}
+          <li class="error"><%= I18n.t('Error')%>: {{ Portal.DialogController.lastError.msg }}</li>
+        {{/if}}
         <li><%= I18n.t 'home_page.signin_tooltip' %></li>
         <li><%= I18n.t 'home_page.dialog.signup_help' %> <a href="#" {{action "showSignup" }} ><%= I18n.t 'home_page.dialog.signup_link' %></a></li>
         <li><%= I18n.t 'home_page.dialog.forgotten_password_help' %> <a href="#" {{action "showPasswordReset" }} ><%= I18n.t 'home_page.dialog.forgotten_password_link' %></a></li>
@@ -238,6 +241,9 @@
     </div>
     <div class="dialog-right-column">
       <ul>
+        {{#if Portal.DialogController.lastError}}
+          <li class="error"><%= I18n.t('Error')%>: {{ Portal.DialogController.lastError.msg }}</li>
+        {{/if}}
         <li><%= I18n.t 'home_page.signup_tooltip' %></li>
         <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
         <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="#" {{action "showSupport" }} ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>

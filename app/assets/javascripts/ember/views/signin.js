@@ -20,7 +20,15 @@ Portal.SigninBarView = Ember.View.extend({
   
   didInsertElement: function() {
     this._super();
-    this.$('input:first').focus();
+    var username = Portal.Cookie.restoreEmail();
+
+    if (username && !Portal.DialogController.get('credentials').get('email')) {
+      Portal.DialogController.get('credentials').set('email', username);
+      this.$('input#password').focus();      
+    }
+    else {
+      this.$('input:first').focus();
+    }
   },
 
   submit: function(event) {
