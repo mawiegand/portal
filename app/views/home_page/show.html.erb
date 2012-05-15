@@ -148,16 +148,16 @@
 <script type="text/x-handlebars" data-template-name="menue">
   <ul>
     <li><a href="#"><%= I18n.t 'menue.about' %></a></li>
-    <li><a href="#"><%= I18n.t 'menue.blog' %></a></li>
+    <li><a href="#"><%= I18n.t 'menue.blog'  %></a></li>
     <li><a href="#"><%= I18n.t 'menue.forum' %></a></li>
-    <li><a href="#"><%= I18n.t 'menue.wiki' %></a></li>
-    <li><a href="#"><%= I18n.t 'menue.tof' %></a></li>
+    <li><a href="#"><%= I18n.t 'menue.wiki'  %></a></li>
+    <li><a href="#"><%= I18n.t 'menue.tof'   %></a></li>
     <li><a href="#"><%= I18n.t 'menue.legal' %></a></li>
     <li><a href="#">
       {{#if controller.context }}
-        <%= I18n.t 'menue.signup' %>
+        <a href="#" {{action "showSignup"}}><%= I18n.t 'menue.signup' %></a>
       {{else}}
-        <%= I18n.t 'menue.signin' %>
+        <a href="#" {{action "showSignin"}}><%= I18n.t 'menue.signin' %></a>
       {{/if}}
     </a></li>
   </ul>

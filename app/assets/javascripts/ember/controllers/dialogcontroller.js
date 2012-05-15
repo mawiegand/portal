@@ -10,6 +10,7 @@ Portal.DialogController = Ember.Object.create(function() {
     bartype: Portal.DIALOG_TYPE_SIGNUP,
     dialogtype: Portal.DIALOG_TYPE_SIGNUP,
     detailsVisible: false,
+    animating: false,
   
     /** returns the overal context of the presented dialog;
      * that is, whether we presently assume the user wanting
@@ -38,6 +39,13 @@ Portal.DialogController = Ember.Object.create(function() {
      * effects. Changing CSS and hiding / showing might be transferred to 
      * ember views that bind to the detailsVisible property.  */
     switchBarClicked: function() {
+      var self = this;
+      
+      if (this.get('animating')) {
+        return ; // can not start a second switch before the first is finished
+      }
+      this.set('animating', true);
+      
       if (!this.get('detailsVisible')) {      
         mainbarMinHeight = $('#mainbar').css('min-height')
         origMargin = $('#loginbar').css('margin-bottom');
@@ -54,7 +62,8 @@ Portal.DialogController = Ember.Object.create(function() {
         $('#menubar').slideUp(function() {
           if (Portal.DialogController.get('visibility') === Portal.DIALOG_STATE_VISIBLE) {
             Portal.DialogController.toggleVisibility(false);
-          }
+          };
+          self.set('animating', false);
         });
         $('#loginbar').animate({'margin-bottom': '-80px', 'padding-top': '10px'});
         $('#logo-small').fadeOut();
@@ -70,7 +79,9 @@ Portal.DialogController = Ember.Object.create(function() {
           $('#mainbar').css('min-height', mainbarMinHeight);
           $('#logo-small').fadeIn();
           $('#switchbar-teaser').fadeIn()
-          $('#togglebar').fadeIn();
+          $('#togglebar').fadeIn(function() {
+            self.set('animating', false);
+          });
         });
         $('#loginbar').animate({'margin-bottom': origMargin, 'padding-top': origPadding});
 

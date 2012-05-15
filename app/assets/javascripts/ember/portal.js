@@ -23,6 +23,13 @@ Portal = Ember.Application.create({
     Portal.MenueView = Ember.View.create({
       templateName: 'menue',
       controllerBinding: 'Portal.DialogController',
+      
+      showSignin: function() {
+        this.get('controller').toggleViewClicked();
+      },
+      showSignup: function() {
+        this.get('controller').toggleViewClicked();
+      },
     }).appendTo('#menubar');
 
     Portal.BarView = Ember.View.create({
