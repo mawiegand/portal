@@ -21,13 +21,25 @@ en:
     signup: Sign Up
     signin: Sign In
     email_or_nickname: Email or Nickname
+    signup_tooltip: Enter a valid email address and choose a password to start playing immediately.
+    signin_tooltip: Enter your email and password to sign in to your existing account.
     
     switchbar:
       teaser: Wanna know more about the game?
       
     togglebar:
       signup: Sign Up
-      signin: Sign In    
+      signin: Sign In
+      
+    dialog:
+      signin_help: Already have an account?
+      signin_link: Sign In here!
+      signup_help: Don't have an account, yet?
+      signup_link: Sign Up to the game!
+      forgotten_password_help: Forgot your password?
+      forgotten_password_link: Reset it here.
+      need_help: Need help? 
+      contact_link: Please contact support.        
       
     about:
       box1:

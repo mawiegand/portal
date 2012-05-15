@@ -1,9 +1,16 @@
 <%= javascript_include_tag "ember/templates/signup_bar" %>
 
+
+<div id="language-switch">
+  <a href="/en">en</a> | <a href="/de">de</a>
+</div>
+
 <div id="mainbar">
   <div class="center">
     <div id="togglebar"></div>
   </div>
+  
+
   
   <div id="figures">
     <img id="figures-foreground" src="<%= asset_path 'lp/group.jpg' %>">
@@ -147,7 +154,7 @@
     <li><a href="#"><%= I18n.t 'menue.tof' %></a></li>
     <li><a href="#"><%= I18n.t 'menue.legal' %></a></li>
     <li><a href="#">
-      {{#if controller.bartype }}
+      {{#if controller.context }}
         <%= I18n.t 'menue.signup' %>
       {{else}}
         <%= I18n.t 'menue.signin' %>
@@ -155,6 +162,7 @@
     </a></li>
   </ul>
 </script>
+
 
 <script type="text/x-handlebars" data-template-name="toggle-view">
   {{#if controller.context}}
@@ -165,20 +173,21 @@
 </script>
 
 <script type="text/x-handlebars" data-template-name="bar-view">
- {{#if visible}}
+ {{#unless hidden}}
    {{#if type }}
-     {{ view Portal.SigninBarView }}
+     {{view Portal.SigninBarView }}
    {{else}}
-     {{ view Portal.SignupBarView }}   
+     {{view Portal.SignupBarView }}   
    {{/if}}
- {{/if}}
+ {{/unless}}
 </script>
+
 
 <script type="text/x-handlebars" data-template-name="signup-form">
 <div class="form-fields-group">
   {{view Ember.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="credentials.email"}}
   {{view Ember.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="credentials.password"}}
-  <button type="submit" class="submit-button">
+  <button {{action "submit"}} title="<%= I18n.t 'home_page.signup_tooltip' %>" type="submit" class="submit-button">
     <%= I18n.t 'home_page.signup' %>
   </button>
 </div>
@@ -187,20 +196,53 @@
 
 <script type="text/x-handlebars" data-template-name="signin-form">
 <div class="form-fields-group">
-  {{view Ember.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="credentials.email"}}
-  {{view Ember.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="credentials.password"}}
-  <button type="submit" class="submit-button">
+  {{view Ember.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="Portal.DialogController.credentials.email"}}
+  {{view Ember.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
+  <button {{action "submit"}} title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
     <%= I18n.t 'home_page.signin' %>
   </button>
+ </div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="dialog">
+<div class="dialog-wrapper">
+  {{#if controller.context}}
+      {{view Portal.SigninDialog controllerBinding="Portal.DialogController"}}
+  {{else}}
+      {{view Portal.SignupDialog controllerBinding="Portal.DialogController"}}
+  {{/if}}
 </div>
 </script>
 
 <script type="text/x-handlebars" data-template-name="signin-dialog">
-<div class="modal-dialog-background"></div>
-<div class="dialog-wrapper">
   <div class="dialog">
-    {{view Portal.SigninBarView}}
+    <div class="dialog-left-column">
+      {{view Portal.SigninBarView}}
+    </div>
+    <div class="dialog-right-column">
+      <ul>
+        <li><%= I18n.t 'home_page.signin_tooltip' %></li>
+        <li><%= I18n.t 'home_page.dialog.signup_help' %> <a href="#" {{action "showSignup" }} ><%= I18n.t 'home_page.dialog.signup_link' %></a></li>
+        <li><%= I18n.t 'home_page.dialog.forgotten_password_help' %> <a href="#" {{action "showPasswordReset" }} ><%= I18n.t 'home_page.dialog.forgotten_password_link' %></a></li>
+        <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="#" {{action "showSupport" }} ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
+      </ul>
+    </div>
   </div>
-</div>
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="signup-dialog">
+  <div class="dialog">
+    <div class="dialog-left-column">
+      {{view Portal.SignupBarView}}
+    </div>
+    <div class="dialog-right-column">
+      <ul>
+        <li><%= I18n.t 'home_page.signup_tooltip' %></li>
+        <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
+        <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="#" {{action "showSupport" }} ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
+      </ul>
+    </div>
+  </div>
 </script>
 

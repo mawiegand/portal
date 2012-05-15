@@ -21,6 +21,9 @@ de:
     signup: Neu Anmelden
     signin: Login
     email_or_nickname: Email oder Name
+    signup_tooltip: Gib Deine Emailadresse ein und wähle ein Passwort, um Dich beim Spiel anzumelden.
+    signin_tooltip: Gib Email und Passwort ein, um Dich einzuloggen.
+
 
     togglebar:
       signup: Anmelden
@@ -29,6 +32,16 @@ de:
     switchbar:
       teaser: Willst Du mehr über das Spiel wissen?
       
+    dialog:
+      signin_help: Du hast schon ein Login?
+      signin_link: Logge Dich hier ein!
+      signup_help: Noch keine Zugangsdaten?
+      signup_link: Jetzt zum Spiel anmelden und sofort loslegen!
+      forgotten_password_help: Passwort vergessen?
+      forgotten_password_link: Setze es hier zurück.
+      need_help: Du brauchst Hilfe? 
+      contact_link: Bitte kontaktiere den Support.    
+  
     about:
       box1:
         title: Wack-a-was?!
