@@ -8,57 +8,18 @@
 
 Portal = Ember.Application.create({
   ready: function() {
-    var detailsVisible = false;
-    var mainbarMinHeight = 0;
-    var origMargin = 0;
-    var origPadding = 0;
     
+    // connect non-ember view object to the dialog controller
     $('#togglebar').click(function() {
       Portal.DialogController.toggleViewClicked();
     });
     
     $('#switchbar').click(function() {
-      if (!detailsVisible) {
-        
-        mainbarMinHeight = $('#mainbar').css('min-height')
-        origMargin = $('#loginbar').css('margin-bottom');
-        origPadding = $('#loginbar').css('padding-top');
-      
-        $('#detailsbar').show();
-        $('#switchbar-bottom').show();
-      
-        $('#mainbar')
-        .css('min-height', '0')
-        .slideUp(); 
-        $('#togglebar').fadeOut();
-      
-        $('#menubar').slideUp(function() {
-          if (Portal.DialogController.get('visibility') === Portal.DIALOG_STATE_VISIBLE) {
-            Portal.DialogController.toggleVisibility(false);
-          }
-        });
-        $('#loginbar').animate({'margin-bottom': '-80px', 'padding-top': '10px'});
-        $('#logo-small').fadeOut();
-        $('#switchbar-teaser').fadeOut();
-      
-        detailsVisible = true;
-      }
-      else {
-        $('#menubar').slideDown();
-        $('#mainbar').slideDown(function() {
-          $('#detailsbar').hide(); 
-          $('#switchbar-bottom').hide();
-          $('#mainbar').css('min-height', mainbarMinHeight);
-          $('#logo-small').fadeIn();
-          $('#switchbar-teaser').fadeIn()
-          $('#togglebar').fadeIn();
-        });
-        $('#loginbar').animate({'margin-bottom': origMargin, 'padding-top': origPadding});
-
-        detailsVisible = false;
-      }
+      Portal.DialogController.switchBarClicked();
     });
-    
+
+    // create those ember views that are visible at the start of the
+    // application
     Portal.MenueView = Ember.View.create({
       templateName: 'menue',
       controllerBinding: 'Portal.DialogController',
@@ -68,10 +29,6 @@ Portal = Ember.Application.create({
       templateName: 'bar-view',
       typeBinding: 'Portal.DialogController.bartype',
       hiddenBinding: 'Portal.DialogController.visibility',
-      
-      submit: function() {
-        console.log('submit pressed');
-      },
     }).appendTo('#loginbar');
 
     Portal.ToggleView = Ember.View.create({
