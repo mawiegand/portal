@@ -12,6 +12,7 @@ gem 'thin'
 gem 'ember-rails'
 gem 'ember-rest-rails'
 
+gem 'therubyracer'          # missing javascript runtime
 
 # Gems used only for assets and not required
 # in production environments by default.
