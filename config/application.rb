@@ -40,10 +40,10 @@ module Portal
     config.filter_parameters += [:password]
 
     # Enable the asset pipeline
-    config.assets.enabled = false
+    config.assets.enabled = true
     
     # Add ember dir to assets
-    config.assets.paths << Rails.root.join("app", "assets", "javascripts", "ember")    
+    #config.assets.paths << Rails.root.join("app", "assets", "javascripts", "ember")    
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
