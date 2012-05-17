@@ -59,7 +59,7 @@ Portal.DialogController = Ember.Object.create(function() {
       this.toggleBarType();
       this.toggleDialogType();
       this.resetError();
-      if (this.get('bartype') === Portal.DIALOG_TYPE_SIGNUP) { // reset email
+      if (this.get('bartype') === Portal.DIALOG_TYPE_SIGNIN) { // reset email
         this.get('credentials').set('email', null);
       }
     },
@@ -184,6 +184,8 @@ Portal.DialogController = Ember.Object.create(function() {
       this.resetError();
       
       this.obtainAccessToken(credentials.email, credentials.password, function(access_token) {
+        Portal.Cookie.saveEmail(credentials.email, 7);
+
         window.name = access_token;
         window.location = Portal.Config.gameserverURL;       
       });
@@ -224,6 +226,8 @@ Portal.DialogController = Ember.Object.create(function() {
               
               if (user.identifier) {
                 self.obtainAccessToken(user.identifier, credentials.password, function(access_token) {
+                  Portal.Cookie.saveEmail(credentials.email, 7);
+                  
                   window.name = access_token;
                   window.location = Portal.Config.gameserverURL;       
                 });                
@@ -265,7 +269,7 @@ Portal.DialogController = Ember.Object.create(function() {
       }
       else { // did not validate
         self.set('lastError', {
-          type: 'signin',
+          type: 'signup',
           msg: 'Please provide a valid email and a password of at least 4 characters.',
         });
       }     
@@ -295,7 +299,6 @@ Portal.DialogController = Ember.Object.create(function() {
           switch(jqXHR.status) {
           case 200:
             if (onSuccess && data['access_token']) {
-              Portal.Cookie.saveEmail(username, 7);
               onSuccess(data.access_token);
             }
             else if (! data['access_token']){
@@ -303,7 +306,10 @@ Portal.DialogController = Ember.Object.create(function() {
                 type: 'signin',
                 statusCode: jqXHR.status,
                 msg: 'Access token missing.',
-              });             
+              });     
+              if (onError) {
+                onError(jqXHR, textStatus,'Access token missing.');
+              }        
             }
             break;
           default:
