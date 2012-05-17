@@ -15,6 +15,8 @@ Portal.SigninDialog = Ember.View.extend({
   
 });
 
+
+
 Portal.SigninBarView = Ember.View.extend({
   templateName: 'signin-form',
   
@@ -29,6 +31,10 @@ Portal.SigninBarView = Ember.View.extend({
     else {
       this.$('input:first').focus();
     }
+  },
+
+  cancel: function(event) {
+    Portal.DialogController.cancel();
   },
 
   submit: function(event) {

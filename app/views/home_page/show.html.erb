@@ -184,8 +184,8 @@
 
 <script type="text/x-handlebars" data-template-name="signup-form">
 <div class="form-fields-group">
-  {{view Ember.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="Portal.DialogController.credentials.email"}}
-  {{view Ember.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
+  {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="Portal.DialogController.credentials.email"}}
+  {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
   <button {{action "submit"}} title="<%= I18n.t 'home_page.signup_tooltip' %>" type="submit" class="submit-button">
     <%= I18n.t 'home_page.signup' %>
   </button>
@@ -195,8 +195,8 @@
 
 <script type="text/x-handlebars" data-template-name="signin-form">
 <div class="form-fields-group">
-  {{view Ember.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="Portal.DialogController.credentials.email"}}
-  {{view Ember.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
+  {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="Portal.DialogController.credentials.email"}}
+  {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
   <button {{action "submit"}} title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
     <%= I18n.t 'home_page.signin' %>
   </button>

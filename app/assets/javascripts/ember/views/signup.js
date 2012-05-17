@@ -23,6 +23,10 @@ Portal.SignupBarView = Ember.View.extend({
     this._super();
     this.$('input:first').focus();
   },  
+  
+  cancel: function(event) {
+    Portal.DialogController.cancel();
+  },
 
   submit: function(event) {
     Portal.DialogController.signup();

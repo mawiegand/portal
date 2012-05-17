@@ -147,6 +147,18 @@ Portal.DialogController = Ember.Object.create(function() {
         Portal.DialogView.appendTo($("#mainbar"));      
       }   
     },
+    
+    cancel: function() {
+      if (this.get('detailsVisible') === true) {
+        this.switchBarClicked();
+      }
+      else if (this.get('visibility') === Portal.DIALOG_STATE_VISIBLE) {
+        this.hideDialog();
+      }
+      else {
+        $('input:focus').blur(); // lose focus
+      }
+    },
 
     toggleVisibility: function(animated) {
       animated = animated === undefined ? true : animated;
