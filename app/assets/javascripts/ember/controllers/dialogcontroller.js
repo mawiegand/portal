@@ -298,7 +298,7 @@ Portal.DialogController = Ember.Object.create(function() {
         { name: 'client_id',
           value: 'WACKADOOHTML5' },
         { name: 'scope',
-          value: '5dentity wackadoo' },
+          value: '5dentity wackadoo payment' },
         { name: 'grant_type',
           value: 'password' }
       ];
