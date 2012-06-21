@@ -102,4 +102,4 @@ Portal.Config = {
   SERVER_ROOT: !document.location.host ? 'http://localhost' : document.location.protocol + '//' + document.location.host, 
 };
 Portal.Config.identityProviderBase = Portal.Config.SERVER_ROOT + '/identity_provider/';
-Portal.Config.gameserverURL = Portal.Config.SERVER_ROOT + (document.location.host !== "wackadoo.de" ? '/client/map.html' : '/client1/map.html');
+Portal.Config.gameserverURL = Portal.Config.SERVER_ROOT + (document.location.host === "wackadoo.de" || document.location.host === "www.wackadoo.de" ? '/client1/map.html' : '/client/map.html');
