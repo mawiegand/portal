@@ -3,6 +3,8 @@
 
 en:
   
+  locale: en_US
+  
   error: error
   Error: Error
   

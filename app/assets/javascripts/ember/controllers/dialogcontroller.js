@@ -189,6 +189,8 @@ Portal.DialogController = Ember.Object.create(function() {
         this.set('dialogtype', Portal.DIALOG_TYPE_SIGNUP);
       }
     },
+    
+    
   
     signin: function() {
       var credentials = this.get('credentials');
@@ -198,8 +200,11 @@ Portal.DialogController = Ember.Object.create(function() {
       this.obtainAccessToken(credentials.email, credentials.password, function(access_token) {
         Portal.Cookie.saveEmail(credentials.email, 7);
 
-        window.name = access_token;
-        window.location = Portal.Config.gameserverURL;       
+        window.name = JSON.stringify({
+          accessToken: access_token,
+          locale: window.current_locale,
+        });
+        window.location = Portal.Config.gameserverURL;   
       });
     },
   
@@ -237,12 +242,7 @@ Portal.DialogController = Ember.Object.create(function() {
               var user = $.parseJSON(jqXHR.responseText)
               
               if (user.identifier) {
-                self.obtainAccessToken(user.identifier, credentials.password, function(access_token) {
-                  Portal.Cookie.saveEmail(credentials.email, 7);
-                  
-                  window.name = access_token;
-                  window.location = Portal.Config.gameserverURL;       
-                });                
+                this.signin();
               }
               else {
                 self.set('lastError', {

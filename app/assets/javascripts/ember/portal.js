@@ -8,9 +8,8 @@
 
 Portal = Ember.Application.create({
   ready: function() {
-    
+        
     // setting up controller
-    
     var username = Portal.Cookie.restoreEmail();
     if (username) {  // returning customer, let him login
       Portal.DialogController.set('bartype', Portal.DIALOG_TYPE_SIGNIN);
@@ -104,4 +103,3 @@ Portal.Config = {
 };
 Portal.Config.identityProviderBase = Portal.Config.SERVER_ROOT + '/identity_provider/';
 Portal.Config.gameserverURL = Portal.Config.SERVER_ROOT + (document.location.host !== "wackadoo.de" ? '/client/map.html' : '/client1/map.html');
-console.log(document.location)
