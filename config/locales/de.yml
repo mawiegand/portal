@@ -49,6 +49,8 @@ de:
       contact_link: Bitte kontaktiere den Support.    
   
     about:
+      whatdoido: whatdoido_de_DE.jpeg
+
       box1:
         title: Wack-a-was?!
         body: |-
@@ -62,10 +64,10 @@ de:
         title: Was ist anders?
         body: |-
           Bei uns sind die Einheiten auf der Karte sichtbar  und teleportieren
-          nicht einfach von A nach B wie bei anderen MMO Spielen. Es ist
-          mehr wie ein Brettspiel. Außerdem entwickeln wir Wack-a-Doo
-          als ein echtes Cross-Plattform-Spiel für Browser und iOS; keine
-          faulen Kompromisse! Und: Wir haben Dinosaurier. Niemand
+          nicht einfach von A nach B wie bei anderen MMO Spielen. Es fühlt sich
+          mehr wie ein Brettspiel an, dass Du mit tausend Leuten spielst. Die Community
+          steht stärker im Vordergrund als in anderen Spielen.
+          Und: Wir haben Dinosaurier. Niemand
           schlägt Dinosaurier!
           
       box3:
