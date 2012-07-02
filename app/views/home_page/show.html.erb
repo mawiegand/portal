@@ -146,12 +146,9 @@
 
 <script type="text/x-handlebars" data-template-name="menue">
   <ul>
-    <li><a href="#"><%= I18n.t 'menue.about' %></a></li>
-    <li><a href="#"><%= I18n.t 'menue.blog'  %></a></li>
-    <li><a href="#"><%= I18n.t 'menue.forum' %></a></li>
-    <li><a href="#"><%= I18n.t 'menue.wiki'  %></a></li>
-    <li><a href="#"><%= I18n.t 'menue.tof'   %></a></li>
-    <li><a href="#"><%= I18n.t 'menue.legal' %></a></li>
+    <li><a href="#" {{action "aboutClicked"}}><%= I18n.t 'menue.about' %></a></li>
+    <li><a href="http://forum.uga-agga.de/wack-a-doo-f235/" target="_blank"><%= I18n.t 'menue.forum' %></a></li>
+    <li><a href="legal.html"><%= I18n.t 'menue.legal' %></a></li>
     <li><a href="#">
       {{#if controller.context }}
         <a href="#" {{action "showSignup"}}><%= I18n.t 'menue.signup' %></a>
