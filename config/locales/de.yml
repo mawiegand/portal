@@ -90,31 +90,27 @@ de:
           Eine faire Balance zwischen diesen Vorteilen und der kostenlosen Teilnahme ist
           dabei unser Leitmotiv.
 
-      more_details: "Yeah, alright, I still wanna know more details..."
+      more_details: "Soweit ok, aber erzählt mir mehr Details..."
 
       box6:
-        title: Armies on the world map
+        title: Einheiten auf der Karte
         body: |-
-            Armies are always visible on the world map. No more giving orders
-            through interfaces that look like spreadsheets! They actually
-            exist on the world map, too, so they can't just teleport through
-            enemy territory like they do in other games in this genre. This
-            adds a new strategic gameplay dimension, because for the first
-            time, location affects more than just travel time. So it's more
-            like board games and RTS games.
+            Bei uns sind die Einheiten sind auf der Weltkarte sichtbar. Kein Interface, das nach 
+            Tabellenkalkulation aussieht! Die Einheiten stehen auf der Weltkarte und teleportieren 
+            sich nicht durch feindliches Gebiet wie in den meisten anderen Spielen dieses Genres. 
+            Durch die Sichtbarkeit jeder Bewegung wird eine neue strategische Spieldimension erreicht.  
+            Zum ersten Mal ist der erste Schritt bzw. die zu passierenden Orte wichtiger als die bloße 
+            Reisezeit. Es ist mehr ein Brettspiel oder Echtzeitstrategie.
 
       box7:
-        title: True cross-platform
+        title: True Cross-Plattform
         body: |-
-              Whack-a-doo is being developed as a true cross-platform game
-              from the very beginning. Command your
-              tribe from any device anywhere using the HTML5 client. No plugins necessary! 
-              </p>
-              <p>Furthermore, we will offer native clients for a number of platforms.
-              We take extra 
-              care that each platform's
-              interface is specifically tailored to its individual properties, 
-              so that it'll always feel just right.
+            Wack-A-Doo wird von Beginn an als echtes Cross-Plattform-Spiel entwickelt. Befehlige 
+            Deine Truppen von überall von jedem Gerät. Mit HTML5 sind keine Plugins nötig. Ob 
+            PC oder Smartphone, alle spielen im selben Spiel!</p>
+            <p>Noch in diesem Winter werden wir Apps für die Apple iOS anbieten. Wir legen Wert 
+            darauf, dass alle Eigenheiten der einzelnen Geräte berücksichtigt werden, so 
+            dass es sich unabhängig von der Plattform genau richtig anfühlt.
 
       box8:
         title: What do I need to play?
@@ -124,11 +120,7 @@ de:
             Client is next.
 
       box9:
-        title: Who are you guys, anyway?
+        title: Wer seid Ihr eigentlich?
         body: |-
-              We're avid fans of the genre and some of us were heavily
-              involved in one of its first games, Uga-Agga, which even today,
-              after many, many years, still has a loyal, active fanbase. Now
-              we want to take it one step further and already have a bunch of
-              revolutionary innovations planned that we will announce soon.
-              Stay put!
+              Wir sind große Fans der Browser-Strategiespiele. Einige von uns waren in 2002 an der Entwicklung des Open-Source Spiels <a href="http://www.uga-agga.com/">Uga Agga</a> beteiligt und haben damals mitgeholfen, das Genre in Deutschland zu definieren. Nach über 10 Jahren hat Uga Agga auch heute noch eine sehr loyale aktive Talgemeinschaft. 
+              Jetzt wollen wir die Entwicklung eine Stufe weiter treiben und haben dafür einige revolutionäre Features in Planung. Es bleibt spannend!
