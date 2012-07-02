@@ -1,3 +1,4 @@
+
 Portal.SigninDialog = Ember.View.extend({
   templateName: 'signin-dialog',
   

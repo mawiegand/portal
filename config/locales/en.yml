@@ -27,7 +27,7 @@ en:
     password: Password
     signup: Sign Up
     signin: Sign In
-    email_or_nickname: Email or Nickname
+    email_or_nickname: Email 
     signup_tooltip: Enter a valid email address and choose a password to start playing immediately.
     signin_tooltip: Enter your email and password to sign in to your existing account.
     
