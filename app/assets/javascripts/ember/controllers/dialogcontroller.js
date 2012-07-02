@@ -14,6 +14,8 @@ Portal.DialogController = Ember.Object.create(function() {
     detailsVisible: false,                  ///< indicates, whether the browser presently presents the title screen or the details screen.
     animating: false,                       ///< true in case a switch from main to details screen (or vice versa) has been initiated and is underway (hasn't finished animating).
     lastError: null,                        ///< object holding the last error, either as received from the server or occured locally in the client. Null, if there is no "present" error.
+  
+    isLoading: false,
     
     /** Observes the error an shows the dialog-view, if necessary. */
     lastErrorObserver: function() {
@@ -197,8 +199,10 @@ Portal.DialogController = Ember.Object.create(function() {
 
       this.resetError();
       
+      
       this.obtainAccessToken(credentials.email, credentials.password, function(access_token) {
         Portal.Cookie.saveEmail(credentials.email, 7);
+        
 
         window.name = JSON.stringify({
           accessToken: access_token,
@@ -302,12 +306,17 @@ Portal.DialogController = Ember.Object.create(function() {
         { name: 'grant_type',
           value: 'password' }
       ];
+
+      this.set('isLoading', true);
+  
   
       $.ajax({
         type: 'POST',
         url: Portal.Config.identityProviderBase + '/oauth2/access_token',
         data: params,
         success: function(data, textStatus, jqXHR) {
+          self.set('isLoading', false);
+
           switch(jqXHR.status) {
           case 200:
             if (onSuccess && data['access_token']) {
@@ -341,6 +350,8 @@ Portal.DialogController = Ember.Object.create(function() {
           }
         },
         error: function(jqXHR, textStatus, errorThrown) {
+          self.set('isLoading', false);
+
           switch(jqXHR.status) {
           case 400:
           case 500:

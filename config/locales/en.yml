@@ -21,6 +21,7 @@ en:
     signout: Sign Out
      
   home_page:
+    processing: processing...
     welcome: Welcome!
     email: Email
     password: Password

@@ -17,14 +17,15 @@ de:
     tof: Nutzungsbedingungen
     legal: Impressum
     signin: Login
-    signup: Anmelden
+    signup: Registrieren
     signout: Abmelden
      
   home_page:
+    processing: Sende...
     welcome: Willkommen!
     email: Email
     password: Passwort
-    signup: Neu Anmelden
+    signup: Neu registrieren
     signin: Login
     email_or_nickname: Email oder Name
     signup_tooltip: Gib Deine Emailadresse ein und wähle ein Passwort, um Dich beim Spiel anzumelden.
@@ -32,7 +33,7 @@ de:
 
 
     togglebar:
-      signup: Anmelden
+      signup: Registrieren
       signin: Login
     
     switchbar:

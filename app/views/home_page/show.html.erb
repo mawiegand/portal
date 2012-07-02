@@ -111,37 +111,8 @@
         </div>
       </div>
     </div>  
-    <div id="sitemap"><div class="sitemap">
-        <ul>
-          <li class="first">Wack-a-doo</li>
-          <li>Terms of Service</li>
-          <li>Privacy</li>
-          <li>Contact</li>
-          <li>Imprint</li>
-        </ul>
-      </div><div class="sitemap">
-        <ul>
-          <li class="first">Game</li>
-          <li>Rules</li>
-          <li>FAQ</li>
-        </ul>
-      </div><div class="sitemap">
-        <ul>
-          <li class="first">News</li>
-          <li>Blog</li>
-          <li>Twitter</li>
-          <li>Facebook</li>
-        </ul>
-      </div><div class="sitemap">
-        <ul>
-          <li class="first">Community</li>
-          <li>Forum</li>
-          <li>Wiki</li>
-          <li>Chat</li>
-        </ul>
-      </div>  
+    <div id="sitemap">
     </div>  
-  
 </div>
 
 <script type="text/x-handlebars" data-template-name="menue">
@@ -149,13 +120,13 @@
     <li><a href="#" {{action "aboutClicked"}}><%= I18n.t 'menue.about' %></a></li>
     <li><a href="http://forum.uga-agga.de/wack-a-doo-f235/" target="_blank"><%= I18n.t 'menue.forum' %></a></li>
     <li><a href="legal.html"><%= I18n.t 'menue.legal' %></a></li>
-    <li><a href="#">
+    <li>
       {{#if controller.context }}
         <a href="#" {{action "showSignup"}}><%= I18n.t 'menue.signup' %></a>
       {{else}}
         <a href="#" {{action "showSignin"}}><%= I18n.t 'menue.signin' %></a>
       {{/if}}
-    </a></li>
+    </li>
   </ul>
 </script>
 
@@ -194,9 +165,15 @@
 <div class="form-fields-group">
   {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="Portal.DialogController.credentials.email"}}
   {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
-  <button {{action "submit"}} title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
-    <%= I18n.t 'home_page.signin' %>
-  </button>
+  {{#if isLoading}}
+    <button title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
+      {{view AWE.Ember.UI.WheelOrValueView valueBinding="false"}} <%= I18n.t 'home_page.processing' %>
+    </button>
+  {{else}}
+    <button {{action "submit"}} title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
+      <%= I18n.t 'home_page.signin' %>
+      </button>
+  {{/if}}
  </div>
 </script>
 
