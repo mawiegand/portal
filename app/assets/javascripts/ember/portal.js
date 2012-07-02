@@ -31,6 +31,10 @@ Portal = Ember.Application.create({
       templateName: 'menue',
       controllerBinding: 'Portal.DialogController',
       
+      aboutClicked: function() {
+        this.get('controller').switchBarClicked();
+      },
+      
       showSignin: function() {
         this.get('controller').toggleViewClicked();
       },
