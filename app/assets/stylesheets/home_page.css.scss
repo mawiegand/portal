@@ -451,3 +451,10 @@ font-family:  Arial, sans-serif; font-size: 18px;
   font-weight: bold;
   padding-bottom: 10px;
 }
+
+.activity-indicator-small {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-image: url('activityindicator_small.svg');
+}
