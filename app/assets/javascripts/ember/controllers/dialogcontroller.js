@@ -246,7 +246,7 @@ Portal.DialogController = Ember.Object.create(function() {
               var user = $.parseJSON(jqXHR.responseText)
               
               if (user.identifier) {
-                this.signin();
+                self.signin();
               }
               else {
                 self.set('lastError', {
