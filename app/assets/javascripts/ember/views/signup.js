@@ -1,6 +1,9 @@
 Portal.SignupDialog = Ember.View.extend({
   templateName: 'signup-dialog',
   
+  isLoadingBinding: 'Portal.DialogController.isLoading',
+  
+  
   showSignin: function() {
     this.get('controller').toggleViewClicked();
   },
@@ -18,6 +21,9 @@ Portal.SignupDialog = Ember.View.extend({
 
 Portal.SignupBarView = Ember.View.extend({
   templateName: 'signup-form',
+  
+  isLoadingBinding: 'Portal.DialogController.isLoading',
+
   
   didInsertElement: function() {
     this._super();

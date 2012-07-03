@@ -235,11 +235,14 @@ Portal.DialogController = Ember.Object.create(function() {
             value: 'wacky' },
         ];
     
+        this.set('isLoading', true);
+    
         $.ajax({
           type: 'POST',
-          url: Portal.Config.identityProviderBase + '/identities/',
+          url: Portal.Config.identityProviderBase + locale_path_frag + '/identities/',
           data: params,
           success: function(data, textStatus, jqXHR) {
+            
             switch(jqXHR.status) {
             case 201:  // created
               console.log(jqXHR, data, textStatus);
@@ -249,6 +252,7 @@ Portal.DialogController = Ember.Object.create(function() {
                 self.signin();
               }
               else {
+                self.set('isLoading', false);            
                 self.set('lastError', {
                   type: 'signup',
                   msg: 'Server could not create a new unique user.',
@@ -257,6 +261,7 @@ Portal.DialogController = Ember.Object.create(function() {
               
               break;
             default:
+              self.set('isLoading', false);            
               var msgObj = $.parseJSON(jqXHR.responseText);
               console.log('ERORR during sign up: ' + msgObj.error_description);
               self.set('lastError', {
@@ -267,12 +272,15 @@ Portal.DialogController = Ember.Object.create(function() {
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
+            self.set('isLoading', false);
+            var msgObj = $.parseJSON(jqXHR.responseText);
+            console.log('ERORR during sign up: ' + msgObj.error_description);
+            
             switch(jqXHR.status) {
+            case 409: // CONFLICT               
             case 400:
             case 500:
             default:
-              var msgObj = $.parseJSON(jqXHR.responseText);
-              console.log('ERORR during sign up: ' + msgObj.error_description);
               self.set('lastError', {
                 type: 'signup',
                 statusCode: jqXHR.status,
@@ -286,7 +294,7 @@ Portal.DialogController = Ember.Object.create(function() {
       else { // did not validate
         self.set('lastError', {
           type: 'signup',
-          msg: 'Please provide a valid email and a password of at least 4 characters.',
+          msg: 'Please provide a valid email and a password of at least 6 characters.',
         });
       }     
     },
@@ -309,20 +317,19 @@ Portal.DialogController = Ember.Object.create(function() {
 
       this.set('isLoading', true);
   
-  
       $.ajax({
         type: 'POST',
-        url: Portal.Config.identityProviderBase + '/oauth2/access_token',
+        url: Portal.Config.identityProviderBase + locale_path_frag + '/oauth2/access_token',
         data: params,
         success: function(data, textStatus, jqXHR) {
-          self.set('isLoading', false);
-
           switch(jqXHR.status) {
           case 200:
             if (onSuccess && data['access_token']) {
               onSuccess(data.access_token);
             }
             else if (! data['access_token']){
+              self.set('isLoading', false);
+
               self.set('lastError', {
                 type: 'signin',
                 statusCode: jqXHR.status,
@@ -334,6 +341,8 @@ Portal.DialogController = Ember.Object.create(function() {
             }
             break;
           default:
+            self.set('isLoading', false);
+
             var msgObj = $.parseJSON(jqXHR.responseText);
             
             self.set('lastError', {

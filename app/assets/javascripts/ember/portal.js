@@ -8,6 +8,12 @@
 
 Portal = Ember.Application.create({
   ready: function() {
+    
+    // binding to ajaxSend in order to modify the accept header
+    // of outgoing packages (-> accept only json, no html!)
+    $(document).bind('ajaxSend', function(event, xhr) {
+      xhr.setRequestHeader('Accept', 'application/json');
+    });    
         
     // setting up controller
     var username = Portal.Cookie.restoreEmail();
