@@ -30,7 +30,7 @@ de:
     email_or_nickname: Email 
     signup_tooltip: Gib Deine Emailadresse ein und wähle ein Passwort, um Dich beim Spiel anzumelden.
     signin_tooltip: Gib Email und Passwort ein, um Dich einzuloggen.
-
+    no_signin_message: Das Einloggen ist wegen Wartungsarbeiten vorübergehend abgeschaltet.
 
     togglebar:
       signup: Registrieren

@@ -169,16 +169,24 @@
 
 <script type="text/x-handlebars" data-template-name="signin-form">
 <div class="form-fields-group">
-  {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="Portal.DialogController.credentials.email"}}
-  {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
-  {{#if isLoading}}
-    <button title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
-      {{view AWE.UI.Ember.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
-    </button>
+  {{#if registrationStatus.isLoading}}
+    {{view AWE.UI.Ember.ActivityIndicatorView classNames="activity-indicator-small"}}
   {{else}}
-    <button {{action "submit"}} title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
-      <%= I18n.t 'home_page.signin' %>
-      </button>
+    {{#if registrationStatus.canSignin}}
+      {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="Portal.DialogController.credentials.email"}}
+      {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
+      {{#if isLoading}}
+        <button title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
+          {{view AWE.UI.Ember.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
+        </button>
+      {{else}}
+        <button {{action "submit"}} title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
+          <%= I18n.t 'home_page.signin' %>
+          </button>
+      {{/if}}
+    {{else}}
+      <%= I18n.t 'home_page.no_signin_message' %>
+    {{/if}}
   {{/if}}
  </div>
 </script>
@@ -195,6 +203,7 @@
 
 <script type="text/x-handlebars" data-template-name="signin-dialog">
   <div class="dialog">
+    {{#if registrationStatus.canSignin}}
     <div class="dialog-left-column">
       {{view Portal.SigninBarView}}
     </div>
@@ -209,6 +218,9 @@
         <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="#" {{action "showSupport" }} ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
       </ul>
     </div>
+    {{else}}
+      <%= I18n.t 'home_page.no_signin_message' %>
+    {{/if}}
   </div>
 </script>
 

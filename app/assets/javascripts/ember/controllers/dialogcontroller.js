@@ -9,6 +9,7 @@ Portal.DialogController = Ember.Object.create(function() {
   return {  
     visibility: Portal.DIALOG_STATE_HIDDEN, ///< visibility of the dialog view. In case it's hidden, the title image will be shown instead.
     credentials: Portal.PasswordCredentials.create(),  ///< holding user-entered credentials
+    registrationStatus: Portal.RegistrationStatus.create(),  ///< holding the current registration status fetched from identity provider
     bartype: Portal.DIALOG_TYPE_SIGNUP,     ///< state of the input fields in the bar-view; either sign in or sign up
     dialogtype: Portal.DIALOG_TYPE_SIGNUP,  ///< state of the input fields in the dialog-view; either sign in or sign up
     detailsVisible: false,                  ///< indicates, whether the browser presently presents the title screen or the details screen.
@@ -16,6 +17,10 @@ Portal.DialogController = Ember.Object.create(function() {
     lastError: null,                        ///< object holding the last error, either as received from the server or occured locally in the client. Null, if there is no "present" error.
   
     isLoading: false,
+    
+    init: function() {
+      this.fetchRegistrationStatus();
+    },
     
     /** Observes the error an shows the dialog-view, if necessary. */
     lastErrorObserver: function() {
@@ -379,5 +384,36 @@ Portal.DialogController = Ember.Object.create(function() {
         }
       }); 
     },
+    
+    fetchRegistrationStatus: function() {
+
+      var self = this;
+
+      var params = [
+        {name: 'client_id', value: 'WACKADOOHTML5'},
+        {name: 'client_password', value: 'wacky'},  
+      ];
+
+      $.ajax({
+        type: 'GET',
+        url: Portal.Config.identityProviderBase + window.locale_path_frag + '/clients/WACKADOOHTML5',
+        data: params,
+        success: function(data, textStatus, jqXHR) {
+          switch(jqXHR.status) {
+            case 200:
+              var status = self.get('registrationStatus');
+              status.set('signin_mode', data['signin_mode']);
+              status.set('signup_mode', data['signup_mode']);
+              break;
+            default:
+          }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          var status = self.get('registrationStatus');
+          status.set('signin_mode', -1);
+          status.set('signup_mode', -1);
+        }
+      }); 
+    },    
   };
 }());

@@ -30,7 +30,8 @@ en:
     email_or_nickname: Email 
     signup_tooltip: Enter a valid email address and choose a password to start playing immediately.
     signin_tooltip: Enter your email and password to sign in to your existing account.
-    
+    no_signin_message: The Login is currently disabled due to maintenance.
+      
     switchbar:
       teaser: Wanna know more about the game?
       

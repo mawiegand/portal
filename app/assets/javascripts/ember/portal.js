@@ -111,5 +111,5 @@ Portal.Config = {
   // automatically determine the server to use -> same origin policy
   SERVER_ROOT: !document.location.host ? 'http://localhost' : document.location.protocol + '//' + document.location.host, 
 };
-Portal.Config.identityProviderBase = Portal.Config.SERVER_ROOT + '/identity_provider/';
-Portal.Config.gameserverURL = Portal.Config.SERVER_ROOT + '/client/';
+Portal.Config.identityProviderBase = Portal.Config.SERVER_ROOT + '/identity_provider';
+Portal.Config.gameserverURL = Portal.Config.SERVER_ROOT + '/client';
