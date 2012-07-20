@@ -20,6 +20,11 @@ Portal.DialogController = Ember.Object.create(function() {
     
     init: function() {
       this.fetchRegistrationStatus();
+      setInterval((function(self) {
+        return function() {
+          self.fetchRegistrationStatus()
+        };
+      }(this)), 20000);
     },
     
     /** Observes the error an shows the dialog-view, if necessary. */
