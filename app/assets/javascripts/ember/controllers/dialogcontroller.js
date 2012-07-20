@@ -231,19 +231,17 @@ Portal.DialogController = Ember.Object.create(function() {
       if (credentials.validate()) {
       
         var params = [
-          { name: 'nickname_base',
-            value: 'WackyUser' },
-          { name: 'email',
-            value: credentials.email },
-          { name: 'password',
-            value: credentials.password },
-          { name: 'password_confirmation',
-            value: credentials.password },
-          { name: 'client_id',
-            value: 'WACKADOOHTML5' },
-          { name: 'client_password',
-            value: 'wacky' },
+          {name: 'nickname_base',         value: 'WackyUser'},
+          {name: 'email',                 value: credentials.email},
+          {name: 'password',              value: credentials.password},
+          {name: 'password_confirmation', value: credentials.password},
+          {name: 'client_id',             value: 'WACKADOOHTML5'},
+          {name: 'client_password',       value: 'wacky'},
         ];
+        
+        if (window.invitation) {
+          params.push({name: 'invitation', value: window.invitation});
+        }
     
         this.set('isLoading', true);
     
