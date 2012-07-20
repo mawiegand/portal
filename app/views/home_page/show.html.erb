@@ -212,13 +212,17 @@
 <script type="text/x-handlebars" data-template-name="signin-dialog">
   <div class="dialog">
     {{#if registrationStatus.canSignin}}
+    <div class="dialog-image">&nbsp;</div>
     <div class="dialog-left-column">
       {{view Portal.SigninBarView}}
     </div>
     <div class="dialog-right-column">
       <ul>
         {{#if Portal.DialogController.lastError}}
-          <li class="error"><%= I18n.t('Error')%>: {{ Portal.DialogController.lastError.msg }}</li>
+          <li class="error">
+          {{#unless Portal.DialogController.lastError.notAnError}}
+            <%= I18n.t('Error')%>:
+          {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
         {{/if}}
         <li><%= I18n.t 'home_page.signin_tooltip' %></li>
         <li><%= I18n.t 'home_page.dialog.signup_help' %> <a href="#" {{action "showSignup" }} ><%= I18n.t 'home_page.dialog.signup_link' %></a></li>
@@ -234,22 +238,32 @@
 
 <script type="text/x-handlebars" data-template-name="signup-dialog">
   <div class="dialog">
-    {{#if registrationStatus.canSignup}}
-    <div class="dialog-left-column">
-      {{view Portal.SignupBarView}}
-    </div>
-    <div class="dialog-right-column">
-      <ul>
-        {{#if Portal.DialogController.lastError}}
-          <li class="error"><%= I18n.t('Error')%>: {{ Portal.DialogController.lastError.msg }}</li>
-        {{/if}}
-        <li><%= I18n.t 'home_page.signup_tooltip' %></li>
-        <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
-        <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="#" {{action "showSupport" }} ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
-      </ul>
-    </div>
+    {{#if showWaitingListNotice}}
+      <div class="dialog-right-column">
+        <%= raw(I18n.t('home_page.waiting_list_notice')) %>
+      </div>
     {{else}}
-      <%= I18n.t('home_page.no_signup_message') %>
+      {{#if registrationStatus.canSignup}}
+        <div class="dialog-image">&nbsp;</div>
+        <div class="dialog-left-column">
+          {{view Portal.SignupBarView}}
+        </div>
+        <div class="dialog-right-column">
+          <ul>
+            {{#if Portal.DialogController.lastError}}
+              <li class="error">
+              {{#unless Portal.DialogController.lastError.notAnError}}
+                <%= I18n.t('Error')%>: 
+              {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
+            {{/if}}
+            <li><%= I18n.t 'home_page.signup_tooltip' %></li>
+            <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
+            <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="#" {{action "showSupport" }} ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
+          </ul>
+        </div>
+      {{else}}
+        <%= I18n.t('home_page.no_signup_message') %>
+      {{/if}}
     {{/if}}
   </div>
 </script>

@@ -31,8 +31,19 @@ en:
     signup_tooltip: Enter a valid email address and choose a password to start playing immediately.
     signin_tooltip: Enter your email and password to sign in to your existing account.
     no_signin_message: Login is currently disabled due to maintenance.
-    no_signup_message: Registration is currently disabled due to maintenance.
-      
+    no_signup_message: Sign up hasn't been enabled, yet. We're about to start in a few days!
+    waiting_list_notice: |-
+      <h1>Thanks for signing up with Wack-a-Doo!</h1>
+      <p>Presently, there are no free slots in the game and you <b>can not
+         sign in</b> immediately. But we have registered you to the 
+         <b>waiting list</b>. We'll send you an email and inform you
+         as soon as further slots become available for you to start 
+         playing.</p> 
+      <p>We work very hard to allow as many players as possible to join the
+         game even now, in the beta phase. Nevertheless, we want to provide
+         reliable and fast service to all our players and thus, need to
+         control the number of new activations. 
+      <p>We hope for your understanding and patience.</p>
     switchbar:
       teaser: Wanna know more about the game?
       
