@@ -259,7 +259,23 @@ Portal.DialogController = Ember.Object.create(function() {
               var user = $.parseJSON(jqXHR.responseText)
               
               if (user.identifier) {
-                self.signin();
+                var signup_mode = self.getPath('registrationStatus.signup_mode');
+                if (signup_mode === 2 && window.invitation === undefined) {    // invitation only
+                  self.set('isLoading', false);            
+                  self.handlePutOnWaitingList();
+                }
+                else if (self.getPath('registrationStatus.canSignin')) {
+                  self.signin();
+                }
+                else {  // cannot do anything else (sign in presently disabled), just inform user has been signed up.
+                  self.set('isLoading', false);            
+                  self.set('lastError', {
+                    type: 'signup',
+                    statusCode: jqXHR.status,
+                    notAnError: true, 
+                    msg: 'Sign Up successful. Please check your emails.',
+                  });   
+                }
               }
               else {
                 self.set('isLoading', false);            

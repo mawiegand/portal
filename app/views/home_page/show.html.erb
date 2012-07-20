@@ -218,7 +218,10 @@
     <div class="dialog-right-column">
       <ul>
         {{#if Portal.DialogController.lastError}}
-          <li class="error"><%= I18n.t('Error')%>: {{ Portal.DialogController.lastError.msg }}</li>
+          <li class="error">
+          {{#unless Portal.DialogController.lastError.notAnError}}
+            <%= I18n.t('Error')%>:
+          {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
         {{/if}}
         <li><%= I18n.t 'home_page.signin_tooltip' %></li>
         <li><%= I18n.t 'home_page.dialog.signup_help' %> <a href="#" {{action "showSignup" }} ><%= I18n.t 'home_page.dialog.signup_link' %></a></li>
@@ -241,7 +244,10 @@
     <div class="dialog-right-column">
       <ul>
         {{#if Portal.DialogController.lastError}}
-          <li class="error"><%= I18n.t('Error')%>: {{ Portal.DialogController.lastError.msg }}</li>
+          <li class="error">
+          {{#unless Portal.DialogController.lastError.notAnError}}
+            <%= I18n.t('Error')%>: 
+          {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
         {{/if}}
         <li><%= I18n.t 'home_page.signup_tooltip' %></li>
         <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
