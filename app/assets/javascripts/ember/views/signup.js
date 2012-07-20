@@ -4,6 +4,7 @@ Portal.SignupDialog = Ember.View.extend({
   isLoadingBinding: 'Portal.DialogController.isLoading',
   
   registrationStatusBinding: 'Portal.DialogController.registrationStatus',
+  showWaitingListNoticeBinding: 'Portal.DialogController.showWaitingListNotice',
   
   showSignin: function() {
     this.get('controller').toggleViewClicked();

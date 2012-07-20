@@ -15,6 +15,8 @@ Portal.DialogController = Ember.Object.create(function() {
     detailsVisible: false,                  ///< indicates, whether the browser presently presents the title screen or the details screen.
     animating: false,                       ///< true in case a switch from main to details screen (or vice versa) has been initiated and is underway (hasn't finished animating).
     lastError: null,                        ///< object holding the last error, either as received from the server or occured locally in the client. Null, if there is no "present" error.
+    showWaitingListNotice: null,
+    
   
     isLoading: false,
     
@@ -194,6 +196,7 @@ Portal.DialogController = Ember.Object.create(function() {
     },
   
     toggleDialogType: function() {
+      this.set('showWaitingListNotice', false); // remove waiting list notice
       if (this.get('dialogtype') == Portal.DIALOG_TYPE_SIGNUP) {
         this.set('dialogtype', Portal.DIALOG_TYPE_SIGNIN);
       }
@@ -202,6 +205,18 @@ Portal.DialogController = Ember.Object.create(function() {
       }
     },
     
+    /** the user was put on the waiting list; display a corresponding message. */
+    handlePutOnWaitingList: function() {
+      if (this.get('detailsVisible')) {
+        this.switchBarClicked();
+      }
+      if (this.get('visibility') === Portal.DIALOG_STATE_HIDDEN) {
+        this.toggleVisibility();
+      }       
+      this.set('dialogtype', Portal.DIALOG_TYPE_SIGNUP);
+      this.set('bartype', Portal.DIALOG_TYPE_SIGNIN);
+      this.set('showWaitingListNotice', true);
+    },
     
   
     signin: function() {

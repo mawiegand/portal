@@ -31,8 +31,18 @@ de:
     signup_tooltip: Gib Deine Emailadresse ein und wähle ein Passwort, um Dich beim Spiel anzumelden.
     signin_tooltip: Gib Email und Passwort ein, um Dich einzuloggen.
     no_signin_message: Das Einloggen ist wegen Wartungsarbeiten vorübergehend abgeschaltet.
-    no_signup_message: Die Registrierung ist wegen Wartungsarbeiten vorübergehend abgeschaltet.
-
+    no_signup_message: Momentan ist keine Registrierung möglich. Aber es geht in wenigen Tagen los!
+    waiting_list_notice: |-
+      <h1>Herzlichen Dank für die Registrierung!</h1>
+      <p>Im Moment sind alle freien Plätze im Spiel belegt und Du kannst Dich
+         <b>noch nicht</b> ins Spiel einloggen. Du wurdest aber auf die 
+         <b>Warteliste</b> gesetzt und erhältst eine Nachricht, sobald weitere 
+         Plätze frei werden und Du aktiviert wurdest.</p>
+      <p>Wir arbeiten hart daran, bereits jetzt in der Erprobungsphase so
+         vielen Spielern wie möglich das Mitspielen zu ermöglichen. 
+         Gleichzeitig wollen wir aber allen eine gute und zuverlässige 
+         Serverleistung bieten. Wir hoffen auf Dein Verständnis und Deine 
+         Geduld.</p>
     togglebar:
       signup: Registrieren
       signin: Login
