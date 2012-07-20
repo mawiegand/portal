@@ -415,8 +415,8 @@ Portal.DialogController = Ember.Object.create(function() {
         },
         error: function(jqXHR, textStatus, errorThrown) {
           var status = self.get('registrationStatus');
-          status.set('signin_mode', -1);
-          status.set('signup_mode', -1);
+          status.set('signin_mode', 0);
+          status.set('signup_mode', 0);
         }
       }); 
     },    
