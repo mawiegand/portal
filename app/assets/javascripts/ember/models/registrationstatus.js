@@ -10,4 +10,8 @@ Portal.RegistrationStatus = Ember.Object.extend({
   canSignin: function() {
     return this.get('signin_mode') == 1;
   }.property('signin_mode').cacheable(),
+
+  canSignup: function() {
+    return this.get('signup_mode') > 0;
+  }.property('signup_mode').cacheable(),
 });
