@@ -413,10 +413,42 @@ font-family:  Arial, sans-serif; font-size: 18px;
 #column-r7c2 {
   margin-left:40px;
   width: 370px;
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+#column-r8c1 {
+  width: 100%;
   margin-bottom: 100px;
 }
 
+.team-member {
+  width: 200px;
+  height: 200px;
+  float: left;
+  position:relative;
+}
+
+.team-member span {
+  position:absolute;
+  bottom: 4px;
+  right: 4px;
+  text-align: right;
+  font-size: 16px;
+  color: #FFF;
+  text-shadow: black 0px 1px 1px;
+}
+
+.team-member span.black {
+  color: #000;
+  text-shadow: white 0px 1px 1px;
+}
+
+.team-member a {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 .center-panel {
    margin-left: auto; margin-right:auto; width: 800px;
