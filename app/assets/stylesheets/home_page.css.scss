@@ -144,14 +144,23 @@ p {
   position: relative;
   left: 50%;
   top: 120px;
-  margin-left: -300px;
-  overflow: auto;
-  width: 601px;
+  margin-left: -350px;
+  overflow: visible;
+  width: 736px;
   padding: 10px;
 }
 
 .dialog-left-column, .dialog-right-column {
   float: left;
+}
+
+.dialog-image {
+  float: left;
+  background-image: url('lp/amazon.png');
+  width: 135px;
+  height: 199px;
+  margin: -40px 0px 0px 0px;
+  padding: 0px;
 }
 
 .dialog-left-column {

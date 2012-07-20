@@ -212,6 +212,7 @@
 <script type="text/x-handlebars" data-template-name="signin-dialog">
   <div class="dialog">
     {{#if registrationStatus.canSignin}}
+    <div class="dialog-image">&nbsp;</div>
     <div class="dialog-left-column">
       {{view Portal.SigninBarView}}
     </div>
@@ -243,6 +244,7 @@
       </div>
     {{else}}
       {{#if registrationStatus.canSignup}}
+        <div class="dialog-image">&nbsp;</div>
         <div class="dialog-left-column">
           {{view Portal.SignupBarView}}
         </div>
