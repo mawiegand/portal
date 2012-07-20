@@ -4,13 +4,17 @@
   <title>Wack-a-Doo<%= @title.blank? ? "" : " | #{@title}"  %></title>
   <script>
   
-  var path_fragments = {
-    'de_DE': '/de',
-    'en_EN': '/en',
-  }
+    var path_fragments = {
+      'de_DE': '/de',
+      'en_EN': '/en',
+    }
   
-  window.current_locale = "<%=I18n.t 'locale' %>";
-  window.locale_path_frag = path_fragments[window.current_locale] || '/en';
+    window.current_locale = "<%=I18n.t 'locale' %>";
+    window.locale_path_frag = path_fragments[window.current_locale] || '/en';
+
+<% if !@invitation.nil? %>
+    window.invitation = "<%= @invitation %>";
+<% end %>
   </script>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
