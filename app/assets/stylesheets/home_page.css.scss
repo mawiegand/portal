@@ -16,6 +16,9 @@ html, body {
   width: 100%;
 }
 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
 
 p {
   font-size: 13px;
