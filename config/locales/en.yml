@@ -67,19 +67,20 @@ en:
       box1:
         title: Wack-a-what?!
         body: |-
-          Wack-a-doo is a MMO strategy game in which you take care of a tribe of wacky cavemen. 
-          Help them prosper and grow and lead them into battle or make friends with other tribes. 
-          You will be able to enter their persistent world anytime and anywhere, using a browser, an iPhone or iPad.
+          Wack-a-Doo is a MMO strategy game in which you take care of a tribe of wacky cavemen. 
+          Help them prosper, by fighting or making friends with other tribes - it's your decision. 
+          Soon, you'll be able to enter their persistent world anytime and anywhere, 
+          using a browser, an iPhone or iPad.
           
       box2:
         title: So, what's different?
         body: |-
           Unlike other MMO strategy games, our units are actually visible
-          on the world map, and don't just teleport around invisibly. More
-          like a board game, really. Whack-a-doo is being developed as a
-          true cross-platform game from the start. There will be no lousy
-          platform-inappropriate interfaces! And: We have dinosaurs! Can't beat
-          dinosaurs.
+          on the world map, and don't just teleport around invisibly. Feels
+          much more 
+          like a classic board game, really. You're playing with thousands of people,
+          the community is at the center of the game. And: We have dinosaurs! 
+          Can't beat dinosaurs.
           
       box3:
         title: What do I do, then?
@@ -91,10 +92,10 @@ en:
         title: How much does it cost?
         body: |-
           You can play for the great price of <b>free</b>. 
-          To make this clear: playing wack-a-doo was free of charge, is free 
+          To make this clear: playing Wack-a-Doo was free of charge, is free 
           of charge and will be free of charge; it costs nothing, nada, zero.</p>
           <p>However, we, too, have
-          to feed our dinosaurs somehow. That's the why there's an optional premium account 
+          to feed our dinosaurs somehow. That's why there's an optional premium account 
           offering comfort features and why you'll also have the
           opportunity to give us small amounts of money and benefit from
           convenience features, time-savers and small boosts. We are
@@ -118,14 +119,20 @@ en:
         title: True cross-platform
         body: |-
               Whack-a-doo is being developed as a true cross-platform game
-              from the very beginning. Command your
-              tribe from any device anywhere using the HTML5 client. No plugins necessary! 
+              from the very beginning. Starting now, command your
+              tribe from your browser.  Our modern HTML5 client does not
+              require any plugins, no flash, no nothing. In the near future
+              you'll be able to access the world from anywhere at any time.
+              Whether you're using a desktop computer, notebook or smartphone;
+              everybody accesses and plays in the same virtual world.
               </p>
-              <p>Furthermore, we will offer native clients for a number of platforms.
+              <p>Furthermore, starting this winter,
+               we will offer native clients for the iOS platform.
               We take extra 
               care that each platform's
-              interface is specifically tailored to its individual properties, 
-              so that it'll always feel just right.
+              interface is specifically tailored to its individual properties. 
+              We'll adapt the gameplay carefully to every single
+              platform, so that it'll always feel just right to you.
 
       box8:
         title: What do I need to play?
@@ -138,11 +145,15 @@ en:
         title: Who are you guys, anyway?
         body: |-
               We're avid fans of the genre and some of us were heavily
-              involved in one of its first games, Uga-Agga, which even today,
-              after many, many years, still has a loyal, active fanbase. Now
-              we want to take it one step further and already have a bunch of
-              revolutionary innovations planned that we will announce soon.
-              Stay put!
+              involved in one of its first games in Germany, 
+              <a href="http://www.uga-agga.com">Uga-Agga</a>, 
+              which even today,
+              after more than 10 years, still has a loyal, active fanbase. 
+              Now <a href="http://www.5dlab.com">we rejoined</a>   in order to take it one step further.
+              </p>
+              <p> We're a small team based in Freiburg, Germany, but we're already planning a bunch of
+              revolutionary innovations to the genre. Leveraging the armies
+              to be visible on the world map is just the very first step. Stay put!
       team:
         title: Team
         former_members: Former Team Members
