@@ -106,22 +106,27 @@ de:
       box6:
         title: Einheiten auf der Karte
         body: |-
-            Bei uns sind die Einheiten sind auf der Weltkarte sichtbar. Kein Interface, das nach 
+            Bei uns sind die Einheiten auf der Weltkarte sichtbar. Kein Interface, das nach 
             Tabellenkalkulation aussieht! Die Einheiten stehen auf der Weltkarte und teleportieren 
             sich nicht durch feindliches Gebiet wie in den meisten anderen Spielen dieses Genres. 
-            Durch die Sichtbarkeit jeder Bewegung wird eine neue strategische Spieldimension erreicht.  
+            Durch die Sichtbarkeit jeder Bewegung wird eine neue taktische Spieldimension erreicht.  
             Zum ersten Mal ist der erste Schritt bzw. die zu passierenden Orte wichtiger als die bloße 
-            Reisezeit. Es ist mehr ein Brettspiel oder Echtzeitstrategie.
+            Reisezeit. Darin ähnelt Wack-a-Doo einem Brettspiel.
 
       box7:
         title: True Cross-Plattform
         body: |-
-            Wack-A-Doo wird von Beginn an als echtes Cross-Plattform-Spiel entwickelt. Befehlige 
-            Deine Truppen von überall von jedem Gerät. Mit HTML5 sind keine Plugins nötig. Ob 
-            PC oder Smartphone, alle spielen im selben Spiel!</p>
-            <p>Noch in diesem Winter werden wir Apps für die Apple iOS anbieten. Wir legen Wert 
-            darauf, dass alle Eigenheiten der einzelnen Geräte berücksichtigt werden, so 
-            dass es sich unabhängig von der Plattform genau richtig anfühlt.
+            Wack-A-Doo wird von Beginn an als echtes Cross-Plattform-Spiel entwickelt.
+            Befehlige Deine Truppen ab sofort in Deinem Browser. Unser moderner HTML5
+            Client benötigt keine Plugins; kein Flash, kein gar nichts. 
+            In naher Zukunft wirst Du zudem von überall, von jedem Gerät auf die
+            Spielwelt zugreifen können. Ob 
+            PC oder Smartphone ist egal, alle spielen im selben Spiel!</p>
+            <p>Noch in diesem Winter werden wir native Apps für Apple iOS anbieten. 
+            Wir legen Wert 
+            darauf, dass alle Eigenheiten der einzelnen Geräte berücksichtigt werden,
+            und werden das Gameplay auf das jeweilige Gerät abstimmen, so 
+            dass es sich für Dich unabhängig von der Plattform immer genau richtig anfühlt. 
 
       box8:
         title: What do I need to play?
@@ -133,5 +138,13 @@ de:
       box9:
         title: Wer seid Ihr eigentlich?
         body: |-
-              Wir sind große Fans der Browser-Strategiespiele. Einige von uns waren in 2002 an der Entwicklung des Open-Source Spiels <a href="http://www.uga-agga.com/">Uga Agga</a> beteiligt und haben damals mitgeholfen, das Genre in Deutschland zu definieren. Nach über 10 Jahren hat Uga Agga auch heute noch eine sehr loyale aktive Talgemeinschaft. 
-              Jetzt wollen wir die Entwicklung eine Stufe weiter treiben und haben dafür einige revolutionäre Features in Planung. Es bleibt spannend!
+              Wir sind große Fans der Browser-Strategiespiele. Einige von uns waren in 2002 an der Entwicklung des Open-Source Spiels <a href="http://www.uga-agga.com/">Uga Agga</a> beteiligt und haben damals mitgeholfen, das Genre in Deutschland zu definieren. Nach über 10 Jahren hat Uga Agga auch heute noch eine sehr loyale und aktive Talgemeinschaft. 
+              Jetzt haben wir uns wieder <a target="_blank" href="http://www.5dlab.com">zusammen getan</a> und wollen die Entwicklung nicht nur eine Stufe weiter treiben.</p>
+              <p> Wir sind  ein kleines Team, haben  aber einige revolutionäre Features in Planung. 
+              Ihr könnt sicher sein, die
+              Einheiten endlich auf die Karte zu stellen ist dabei nur der erste Schritt. Es bleibt spannend!
+      team:
+        title: Team
+        former_members: Ehemalige
+        
+        
