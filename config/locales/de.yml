@@ -16,6 +16,8 @@ de:
     support: Hilfe
     tof: Nutzungsbedingungen
     legal: Impressum
+    agb: AGB
+    datenschutz: Datenschutzerklärung
     signin: Login
     signup: Registrieren
     signout: Abmelden
@@ -31,7 +33,7 @@ de:
     signup_tooltip: Gib Deine Emailadresse ein und wähle ein Passwort, um Dich beim Spiel anzumelden.
     signin_tooltip: Gib Email und Passwort ein, um Dich einzuloggen.
     no_signin_message: Das Einloggen ist wegen Wartungsarbeiten vorübergehend abgeschaltet.
-    no_signup_message: Momentan ist keine Registrierung möglich. Aber es geht in wenigen Tagen los!
+    no_signup_message: Momentan ist keine Registrierung möglich.
     waiting_list_notice: |-
       <h1>Herzlichen Dank für die Registrierung!</h1>
       <p>Im Moment sind alle freien Plätze im Spiel belegt und Du kannst Dich
