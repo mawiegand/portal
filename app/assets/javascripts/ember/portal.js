@@ -112,4 +112,4 @@ Portal.Config = {
   SERVER_ROOT: !document.location.host ? 'http://localhost' : document.location.protocol + '//' + document.location.host, 
 };
 Portal.Config.identityProviderBase = Portal.Config.SERVER_ROOT + '/identity_provider';
-Portal.Config.gameserverURL = Portal.Config.SERVER_ROOT + '/client';
+Portal.Config.gameserverURL = Portal.Config.SERVER_ROOT + '/client?t=' + (Math.round(Math.random().toString() * 100000000)); 
