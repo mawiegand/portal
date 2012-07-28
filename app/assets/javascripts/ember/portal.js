@@ -5,7 +5,6 @@
 #= require_tree ./helpers
 #= require_tree ./templates
 
-
 Portal = Ember.Application.create({
   ready: function() {
     
@@ -65,6 +64,14 @@ Portal = Ember.Application.create({
       controllerBinding: 'Portal.DialogController',
     });
 
+    if (window.startMsg) {
+      Portal.DialogController.toggleVisibility(false);
+      Portal.DialogController.set('lastError', {
+        type: 'signin',
+        msg: window.startMsg,
+        notAnError: true,
+      });
+    }
   },
 });
 

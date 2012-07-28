@@ -11,6 +11,7 @@
   
     window.current_locale = "<%=I18n.t 'locale' %>";
     window.locale_path_frag = path_fragments[window.current_locale] || '/en';
+    window.startMsg = "<%= @message %>";
 
 <% if !@invitation.nil? %>
     window.invitation = "<%= @invitation %>";

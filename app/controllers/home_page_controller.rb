@@ -17,9 +17,9 @@ class HomePageController < ApplicationController
                                 :client_password => PORTAL_CONFIG['client_password'] },
                    :headers => { 'Accept' => 'application/json'})
       if response.code == 200
-        @message = "sent"
+        @message = 'Wir haben dir ein neues Passwort an deine Mail-Adresse geschickt. Du kannst dich damit wieder einloggen.' 
       else
-        @message = "not sent"
+        @message = 'Das Passwort Token wurde nicht gefunden'
       end             
     end
   end
