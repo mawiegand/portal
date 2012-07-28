@@ -449,5 +449,53 @@ Portal.DialogController = Ember.Object.create(function() {
         }
       }); 
     },    
+
+    createPasswordResetToken: function() {
+
+      var identifier = this.getPath('credentials.email');
+
+      if (identifier) {
+        var self = this;
+  
+        var params = [
+          {name: 'client_id', value: 'WACKADOOHTML5'},
+          {name: 'client_password', value: 'wacky'},
+          {name: 'identifier', value: identifier}  
+        ];
+  
+        this.set('isLoading', true);
+  
+        $.ajax({
+          type: 'GET',
+          url: Portal.Config.identityProviderBase + window.locale_path_frag + '/send_password_token',
+          data: params,
+          success: function(data, textStatus, jqXHR) {
+            self.set('isLoading', false);
+            switch(jqXHR.status) {
+              case 200:
+                console.log('--> password send request erfolgreich');
+                var msgObj = $.parseJSON(jqXHR.responseText);
+                self.set('lastError', {
+                  type: 'signin',
+                  statusCode: jqXHR.status,
+                  msg: 'Eine Mail mit Hinweisen, wie du dein Passwort zurücksetzen kannst, wurde an deine Mail-Adresse versandt.',
+                  notAnError: true,
+                });
+                break;
+              default:
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+          }
+        });
+      }
+      else {
+        this.set('lastError', {
+          type: 'signin',
+          statusCode: 400,
+          msg: 'Gib zum Zurücksetzen des Passworts deine Mailadresse an und klicke anschließend noch mal auf den Link!',
+        });
+      } 
+    },    
   };
 }());
