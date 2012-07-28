@@ -225,12 +225,13 @@ Portal.DialogController = Ember.Object.create(function() {
       this.resetError();
       
       
-      this.obtainAccessToken(credentials.email, credentials.password, function(access_token) {
+      this.obtainAccessToken(credentials.email, credentials.password, function(access_token, expiration) {
         Portal.Cookie.saveEmail(credentials.email, 7);
         
 
         window.name = JSON.stringify({
           accessToken: access_token,
+          expiration: expiration, 
           locale: window.current_locale,
         });
         window.location = Portal.Config.gameserverURL;   
@@ -365,7 +366,7 @@ Portal.DialogController = Ember.Object.create(function() {
           switch(jqXHR.status) {
           case 200:
             if (onSuccess && data['access_token']) {
-              onSuccess(data.access_token);
+              onSuccess(data.access_token, data.expires_in);
             }
             else if (! data['access_token']){
               self.set('isLoading', false);
