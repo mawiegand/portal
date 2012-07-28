@@ -267,6 +267,7 @@ Portal.DialogController = Ember.Object.create(function() {
           success: function(data, textStatus, jqXHR) {
             
             switch(jqXHR.status) {
+            case 200:
             case 201:  // created
               console.log(jqXHR, data, textStatus);
               var user = $.parseJSON(jqXHR.responseText)
