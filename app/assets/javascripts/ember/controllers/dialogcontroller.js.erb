@@ -479,7 +479,7 @@ Portal.DialogController = Ember.Object.create(function() {
                 self.set('lastError', {
                   type: 'signin',
                   statusCode: jqXHR.status,
-                  msg: 'Eine Mail mit Hinweisen, wie du dein Passwort zurücksetzen kannst, wurde an deine Mail-Adresse versandt.',
+                  msg: "<%= I18n.t('home_page.password_hint') %>",
                   notAnError: true,
                 });
                 break;
@@ -494,7 +494,7 @@ Portal.DialogController = Ember.Object.create(function() {
         this.set('lastError', {
           type: 'signin',
           statusCode: 400,
-          msg: 'Gib zum Zurücksetzen des Passworts deine Mailadresse an und klicke anschließend noch mal auf den Link!',
+          msg: "<%= I18n.t('home_page.email_not_set') %>",
         });
       } 
     },    

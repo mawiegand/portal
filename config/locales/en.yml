@@ -21,6 +21,16 @@ en:
     signin: Sign In
     signup: Sing Up
     signout: Sign Out
+    
+  mailing:
+    validation:
+      subject: Welcome to Wack-a-Doo
+    waiting_list:
+      subject: You're on the waiting list to Wack-a-Doo
+    password_token:
+      subject: Your Password Link
+    password:
+      subject: Your new Password
      
   home_page:
     processing: processing...
@@ -46,6 +56,9 @@ en:
          reliable and fast service to all our players and thus, need to
          control the number of new activations. 
       <p>We hope for your understanding and patience.</p>
+      
+    password_hint: EN Eine Mail mit Hinweisen, wie du dein Passwort zurücksetzen kannst, wurde an deine Mail-Adresse versandt.
+    email_not_set: EN Gib zum Zurücksetzen des Passworts deine Mailadresse an und klicke anschließend noch mal auf den Link!
     password_sent: We sent a new password to your mail address. You can log in with it once again. 
     password_not_sent: The password token is not valid. 
     switchbar:
