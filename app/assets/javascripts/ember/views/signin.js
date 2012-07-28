@@ -11,12 +11,10 @@ Portal.SigninDialog = Ember.View.extend({
   },
   
   showPasswordReset: function() {
+    alert ('Sorry, not yet implemented.');
     this.get('controller').createPasswordResetToken();
   },
   
-  showSupport: function() {
-    alert ('Sorry, not yet implemented.');
-  },
   
 });
 
