@@ -45,6 +45,10 @@ de:
          Gleichzeitig wollen wir aber allen eine gute und zuverlässige 
          Serverleistung bieten. Wir hoffen auf Dein Verständnis und Deine 
          Geduld.</p>
+    password_hint: Eine Mail mit Hinweisen, wie du dein Passwort zurücksetzen kannst, wurde an deine Mail-Adresse versandt.
+    password_sent: Wir haben dir ein neues Passwort an deine Mail-Adresse geschickt. Du kannst dich damit wieder einloggen. 
+    password_not_sent: Das Passwort Token ist ungültig. 
+     
     togglebar:
       signup: Registrieren
       signin: Login

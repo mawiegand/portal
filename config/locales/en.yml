@@ -46,6 +46,8 @@ en:
          reliable and fast service to all our players and thus, need to
          control the number of new activations. 
       <p>We hope for your understanding and patience.</p>
+    password_sent: We sent a new password to your mail address. You can log in with it once again. 
+    password_not_sent: The password token is not valid. 
     switchbar:
       teaser: Wanna know more about the game?
       
