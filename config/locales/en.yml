@@ -39,9 +39,12 @@ en:
     password: Password
     signup: Sign Up
     signin: Sign In
+    reset: Request Password
     email_or_nickname: Email 
     signup_tooltip: Enter a valid email address and choose a password to start playing immediately.
     signin_tooltip: Enter your email and password to sign in to your existing account.
+    password_tooltip: |-
+      Enter your email to reset your password. We will then send you a mail with a link to request a new password.
     no_signin_message: Login is currently disabled due to maintenance.
     no_signup_message: Sign up is disabled. Please check back later.
     waiting_list_notice: |-
