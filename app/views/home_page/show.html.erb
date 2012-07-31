@@ -220,14 +220,14 @@
 <script type="text/x-handlebars" data-template-name="signup-form">
 <div class="form-fields-group">
   {{#if registrationStatus.isLoading}}
-    {{view AWE.UI.Ember.ActivityIndicatorView classNames="activity-indicator-small"}}
+    {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}}
   {{else}}
     {{#if registrationStatus.canSignup }}
       {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="Portal.DialogController.credentials.email"}}
       {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
       {{#if isLoading}}
         <button title="<%= I18n.t 'home_page.signup_tooltip' %>" type="submit" class="submit-button">
-          {{view AWE.UI.Ember.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
+          {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
         </button>
       {{else}}
         <button {{action "submit"}} title="<%= I18n.t 'home_page.signup_tooltip' %>" type="submit" class="submit-button">
@@ -245,14 +245,14 @@
 <script type="text/x-handlebars" data-template-name="signin-form">
 <div class="form-fields-group">
   {{#if registrationStatus.isLoading}}
-    {{view AWE.UI.Ember.ActivityIndicatorView classNames="activity-indicator-small"}}
+    {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}}
   {{else}}
     {{#if registrationStatus.canSignin}}
       {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="Portal.DialogController.credentials.email"}}
       {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
       {{#if isLoading}}
         <button title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
-          {{view AWE.UI.Ember.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
+          {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
         </button>
       {{else}}
         <button {{action "submit"}} title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
