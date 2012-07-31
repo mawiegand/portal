@@ -199,7 +199,7 @@
 
 
 <script type="text/x-handlebars" data-template-name="toggle-view">
-  {{#if controller.context}}
+  {{#if controller.signinContext}}
     <%= I18n.t 'home_page.togglebar.signup' %>
   {{else}}
     <%= I18n.t 'home_page.togglebar.signin' %>
@@ -208,10 +208,14 @@
 
 <script type="text/x-handlebars" data-template-name="bar-view">
  {{#unless hidden}}
-   {{#if type }}
+   {{#if signinType }}
      {{view Portal.SigninBarView }}
-   {{else}}
-     {{view Portal.SignupBarView }}   
+   {{/if}}
+   {{#if signupType }}
+     {{view Portal.SigninBarView }}
+   {{/if}}
+   {{#if passwordType }}
+     {{view Portal.SigninBarView }}
    {{/if}}
  {{/unless}}
 </script>
@@ -266,12 +270,31 @@
  </div>
 </script>
 
+<script type="text/x-handlebars" data-template-name="password-form">
+<div class="form-fields-group">
+  {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="Portal.DialogController.credentials.email"}}
+  {{#if isLoading}}
+    <button title="<%= I18n.t 'home_page.password_tooltip' %>" type="submit" class="submit-button">
+      {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
+    </button>
+  {{else}}
+    <button {{action "submit"}} title="<%= I18n.t 'home_page.password_tooltip' %>" type="submit" class="submit-button">
+      <%= I18n.t 'home_page.reset' %>
+      </button>
+  {{/if}}
+ </div>
+</script>
+
 <script type="text/x-handlebars" data-template-name="dialog">
 <div class="dialog-wrapper">
-  {{#if controller.context}}
-      {{view Portal.SigninDialog controllerBinding="Portal.DialogController"}}
-  {{else}}
-      {{view Portal.SignupDialog controllerBinding="Portal.DialogController"}}
+  {{#if controller.signinContext}}
+    {{view Portal.SigninDialog controllerBinding="Portal.DialogController"}}
+  {{/if}}
+  {{#if controller.signupContext}}
+    {{view Portal.SignupDialog controllerBinding="Portal.DialogController"}}
+  {{/if}}
+  {{#if controller.passwordContext}}
+    {{view Portal.PasswordDialog controllerBinding="Portal.DialogController"}}
   {{/if}}
 </div>
 </script>
@@ -332,6 +355,28 @@
         <%= I18n.t('home_page.no_signup_message') %>
       {{/if}}
     {{/if}}
+  </div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="password-dialog">
+  <div class="dialog">
+    <div class="dialog-image">&nbsp;</div>
+    <div class="dialog-left-column">
+      {{view Portal.PasswordBarView}}
+    </div>
+    <div class="dialog-right-column">
+      <ul>
+        {{#if Portal.DialogController.lastError}}
+          <li class="error">
+          {{#unless Portal.DialogController.lastError.notAnError}}
+            <%= I18n.t('Error')%>: 
+          {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
+        {{/if}}
+        <li><%= I18n.t 'home_page.password_tooltip' %></li>
+        <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
+        <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
+      </ul>
+    </div>
   </div>
 </script>
 

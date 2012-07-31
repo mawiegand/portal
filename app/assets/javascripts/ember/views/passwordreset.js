@@ -1,6 +1,6 @@
 
-Portal.SigninDialog = Ember.View.extend({
-  templateName: 'signin-dialog',
+Portal.PasswordDialog = Ember.View.extend({
+  templateName: 'password-dialog',
   
   isLoadingBinding: 'Portal.DialogController.isLoading',
 
@@ -11,12 +11,13 @@ Portal.SigninDialog = Ember.View.extend({
   },
   
   showPasswordReset: function() {
-    this.get('controller').resetPasswordClicked();
+    alert ('Sorry, not yet implemented.');
+    this.get('controller').createPasswordResetToken();
   },
 });
 
-Portal.SigninBarView = Ember.View.extend({
-  templateName: 'signin-form',
+Portal.PasswordBarView = Ember.View.extend({
+  templateName: 'password-form',
   
   isLoadingBinding: 'Portal.DialogController.isLoading',
   
@@ -35,11 +36,7 @@ Portal.SigninBarView = Ember.View.extend({
     }
   },
 
-  cancel: function(event) {
-    Portal.DialogController.cancel();
-  },
-
   submit: function(event) {
-    Portal.DialogController.signin();
+    Portal.DialogController.createPasswordResetToken();
   },
 });

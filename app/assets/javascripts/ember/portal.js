@@ -4,6 +4,7 @@
 #= require_tree ./controllers
 #= require_tree ./helpers
 #= require_tree ./templates
+#= require_tree ./i18n
 
 Portal = Ember.Application.create({
   ready: function() {
@@ -50,8 +51,21 @@ Portal = Ember.Application.create({
 
     Portal.BarView = Ember.View.create({
       templateName: 'bar-view',
-      typeBinding: 'Portal.DialogController.bartype',
+      
+      signupType: function() {
+        return Portal.DialogController.get('bartype') === Portal.DIALOG_TYPE_SIGNUP;
+      }.property('Portal.DialogController.bartype').cacheable(),
+      
+      signinType: function() {
+        return Portal.DialogController.get('bartype') === Portal.DIALOG_TYPE_SIGNIN;
+      }.property('Portal.DialogController.bartype').cacheable(),
+      
+      passwordType: function() {
+        return Portal.DialogController.get('bartype') === Portal.DIALOG_TYPE_PASSWORD;
+      }.property('Portal.DialogController.bartype').cacheable(),
+      
       hiddenBinding: 'Portal.DialogController.visibility',
+      
     }).appendTo('#loginbar');
 
     Portal.ToggleView = Ember.View.create({
@@ -77,9 +91,10 @@ Portal = Ember.Application.create({
 
 Portal.DIALOG_STATE_HIDDEN  = 0;
 Portal.DIALOG_STATE_VISIBLE = 1;
-Portal.DIALOG_TYPE_SIGNUP  = 0;
-Portal.DIALOG_TYPE_SIGNIN  = 1;
 
+Portal.DIALOG_TYPE_SIGNUP   = 0;
+Portal.DIALOG_TYPE_SIGNIN   = 1;
+Portal.DIALOG_TYPE_PASSWORD = 2;
 
 Portal.Cookie = Ember.Object.create({
   email: null,
@@ -120,3 +135,4 @@ Portal.Config = {
 };
 Portal.Config.identityProviderBase = Portal.Config.SERVER_ROOT + '/identity_provider';
 Portal.Config.gameserverURL = Portal.Config.SERVER_ROOT + '/client?t=' + (Math.round(Math.random().toString() * 100000000)); 
+Portal.Config.DEFAULT_LOCALE = 'en_US';
