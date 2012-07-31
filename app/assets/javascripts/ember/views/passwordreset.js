@@ -4,15 +4,8 @@ Portal.PasswordDialog = Ember.View.extend({
   
   isLoadingBinding: 'Portal.DialogController.isLoading',
 
-  registrationStatusBinding: 'Portal.DialogController.registrationStatus',
-
-  showSignup: function() {
+  showSignin: function() {
     this.get('controller').toggleViewClicked();
-  },
-  
-  showPasswordReset: function() {
-    alert ('Sorry, not yet implemented.');
-    this.get('controller').createPasswordResetToken();
   },
 });
 
@@ -20,8 +13,6 @@ Portal.PasswordBarView = Ember.View.extend({
   templateName: 'password-form',
   
   isLoadingBinding: 'Portal.DialogController.isLoading',
-  
-  registrationStatusBinding: 'Portal.DialogController.registrationStatus',
   
   didInsertElement: function() {
     this._super();
