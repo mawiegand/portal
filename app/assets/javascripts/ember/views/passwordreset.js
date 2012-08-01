@@ -27,6 +27,10 @@ Portal.PasswordBarView = Ember.View.extend({
     }
   },
 
+  cancel: function(event) {
+    Portal.DialogController.cancel();
+  },
+
   submit: function(event) {
     Portal.DialogController.createPasswordResetToken();
   },

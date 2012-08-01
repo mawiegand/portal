@@ -16,7 +16,7 @@ Portal.DialogController = Ember.Object.create(function() {
     animating: false,                       ///< true in case a switch from main to details screen (or vice versa) has been initiated and is underway (hasn't finished animating).
     lastError: null,                        ///< object holding the last error, either as received from the server or occured locally in the client. Null, if there is no "present" error.
     showWaitingListNotice: null,
-    
+    passwordTokenSent: false,
   
     isLoading: false,
     
@@ -32,6 +32,7 @@ Portal.DialogController = Ember.Object.create(function() {
     /** Observes the error an shows the dialog-view, if necessary. */
     lastErrorObserver: function() {
       var error = this.get('lastError');
+      console.log('---> error', error, this.getPath('credentials.email'), this.getPath('credentials.password'));
       if (error && this.get('detailsVisible')) {
         this.switchBarClicked();
       }
@@ -39,7 +40,7 @@ Portal.DialogController = Ember.Object.create(function() {
         this.toggleVisibility();
       }
       if (error) { // reset password field -> most frequent error
-        this.get('credentials').set('password', null);
+        this.get('credentials').set('password', '');
       }
     }.observes('lastError'),
     
@@ -47,6 +48,7 @@ Portal.DialogController = Ember.Object.create(function() {
      * sgin in / sign up attempt or changes the state of the UI. */
     resetError: function() {
       this.set('lastError', null);
+      this.set('passwordTokenSent', false);
     },
   
     signinContext: function() {
@@ -503,14 +505,7 @@ Portal.DialogController = Ember.Object.create(function() {
             self.set('isLoading', false);
             switch(jqXHR.status) {
               case 200:
-                self.toggleViewClicked();
-                var msgObj = $.parseJSON(jqXHR.responseText);
-                self.set('lastError', {
-                  type: 'signin',
-                  statusCode: jqXHR.status,
-                  msg: Portal.I18n.lookupTranslation('home_page.password_hint'),
-                  notAnError: true,
-                });
+                self.set('passwordTokenSent', true);
                 break;
               default:
             }

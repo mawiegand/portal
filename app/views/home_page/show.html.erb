@@ -228,7 +228,7 @@
   {{else}}
     {{#if registrationStatus.canSignup }}
       {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="Portal.DialogController.credentials.email"}}
-      {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
+      {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password1"}}
       {{#if isLoading}}
         <button title="<%= I18n.t 'home_page.signup_tooltip' %>" type="submit" class="submit-button">
           {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
@@ -253,7 +253,7 @@
   {{else}}
     {{#if registrationStatus.canSignin}}
       {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email_or_nickname' %>" valueBinding="Portal.DialogController.credentials.email"}}
-      {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
+      {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password2"}}
       {{#if isLoading}}
         <button title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
           {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
@@ -361,22 +361,28 @@
 <script type="text/x-handlebars" data-template-name="password-dialog">
   <div class="dialog">
     <div class="dialog-image">&nbsp;</div>
-    <div class="dialog-left-column">
-      {{view Portal.PasswordBarView}}
-    </div>
-    <div class="dialog-right-column">
-      <ul>
-        {{#if Portal.DialogController.lastError}}
-          <li class="error">
-          {{#unless Portal.DialogController.lastError.notAnError}}
-            <%= I18n.t('Error')%>: 
-          {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
-        {{/if}}
-        <li><%= I18n.t 'home_page.password_tooltip' %></li>
-        <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
-        <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
-      </ul>
-    </div>
+    {{#if Portal.DialogController.passwordTokenSent }}
+      <div class="dialog-right-column">
+        <%= raw(I18n.t('home_page.password_hint')) %>
+      </div>
+    {{else}}
+      <div class="dialog-left-column">
+        {{view Portal.PasswordBarView}}
+      </div>
+      <div class="dialog-right-column">
+        <ul>
+          {{#if Portal.DialogController.lastError}}
+            <li class="error">
+            {{#unless Portal.DialogController.lastError.notAnError}}
+              <%= I18n.t('Error')%>: 
+            {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
+          {{/if}}
+          <li><%= I18n.t 'home_page.password_tooltip' %></li>
+          <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
+          <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
+        </ul>
+      </div>
+    {{/if}}
   </div>
 </script>
 
