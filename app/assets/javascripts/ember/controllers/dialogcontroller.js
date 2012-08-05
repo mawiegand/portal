@@ -17,6 +17,9 @@ Portal.DialogController = Ember.Object.create(function() {
     lastError: null,                        ///< object holding the last error, either as received from the server or occured locally in the client. Null, if there is no "present" error.
     showWaitingListNotice: null,
     passwordTokenSent: false,
+    passwordTokenNotSent: false,
+    passwordSent: false,
+    passwordNotSent: false,
   
     isLoading: false,
     
@@ -32,7 +35,6 @@ Portal.DialogController = Ember.Object.create(function() {
     /** Observes the error an shows the dialog-view, if necessary. */
     lastErrorObserver: function() {
       var error = this.get('lastError');
-      console.log('---> error', error, this.getPath('credentials.email'), this.getPath('credentials.password'));
       if (error && this.get('detailsVisible')) {
         this.switchBarClicked();
       }
@@ -49,6 +51,9 @@ Portal.DialogController = Ember.Object.create(function() {
     resetError: function() {
       this.set('lastError', null);
       this.set('passwordTokenSent', false);
+      this.set('passwordTokenNotSent', false);
+      this.set('passwordSent', false);
+      this.set('passwordNotSent', false);
     },
   
     signinContext: function() {
@@ -76,7 +81,7 @@ Portal.DialogController = Ember.Object.create(function() {
       else {
         return this.get('dialogtype') == Portal.DIALOG_TYPE_PASSWORD;
       }
-    }.property('visibility', 'bartype', 'dialogtype'),
+    }.property('visibility', 'dialogtype'),
   
     /** toggles the state of the UI from sign in to sign up and vice versa.
      * Also displays the dialog-view if not presently visible. */
@@ -104,7 +109,6 @@ Portal.DialogController = Ember.Object.create(function() {
         this.toggleVisibility();
       }
       this.set('dialogtype', Portal.DIALOG_TYPE_PASSWORD);
-      this.set('bartype', Portal.DIALOG_TYPE_PASSWORD);
       this.resetError();
     },
   
@@ -486,7 +490,7 @@ Portal.DialogController = Ember.Object.create(function() {
 
       var identifier = this.getPath('credentials.email');
 
-      if (identifier) {
+      if (identifier && identifier != '') {
         var self = this;
   
         var params = [
@@ -511,16 +515,12 @@ Portal.DialogController = Ember.Object.create(function() {
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
+            console.log('---> error');
+            self.set('isLoading', false);
+            self.set('passwordTokenNotSent', true);
           }
         });
       }
-      else {
-        this.set('lastError', {
-          type: 'signin',
-          statusCode: 400,
-          msg: Partal.I18n.lookupTranslation('home_page.email_not_set'),
-        });
-      } 
     },    
   };
 }());

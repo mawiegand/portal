@@ -60,10 +60,10 @@ en:
          control the number of new activations. 
       <p>We hope for your understanding and patience.</p>
       
-    password_hint: EN Eine Mail mit Hinweisen, wie du dein Passwort zurücksetzen kannst, wurde an deine Mail-Adresse versandt.
-    email_not_set: EN Gib zum Zurücksetzen des Passworts deine Mailadresse an und klicke anschließend noch mal auf den Link!
+    password_hint: We sent a mail to your mail address with further information how to reset your password.
+    password_token_not_sent: The email or username could not be found.
     password_sent: We sent a new password to your mail address. You can log in with it once again. 
-    password_not_sent: The password token is not valid. 
+    password_not_sent: The password link is not valid. 
     switchbar:
       teaser: Wanna know more about the game?
       

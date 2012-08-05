@@ -60,9 +60,9 @@ de:
          Serverleistung bieten. Wir hoffen auf Dein Verständnis und Deine 
          Geduld.</p>
     password_hint: Eine Mail mit Hinweisen, wie du dein Passwort zurücksetzen kannst, wurde an deine Mail-Adresse versandt.
-    email_not_set: Gib zum Zurücksetzen des Passworts deine Mailadresse an und klicke anschließend noch mal auf den Link!
+    password_token_not_sent: Die Emailadresse oder der Benutzername wurde nicht gefunden.
     password_sent: Wir haben dir ein neues Passwort an deine Mail-Adresse geschickt. Du kannst dich damit wieder einloggen. 
-    password_not_sent: Das Passwort Token ist ungültig. 
+    password_not_sent: Der Passwort Link ist ungültig. 
      
     togglebar:
       signup: Registrieren
