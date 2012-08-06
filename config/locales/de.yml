@@ -44,7 +44,7 @@ de:
     signup_tooltip: Gib Deine Emailadresse ein und wähle ein Passwort, um Dich beim Spiel anzumelden.
     signin_tooltip: Gib Email und Passwort ein, um Dich einzuloggen.
     password_tooltip: |-
-      Gib deine Emailadresse ein um dein Passwort zurückzusetzen. Du bekommst dann eine Mail an deine Adresse, der einen Link enthält,
+      Gib deine Emailadresse, ein um dein Passwort zurückzusetzen. Du bekommst dann eine Mail an deine Adresse gesendet, die einen Link enthält,
       mit dem du dir ein neues Passwort anfordern kannst. 
     no_signin_message: Das Einloggen ist wegen Wartungsarbeiten vorübergehend abgeschaltet.
     no_signup_message: Momentan ist keine Registrierung möglich.
@@ -60,7 +60,7 @@ de:
          Serverleistung bieten. Wir hoffen auf Dein Verständnis und Deine 
          Geduld.</p>
     password_hint: Eine Mail mit Hinweisen, wie du dein Passwort zurücksetzen kannst, wurde an deine Mail-Adresse versandt.
-    password_token_not_sent: Die Emailadresse oder der Benutzername wurde nicht gefunden.
+    password_token_not_sent: Die Emailadresse wurde nicht gefunden.
     password_sent: Wir haben dir ein neues Passwort an deine Mail-Adresse geschickt. Du kannst dich damit wieder einloggen. 
     password_not_sent: Der Passwort Link ist ungültig. 
      
