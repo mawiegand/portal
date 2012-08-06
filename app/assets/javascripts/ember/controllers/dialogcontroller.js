@@ -90,7 +90,7 @@ Portal.DialogController = Ember.Object.create(function() {
         this.toggleVisibility();
       }
       
-      if (this.get('bartype') === Portal.DIALOG_TYPE_SIGNIN) {
+      if (this.get('dialogtype') === Portal.DIALOG_TYPE_SIGNIN) {
         this.set('dialogtype', Portal.DIALOG_TYPE_SIGNUP);
         this.set('bartype', Portal.DIALOG_TYPE_SIGNUP);
       }
