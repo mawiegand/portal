@@ -138,6 +138,7 @@ Portal.DialogController = Ember.Object.create(function() {
         .css('min-height', '0')
         .slideUp(); 
         $('#togglebar').fadeOut();
+        $('#top-controls').fadeOut();
     
         $('#menubar').slideUp(function() {
           if (Portal.DialogController.get('visibility') === Portal.DIALOG_STATE_VISIBLE) {
@@ -158,7 +159,8 @@ Portal.DialogController = Ember.Object.create(function() {
           $('#switchbar-bottom').hide();
           $('#mainbar').css('min-height', mainbarMinHeight);
           $('#logo-small').fadeIn();
-          $('#switchbar-teaser').fadeIn()
+          $('#switchbar-teaser').fadeIn();
+          $('#top-controls').fadeIn();
           $('#togglebar').fadeIn(function() {
             self.set('animating', false);
           });
