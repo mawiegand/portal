@@ -92,8 +92,15 @@ Portal.DialogController = Ember.Object.create(function() {
         this.set('bartype', Portal.DIALOG_TYPE_SIGNIN);
       }
       this.resetError();
+
+        console.log("BARTYPE === SIGNIN", this.get('bartype'), this.get('dialogtype'), 
+                    Ember.getPath("Portal.DialogController.credentials.email"), Ember.getPath("Portal.DialogController.credentials.password"))
+
+
       if (this.get('bartype') === Portal.DIALOG_TYPE_SIGNIN) { // reset email
-        this.get('credentials').set('email', null);
+        //this.get('credentials').set('email', "gucki");
+        console.log("BARTYPE === SIGNIN", this.get('bartype'), this.get('dialogtype'), 
+                    Ember.getPath("Portal.DialogController.credentials.email"), Ember.getPath("Portal.DialogController.credentials.password"))
       }
     },
     
@@ -179,7 +186,7 @@ Portal.DialogController = Ember.Object.create(function() {
       animated = animated === undefined ? true : animated;
 
       this.set('visibility', Portal.DIALOG_STATE_VISIBLE);
-      if (animated) {
+      if (animated ) {
         $('#figures').fadeOut(function() {
           Portal.DialogView.appendTo($("#mainbar"));
         }); 
@@ -253,8 +260,8 @@ Portal.DialogController = Ember.Object.create(function() {
       this.resetError();
       
       
-      this.obtainAccessToken(credentials.email, credentials.password, function(access_token, expiration) {
-        Portal.Cookie.saveEmail(credentials.email, 7);
+      this.obtainAccessToken(credentials.get('email'), credentials.get('password'), function(access_token, expiration) {
+        Portal.Cookie.saveEmail(credentials.get('email'), 7);
         
 
         window.name = JSON.stringify({
@@ -276,9 +283,9 @@ Portal.DialogController = Ember.Object.create(function() {
       
         var params = [
           {name: 'nickname_base',         value: 'WackyUser'},
-          {name: 'email',                 value: credentials.email},
-          {name: 'password',              value: credentials.password},
-          {name: 'password_confirmation', value: credentials.password},
+          {name: 'email',                 value: credentials.get('email')},
+          {name: 'password',              value: credentials.get('password')},
+          {name: 'password_confirmation', value: credentials.get('password')},
           {name: 'client_id',             value: 'WACKADOOHTML5'},
           {name: 'client_password',       value: 'wacky'},
         ];
