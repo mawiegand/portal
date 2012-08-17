@@ -79,12 +79,16 @@ Portal = Ember.Application.create({
     });
 
     if (window.startMsg) {
-      Portal.DialogController.toggleVisibility(false);
-      Portal.DialogController.set('lastError', {
-        type: 'signin',
-        msg: window.startMsg,
-        notAnError: true,
-      });
+      if (window.startMsg == 'passwordSent') {
+        Portal.DialogController.toggleVisibility(false);
+        Portal.DialogController.set('passwordSent', true);
+        Portal.DialogController.set('dialogtype', Portal.DIALOG_TYPE_PASSWORD);
+      }
+      else if (window.startMsg == 'passwordNotSent') {
+        Portal.DialogController.toggleVisibility(false);
+        Portal.DialogController.set('passwordNotSent', true);
+        Portal.DialogController.set('dialogtype', Portal.DIALOG_TYPE_PASSWORD);
+      }
     }
   },
 });

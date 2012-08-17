@@ -16,7 +16,10 @@ Portal.DialogController = Ember.Object.create(function() {
     animating: false,                       ///< true in case a switch from main to details screen (or vice versa) has been initiated and is underway (hasn't finished animating).
     lastError: null,                        ///< object holding the last error, either as received from the server or occured locally in the client. Null, if there is no "present" error.
     showWaitingListNotice: null,
-    
+    passwordTokenSent: false,
+    passwordTokenNotSent: false,
+    passwordSent: false,
+    passwordNotSent: false,
   
     isLoading: false,
     
@@ -39,7 +42,7 @@ Portal.DialogController = Ember.Object.create(function() {
         this.toggleVisibility();
       }
       if (error) { // reset password field -> most frequent error
-        this.get('credentials').set('password', null);
+        this.get('credentials').set('password', '');
       }
     }.observes('lastError'),
     
@@ -47,6 +50,10 @@ Portal.DialogController = Ember.Object.create(function() {
      * sgin in / sign up attempt or changes the state of the UI. */
     resetError: function() {
       this.set('lastError', null);
+      this.set('passwordTokenSent', false);
+      this.set('passwordTokenNotSent', false);
+      this.set('passwordSent', false);
+      this.set('passwordNotSent', false);
     },
   
     signinContext: function() {
@@ -74,7 +81,7 @@ Portal.DialogController = Ember.Object.create(function() {
       else {
         return this.get('dialogtype') == Portal.DIALOG_TYPE_PASSWORD;
       }
-    }.property('visibility', 'bartype', 'dialogtype'),
+    }.property('visibility', 'dialogtype'),
   
     /** toggles the state of the UI from sign in to sign up and vice versa.
      * Also displays the dialog-view if not presently visible. */
@@ -83,7 +90,7 @@ Portal.DialogController = Ember.Object.create(function() {
         this.toggleVisibility();
       }
       
-      if (this.get('bartype') === Portal.DIALOG_TYPE_SIGNIN) {
+      if (this.get('dialogtype') === Portal.DIALOG_TYPE_SIGNIN) {
         this.set('dialogtype', Portal.DIALOG_TYPE_SIGNUP);
         this.set('bartype', Portal.DIALOG_TYPE_SIGNUP);
       }
@@ -109,7 +116,6 @@ Portal.DialogController = Ember.Object.create(function() {
         this.toggleVisibility();
       }
       this.set('dialogtype', Portal.DIALOG_TYPE_PASSWORD);
-      this.set('bartype', Portal.DIALOG_TYPE_PASSWORD);
       this.resetError();
     },
   
@@ -493,7 +499,7 @@ Portal.DialogController = Ember.Object.create(function() {
 
       var identifier = this.getPath('credentials.email');
 
-      if (identifier) {
+      if (identifier && identifier != '') {
         var self = this;
   
         var params = [
@@ -512,29 +518,18 @@ Portal.DialogController = Ember.Object.create(function() {
             self.set('isLoading', false);
             switch(jqXHR.status) {
               case 200:
-                self.toggleViewClicked();
-                var msgObj = $.parseJSON(jqXHR.responseText);
-                self.set('lastError', {
-                  type: 'signin',
-                  statusCode: jqXHR.status,
-                  msg: Portal.I18n.lookupTranslation('home_page.password_hint'),
-                  notAnError: true,
-                });
+                self.set('passwordTokenSent', true);
                 break;
               default:
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
+            console.log('---> error');
+            self.set('isLoading', false);
+            self.set('passwordTokenNotSent', true);
           }
         });
       }
-      else {
-        this.set('lastError', {
-          type: 'signin',
-          statusCode: 400,
-          msg: Partal.I18n.lookupTranslation('home_page.email_not_set'),
-        });
-      } 
     },    
   };
 }());

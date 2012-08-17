@@ -16,9 +16,9 @@ class HomePageController < ApplicationController
                                 :client_password => PORTAL_CONFIG['client_password'] },
                    :headers => { 'Accept' => 'application/json'})
       if response.code == 200
-        @message = I18n.t('home_page.password_sent')
+        @message = 'passwordSent'
       else
-        @message = I18n.t('home_page.password_not_sent')
+        @message = 'passwordNotSent'
       end             
     end
   end
