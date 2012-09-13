@@ -1,0 +1,15 @@
+<section id=announcement>
+  <p id="notice"><%= notice %></p>
+  
+  <article>
+    <h1><%= @announcement.title %></h1>
+    <img id="icon" src="<%= asset_path @announcement.image_url %>" />
+    <p><%= @announcement.content %></p>
+    <img src="<%= asset_path 'about/shadow.png' %>" />
+    <%= @announcement.author %> on <%= @announcement.date %>
+  </article>
+  
+  <%= link_to '<< Previous', @announcement.previous %> |
+  <%= link_to 'Back', announcements_path %> |
+  <%= link_to 'Next >>', @announcement.next %>
+</section>

@@ -1,0 +1,18 @@
+<section id="announcement">
+  <h1>Announcements</h1>
+  
+  <% @announcements.each do |announcement| %>
+  <article>
+	<h1><%= link_to announcement.title, announcement %></h1>
+    <img id="icon_small" src="<%= asset_path announcement.image_url %>"/>
+	<p><%= announcement.content %> <%= link_to "more…", announcement %></p>
+    <img src="<%= asset_path 'about/shadow.png' %>" />
+    <%= announcement.author %> on <%= announcement.date %>
+    <%= link_to 'Edit', edit_announcement_path(announcement) %>
+    <%= link_to 'Destroy', announcement, confirm: 'Are you sure?', method: :delete %>
+  </article>
+  <% end %>
+</section>
+<br />
+
+<%= link_to 'New Announcement', new_announcement_path %>
