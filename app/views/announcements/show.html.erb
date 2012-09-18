@@ -6,7 +6,7 @@
     <img id="icon" src="<%= asset_path @announcement.image_url %>" />
     <p><%= @announcement.content %></p>
     <img src="<%= asset_path 'about/shadow.png' %>" />
-    <%= @announcement.author %> on <%= @announcement.date %>
+    <%= @announcement.author %> on <%= @announcement.updated_at %>
   </article>
   
   <%= link_to '<< Previous', @announcement.previous %> |
