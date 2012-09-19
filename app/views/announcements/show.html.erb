@@ -6,10 +6,10 @@
     <%= image_tag @announcement.image_url, :id => "icon" %>
     <p><%= raw @announcement.content %></p>
     <img src="<%= asset_path 'about/shadow.png' %>" />
-    <%= @announcement.author %> on <%= @announcement.updated_at %>
+    <%= @announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l @announcement.updated_at %>
   </article>
   
-  <%= link_to '<< Previous', @announcement.previous %> |
-  <%= link_to 'Back', announcements_path %> |
-  <%= link_to 'Next >>', @announcement.next %>
+  <%= link_to I18n.t('announcement.previous'), @announcement.previous %> |
+  <%= link_to I18n.t('announcement.back'), announcements_path %> |
+  <%= link_to I18n.t('announcement.next'), @announcement.next %>
 </section>

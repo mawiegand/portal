@@ -179,7 +179,13 @@ en:
         title: Team
         former_members: Former Team Members
         
-        
+  announcement:
+    title: Latest announcements
+    show_more: more…
+    time_prefix: "on"
+    previous: << Previous
+    back: Index
+    next: Next >>
 
 
    
