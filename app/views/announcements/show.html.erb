@@ -3,7 +3,7 @@
   
   <article>
     <h1><%= @announcement.title %></h1>
-    <img id="icon" src="<%= asset_path @announcement.image_url %>" />
+    <%= image_tag @announcement.image_url, :id => "icon" %>
     <p><%= raw @announcement.content %></p>
     <img src="<%= asset_path 'about/shadow.png' %>" />
     <%= @announcement.author %> on <%= @announcement.updated_at %>

@@ -4,7 +4,7 @@
   <% announcement = @announcements.first %>
   <article>
 	<h1><%= link_to announcement.title, announcement %></h1>
-    <img id="icon" src="<%= asset_path announcement.image_url %>"/>
+    <%= image_tag announcement.image_url, :id => "icon" %>
 	<p><%= raw announcement.content %> <%= link_to "more…", announcement %></p>
     <img src="<%= asset_path 'about/shadow.png' %>" />
     <%= announcement.author %> on <%= announcement.updated_at %>
@@ -15,7 +15,7 @@
   <% @announcements[1..-1].each do |announcement| %>
   <article>
 	<h1><%= link_to announcement.title, announcement %></h1>
-    <img id="icon_small" src="<%= asset_path announcement.image_url %>"/>
+    <%= image_tag announcement.image_url, :id => "icon", :size => "100x100" %>
 	<p><%= raw announcement.content.match /<p>(.*)<\/p>/ %> <%= link_to "more…", announcement %></p>
     <img src="<%= asset_path 'about/shadow.png' %>" />
     <%= announcement.author %> on <%= announcement.updated_at %>
