@@ -5,7 +5,7 @@
   <article>
 	<h1><%= link_to announcement.title, announcement %></h1>
     <img id="icon" src="<%= asset_path announcement.image_url %>"/>
-	<p><%= announcement.content %> <%= link_to "more…", announcement %></p>
+	<p><%= raw announcement.content %> <%= link_to "more…", announcement %></p>
     <img src="<%= asset_path 'about/shadow.png' %>" />
     <%= announcement.author %> on <%= announcement.updated_at %>
     <%= link_to 'Edit', edit_announcement_path(announcement) %>
@@ -16,7 +16,7 @@
   <article>
 	<h1><%= link_to announcement.title, announcement %></h1>
     <img id="icon_small" src="<%= asset_path announcement.image_url %>"/>
-	<p><%= announcement.content.match /<p>(.*)<\/p>/ %> <%= link_to "more…", announcement %></p>
+	<p><%= raw announcement.content.match /<p>(.*)<\/p>/ %> <%= link_to "more…", announcement %></p>
     <img src="<%= asset_path 'about/shadow.png' %>" />
     <%= announcement.author %> on <%= announcement.updated_at %>
     <%= link_to 'Edit', edit_announcement_path(announcement) %>
