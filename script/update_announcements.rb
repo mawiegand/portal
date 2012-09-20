@@ -23,6 +23,7 @@ response.parsed_response.each do |item|
   if announce != nil
     announce.id = item["id"]
     announce.locale = item["locale"]
+    announce.image_url = "team/#{item['author_name']}.jpg"
     announce.title = item["heading"]
     announce.author = item["author_name"]
     announce.content = item["body"]
