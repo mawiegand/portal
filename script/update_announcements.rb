@@ -15,13 +15,14 @@ response.code
 
 response.parsed_response.each do |item|
   if Announcement.exists?(item["id"])
-    announce = Announcement.find(item["id"])
-  elsif item["published"]
+  announce = Announcement.find(item["id"]) if Time.parse(item["updated_at"]) >= 7.days.ago
+  elsif item["public"]
     announce = Announcement.new
   end
   
   if announce != nil
     announce.id = item["id"]
+    announce.locale = item["locale"]
     announce.title = item["heading"]
     announce.author = item["author_name"]
     announce.content = item["body"]

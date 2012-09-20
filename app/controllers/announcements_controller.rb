@@ -2,7 +2,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.all :order => 'created_at DESC'
+    @announcements = Announcement.where(:locale => locale).order("created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
