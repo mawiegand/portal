@@ -1,14 +1,15 @@
 class Announcement < ActiveRecord::Base
-  
-  scope :next, lambda {|id| where("id > ?",id).order("id ASC") } # this is the default ordering for AR
-  scope :previous, lambda {|id| where("id < ?",id).order("id DESC") }
+  default_scope :order => "created_at DESC"
+
+  scope :next, lambda {|created_at| where("created_at < ? and locale = ?", created_at, I18n.locale).order("created_at DESC") }
+  scope :previous, lambda {|created_at| where("created_at > ? and locale = ?", created_at, I18n.locale).order("created_at ASC") }
 
   def next
-    Announcement.next(self.id).first
+    Announcement.next(self.created_at).first
   end
   
   def previous
-    Announcement.previous(self.id).first
+    Announcement.previous(self.created_at).last
   end
 
 end
