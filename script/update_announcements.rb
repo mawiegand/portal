@@ -10,18 +10,23 @@
 # development environtment) but is exactly what you want.
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
 
-response = HTTParty.get('https://wack-a-doo.de/game_server/fundamental/announcements/', :headers => { 'Accept' => 'application/json'})
+url = File.read("#{Rails.root}/config/update_url.conf")
+
+response = HTTParty.get(url, :headers => { 'Accept' => 'application/json'})
 response.code
 
 response.parsed_response.each do |item|
+  puts item.inspect
   if Announcement.exists?(item["id"])
-    announce = Announcement.find(item["id"])
+    announce = Announcement.find(item["id"]) if Time.parse(item["updated_at"]) >= 7.days.ago
   elsif item["published"]
     announce = Announcement.new
   end
   
   if announce != nil
     announce.id = item["id"]
+    announce.locale = item["locale"]
+    announce.image_url = "team/#{item['author_name'].downcase}.jpg"
     announce.title = item["heading"]
     announce.author = item["author_name"]
     announce.content = item["body"]

@@ -1,3 +1,21 @@
+<div id="menubar">
+</div>
+
+<script type="text/x-handlebars" data-template-name="menue">
+  <ul>
+    <li><%= link_to 'Home', "." %></li>
+    <% if I18n.locale == :de %>
+      <li><a href="http://forum.uga-agga.de/wack-a-doo-f235/" target="_blank"><%= I18n.t 'menue.forum' %></a></li>
+      <li><a href="http://wiki.wack-a-doo.de/" target="_blank"><%= I18n.t 'menue.wiki' %></a></li>
+    <% end %>
+    <li><a href="agb.html" target="_blank"><%= I18n.t 'menue.agb' %></a></li>
+    <li><a href="datenschutz.html" target="_blank"><%= I18n.t 'menue.datenschutz' %></a></li>
+    <li><a href="legal.html"><%= I18n.t 'menue.legal' %></a></li>
+    <li><a href="?locale=en">en</a> | <a href="?locale=de">de</a> &nbsp; &nbsp;</li>
+    <li><a href="http://www.facebook.com/pages/Wackadoo/239722582763809" target="_blank" id="facebook-link" ><img src="<%= asset_path 'lp/fb.png' %>" /></a></li>
+  </ul>
+</script>
+
 <section id="announcement">
   <h1><%= I18n.t 'announcement.title' %></h1>
   
