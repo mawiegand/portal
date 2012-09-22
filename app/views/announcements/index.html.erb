@@ -16,32 +16,37 @@
   </ul>
 </script>
 
-<section id="announcement">
-  <h1><%= I18n.t 'announcement.title' %></h1>
-  
-  <% announcement = @announcements.first %>
-  <article>
-	<h1><%= link_to announcement.title, announcement %></h1>
-    <%= image_tag announcement.image_url, :id => "icon" %>
-	<p><%= raw announcement.content %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
-    <img src="<%= asset_path 'about/shadow.png' %>" />
-    <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.updated_at %>
-    <%= link_to 'Edit', edit_announcement_path(announcement) %>
-    <%= link_to 'Destroy', announcement, confirm: 'Are you sure?', method: :delete %>
-  </article>
 
-  <% @announcements[1..-1].each do |announcement| %>
-  <article>
-	<h1><%= link_to announcement.title, announcement %></h1>
+<section id="announcement">
+
+  <% if @announcements.first.nil? %>
+    <br/><br/>
+    <h1>Derzeit keine aktuellen Ankündigungen (localize me)</h1>
+  <% else %>
+
+    <h1><%= I18n.t 'announcement.title' %></h1>
+  
+    <% announcement = @announcements.first %>
+    <article>
+    <%= image_tag announcement.image_url, :id => "icon" %>
+  	<h1><%= link_to announcement.title, announcement %></h1>
+  	<p><%= raw announcement.content %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
+      <img src="<%= asset_path 'about/shadow.png' %>" />
+      <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.updated_at %>
+    </article>
+  
+
+    <% @announcements[1..-1].each do |announcement| %>
+    <article>
     <%= image_tag announcement.image_url, :id => "icon", :size => "100x100" %>
-	<p><%= raw announcement.content.match /<p>(.*)<\/p>/ %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
-    <img src="<%= asset_path 'about/shadow.png' %>" />
-    <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.updated_at %>
-    <%= link_to 'Edit', edit_announcement_path(announcement) %>
-    <%= link_to 'Destroy', announcement, confirm: 'Are you sure?', method: :delete %>
-  </article>
+  	<h1><%= link_to announcement.title, announcement %></h1>
+  	<p><%= raw announcement.content.match /<p>(.*)<\/p>/ %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
+      <img src="<%= asset_path 'about/shadow.png' %>" />
+      <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.updated_at %>
+    </article>
+    <% end %>
   <% end %>
+
 </section>
 <br />
 
-<%= link_to 'New Announcement', new_announcement_path %>

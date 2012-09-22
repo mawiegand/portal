@@ -1,10 +1,10 @@
 Portal::Application.routes.draw do
 
-  resources :announcements
 
   scope "(:locale)", :locale => /en|de/ do
   
-    resources :home_page, :only => [ :show ]
+    resources :announcements, :only => [ :index, :show]
+    resources :home_page,     :only => [ :show ]
 
     match :index, :to => 'home_page#show'
     match '/invitations/:invitation', :to => 'home_page#show'

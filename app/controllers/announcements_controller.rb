@@ -2,7 +2,9 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.where(:locale => locale)
+    @announcements = Announcement.where(locale: I18n.locale || "en")
+
+    logger.debug @announcement.inspect
 
     respond_to do |format|
       format.html # index.html.erb
