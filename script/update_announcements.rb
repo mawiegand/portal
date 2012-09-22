@@ -16,10 +16,9 @@ response = HTTParty.get(url, :headers => { 'Accept' => 'application/json'})
 response.code
 
 response.parsed_response.each do |item|
-  puts item.inspect
   if Announcement.exists?(item["id"])
     announce = Announcement.find(item["id"]) if Time.parse(item["updated_at"]) >= 7.days.ago
-  elsif item["published"]
+  elsif item["public"]
     announce = Announcement.new
   end
   
