@@ -199,6 +199,7 @@ de:
         
   announcement:
     title: Neuste Ankündigungen
+    no_news: Derzeit keine aktuellen Ankündigungen
     show_more: weiter…
     time_prefix: am
     previous: << Zurück

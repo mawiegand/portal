@@ -181,6 +181,7 @@ en:
         
   announcement:
     title: Latest announcements
+    no_news: Currently no latest announcements
     show_more: more…
     time_prefix: "on"
     previous: << Previous

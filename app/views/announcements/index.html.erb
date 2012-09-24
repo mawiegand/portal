@@ -19,7 +19,7 @@
 
   <% if @announcements.first.nil? %>
     <br/><br/>
-    <h1>Derzeit keine aktuellen Ankündigungen (localize me)</h1>
+    <h1><%= I18n.t 'announcement.no_news' %></h1>
   <% else %>
 
     <h1><%= I18n.t 'announcement.title' %></h1>
