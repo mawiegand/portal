@@ -38,13 +38,21 @@
   margin: 0px;
 }
 
-article > h1 {
+article h1 {
   margin: 0px;
 }
 
 article > img#icon {
   margin-right: 10px;
   float: left;
+}
+
+article * p {
+  margin: 0px;
+}
+
+article * td {
+  vertical-align: top
 }
 
 article {

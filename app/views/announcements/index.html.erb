@@ -9,6 +9,7 @@
     <li><a href="/agb.html" target="_blank"><%= I18n.t 'menue.agb' %></a></li>
     <li><a href="/datenschutz.html" target="_blank"><%= I18n.t 'menue.datenschutz' %></a></li>
     <li><a href="legal.html"><%= I18n.t 'menue.legal' %></a></li>
+    <li><%= link_to 'Login', "." %></li>
   <div id="langswitch">
     <%= link_to "en", announcements_path(locale: :en) %> | <%= link_to "de", announcements_path(locale: :de) %>
     <a href="http://www.facebook.com/pages/Wackadoo/239722582763809" target="_blank" id="facebook-link" ><img src="<%= asset_path 'lp/fb.png' %>" /></a>
@@ -39,9 +40,15 @@
 
     <% @announcements[1..-1].each do |announcement| %>
     <article>
-    <%= image_tag announcement.image_url, :id => "icon", :size => "100x100" %>
-  	<h1><%= link_to announcement.title, announcement %></h1>
-  	<p><%= raw announcement.content.match /<p>(.*)<\/p>/ %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
+	  <table>
+	    <tr>
+          <td><%= image_tag announcement.image_url, :id => "icon", :size => "100x100" %></td>
+  	      <td>
+		    <h1><%= link_to announcement.title, announcement %></h1>
+  	        <p><%= raw announcement.content.match /<p>(.*)<\/p>/ %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
+		  </td>
+	    </tr>
+	  </table>
       <img src="<%= asset_path 'about/shadow.png' %>" />
       <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.updated_at %>
     </article>
