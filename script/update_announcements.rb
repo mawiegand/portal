@@ -12,7 +12,11 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'envi
 
 url = File.read("#{Rails.root}/config/update_url.conf")
 
-response = HTTParty.get(url, :headers => { 'Accept' => 'application/json', 'If-Modified-Since' => Announcement.maximum(:updated_at).httpdate })
+header = Hash.new
+header['Accept'] = 'application/json'
+header['If-Modified-Since'] = Announcement.maximum(:updated_at).httpdate unless Announcement.first.nil?
+
+response = HTTParty.get(url, :headers => header)
 httpstatus = response.code
 
 if httpstatus == 200
