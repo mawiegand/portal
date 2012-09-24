@@ -1,5 +1,6 @@
-<div id="menubar">
+<div id="menubar" class="menubarbackground">
   <ul>
+    <li><%= image_tag 'lp/logoswsmall.png', :id => 'logo' %></li>
     <li><%= link_to 'Home', "." %></li>
     <% if I18n.locale == :de %>
       <li><a href="http://forum.uga-agga.de/wack-a-doo-f235/" target="_blank"><%= I18n.t 'menue.forum' %></a></li>
@@ -8,10 +9,12 @@
     <li><a href="/agb.html" target="_blank"><%= I18n.t 'menue.agb' %></a></li>
     <li><a href="/datenschutz.html" target="_blank"><%= I18n.t 'menue.datenschutz' %></a></li>
     <li><a href="legal.html"><%= I18n.t 'menue.legal' %></a></li>
-    <li><%= link_to "en", announcements_path(locale: :en) %> | 
-        <%= link_to "de", announcements_path(locale: :de) %></li>
-    <li><a href="http://www.facebook.com/pages/Wackadoo/239722582763809" target="_blank" id="facebook-link" ><img src="<%= asset_path 'lp/fb.png' %>" /></a></li>
+  <div id="langswitch">
+    <%= link_to "en", announcements_path(locale: :en) %> | <%= link_to "de", announcements_path(locale: :de) %>
+    <a href="http://www.facebook.com/pages/Wackadoo/239722582763809" target="_blank" id="facebook-link" ><img src="<%= asset_path 'lp/fb.png' %>" /></a>
+  </div>
   </ul>
+  <%= image_tag 'lp/switchbar_03.png', :class => 'fullsize' %>
 </div>
 
 
@@ -48,3 +51,4 @@
 </section>
 <br />
 
+<%= image_tag 'about/footerback.jpg', :class => 'fullsize' %>

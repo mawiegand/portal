@@ -15,6 +15,29 @@
   max-width: 800px;
 }
 
+.menubarbackground {
+  background-image: url(lp/switchbar_02.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menubarbackground > img {
+  overflow: visible;
+  float: left;
+}
+
+.menubarbackground #langswitch {
+  float: right;
+  text-align: left;
+}
+
+.fullsize {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 article > h1 {
   margin: 0px;
 }
