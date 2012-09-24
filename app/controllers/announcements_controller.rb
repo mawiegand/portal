@@ -2,7 +2,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.where(locale: I18n.locale || "en")
+    @announcements = Announcement.visible.where(locale: I18n.locale || "en")
 
     logger.debug @announcement.inspect
 
@@ -15,7 +15,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/1
   # GET /announcements/1.json
   def show
-    @announcement = Announcement.find(params[:id])
+    @announcement = Announcement.visible.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
