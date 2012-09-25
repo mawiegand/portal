@@ -8,6 +8,12 @@ en:
   error: error
   Error: Error
   
+  time:
+    formats:
+      default: ! '%a, %d. %b %Y %I:%M %p'
+    am: "AM"
+    pm: "PM"
+
   menue: 
     about: About
     news: News
@@ -181,6 +187,7 @@ en:
         
   announcement:
     title: Latest announcements
+    no_news: Currently no latest announcements
     show_more: more…
     time_prefix: "on"
     previous: << Previous
