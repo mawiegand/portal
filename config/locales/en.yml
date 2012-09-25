@@ -8,6 +8,12 @@ en:
   error: error
   Error: Error
   
+  time:
+    formats:
+      default: ! '%a, %d. %b %Y %I:%M %p'
+    am: "AM"
+    pm: "PM"
+
   menue: 
     about: About
     news: News
