@@ -26,20 +26,15 @@
   <% else %>
 
     <h1><%= I18n.t 'announcement.title' %></h1>
-  
-    <% announcement = @announcements.first %>
-    <article>
-    <%= image_tag announcement.image_url, :id => "icon" %>
-  	<h1><%= link_to announcement.title, announcement %></h1>
-  	<p><%= raw announcement.content %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
-      <img src="<%= asset_path 'about/shadow.png' %>" />
-      <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.updated_at %>
-    </article>
-  
 
-    <% @announcements[1..-1].each do |announcement| %>
+    <% @announcements.each do |announcement, index| %>
     <article>
-	  <table>
+    <% if @announcements.first == announcement %>
+      <%= image_tag announcement.image_url, :id => "icon" %>
+  	  <h1><%= link_to announcement.title, announcement %></h1>
+  	  <p><%= raw announcement.content %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
+	<% else %>
+      <table>
 	    <tr>
           <td><%= image_tag announcement.image_url, :id => "icon", :size => "100x100" %></td>
   	      <td>
@@ -48,11 +43,14 @@
 		  </td>
 	    </tr>
 	  </table>
-      <img src="<%= asset_path 'about/shadow.png' %>" />
+	<% end %>
+      <%= image_tag 'about/shadow.png' %>
       <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.updated_at %>
     </article>
     <% end %>
   <% end %>
+
+<%= will_paginate @announcements %>
 
 </section>
 <br />
