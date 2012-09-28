@@ -194,5 +194,6 @@ en:
     back: Index
     next: Next >>
 
-
-   
+  will_paginate:
+    previous_label: << Previous
+    next_label: Next >> 

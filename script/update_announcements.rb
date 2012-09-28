@@ -21,22 +21,22 @@ httpstatus = response.code
 
 if httpstatus == 200
   response.parsed_response.each do |item|
-    if Announcement.exists?(item["id"])
-      announce = Announcement.find(item["id"]) if Time.parse(item["updated_at"]) >= 7.days.ago
-    elsif item["public"]
+    if Announcement.exists?(item['id'])
+      announce = Announcement.find(item['id']) if Time.parse(item['updated_at']) >= 7.days.ago
+    elsif item['public']
       announce = Announcement.new
     end
     
     if announce != nil
-      announce.id = item["id"]
-      announce.locale = item["locale"]
-      announce.expires = item["expires"].to_datetime unless item["expires"].nil?
+      announce.id = item['id']
+      announce.locale = item['locale']
+      announce.expires = item['expires'].to_datetime unless item['expires'].nil?
       announce.image_url = "team/#{item['author_name'].downcase}.jpg"
-      announce.title = item["heading"]
-      announce.author = item["author_name"]
-      announce.content = item["body"]
-      announce.created_at = item["created_at"]
-      announce.updated_at = item["updated_at"]
+      announce.title = item['heading']
+      announce.author = item['author_name']
+      announce.content = item['body']
+      announce.created_at = item['created_at']
+      announce.updated_at = item['updated_at']
       
       announce.save
     end

@@ -2,7 +2,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.visible.where(locale: I18n.locale || "en")
+    @announcements = Announcement.visible.where(locale: I18n.locale || 'en').paginate(:page => params[:page], :per_page => 10)
 
     logger.debug @announcement.inspect
 
