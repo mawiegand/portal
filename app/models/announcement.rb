@@ -12,5 +12,9 @@ class Announcement < ActiveRecord::Base
   def previous
     Announcement.previous(self.created_at).visible.last
   end
-
+  
+  def increase_views
+    self.views_counter += 1
+	self.save
+  end
 end

@@ -5,8 +5,9 @@
     <h1><%= @announcement.title %></h1>
     <%= image_tag @announcement.image_url, :class => 'icon' %>
     <p><%= raw @announcement.content %></p>
-    <% image_tag 'about/shadow.png' %>
+    <%= image_tag 'about/shadow.png' %>
     <%= @announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l @announcement.updated_at %>
+	<div class="statistics"><%= @announcement.views_counter %> <%= I18n.t 'announcement.views' %></div>
   </article>
   
   <%= link_to_unless(@announcement.previous.nil?, I18n.t('announcement.previous'), @announcement.previous) %>

@@ -3,6 +3,8 @@ class AnnouncementsController < ApplicationController
   # GET /announcements.json
   def index
     @announcements = Announcement.visible.where(locale: I18n.locale || 'en').paginate(:page => params[:page], :per_page => 10)
+    
+    @announcements.first.increase_views
 
     logger.debug @announcement.inspect
 
@@ -16,6 +18,8 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/1.json
   def show
     @announcement = Announcement.visible.find(params[:id])
+    
+    @announcement.increase_views
 
     respond_to do |format|
       format.html # show.html.erb
