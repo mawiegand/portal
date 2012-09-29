@@ -17,4 +17,20 @@ class Announcement < ActiveRecord::Base
     self.views_counter += 1
 	self.save
   end
+
+  def get_global_views
+    if self.original_id.nil?
+	  global_announcements = Announcement.visible.where('id == ? or original_id == ?', self.id, self.id)
+	else
+	  global_announcements = Announcement.visible.where('id == ? or id == ?', self.id, self.original_id)
+	end
+    
+	global_views = 0
+
+	global_announcements.each do |announcement|
+	  global_views += announcement.views_counter
+	end
+
+	return global_views
+  end
 end

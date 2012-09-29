@@ -29,6 +29,7 @@ if httpstatus == 200
     
     if announce != nil
       announce.id = item['id']
+	  announce.original_id = item['original_id']
       announce.locale = item['locale']
       announce.expires = item['expires'].to_datetime unless item['expires'].nil?
       announce.image_url = "team/#{item['author_name'].downcase}.jpg"
