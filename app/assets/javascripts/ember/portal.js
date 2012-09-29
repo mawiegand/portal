@@ -135,8 +135,8 @@ Portal.Cookie = Ember.Object.create({
 
 Portal.Config = {
   // automatically determine the server to use -> same origin policy
-  SERVER_ROOT: !document.location.host ? 'http://localhost' : document.location.protocol + '//' + document.location.host, 
+  SERVER_ROOT: !document.location.host ? 'http://localhost' : document.location.protocol + '//' + document.location.host,
+  IDENTITY_PROVIDER_BASE: !document.location.host ? 'http://5dentity.localhost' : document.location.protocol + '//5dentity.' + document.location.host,
 };
-Portal.Config.identityProviderBase = Portal.Config.SERVER_ROOT + '/identity_provider';
 Portal.Config.gameserverURL = Portal.Config.SERVER_ROOT + '/client?t=' + (Math.round(Math.random().toString() * 100000000)); 
 Portal.Config.DEFAULT_LOCALE = 'en_US';
