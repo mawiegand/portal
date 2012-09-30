@@ -302,12 +302,14 @@
 <div class="dialog-wrapper">
   {{#if controller.signinContext}}
     {{view Portal.SigninDialog controllerBinding="Portal.DialogController"}}
-  {{/if}}
-  {{#if controller.signupContext}}
-    {{view Portal.SignupDialog controllerBinding="Portal.DialogController"}}
-  {{/if}}
-  {{#if controller.passwordContext}}
-    {{view Portal.PasswordDialog controllerBinding="Portal.DialogController"}}
+  {{else}}
+    {{#if controller.signupContext}}
+      {{view Portal.SignupDialog controllerBinding="Portal.DialogController"}}
+    {{else}}
+      {{#if controller.passwordContext}}
+        {{view Portal.PasswordDialog controllerBinding="Portal.DialogController"}}
+      {{/if}}
+    {{/if}}}
   {{/if}}
 </div>
 </script>

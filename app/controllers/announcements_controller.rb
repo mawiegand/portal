@@ -1,3 +1,4 @@
+
 class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
