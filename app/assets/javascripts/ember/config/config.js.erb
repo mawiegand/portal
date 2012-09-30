@@ -9,4 +9,7 @@ Portal.Config = {
   IDENTITY_PROVIDER_BASE: '<%= PORTAL_CONFIG['identity_provider_base_url'] %>',
   DEFAULT_LOCALE:         'en_US',
   CLIENT_URL:             '<%= PORTAL_CONFIG['client_base_url'] %>?t=' + (Math.round(Math.random().toString() * 100000000)), 
+  CLIENT_ID:              '<%= PORTAL_CONFIG['client_id'] %>',
+  CLIENT_PASSWORD:        '<%= PORTAL_CONFIG['client_password'] %>',
+  REQUESTED_SCOPES:       '<%= PORTAL_CONFIG['requested_scopes'] %>',
 };
