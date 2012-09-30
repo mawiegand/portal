@@ -1,14 +1,12 @@
 defaults: &defaults
   
-  identity_provider_base_url: 'https://test1.wack-a-doo.de/identity_provider'
+  identity_provider_base_url: 'https://localhost/identity_provider'
   
   client_id:       'WACKADOOHTML5'
   client_password: 'wacky'
   
 development:
   <<: *defaults
-
-  identity_provider_base_url: 'https://localhost/identity_provider'
   
 test:
   <<: *defaults
@@ -17,7 +15,16 @@ testing:
   <<: *defaults
 
   identity_provider_base_url: 'https://test1.wack-a-doo.de/identity_provider'
+
+  client_id:       'WACKADOOHTML5'
+  client_password: 'wacky'
+
   
 
 production:
   <<: *defaults
+
+  identity_provider_base_url: 'https://localhost/identity_provider'
+
+  client_id:       'WACKADOOHTML5-ROUND2'
+  client_password: 'wacky2'
