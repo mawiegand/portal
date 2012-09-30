@@ -1,6 +1,6 @@
 defaults: &defaults
   
-  identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
+  identity_provider_base_url: 'https://test1.wack-a-doo.de/identity_provider'
   
   client_id:       'WACKADOOHTML5'
   client_password: 'wacky'
