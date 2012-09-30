@@ -294,8 +294,8 @@ Portal.DialogController = Ember.Object.create(function() {
           {name: 'email',                 value: credentials.get('email')},
           {name: 'password',              value: credentials.get('password')},
           {name: 'password_confirmation', value: credentials.get('password')},
-          {name: 'client_id',             value: 'WACKADOOHTML5'},
-          {name: 'client_password',       value: 'wacky'},
+          {name: 'client_id',             value: Portal.Config.CLIENT_ID},
+          {name: 'client_password',       value: Portal.Config.CLIENT_PASSWORD},
         ];
         
         if (window.invitation) {
