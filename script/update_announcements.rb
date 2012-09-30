@@ -14,7 +14,7 @@ url = File.read("#{Rails.root}/config/update_url.conf")
 
 header = Hash.new
 header['Accept'] = 'application/json'
-header['If-Modified-Since'] = Announcement.maximum(:updated_at).httpdate unless Announcement.first.nil?
+header['If-Modified-Since'] = Announcement.maximum(:edited_at).httpdate unless Announcement.first.nil?
 
 response = HTTParty.get(url, :headers => header)
 httpstatus = response.code
@@ -37,7 +37,7 @@ if httpstatus == 200
       announce.author = item['author_name']
       announce.content = item['body']
       announce.created_at = item['created_at']
-      announce.updated_at = item['updated_at']
+      announce.edited_at = item['updated_at']
       
       announce.save
     end
