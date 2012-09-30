@@ -6,7 +6,7 @@ gem 'rails', '3.1.3'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'capistrano'
+gem 'capistrano', '>= 2.10.0'
 gem 'thin'
 
 gem 'ember-rails'
