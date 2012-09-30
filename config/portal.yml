@@ -26,7 +26,7 @@ staging:
 production:
   <<: *defaults
 
-  identity_provider_base_url: 'https://localhost/identity_provider'
+  identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
   client_base_url: 'https://localhost/client'
 
   client_id:       'WACKADOOHTML5-ROUND2'
