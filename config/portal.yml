@@ -13,5 +13,11 @@ development:
 test:
   <<: *defaults
 
+testing:
+  <<: *defaults
+
+  identity_provider_base_url: 'https://test1.wack-a-doo.de/identity_provider'
+  
+
 production:
   <<: *defaults
