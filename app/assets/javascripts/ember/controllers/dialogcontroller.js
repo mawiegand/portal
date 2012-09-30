@@ -391,10 +391,12 @@ Portal.DialogController = Ember.Object.create(function() {
           value: username },
         { name: 'password',
           value: password },
-        { name: 'client_id',
-          value: 'WACKADOOHTML5' },
+        { name: 'client_id',             
+          value: Portal.Config.CLIENT_ID}, 
+        { name: 'client_password',       
+          value: Portal.Config.CLIENT_PASSWORD},
         { name: 'scope',
-          value: '5dentity wackadoo payment' },
+          value: Portal.Config.REQUESTED_SCOPES},
         { name: 'grant_type',
           value: 'password' }
       ];
@@ -469,8 +471,8 @@ Portal.DialogController = Ember.Object.create(function() {
       var self = this;
 
       var params = [
-        {name: 'client_id', value: 'WACKADOOHTML5'},
-        {name: 'client_password', value: 'wacky'},  
+        {name: 'client_id',             value: Portal.Config.CLIENT_ID},
+        {name: 'client_password',       value: Portal.Config.CLIENT_PASSWORD},
       ];
 
       $.ajax({
@@ -503,8 +505,8 @@ Portal.DialogController = Ember.Object.create(function() {
         var self = this;
   
         var params = [
-          {name: 'client_id', value: 'WACKADOOHTML5'},
-          {name: 'client_password', value: 'wacky'},
+          {name: 'client_id',             value: Portal.Config.CLIENT_ID},
+          {name: 'client_password',       value: Portal.Config.CLIENT_PASSWORD},
           {name: 'identifier', value: identifier}  
         ];
   
