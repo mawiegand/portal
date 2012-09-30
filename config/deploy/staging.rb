@@ -3,3 +3,4 @@ role :app, "test1.wack-a-doo.de"                          # This may be the same
 role :db,  "test1.wack-a-doo.de", :primary => true        # This is where Rails migrations will run
 
 set :rails_env, 'staging'
+set :port, 5775

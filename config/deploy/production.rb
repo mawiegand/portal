@@ -3,3 +3,4 @@ role :app, "portal.wack-a-doo.de"                          # This may be the sam
 role :db,  "portal.wack-a-doo.de", :primary => true        # This is where Rails migrations will run
 
 set :rails_env, 'production'
+set :port, 5775                                            # until 5775 is working!
