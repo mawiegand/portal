@@ -277,7 +277,7 @@ Portal.DialogController = Ember.Object.create(function() {
           expiration: expiration, 
           locale: window.current_locale,
         });
-        window.location = Portal.Config.gameserverURL;   
+        window.location = Portal.Config.CLIENT_URL;   
       });
     },
   

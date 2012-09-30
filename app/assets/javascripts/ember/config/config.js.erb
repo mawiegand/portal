@@ -1,0 +1,12 @@
+/* Author: Sascha Lange <sascha@5dlab.com>, Patrick Fox <patrick@5dlab.com>
+ * Copyright (C) 2012 5D Lab GmbH, Freiburg, Germany
+ * Do not copy, do not distribute. All rights reserved.
+ */
+
+
+Portal.Config = {
+  SERVER_ROOT:            document.location.protocol + '//' + document.location.host,
+  IDENTITY_PROVIDER_BASE: '<%= PORTAL_CONFIG['identity_provider_base_url'] %>',
+  DEFAULT_LOCALE:         'en_US',
+  CLIENT_URL:             '<%= PORTAL_CONFIG['client_base_url'] %>/client?t=' + (Math.round(Math.random().toString() * 100000000)), 
+};

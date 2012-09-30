@@ -18,9 +18,9 @@ test:
   pool: 5
   timeout: 5000
 
-testing:
+staging:
   adapter: sqlite3
-  database: db/testing.sqlite3
+  database: db/staging.sqlite3
   pool: 5
   timeout: 5000
 

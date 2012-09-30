@@ -1,4 +1,5 @@
 #= require_self
+#= require_tree ./config
 #= require_tree ./models
 #= require_tree ./views
 #= require_tree ./controllers
@@ -132,11 +133,3 @@ Portal.Cookie = Ember.Object.create({
   }, 
 
 });
-
-Portal.Config = {
-  // automatically determine the server to use -> same origin policy
-  SERVER_ROOT: !document.location.host ? 'http://localhost' : document.location.protocol + '//' + document.location.host,
-  IDENTITY_PROVIDER_BASE: !document.location.host ? 'http://localhost/identity_provider' : document.location.protocol + '//' + document.location.host + '/identity_provider',
-};
-Portal.Config.gameserverURL = Portal.Config.SERVER_ROOT + '/client?t=' + (Math.round(Math.random().toString() * 100000000)); 
-Portal.Config.DEFAULT_LOCALE = 'en_US';
