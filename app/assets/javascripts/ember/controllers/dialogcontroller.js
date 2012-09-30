@@ -477,7 +477,7 @@ Portal.DialogController = Ember.Object.create(function() {
 
       $.ajax({
         type: 'GET',
-        url: Portal.Config.IDENTITY_PROVIDER_BASE + window.locale_path_frag + '/clients/WACKADOOHTML5',
+        url: Portal.Config.IDENTITY_PROVIDER_BASE + window.locale_path_frag + '/clients/' + Portal.Config.CLIENT_ID,
         data: params,
         success: function(data, textStatus, jqXHR) {
           switch(jqXHR.status) {
