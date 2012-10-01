@@ -152,7 +152,7 @@ Portal.DialogController = Ember.Object.create(function() {
           };
           self.set('animating', false);
         });
-        $('#loginbar').animate({'margin-bottom': '-80px', 'padding-top': '10px'});
+        $('#loginbar').animate({'margin-bottom': '-100px', 'padding-top': '10px'});
         $('#logo-small').fadeOut();
         $('#switchbar-teaser').fadeOut();
     
@@ -287,7 +287,7 @@ Portal.DialogController = Ember.Object.create(function() {
       
       this.resetError();
     
-      if (credentials.validate()) {
+      if (credentials.validate() && credentials.termsAccepted()) {
       
         var params = [
           {name: 'nickname_base',         value: 'WackyUser'},
@@ -375,10 +375,16 @@ Portal.DialogController = Ember.Object.create(function() {
         });      
       
       }
+      else if (credentials.validate()) { // did not validate
+        self.set('lastError', {
+          type: 'signup',
+          msg: 'Du musst die AGB akzeptieren, um dich zu registrieren.',
+        });
+      }     
       else { // did not validate
         self.set('lastError', {
           type: 'signup',
-          msg: 'Please provide a valid email and a password of at least 6 characters.',
+          msg: 'Gib eine gültige E-Mailadresse und ein Passwort mit mindestens sechs Zeichen an.',
         });
       }     
     },

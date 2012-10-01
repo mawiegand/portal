@@ -66,7 +66,8 @@ de:
     welcome: Willkommen!
     email: Email
     password: Passwort
-    signup: Neu registrieren
+    signup: Kostenlos registrieren
+    accept_terms: Ich akzeptiere die AGB
     signin: Login
     reset: Passwort anfordern
     email_or_nickname: Email 

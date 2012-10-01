@@ -244,8 +244,18 @@
     {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}}
   {{else}}
     {{#if registrationStatus.canSignup }}
-      {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="Portal.DialogController.credentials.email"}}
-      {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
+      <div class="form-div">
+        {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="Portal.DialogController.credentials.email"}}
+      </div>
+      <div class="form-div">
+        <div>
+        {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
+        <div class="checkbox-div">
+          {{view Ember.Checkbox classNames="checkbox" checkedBinding="Portal.DialogController.credentials.terms" }} <%= I18n.t 'home_page.accept_terms' %>
+        </div>
+        </div>
+      </div>
+      <div class="form-div">
       {{#if isLoading}}
         <button title="<%= I18n.t 'home_page.signup_tooltip' %>" type="submit" class="submit-button">
           {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
@@ -253,8 +263,9 @@
       {{else}}
         <button {{action "submit"}} title="<%= I18n.t 'home_page.signup_tooltip' %>" type="submit" class="submit-button">
           <%= I18n.t 'home_page.signup' %>
-          </button>
+        </button>
       {{/if}}
+      </div>
     {{else}}
       <%= I18n.t 'home_page.no_signup_message' %>
     {{/if}}  
