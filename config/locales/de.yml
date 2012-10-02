@@ -63,11 +63,11 @@ de:
      
   home_page:
     processing: Sende...
-    welcome: Willkommen!
+    welcome: Kostenloses Steinzeitspiel | Willkommen!
     email: Email
     password: Passwort
     signup: Kostenlos registrieren
-    accept_terms: Ich akzeptiere die AGB
+    accept_terms: Ich akzeptiere die <a href="agb.html" target="_blank">AGB</a>
     signin: Login
     reset: Passwort anfordern
     email_or_nickname: Email 

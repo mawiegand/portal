@@ -41,10 +41,11 @@ en:
      
   home_page:
     processing: processing...
-    welcome: Welcome!
+    welcome: Free Stone Age Game | Welcome!
     email: Email
     password: Password
     signup: Free Sign Up
+    accept_terms: accept <a href="agb.html" target="_blank">terms of service</a>
     signin: Sign In
     reset: Request Password
     email_or_nickname: Email 

@@ -12,6 +12,11 @@
   
   <div id="figures">
     <img id="figures-foreground" src="<%= asset_path 'lp/group_800.png' %>">
+    <% if !@invitation.blank? %>
+      <div id="invitation-notice" title="Du bist über einen persönlichen Einladungslink gekommen. Solange Du diesen Vermerk hier siehst, kannst Du sicher sein, dass Dir mit der Einladung vermerkte Vorteile bei einer Neuanmeldung gutgeschrieben werden.">
+        Aktive Einladung:<br/> <%= @invitation %>
+      </div>
+    <% end %>
   </div>
 </div>
 
@@ -252,12 +257,12 @@
       <div class="form-div">
         <div>
         {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
-        <div class="checkbox-div">
-          {{view Ember.Checkbox classNames="checkbox" checkedBinding="Portal.DialogController.credentials.terms" }} <%= I18n.t 'home_page.accept_terms' %>
         </div>
-        </div>
-      </div>
+      </div>    
       <div class="form-div">
+        <div class="checkbox-div">
+          {{view Ember.Checkbox classNames="checkbox" checkedBinding="Portal.DialogController.credentials.terms" }} <%= raw I18n.t 'home_page.accept_terms' %>
+        </div>  
       {{#if isLoading}}
         <button title="<%= I18n.t 'home_page.signup_tooltip' %>" type="submit" class="submit-button">
           {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
@@ -381,6 +386,12 @@
             <li><%= I18n.t 'home_page.signup_tooltip' %></li>
             <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
             <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
+            
+            <% if !@invitation.blank? %>
+              <li title="Du bist über einen persönlichen Einladungslink gekommen. Solange Du diesen Vermerk hier siehst, kannst Du sicher sein, dass Dir mit der Einladung vermerkte Vorteile bei einer Neuanmeldung gutgeschrieben werden.">
+                Aktive Einladung: <a href="/invitations/<%= @invitation %>"><%= @invitation %></a>
+              </li>
+            <% end %>            
           </ul>
         </div>
       {{else}}

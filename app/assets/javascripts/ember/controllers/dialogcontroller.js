@@ -407,6 +407,10 @@ Portal.DialogController = Ember.Object.create(function() {
           value: 'password' }
       ];
 
+      if (window.invitation) {
+        params.push({name: 'invitation', value: window.invitation});
+      }
+
       this.set('isLoading', true);
   
       $.ajax({
