@@ -275,11 +275,11 @@ Portal.DialogController = Ember.Object.create(function() {
       this.obtainAccessToken(credentials.get('email'), credentials.get('password'), function(access_token, expiration) {
         Portal.Cookie.saveEmail(credentials.get('email'), 7);
         
-
         window.name = JSON.stringify({
           accessToken: access_token,
-          expiration: expiration, 
-          locale: window.current_locale,
+          expiration:  expiration, 
+          locale:      window.current_locale,
+          client_id:   Portal.Config.CLIENT_ID,
         });
         window.location = Portal.Config.CLIENT_URL;   
       });
