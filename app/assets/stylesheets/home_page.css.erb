@@ -1,7 +1,3 @@
-// Place all the styles related to the HomePage controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 html, body {
   margin: 0px;
   padding: 0px;
@@ -73,13 +69,13 @@ p {
 }
 
 #switchbar-top {
-  background-image: url('lp/switchbar_01.png');
+  background-image: url('<%= asset_path 'lp/switchbar_01.png' %>');
   background-position: center top;
   height: 11px;
 }
 
 #switchbar-content {
-  background-image: url('lp/switchbar_02.png');
+  background-image: url('<%= asset_path 'lp/switchbar_02.png' %>');
   background-position: center top;
   height: 74px;
   text-align: left;
@@ -105,7 +101,7 @@ p {
 }
 
 #switchbar-bottom {
-  background-image: url('lp/switchbar_03.png');
+  background-image: url('<%= asset_path 'lp/switchbar_03.png' %>');
   background-position: center top;
   height: 54px;
   display: none;
@@ -121,7 +117,7 @@ p {
 
 
 .arrow-down {
-  background: url('lp/switch_down_btn_normal.png');
+  background: url('<%= asset_path 'lp/switch_down_btn_normal.png' %>');
   width: 58px;
   height: 58px;
   display: inline-block;
@@ -129,11 +125,11 @@ p {
 }
 
 #switchbar:hover .arrow-down {
-  background: url('lp/switch_down_btn_mouseover.png');
+  background: url('<%= asset_path 'lp/switch_down_btn_mouseover.png' %>');
 }
 
 .arrow-up {
-  background: url('lp/switch_up_btn_normal.png');
+  background: url('<%= asset_path 'lp/switch_up_btn_normal.png' %>');
   width: 58px;
   height: 58px;
   display: inline-block;
@@ -141,7 +137,7 @@ p {
 }
 
 #switchbar:hover .arrow-up {
-  background: url('lp/switch_up_btn_mouseover.png');
+  background: url('<%= asset_path 'lp/switch_up_btn_mouseover.png' %>');
 }
 
 #togglebar {
@@ -152,7 +148,7 @@ p {
   color: #E74;
   font-size: 17px;
   padding-top: 7px;
-  background-image: url('lp/signin_top.png');
+  background-image: url('<%= asset_path 'lp/signin_top.png' %>');
   height: 36px;
   width: 108px;
   z-index: 100;
@@ -175,7 +171,7 @@ p {
 
 .dialog-image {
   float: left;
-  background-image: url('lp/amazon.png');
+  background-image: url('<%= asset_path 'lp/amazon.png' %>');
   width: 135px;
   height: 199px;
   margin: -40px 0px 0px 0px;
@@ -236,7 +232,7 @@ p {
 }
 
 #facebook-link {
-  background-image: url('lp/fb.png');  
+  background-image: url('<%= asset_path 'lp/fb.png' %>');  
   display: inline-block;
   vertical-align: middle;
   width: 54px;
@@ -244,7 +240,7 @@ p {
 }
 
 #facebook-link:hover {
-  background-image: url('lp/fb-hover.png');  
+  background-image: url('<%= asset_path 'lp/fb-hover.png' %>');  
 }
 
 
@@ -378,7 +374,7 @@ font-family:  Arial, sans-serif; font-size: 18px;
 }
 
 .panel-top-ruler {
-  background-image: url('about/shadow.png');
+  background-image: url('<%= asset_path 'about/shadow.png' %>');
   background-origin: padding-box;
   background-position: 0px 50px;
   background-repeat: no-repeat;
@@ -514,7 +510,7 @@ font-family:  Arial, sans-serif; font-size: 18px;
 }
 
 #sitemap {
-  background-image: url('about/footerback.jpg');
+  background-image: url('<%= asset_path 'about/footerback.jpg' %>');
   background-position: center top;
   height: 232px;
   margin-top: 0px;
@@ -556,7 +552,7 @@ font-family:  Arial, sans-serif; font-size: 18px;
   width: 16px;
   height: 16px;
   display: inline-block;
-  background-image: url('activityindicator_small.svg');
+  background-image: url('<%= asset_path 'activityindicator_small.svg' %>');
 }
 
 .img-preloader {
