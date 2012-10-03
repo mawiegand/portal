@@ -150,11 +150,13 @@ Portal.DialogController = Ember.Object.create(function() {
           if (Portal.DialogController.get('visibility') === Portal.DIALOG_STATE_VISIBLE) {
             Portal.DialogController.toggleVisibility(false);
           };
+          $('#arrow').removeClass('arrow-down');
+          $('#arrow').addClass('arrow-up');
           self.set('animating', false);
         });
         $('#loginbar').animate({'margin-bottom': '-100px', 'padding-top': '10px'});
         $('#logo-small').fadeOut();
-        $('#switchbar-teaser').fadeOut();
+        $('#teaser-text').fadeOut();
     
         this.set('detailsVisible', true);
       }
@@ -165,7 +167,9 @@ Portal.DialogController = Ember.Object.create(function() {
           $('#switchbar-bottom').hide();
           $('#mainbar').css('min-height', mainbarMinHeight);
           $('#logo-small').fadeIn();
-          $('#switchbar-teaser').fadeIn();
+          $('#teaser-text').fadeIn();
+          $('#arrow').removeClass('arrow-up');
+          $('#arrow').addClass('arrow-down');
           $('#top-controls').fadeIn();
           $('#togglebar').fadeIn(function() {
             self.set('animating', false);

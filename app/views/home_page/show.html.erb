@@ -1,7 +1,7 @@
 <div class="center" id="language-switch">
   <div id="top-controls">
     <a href="/en">en</a> | <a href="/de">de</a> &nbsp; &nbsp;
-    <a href="http://www.facebook.com/pages/Wackadoo/239722582763809" target="_blank" id="facebook-link" ><img src="<%= asset_path 'lp/fb.png' %>" /></a>
+    <a href="http://www.facebook.com/pages/Wackadoo/239722582763809" target="_blank" id="facebook-link" >&nbsp;</a>
   </div>
 </div>
 
@@ -40,10 +40,13 @@
   <div id="switchbar">
     <div id="switchbar-top"></div>
     <div id="switchbar-content">
-      <div id="switchbar-logo">
+      <div id="switchbar-logo"> 
         <img id="logo-small" src="<%= asset_path 'lp/logoswsmall.png' %>"  alt="" />
       </div>
-      <div id="switchbar-teaser"><%= I18n.t 'home_page.switchbar.teaser' %> <span class="arrow">&nbsp;</span></div>
+      <div id="switchbar-teaser">
+        <span id="teaser-text"><%= I18n.t 'home_page.switchbar.teaser' %></span>
+      </div>
+      <span id="arrow" class="arrow-down">&nbsp;</span>
     </div>
     <div id="switchbar-bottom"></div>
   </div>
