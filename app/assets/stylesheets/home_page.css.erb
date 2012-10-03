@@ -66,6 +66,8 @@ p {
 
 #switchbar {
   cursor: pointer;
+  min-width: 909px;
+  width: 100%;
 }
 
 #switchbar-top {
@@ -91,37 +93,39 @@ p {
   height: 61px;
 }
 
+#logo-small {
+  height: 61px;
+}
+
 #switchbar-teaser {
   float: left;
-  width:60%;
-  min-width: 750px;
+  width: 60%;
+  min-width: 510px;
   display: inline-block;
   text-align: center;
   padding-top: 4px;
 }
 
-#switchbar-bottom {
-  background-image: url('<%= asset_path 'lp/switchbar_03.png' %>');
-  background-position: center top;
-  height: 54px;
-  display: none;
-  margin-bottom: -30px;
+#switchbar-spacer {
+  width: 7%;
+  min-width: 1px;
+  display: inline-block;
 }
 
-
-#logo-small {
-  height: 61px;
-  width: 190px;
-  padding-left: 10px;
+#switchbar-arrow {
+  width: 13%;
+  min-width: 58px;
+  text-align: right;
+  display: inline-block;
 }
-
 
 .arrow-down {
   background: url('<%= asset_path 'lp/switch_down_btn_normal.png' %>');
   width: 58px;
   height: 58px;
+  top: 13px;
+  margin-right: 71px;
   display: inline-block;
-  vertical-align: 13px;
 }
 
 #switchbar:hover .arrow-down {
@@ -132,12 +136,21 @@ p {
   background: url('<%= asset_path 'lp/switch_up_btn_normal.png' %>');
   width: 58px;
   height: 58px;
+  top: 13px;
+  margin-right: 71px;
   display: inline-block;
-  vertical-align: 13px;
 }
 
 #switchbar:hover .arrow-up {
   background: url('<%= asset_path 'lp/switch_up_btn_mouseover.png' %>');
+}
+
+#switchbar-bottom {
+  background-image: url('<%= asset_path 'lp/switchbar_03.png' %>');
+  background-position: center top;
+  height: 54px;
+  display: none;
+  margin-bottom: -30px;
 }
 
 #togglebar {

@@ -24,9 +24,9 @@
 
 <div id="inbetween">
   
-  <% if Rails.env == "production" %>
+  <% if Rails.env == "staging" %>
   <div style="position: relative; top: -60px; height: 0px; font-size: 24px;">
-    Hier geht's zur Testrunde: <a href="https://test1.wack-a-doo.de">https://test1.wack-a-doo.de</a>
+    Achtung, private Testrunde! Zur Hauptrunde geht's hier: <a href="https://wack-a-doo.de">https://wack-a-doo.de</a>
   </div>
   <% end %>
   
@@ -47,7 +47,10 @@
       <div id="switchbar-teaser">
         <span id="teaser-text"><%= I18n.t 'home_page.switchbar.teaser' %></span>
       </div>
-      <span id="arrow" class="arrow-down">&nbsp;</span>
+      <div id="switchbar-spacer"></div>
+      <div id="switchbar-arrow">
+        <span id="arrow" class="arrow-down">&nbsp;</span>
+      </div>
     </div>
     <div id="switchbar-bottom"></div>
   </div>
