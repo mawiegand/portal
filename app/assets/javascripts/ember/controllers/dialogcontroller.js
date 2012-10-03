@@ -279,7 +279,7 @@ Portal.DialogController = Ember.Object.create(function() {
           accessToken: access_token,
           expiration:  expiration, 
           locale:      window.current_locale,
-          client_id:   Portal.Config.CLIENT_ID;
+          client_id:   Portal.Config.CLIENT_ID,
         });
         window.location = Portal.Config.CLIENT_URL;   
       });
