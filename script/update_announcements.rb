@@ -10,7 +10,7 @@
 # development environtment) but is exactly what you want.
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
 
-url = File.read("#{Rails.root}/config/update_url.conf")
+url = PORTAL_CONFIG['ingame_news_url']
 
 header = Hash.new
 header['Accept'] = 'application/json'
