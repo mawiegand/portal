@@ -16,10 +16,15 @@
 }
 
 .menubarbackground {
-  background-image: url(lp/switchbar_02.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('lp/switchbar_02.png');
+  height: 50px;
+  background-position: center top;
+}
+
+.menubarbackground-bottom {
+  background-image: url('lp/switchbar_03.png');
+  background-position: center top;
+  height: 54px;
 }
 
 .menubarbackground > img {
@@ -30,6 +35,36 @@
 .menubarbackground #langswitch {
   float: right;
   text-align: left;
+}
+
+#menubar ul {
+  height:40px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+#menubar li {
+  display: inline;
+  font-size: 14px;
+  line-height: 14px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 20px;
+  color: #777;
+}
+
+#wad-logo {
+  position: absolute;
+  left: 40px;
+  top: 6px;
+}
+
+#top-controls.announcements {
+  position: absolute;
+  right: 100px;
+  width: 200px;
+  text-align: right;
 }
 
 .fullsize {
