@@ -5,7 +5,7 @@ class AnnouncementsController < ApplicationController
   def index
     @announcements = Announcement.visible.where(locale: I18n.locale || 'en').paginate(:page => params[:page], :per_page => 10)
     
-    @announcements.first.increase_views
+    @announcements.first.increase_views   unless  @announcements.empty?
 
     logger.debug @announcement.inspect
 
