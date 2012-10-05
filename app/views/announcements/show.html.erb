@@ -6,7 +6,7 @@
     <%= image_tag @announcement.image_url, :class => 'icon' %>
     <p><%= raw @announcement.content %></p>
     <%= image_tag 'about/shadow.png' %>
-    <%= @announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l @announcement.edited_at %>
+  <div class="author single"><%= @announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l @announcement.edited_at %></div>
 	<div class="statistics"><%= @announcement.get_global_views %> <%= I18n.t 'announcement.views' %></div>
   </article>
   

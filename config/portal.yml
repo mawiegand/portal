@@ -13,6 +13,9 @@ defaults: &defaults
 development:
   <<: *defaults
   
+  ingame_news_url:  'https://gs02.wack-a-doo.de/game_server/fundamental/announcements?language=all'
+
+  
 test:
   <<: *defaults
 

@@ -24,29 +24,28 @@
     <br/><br/>
     <h1><%= I18n.t 'announcement.no_news' %></h1>
   <% else %>
-
-    <h1><%= I18n.t 'announcement.title' %></h1>
-
     <% @announcements.each do |announcement| %>
     <article>
     <% if @announcements.first == announcement %>
-      <%= image_tag announcement.image_url, :class => 'icon' %>
+      <%= image_tag announcement.image_url, :class => 'icon first' %>
   	  <h1><%= link_to announcement.title, announcement %></h1>
+      <div class="author first">-- <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.edited_at || announcement.created_at %></div>
   	  <p><%= raw announcement.content %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
+  	  
 	<% else %>
       <table>
 	    <tr>
           <td><%= image_tag announcement.image_url, :class => 'icon', :size => '100x100' %></td>
   	      <td>
-		    <h1><%= link_to announcement.title, announcement %></h1>
+		        <h1><%= link_to announcement.title, announcement %></h1>
+		        <div class="author">-- <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.edited_at || announcement.created_at %></div>
   	        <p><%= raw announcement.content.match /<p>(.*)<\/p>/ %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
-		  </td>
+		      </td>
 	    </tr>
 	  </table>
 	<% end %>
-      <%= image_tag 'about/shadow.png' %>
-      <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.edited_at || announcement.created_at %>
 	  <div class="statistics"><%= announcement.get_global_views %> <%= I18n.t 'announcement.views' %></div>
+      <%= image_tag 'about/shadow.png' %>
     </article>
     <% end %>
   <% end %>
