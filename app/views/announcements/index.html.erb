@@ -1,22 +1,24 @@
-<div id="menubar" class="menubarbackground">
-  <div id="langswitch">
-    <%= link_to 'en', announcements_path(locale: :en) %> | <%= link_to 'de', announcements_path(locale: :de) %>
-    <%= link_to image_tag('lp/fb.png'), 'http://www.facebook.com/pages/Wackadoo/239722582763809', :target => '_blank', :id => 'facebook-link' %>
+  <div id="top-controls" class="announcements">
+    <a href="/en">en</a> | <a href="/de">de</a> &nbsp; &nbsp;
+    <a href="http://www.facebook.com/pages/Wackadoo/239722582763809" target="_blank" id="facebook-link" >&nbsp;</a>
+    <img class="img-preloader" src="<%= asset_path 'lp/fb-hover.png' %>">
   </div>
+
+  <%= image_tag 'lp/logoswsmall.png', :id => 'wad-logo' %>
+
+
+<div id="menubar" class="menubarbackground">
   <ul>
-    <li><%= image_tag 'lp/logoswsmall.png', :id => 'logo' %></li>
     <li><%= link_to 'Home', '.' %></li>
     <% if I18n.locale == :de %>
       <li><%= link_to I18n.t('menue.forum'), 'http://forum.uga-agga.de/wack-a-doo-f235/', :target => '_blank' %></li>
       <li><%= link_to I18n.t('menue.wiki'), 'http://wiki.wack-a-doo.de/', :target => '_blank' %></li>
     <% end %>
-    <li><%= link_to I18n.t('menue.agb'), '/agb.html', :target=> '_blank' %></li>
-    <li><%= link_to I18n.t('menue.datenschutz'), '/datenschutz.html', :target=> '_blank' %></li>
-    <li><%= link_to I18n.t('menue.legal'), '/legal.html' %></li>
     <li><%= link_to 'Login', '.' %></li>
   </ul>
-  <%= image_tag 'lp/switchbar_03.png', :class => 'fullsize' %>
 </div>
+<div class="menubarbackground-bottom"></div>
+
 
 <section id="announcement">
 
@@ -55,4 +57,11 @@
 </section>
 <br />
 
-<%= image_tag 'about/footerback.jpg', :class => 'fullsize' %>
+<div id="sitemap">
+  <ul>
+    <li><%= link_to I18n.t('menue.agb'), '/agb.html', :target=> '_blank' %></li>
+    <li><%= link_to I18n.t('menue.datenschutz'), '/datenschutz.html', :target=> '_blank' %></li>
+    <li><%= link_to I18n.t('menue.legal'), '/legal.html' %></li>
+  </ul>
+</div>
+
