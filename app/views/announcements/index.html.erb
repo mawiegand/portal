@@ -45,7 +45,7 @@
 	  </table>
 	<% end %>
       <%= image_tag 'about/shadow.png' %>
-      <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.edited_at %>
+      <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.edited_at || announcement.created_at %>
 	  <div class="statistics"><%= announcement.get_global_views %> <%= I18n.t 'announcement.views' %></div>
     </article>
     <% end %>
