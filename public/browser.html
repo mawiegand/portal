@@ -1,24 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Wack-a-Doo</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
-</head>
-<body>
-  <p>Leider erfüllt Dein Webbrowser nicht alle Voraussetzungen, um Wack-a-doo zu spielen. Lade Dir jetzt einen geeigneten Webbrowser 
-    herunter</p>
-  <div style="display: inline-block; text-align: center">
-    <a href="http://www.apple.com/de/safari/" target="_blank"><img src="images/safari.png" alt=""></a>
-    <p>Safari</p>
-  </div>
-  <div style="display: inline-block; text-align: center">
-    <a href="https://www.google.com/intl/de/chrome/browser/"><img src="images/chrome.png" alt=""></a>
-    <p>Chrome</p>
-  </div>
-  <div style="display: inline-block; text-align: center">
-    <a href="http://www.mozilla.org/de/firefox/features/"><img src="images/firefox.png" alt=""></a>
-    <p>Firefox</p>
-  </div>
-  <p><a href=".">Zurück zum Wack-a-doo Login</a></p>
-</body>
+<html class="no-js">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Wack-a-doo</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body class="browsercheck">
+    <div id="main">
+      <h2>
+        Aktualisiere deinen Browser
+      </h2> 
+      <p>
+        Leider erfüllt Dein Webbrowser nicht alle Voraussetzungen, um Wack-a-doo zu spielen.<br />
+        Lade Dir jetzt einen aktuellen Webbrowser herunter.
+      </p>
+      <a class="browser-button" href="https://www.google.com/intl/de/chrome/browser/" target="_blank">
+        <img src="images/chrome.png" alt="">
+        <p>Chrome</p>
+        <p class="small">Empfohlen für Windows</p>
+      </a><a class="browser-button" href="http://www.mozilla.org/de/firefox/features/" target="_blank">
+        <img src="images/firefox.png" alt="">
+        <p>Firefox</p>
+        <p class="small">&nbsp;</p>
+      </a><a class="browser-button" href="http://www.apple.com/de/safari/" target="_blank">
+        <img src="images/safari.png" alt="">
+        <p>Safari</p>
+        <p class="small">Empfohlen für Mac</p>
+      </a><a class="browser-button no-margin" href="http://windows.microsoft.com/de-DE/internet-explorer/products/ie/home" target="_blank">
+        <img src="images/ie.png" alt="">
+        <p>Internet Explorer 9/10</p>
+        <p class="small">&nbsp;</p>
+      </a>
+      <a id="back" href=".">Zurück zum Wack-A-Doo Login</a>
+      <img id="html5-logo" src="images/html5-small.png" alt="">
+    </div>
+  </body>
 </html>
