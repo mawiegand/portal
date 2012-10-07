@@ -24,6 +24,7 @@ staging:
   database: portal
   port: 5432
   username: run-po
+  host: portal.wack-a-doo.de
 
 production:
   adapter: sqlite3
