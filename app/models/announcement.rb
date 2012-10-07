@@ -20,9 +20,9 @@ class Announcement < ActiveRecord::Base
 
   def get_global_views
     if self.original_id.nil?
-	  global_announcements = Announcement.visible.where('id == ? or original_id == ?', self.id, self.id)
+	  global_announcements = Announcement.visible.where('id = ? or original_id = ?', self.id, self.id)
 	else
-	  global_announcements = Announcement.visible.where('id == ? or id == ?', self.id, self.original_id)
+	  global_announcements = Announcement.visible.where('id = ? or id = ?', self.id, self.original_id)
 	end
     
 	global_views = 0
