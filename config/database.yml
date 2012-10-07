@@ -19,10 +19,10 @@ test:
   timeout: 5000
 
 staging:
-  adapter: sqlite3
-  database: db/staging.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  encoding: UTF8
+  database: portal
+  username: run-gs
 
 production:
   adapter: sqlite3
