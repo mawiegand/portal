@@ -22,6 +22,7 @@ staging:
   adapter: postgresql
   encoding: UTF8
   database: portal
+  port: 5432
   username: run-gs
 
 production:
