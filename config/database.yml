@@ -23,7 +23,7 @@ staging:
   encoding: UTF8
   database: portal
   port: 5432
-  username: run-gs
+  username: run-po
 
 production:
   adapter: sqlite3
