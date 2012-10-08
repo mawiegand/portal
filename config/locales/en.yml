@@ -186,6 +186,11 @@ en:
         title: Team
         former_members: Former Team Members
         
+      vote:
+        title: Visit us on...
+        intro: You can find us at these partner sites and social networks. Visit us, like us and vote for us!
+        
+        
   announcement:
     title: Latest announcements
     no_news: Currently no latest announcements

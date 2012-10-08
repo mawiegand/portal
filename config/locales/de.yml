@@ -198,6 +198,10 @@ de:
         title: Team
         former_members: Ehemalige
         
+      vote:
+        title: Besucht uns auf...
+        intro: Auf diesen Partnerseiten und sozialen Netzwerken sind wir aktiv. Besucht uns, liked uns und voted für uns!
+        
   announcement:
     title: Neuste Ankündigungen
     no_news: Derzeit keine aktuellen Ankündigungen
