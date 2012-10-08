@@ -18,14 +18,17 @@ test:
   pool: 5
   timeout: 5000
 
-staging:
-  adapter: sqlite3
-  database: db/staging.sqlite3
-  pool: 5
-  timeout: 5000
+staging:      # use the local postgres db
+  adapter: postgresql
+  encoding: UTF8
+  database: portal
+  port: 5686
+  username: run-po
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  encoding: UTF8
+  database: portal
+  port: 5432
+  username: run-po
+  host: portal.wack-a-doo.de
