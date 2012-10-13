@@ -310,7 +310,7 @@ Portal.DialogController = Ember.Object.create(function() {
     
         $.ajax({
           type: 'POST',
-          url: Portal.Config.IDENTITY_PROVIDER_BASE + locale_path_frag + '/identities/',
+          url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/identities/',
           data: params,
           success: function(data, textStatus, jqXHR) {
             
@@ -419,7 +419,7 @@ Portal.DialogController = Ember.Object.create(function() {
   
       $.ajax({
         type: 'POST',
-        url: Portal.Config.IDENTITY_PROVIDER_BASE + locale_path_frag + '/oauth2/access_token',
+        url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/oauth2/access_token',
         data: params,
         success: function(data, textStatus, jqXHR) {
           switch(jqXHR.status) {
@@ -491,7 +491,7 @@ Portal.DialogController = Ember.Object.create(function() {
 
       $.ajax({
         type: 'GET',
-        url: Portal.Config.IDENTITY_PROVIDER_BASE + window.locale_path_frag + '/clients/' + Portal.Config.CLIENT_ID,
+        url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/clients/' + Portal.Config.CLIENT_ID,
         data: params,
         success: function(data, textStatus, jqXHR) {
           switch(jqXHR.status) {
@@ -528,7 +528,7 @@ Portal.DialogController = Ember.Object.create(function() {
   
         $.ajax({
           type: 'GET',
-          url: Portal.Config.IDENTITY_PROVIDER_BASE + window.locale_path_frag + '/send_password_token',
+          url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/send_password_token',
           data: params,
           success: function(data, textStatus, jqXHR) {
             self.set('isLoading', false);
