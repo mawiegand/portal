@@ -47,12 +47,14 @@
           </table>
         <% end %>
         <div class="statistics">
-          <% if session[:likes].nil? || !session[:likes].include?(announcement.get_original_id) %>
-            <%= link_to I18n.t('announcement.like'), { action: 'like', id: announcement.id } %>
-          <% else %>
-            <%= link_to I18n.t('announcement.dislike'), { action: 'dislike', id: announcement.id } %>
+          <% if @announcements.first == announcement %>
+            <% if session[:likes].nil? || !session[:likes].include?(announcement.get_original_id) %>
+              <%= link_to I18n.t('announcement.like'), { action: 'like', id: announcement.id } %> | 
+            <% else %>
+              <%= link_to I18n.t('announcement.dislike'), { action: 'dislike', id: announcement.id } %> | 
+            <% end %>
           <% end %>
-          | <%= announcement.get_global_likes %> <%= I18n.t('announcement.likes') %> | <%= announcement.get_global_views %> <%= I18n.t 'announcement.views' %>
+	  <%= announcement.get_global_likes %> <%= I18n.t('announcement.likes') %> | <%= announcement.get_global_views %> <%= I18n.t 'announcement.views' %>
         </div>
         <%= image_tag 'about/shadow.png' %>
       </article>
