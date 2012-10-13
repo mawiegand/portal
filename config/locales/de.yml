@@ -211,7 +211,10 @@ de:
     previous: << Zurück
     back: Übersicht
     next: Vor >> 
-  
+    like: Gefällt mir
+    dislike: Gefällt mir nicht mehr
+    likes: Personen gefällt das
+
   will_paginate:
     previous_label: << Zurück
     next_label: Vor >> 

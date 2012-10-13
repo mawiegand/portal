@@ -1,13 +1,20 @@
 <section id=announcement>
   <p id="notice"><%= notice %></p>
-  
+
   <article>
     <h1><%= @announcement.title %></h1>
     <%= image_tag @announcement.image_url, :class => 'icon' %>
     <p><%= raw @announcement.content %></p>
     <%= image_tag 'about/shadow.png' %>
-  <div class="author single"><%= @announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l @announcement.edited_at %></div>
-	<div class="statistics"><%= @announcement.get_global_views %> <%= I18n.t 'announcement.views' %></div>
+    <div class="author single"><%= @announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l @announcement.edited_at %></div>
+    <div class="statistics">
+      <% if session[:likes].nil? || !session[:likes].include?(@announcement.get_original_id) %>
+        <%= link_to I18n.t('announcement.like'), { action: 'like' } %>
+      <% else %>
+        <%= link_to I18n.t('announcement.dislike'), { action: 'dislike' } %>
+      <% end %>
+      | <%= @announcement.get_global_likes %> <%= I18n.t('announcement.likes') %> | <%= @announcement.get_global_views %> <%= I18n.t 'announcement.views' %>
+    </div>
   </article>
   
   <%= link_to_unless(@announcement.previous.nil?, I18n.t('announcement.previous'), @announcement.previous) %>

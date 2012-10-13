@@ -27,6 +27,32 @@ class AnnouncementsController < ApplicationController
       format.json { render json: @announcement }
     end
   end
+  
+  def like
+    @announcement = Announcement.find(params[:id])
+
+    session[:likes] = [] if session[:likes].nil?
+
+    unless session[:likes].include?(@announcement.get_original_id)
+      @announcement.increase_likes 
+      session[:likes] << @announcement.get_original_id
+    end
+    
+    redirect_to :back
+  end
+
+  def dislike
+    @announcement = Announcement.find(params[:id])
+
+    session[:likes] = [] if session[:likes].nil?
+
+    if session[:likes].include?(@announcement.get_original_id)
+      @announcement.decrease_likes 
+      session[:likes].delete(@announcement.get_original_id)
+    end
+    
+    redirect_to :back
+  end
 
   # GET /announcements/new
   # GET /announcements/new.json

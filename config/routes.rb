@@ -3,7 +3,11 @@ Portal::Application.routes.draw do
 
   scope "(:locale)", :locale => /en|de/ do
   
-    resources :announcements, :only => [ :index, :show]
+    resources :announcements, :only => [ :index, :show] do
+      get 'like', :on => :member
+      get 'dislike', :on => :member
+    end
+
     resources :home_page,     :only => [ :show ]
 
     match :index, :to => 'home_page#show'

@@ -200,6 +200,9 @@ en:
     previous: << Previous
     back: Index
     next: Next >>
+    like: Like
+    dislike: Dislike
+    likes: Persons like this
 
   will_paginate:
     previous_label: << Previous

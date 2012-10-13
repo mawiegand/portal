@@ -27,28 +27,35 @@
     <h1><%= I18n.t 'announcement.no_news' %></h1>
   <% else %>
     <% @announcements.each do |announcement| %>
-    <article>
-    <% if @announcements.first == announcement %>
-      <%= image_tag announcement.image_url, :class => 'icon first' %>
-  	  <h1><%= link_to announcement.title, announcement %></h1>
-      <div class="author first">-- <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.edited_at || announcement.created_at %></div>
-  	  <p><%= raw announcement.content %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
-  	  
-	<% else %>
-      <table>
-	    <tr>
-          <td><%= image_tag announcement.image_url, :class => 'icon', :size => '100x100' %></td>
-  	      <td>
-		        <h1><%= link_to announcement.title, announcement %></h1>
-		        <div class="author">-- <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.edited_at || announcement.created_at %></div>
-  	        <p><%= raw announcement.content.match /<p>(.*)<\/p>/ %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
-		      </td>
-	    </tr>
-	  </table>
-	<% end %>
-	  <div class="statistics"><%= announcement.get_global_views %> <%= I18n.t 'announcement.views' %></div>
-      <%= image_tag 'about/shadow.png' %>
-    </article>
+      <article>
+        <% if @announcements.first == announcement %>
+          <%= image_tag announcement.image_url, :class => 'icon first' %>
+          <h1><%= link_to announcement.title, announcement %></h1>
+          <div class="author first">-- <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.edited_at || announcement.created_at %></div>
+          <p><%= raw announcement.content %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
+    	  
+        <% else %>
+          <table>
+            <tr>
+              <td><%= image_tag announcement.image_url, :class => 'icon', :size => '100x100' %></td>
+              <td>
+                <h1><%= link_to announcement.title, announcement %></h1>
+                <div class="author">-- <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.edited_at || announcement.created_at %></div>
+                <p><%= raw announcement.content.match /<p>(.*)<\/p>/ %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
+              </td>
+            </tr>
+          </table>
+        <% end %>
+        <div class="statistics">
+          <% if session[:likes].nil? || !session[:likes].include?(announcement.get_original_id) %>
+            <%= link_to I18n.t('announcement.like'), { action: 'like', id: announcement.id } %>
+          <% else %>
+            <%= link_to I18n.t('announcement.dislike'), { action: 'dislike', id: announcement.id } %>
+          <% end %>
+          | <%= announcement.get_global_likes %> <%= I18n.t('announcement.likes') %> | <%= announcement.get_global_views %> <%= I18n.t 'announcement.views' %>
+        </div>
+        <%= image_tag 'about/shadow.png' %>
+      </article>
     <% end %>
   <% end %>
 
