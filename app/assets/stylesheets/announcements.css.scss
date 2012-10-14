@@ -7,11 +7,7 @@
   padding: 0px;
   color: #555;
   background-color: white;
-  font-size: 12pt;
   text-align: center;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  text-shadow: white 0px 1px 1px;
   max-width: 800px;
 }
 
@@ -73,24 +69,45 @@
   margin: 0px;
 }
 
+article {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 26px;
+  text-shadow: none;
+  text-align: left;
+  margin: 40px 0px;
+}
+
 article h1 {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
-  margin: 36pt 0 0 0;
-  font-size: 36pt;
-  color: #FA0;
-  font-weight: normal;
+  font-weight: lighter;
+  font-size: 48px;
+  line-height: 64px;
+  margin: 48px 0 16px 0;
+  color: #EC8A43;
 }
 
 article h1 a:visited,
 article h1 a:link {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
-  color: #FA0;
+  color: #EC8A43;
+}
+
+article a:link,
+article a:visited {
+  color: #EC8A43;  
+}
+
+article a:hover {
+  text-decoration: underline;
 }
 
 article h2 {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
-  margin: 20pt 0 0 0;
-  font-size: 18pt;
+  margin: 24px 0 8px 0;
+  font-size: 24px;
+  line-height: 36px;
   color: #555;
   font-weight: normal;
 }
@@ -102,13 +119,15 @@ article > img.icon {
 }
 
 article > img.icon.first {
-  margin: -10px 0px 10px 10px;
+  margin: -4px 0px 10px 10px;
   float: right;
   width: 172px;
 }
 
-article * p {
-  margin: 0px;
+article p {
+  font-size: 18px;
+  line-height: 26px;
+  margin: 12px 0px;
 }
 
 article ul {
@@ -131,14 +150,24 @@ article .author.single {
 
 article .author {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
-  font-size: 9pt;
+  font-size: 18px;
+  line-height: 24px;
   color: #AAA;
-  margin-bottom: 20pt;
-  margin-top: -4pt;
+  margin-bottom: 24px;
+  margin-top: -18px;
   float: none;
 }
 
-article {
-  text-align: left;
-  margin: 40px 0px;
+article .author .name {
+  color: #2C679C;
 }
+
+article .author .date {
+  color: #AAA;
+}
+
+article .statistics {
+  font-size: 14px;
+  margin: 24px 0px 6px 0px;
+}
+
