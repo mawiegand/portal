@@ -1,12 +1,14 @@
 <section id=announcement>
   <p id="notice"><%= notice %></p>
 
-  <article>
-    <h1><%= @announcement.title %></h1>
+  <article class="single">
     <%= image_tag @announcement.image_url, :class => 'icon' %>
+    
+    <h1><%= @announcement.title %></h1>
+    <div class="author first"><span class="name"><%= @announcement.author %></span> <span class="date"><%= I18n.t 'announcement.time_prefix' %> <%= I18n.l @announcement.created_at || @announcement.edited_at  %></span></div>
+    
     <p><%= raw @announcement.content %></p>
-    <%= image_tag 'about/shadow.png' %>
-    <div class="author single"><%= @announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l @announcement.edited_at %></div>
+
     <div class="statistics">
       <% if session[:likes].nil? || !session[:likes].include?(@announcement.get_original_id) %>
         <%= link_to I18n.t('announcement.like'), { action: 'like' } %>
@@ -17,7 +19,9 @@
     </div>
   </article>
   
-  <%= link_to_unless(@announcement.previous.nil?, I18n.t('announcement.previous'), @announcement.previous) %>
-  | <%= link_to I18n.t('announcement.back'), announcements_path %> |
-  <%= link_to_unless(@announcement.next.nil?, I18n.t('announcement.next'), @announcement.next) %>
+  <div class="article-navigation">
+    <%= link_to_unless(@announcement.previous.nil?, I18n.t('announcement.previous'), @announcement.previous) %> |
+    <%= link_to I18n.t('announcement.back'), announcements_path %> |
+    <%= link_to_unless(@announcement.next.nil?, I18n.t('announcement.next'), @announcement.next) %>
+  </div>
 </section>

@@ -1,6 +1,8 @@
 class HomePageController < ApplicationController
   require 'httparty'
   
+  layout 'landing_page'
+  
   def show
     @title = I18n.t('home_page.welcome')
     

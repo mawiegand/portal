@@ -1,5 +1,7 @@
-
 class AnnouncementsController < ApplicationController
+  
+  layout 'standard'
+  
   # GET /announcements
   # GET /announcements.json
   def index

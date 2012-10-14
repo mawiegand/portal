@@ -1,0 +1,9 @@
+<% content_for :javascript do %>
+  <%= javascript_include_tag "application" %>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:fundamental_content) ? yield(:fundamental_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

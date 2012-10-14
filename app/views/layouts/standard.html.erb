@@ -1,0 +1,39 @@
+<% content_for :content do %>
+  <div id="top-controls" class="announcements">
+    <a href="/en/announcements">en</a> | <a href="/de/announcements">de</a> &nbsp; &nbsp;
+    <a href="http://www.facebook.com/pages/Wackadoo/239722582763809" target="_blank" id="facebook-link" >&nbsp;</a>
+    <img class="img-preloader" src="<%= asset_path 'lp/fb-hover.png' %>">
+  </div>
+
+  <%= image_tag 'lp/logoswsmall.png', :id => 'wad-logo' %>
+
+
+  <div id="menubar" class="menubarbackground">
+    <ul>
+      <li><%= link_to 'Home', '.' %></li>
+      <li><%= link_to I18n.t('menue.news'), announcements_path %></li>
+      <% if I18n.locale == :de %>
+        <li><%= link_to I18n.t('menue.forum'), 'http://forum.uga-agga.de/wack-a-doo-f235/', :target => '_blank' %></li>
+        <li><%= link_to I18n.t('menue.wiki'), 'http://wiki.wack-a-doo.de/', :target => '_blank' %></li>
+      <% end %>
+      <li><%= link_to 'Login', '.' %></li>
+    </ul>
+  </div>
+  <div class="menubarbackground-bottom"></div>
+
+
+  <%= content_for?(:fundamental_content) ? yield(:fundamental_content) : yield %>
+  
+  
+  <br />
+
+  <div id="sitemap">
+    <ul>
+      <li><%= link_to I18n.t('menue.agb'), '/agb.html', :target=> '_blank' %></li>
+      <li><%= link_to I18n.t('menue.datenschutz'), '/datenschutz.html', :target=> '_blank' %></li>
+      <li><%= link_to I18n.t('menue.legal'), '/legal.html' %></li>
+    </ul>
+  </div>  
+<% end %>
+
+<%= render :template => 'layouts/application' %>

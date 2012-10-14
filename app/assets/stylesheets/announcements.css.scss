@@ -69,6 +69,13 @@
   margin: 0px;
 }
 
+article a:link,a:visited,a{
+  transition-property:none;
+  -moz-transition-property:none;
+  -o-transition-property:none;
+  -webkit-transition-property:none;
+}
+
 article {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
   font-size: 18px;
@@ -94,6 +101,10 @@ article h1 a:link {
   color: #EC8A43;
 }
 
+article td h1 {
+  margin-top: 0px;
+}
+
 article a:link,
 article a:visited {
   color: #EC8A43;  
@@ -112,17 +123,18 @@ article h2 {
   font-weight: normal;
 }
 
-article > img.icon {
-  margin: -6px 10px 4px 0px;
+article td img.icon {
+  margin: 2px 20px 4px 0px;
   float: left;
   width: 128px;
 }
 
-article > img.icon.first {
+article > img.icon:first-of-type {
   margin: -4px 0px 10px 10px;
   float: right;
   width: 172px;
 }
+
 
 article p {
   font-size: 18px;
@@ -136,11 +148,6 @@ article ul {
 
 article * td {
   vertical-align: top
-}
-
-article .statistics {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
-  float: right;
 }
 
 article .author.single {
@@ -167,7 +174,21 @@ article .author .date {
 }
 
 article .statistics {
+  width: 100%;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  text-align: right;
   font-size: 14px;
+  margin: -20px 0px 64px 0px;
+}
+
+article:first-of-type .statistics {
   margin: 24px 0px 6px 0px;
+}
+
+.article-navigation {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  font-size: 16px;
+  margin: 48px 0px 96px 0px;
+  color: #DDD;
 }
 

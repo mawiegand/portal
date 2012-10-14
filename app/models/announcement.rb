@@ -5,6 +5,14 @@ class Announcement < ActiveRecord::Base
   scope :next, lambda {|created_at| where('created_at < ? and locale = ?', created_at, I18n.locale).order('created_at DESC') }
   scope :previous, lambda {|created_at| where('created_at > ? and locale = ?', created_at, I18n.locale).order('created_at ASC') }
 
+  def content_teaser
+    if content.length < 1000
+      content
+    else 
+      content.match /<p>(.*)<\/p>/
+    end
+  end
+
   def next
     Announcement.next(self.created_at).visible.first
   end

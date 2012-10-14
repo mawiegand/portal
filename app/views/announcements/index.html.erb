@@ -1,25 +1,3 @@
-  <div id="top-controls" class="announcements">
-    <a href="/en/announcements">en</a> | <a href="/de/announcements">de</a> &nbsp; &nbsp;
-    <a href="http://www.facebook.com/pages/Wackadoo/239722582763809" target="_blank" id="facebook-link" >&nbsp;</a>
-    <img class="img-preloader" src="<%= asset_path 'lp/fb-hover.png' %>">
-  </div>
-
-  <%= image_tag 'lp/logoswsmall.png', :id => 'wad-logo' %>
-
-
-<div id="menubar" class="menubarbackground">
-  <ul>
-    <li><%= link_to 'Home', '.' %></li>
-    <% if I18n.locale == :de %>
-      <li><%= link_to I18n.t('menue.forum'), 'http://forum.uga-agga.de/wack-a-doo-f235/', :target => '_blank' %></li>
-      <li><%= link_to I18n.t('menue.wiki'), 'http://wiki.wack-a-doo.de/', :target => '_blank' %></li>
-    <% end %>
-    <li><%= link_to 'Login', '.' %></li>
-  </ul>
-</div>
-<div class="menubarbackground-bottom"></div>
-
-
 <section id="announcement">
 
   <% if @announcements.first.nil? %>
@@ -31,17 +9,17 @@
         <% if @announcements.first == announcement %>
           <%= image_tag announcement.image_url, :class => 'icon first' %>
           <h1><%= link_to announcement.title, announcement %></h1>
-          <div class="author first"><span class="name"><%= announcement.author %></span> <span class="date"><%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.edited_at || announcement.created_at %></span></div>
+          <div class="author first"><span class="name"><%= announcement.author %></span> <span class="date"><%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.created_at ||  announcement.edited_at  %></span></div>
           <p><%= raw announcement.content %></p>
     	  
         <% else %>
           <table>
             <tr>
-              <td><%= image_tag announcement.image_url, :class => 'icon', :size => '100x100' %></td>
+              <td><%= image_tag announcement.image_url, :class => 'icon' %></td>
               <td>
                 <h1><%= link_to announcement.title, announcement %></h1>
-                <div class="author">-- <%= announcement.author %> <%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.edited_at || announcement.created_at %></div>
-                <p><%= raw announcement.content.match /<p>(.*)<\/p>/ %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
+                <div class="author first"><span class="name"><%= announcement.author %></span> <span class="date"><%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.created_at || announcement.edited_at %></span></div>
+                <p><%= raw announcement.content_teaser %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
               </td>
             </tr>
           </table>
@@ -67,13 +45,5 @@
 <%= will_paginate @announcements %>
 
 </section>
-<br />
 
-<div id="sitemap">
-  <ul>
-    <li><%= link_to I18n.t('menue.agb'), '/agb.html', :target=> '_blank' %></li>
-    <li><%= link_to I18n.t('menue.datenschutz'), '/datenschutz.html', :target=> '_blank' %></li>
-    <li><%= link_to I18n.t('menue.legal'), '/legal.html' %></li>
-  </ul>
-</div>
 
