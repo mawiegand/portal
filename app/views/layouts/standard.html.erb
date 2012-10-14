@@ -10,7 +10,7 @@
 
   <div id="menubar" class="menubarbackground">
     <ul>
-      <li><%= link_to 'Home', '.' %></li>
+      <li><%= link_to 'Home', '/' %></li>
       <li><%= link_to I18n.t('menue.news'), announcements_path %></li>
       <% if I18n.locale == :de %>
         <li><%= link_to I18n.t('menue.forum'), 'http://forum.uga-agga.de/wack-a-doo-f235/', :target => '_blank' %></li>
