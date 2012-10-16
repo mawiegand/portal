@@ -10,6 +10,9 @@ defaults: &defaults
   
   ingame_news_url:  'https://localhost/game_server/fundamental/announcements?language=all'
   
+  redirector_url:   'http://localhost/identity_provider/redirect_to'
+
+  
 development:
   <<: *defaults
   
@@ -30,6 +33,8 @@ staging:
 
   ingame_news_url:  'https://test1.wack-a-doo.de/game_server/fundamental/announcements?language=all'
 
+  redirector_url:   'http://test1.wack-a-doo.de/identity_provider/redirect_to'
+
   
 
 production:
@@ -43,5 +48,7 @@ production:
   requested_scopes: 'payment 5dentity wackadoo-round2'
   
   ingame_news_url:  'https://gs02.wack-a-doo.de/game_server/fundamental/announcements?language=all'
+
+  redirector_url:   'http://wack-a-doo.de/identity_provider/redirect_to'
 
 
