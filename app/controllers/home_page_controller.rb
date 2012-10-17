@@ -4,7 +4,8 @@ class HomePageController < ApplicationController
   layout 'landing_page'
   
   def show
-    @title = I18n.t('home_page.welcome')
+    @title         = I18n.t('home_page.welcome')
+    @description   = I18n.t('home_page.meta_description')
     
     @invitation    = params[:invitation]      if params[:invitation]
     id             = params[:id]              

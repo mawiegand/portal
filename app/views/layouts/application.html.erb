@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>Wack-a-Doo<%= @title.blank? ? "" : " | #{@title}"  %></title>
+  <%if @description%>
+    <meta name="description" content="<%= @description %>" />
+  <%end%>
   <script>
   
     var path_fragments = {
