@@ -9,6 +9,8 @@ class AnnouncementsController < ApplicationController
     
     @announcements.first.increase_views   unless  @announcements.empty?
 
+    @title = "News"
+
     logger.debug @announcement.inspect
 
     respond_to do |format|
@@ -23,6 +25,8 @@ class AnnouncementsController < ApplicationController
     @announcement = Announcement.visible.find(params[:id])
     
     @announcement.increase_views
+    
+    @title = @announcement.title
 
     respond_to do |format|
       format.html # show.html.erb
