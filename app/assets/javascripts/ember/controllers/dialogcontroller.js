@@ -100,13 +100,13 @@ Portal.DialogController = Ember.Object.create(function() {
       }
       this.resetError();
 
-        console.log("BARTYPE === SIGNIN", this.get('bartype'), this.get('dialogtype'), 
+        log("BARTYPE === SIGNIN", this.get('bartype'), this.get('dialogtype'), 
                     Ember.getPath("Portal.DialogController.credentials.email"), Ember.getPath("Portal.DialogController.credentials.password"))
 
 
       if (this.get('bartype') === Portal.DIALOG_TYPE_SIGNIN) { // reset email
         //this.get('credentials').set('email', "gucki");
-        console.log("BARTYPE === SIGNIN", this.get('bartype'), this.get('dialogtype'), 
+        log("BARTYPE === SIGNIN", this.get('bartype'), this.get('dialogtype'), 
                     Ember.getPath("Portal.DialogController.credentials.email"), Ember.getPath("Portal.DialogController.credentials.password"))
       }
     },
@@ -322,7 +322,7 @@ Portal.DialogController = Ember.Object.create(function() {
             switch(jqXHR.status) {
             case 200:
             case 201:  // created
-              console.log(jqXHR, data, textStatus);
+              log(jqXHR, data, textStatus);
               var user = $.parseJSON(jqXHR.responseText)
               
               if (user.identifier) {
@@ -356,7 +356,7 @@ Portal.DialogController = Ember.Object.create(function() {
             default:
               self.set('isLoading', false);            
               var msgObj = $.parseJSON(jqXHR.responseText);
-              console.log('ERORR during sign up: ' + msgObj.error_description);
+              log('ERORR during sign up: ' + msgObj.error_description);
               self.set('lastError', {
                 type: 'signup',
                 statusCode: jqXHR.status,
@@ -367,7 +367,7 @@ Portal.DialogController = Ember.Object.create(function() {
           error: function(jqXHR, textStatus, errorThrown) {
             self.set('isLoading', false);
             var msgObj = $.parseJSON(jqXHR.responseText);
-            console.log('ERORR during sign up: ' + msgObj.error_description);
+            log('ERORR during sign up: ' + msgObj.error_description);
             
             switch(jqXHR.status) {
             case 409: // CONFLICT               
@@ -456,7 +456,7 @@ Portal.DialogController = Ember.Object.create(function() {
               msg: msgObj.error_description,
             });
             
-            console.log('ERORR during sign in: ' + msgObj.error_description);
+            log('ERORR during sign in: ' + msgObj.error_description);
             
             if (onError) {
               onError(jqXHR, textStatus, 'Unexpected server response.');
@@ -476,7 +476,7 @@ Portal.DialogController = Ember.Object.create(function() {
               statusCode: jqXHR.status,
               msg: msgObj.error_description,
             });
-            console.log('ERORR during sign in: ' + msgObj.error_description);
+            log('ERORR during sign in: ' + msgObj.error_description);
             if (onError) {
               onError(jqXHR, textStatus, errorThrown);
             }
@@ -550,7 +550,7 @@ Portal.DialogController = Ember.Object.create(function() {
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
-            console.log('---> error');
+            log('---> error');
             self.set('isLoading', false);
             self.set('passwordTokenNotSent', true);
           }
