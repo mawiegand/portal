@@ -425,6 +425,11 @@ Portal.DialogController = Ember.Object.create(function() {
       $.ajax({
         type: 'POST',
         url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/oauth2/access_token',
+        beforeSend: function(xhr) {
+          if (window.referer !== undefined && window.referer !== null) {
+            xhr.setRequestHeader('X-Alt-Referer', window.referer);
+          }
+        },
         data: params,
         success: function(data, textStatus, jqXHR) {
           switch(jqXHR.status) {
