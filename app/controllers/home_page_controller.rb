@@ -8,6 +8,7 @@ class HomePageController < ApplicationController
     @description   = I18n.t('home_page.meta_description')
     
     @invitation    = params[:invitation]      if params[:invitation]
+    @referer       = request.referer          unless request.referer.blank?
     id             = params[:id]              
     password_token = params[:password_token]
 

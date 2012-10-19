@@ -312,6 +312,11 @@ Portal.DialogController = Ember.Object.create(function() {
           type: 'POST',
           url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/identities/',
           data: params,
+          beforeSend: function(xhr) {
+            if (window.referer !== undefined && window.referer !== null) {
+              xhr.setRequestHeader('X-Alt-Referer', window.referer);
+            }
+          },
           success: function(data, textStatus, jqXHR) {
             
             switch(jqXHR.status) {
@@ -493,6 +498,11 @@ Portal.DialogController = Ember.Object.create(function() {
         type: 'GET',
         url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/clients/' + Portal.Config.CLIENT_ID,
         data: params,
+        beforeSend: function(xhr) {
+          if (window.referer !== undefined && window.referer !== null) {
+            xhr.setRequestHeader('X-Alt-Referer', window.referer);
+          }
+        },
         success: function(data, textStatus, jqXHR) {
           switch(jqXHR.status) {
             case 200:
