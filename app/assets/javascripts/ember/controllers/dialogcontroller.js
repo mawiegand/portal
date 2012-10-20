@@ -30,7 +30,30 @@ Portal.DialogController = Ember.Object.create(function() {
           self.fetchRegistrationStatus()
         };
       }(this)), 20000);
+      
+      if (this.get('signinContext')) {
+        this.hideBetaSubline();
+      }      
     },
+    
+    betaSublineVisibilityObserver: function() {
+      var signin = this.get("signinContext");
+      if (signin) {
+        this.hideBetaSubline();
+      }
+      else {
+        this.showBetaSubline();
+      }
+    }.observes('signinContext'),
+    
+    hideBetaSubline: function() {
+      $('#beta-notice .subline').hide();
+    },
+
+    showBetaSubline: function() {
+      $('#beta-notice .subline').show();
+    },
+
     
     /** Observes the error an shows the dialog-view, if necessary. */
     lastErrorObserver: function() {
