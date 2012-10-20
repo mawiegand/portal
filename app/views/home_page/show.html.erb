@@ -22,6 +22,10 @@
       Brandneu: <span class="public-beta">Public Beta</span> 1.0<br/>
       <span class="subline">Jetzt testen und kostenlos mitspielen!</span>
     </div>
+    <h1 id="slogan">
+      <p class="line1">Das online Steinzeit-Strategiespiel</p>
+      <p class="line2">mit Knüppelkriegern und Dinosauriern.</p>
+    </h1>
   </div>
 </div>
 
@@ -284,11 +288,11 @@
     {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}}
   {{else}}
     {{#if registrationStatus.canSignup }}
-      <div class="form-div">
+      <div class="form-div" title="Gib hier Deine Email ein.">
         {{view Portal.TextField id="email" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.email' %>" valueBinding="Portal.DialogController.credentials.email"}}
       </div>
       <div class="form-div">
-        <div>
+        <div title="Gib hier das gewünschte Passwort ein.">
         {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
         </div>
       </div>    

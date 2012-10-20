@@ -1,6 +1,7 @@
 
 /** extends Ember.TextField to bubble-up submit and cancel actions. */
 Portal.TextField = Ember.TextField.extend({
+    
   insertNewline: function(event) {
     this._super(event);
     var parentView = this.get('parentView');
