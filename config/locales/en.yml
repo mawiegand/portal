@@ -88,7 +88,16 @@ en:
       forgotten_password_help: Forgot your password?
       forgotten_password_link: Reset it here.
       need_help: Need help? 
-      contact_link: Please contact support.        
+      contact_link: Please contact support. 
+      
+    slogans:
+      first: |-  
+        <p class="line1">THE stone age online strategy game</p>
+        <p class="line2">with clubwarriors and dinosaurs.</p>
+
+    beta_notice: |-
+      Brand new: <span class="public-beta">Public Beta</span> 1.0<br/>
+      <span class="subline">Sing up now, test and play for free!</span>             
       
     about:
       whatdoido: whatdoido_en_US.jpeg

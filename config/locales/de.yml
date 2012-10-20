@@ -102,6 +102,16 @@ de:
     switchbar:
       teaser: Willst Du mehr über das Spiel wissen?
       
+    slogans:
+      first: |-  
+        <p class="line1">Das online Steinzeit-Strategiespiel</p>
+        <p class="line2">mit Knüppelkriegern und Dinosauriern.</p>
+        
+    beta_notice: |-
+      Brandneu: <span class="public-beta">Public Beta</span> 1.0<br/>
+      <span class="subline">Jetzt testen und kostenlos mitspielen!</span>
+
+      
     dialog:
       signin_help: Du hast schon ein Login?
       signin_link: Logge Dich hier ein!
