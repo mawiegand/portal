@@ -3,7 +3,7 @@ var Portal = window.Portal || {};
 
 Portal.I18n = function(module) {
 
-  module.lookupTranslation = function(path) {
+  module.lookupTranslation = function(path, index) {
     if (path === undefined || path === null) return "" ;
     var locale = window.current_locale || Portal.Config.DEFAULT_LOCALE
     if (!Portal.I18n[locale]) return "(NO TRANSLATION FOR "+locale+" LOADED.)";
@@ -14,7 +14,12 @@ Portal.I18n = function(module) {
     string     = string ? string :"FATAL ERROR IN I18N FOR LOCALE " + locale;
     
     if (string && string instanceof Array) { // allow to specify several translations for the same thing (not so borring...)
-      string = string[Math.floor(Math.random()*string.length)];    
+      if (index) {
+        string = string[index % string.length];
+      }
+      else {
+        string = string[Math.floor(Math.random()*string.length)];   
+      } 
     }
     return string ;
   };

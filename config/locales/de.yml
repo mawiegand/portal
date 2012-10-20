@@ -106,11 +106,28 @@ de:
       first: |-  
         <p class="line1">Das online Steinzeit-Strategiespiel</p>
         <p class="line2">mit Knüppelkriegern und Dinosauriern.</p>
+      second: |-  
+        <p class="line1">Baue Deine Siedlung aus und</p>
+        <p class="line2">hilf Deinem Stamm sich auszubreiten.</p>
+      third: |-  
+        <p class="line1">Revolutionäre Spielkarte mit Landesgrenzen</p>
+        <p class="line2">und witzig animierten Spielfiguren.</p>
+      forth: |-  
+        <p class="line1">Keine Installation, keine Kosten,</p>
+        <p class="line2">einfach jetzt im Browser loslegen.</p>
+      fifth: |-  
+        <p class="line1">Kämpfe mit Deiner Allianz</p>
+        <p class="line2">gegen hunderte anderer Spieler.</p>
+      sixth: |-  
+        <p class="line1">Ziehe Deine Figuren wie auf einem Brettspiel.</p>
+        <p class="line2">Etabliere Grenzen und bestimme wer passieren darf.</p>
+      seventh: |-  
+        <p class="line1">Erringe die Vorherrschaft in Deiner Region</p>
+        <p class="line2">und kassiere Steuern von anderen Spielern.</p>
         
     beta_notice: |-
       Brandneu: <span class="public-beta">Public Beta</span> 1.0<br/>
       <span class="subline">Jetzt testen und kostenlos mitspielen!</span>
-
       
     dialog:
       signin_help: Du hast schon ein Login?

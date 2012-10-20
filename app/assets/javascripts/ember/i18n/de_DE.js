@@ -13,6 +13,7 @@ Portal.I18n.de_DE = function(module) {
     error: {
       stringMissing: "(error: text missing!)",
     },
+    
   };
   
   return module;

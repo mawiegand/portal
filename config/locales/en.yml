@@ -94,6 +94,25 @@ en:
       first: |-  
         <p class="line1">THE stone age online strategy game</p>
         <p class="line2">with clubwarriors and dinosaurs.</p>
+      second: |-  
+        <p class="line1">Build-up your settlement</p>
+        <p class="line2">and help your tribe prosper.</p>
+      third: |-  
+        <p class="line1">Revolutionary map with territory borders</p>
+        <p class="line2">and funny animated gaming pieces.</p>
+      forth: |-  
+        <p class="line1">No installation, no hidden costs,</p>
+        <p class="line2">just start playing with your browser.</p>
+      fifth: |-  
+        <p class="line1">Fight together with your alliance</p>
+        <p class="line2">against hundreds of other players.</p>
+      sixth: |-  
+        <p class="line1">Move your armies like in a classic board game.</p>
+        <p class="line2">Establish borders and decide who may pass.</p>
+      seventh: |-  
+        <p class="line1">Dominate your region of the map</p>
+        <p class="line2">and collect taxes from other players.</p>
+
 
     beta_notice: |-
       Brand new: <span class="public-beta">Public Beta</span> 1.0<br/>

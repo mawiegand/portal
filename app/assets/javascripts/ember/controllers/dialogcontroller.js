@@ -23,6 +23,9 @@ Portal.DialogController = Ember.Object.create(function() {
   
     isLoading: false,
     
+    slogans: ['first', 'second', 'third', 'forth', 'fifth', 'sixth', 'seventh'],
+    presentSlogan: 0,
+    
     init: function() {
       this.fetchRegistrationStatus();
       setInterval((function(self) {
@@ -31,9 +34,36 @@ Portal.DialogController = Ember.Object.create(function() {
         };
       }(this)), 20000);
       
+      setInterval((function(self) {
+        return function() {
+          self.switchSlogan();
+        }
+      }(this)), 10000);
+      
       if (this.get('signinContext')) {
         this.hideBetaSubline();
       }      
+    },
+    
+    switchSlogan: function() {
+      if (this.get('visibility') === Portal.DIALOG_STATE_VISIBLE) {
+        return ; // not this time; it's not visible
+      }
+      var slogans = this.get('slogans');
+      var present = this.get('presentSlogan');
+      var next    = (present+1)%slogans.length;
+      
+      var nslogan = slogans[next];
+      var pslogan = slogans[present];
+
+      $('#slogan-'+pslogan).fadeOut(function() {
+        slogans.forEach(function(item) {
+          $('#slogan-'+item).hide();
+        });
+        $('#slogan-'+nslogan).fadeIn();
+      });
+      
+      this.set('presentSlogan', next);
     },
     
     betaSublineVisibilityObserver: function() {
