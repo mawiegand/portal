@@ -359,8 +359,8 @@ a.minor-link:link,a.minor-link:visited{color:#388da2}
   font-size: 16px;
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   text-align: left;
-  padding: 4px 10px 4px 10px;
-  width: 220px;
+  padding: 3px 0px 0px 4px;
+  width: 199px;
 }
 
 #loginbar .checkbox-div {
@@ -368,22 +368,28 @@ a.minor-link:link,a.minor-link:visited{color:#388da2}
   top: 49px;
 }
 
+input[type=checkbox] {
+  height: 15px;
+}
+
 
 .checkbox {
   width: 14px;
 }
 
-input, .submit-button {
+input {
   border: #333 solid 1px;
   box-shadow: inset 0px 1px 0px rgba(0,0,0,.6), 0px 1px 0px rgba(255,255,255,.2);
   background-color: #DEF;
-  font-size: 20px;
-  width: 220px;
-  padding: 8px;
+  font-size: 18px;
+  width: 189px;
+  padding: 2px 0px 1px 0px;
   color: #ABC;
   border-radius: 5px;
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  height: 30px;
 }
+
 
 input[type=submit] {
   box-shadow: inset 0px 1px 0px rgba(255,255,255,.4), 0px 1px 0px rgba(255,255,255,.2);  
@@ -399,14 +405,28 @@ input[type=submit]#hover {
   background-color: #FAA;
 }
 
-.submit-button {
-  width: 238px;
-  box-shadow: inset 0px 1px 0px rgba(255,255,255,.4), 0px 1px 0px rgba(255,255,255,.2);  
-  background-color: #F80;
-  color: #444;
-  text-shadow: rgba(255,255,255,.5) 0px 1px 0px;
+button.submit-button {
+  background-color: white;
+  border: none;
+  background-image: url('<%= asset_path 'lp/main_button.png' %>');
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  width: 197px;
+  height: 41px;
+    
+  color: #FFF;
+  text-shadow: inset rgba(0,0,0,.5) -1px -1px 0px;
   font-weight: bold;
   cursor: pointer;
+
+  line-height: 20px;
+  font-size: 18px;
+  
+  margin-left: 3px;
+}
+
+button.submit-button:hover {
+  background-position: 0px -44px;
 }
 
 
