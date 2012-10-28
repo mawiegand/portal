@@ -95,9 +95,9 @@ Portal = Ember.Application.create({
     }
     
     // preload hack
-    var img1 = new Image(); img1.src = Portal.Config.CLIENT_BASE + '/assets/splashscreen/ladedame.png';
-    var img2 = new Image(); img2.src = Portal.Config.CLIENT_BASE + '/assets/splashscreen/mapcolor.jpg';
-    var img3 = new Image(); img3.src = Portal.Config.CLIENT_BASE + '/assets/splashscreen/mapsw.jpg';
+    var img1 = new Image(); img1.src = Portal.Config.CLIENT_BASE + '/assets/splashscreen/ladedame_neu.png';
+    var img2 = new Image(); img2.src = Portal.Config.CLIENT_BASE + '/assets/splashscreen/crack_color.jpg';
+    var img3 = new Image(); img3.src = Portal.Config.CLIENT_BASE + '/assets/splashscreen/crack_sw.jpg';
     
   },
 });
