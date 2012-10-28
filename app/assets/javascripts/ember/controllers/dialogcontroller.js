@@ -330,7 +330,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       this.resetError();
       
       
-      this.obtainAccessToken(credentials.get('email'), credentials.get('password'), function(access_token, expiration) {
+      this.obtainAccessToken($.trim(credentials.get('email')), credentials.get('password'), function(access_token, expiration) {
         Portal.Cookie.saveEmail(credentials.get('email'), 7);
         
         window.name = JSON.stringify({
@@ -353,7 +353,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       
         var params = [
           {name: 'nickname_base',         value: 'WackyUser'},
-          {name: 'email',                 value: credentials.get('email')},
+          {name: 'email',                 value: $.trim(credentials.get('email'))},
           {name: 'password',              value: credentials.get('password')},
           {name: 'password_confirmation', value: credentials.get('password')},
           {name: 'client_id',             value: Portal.Config.CLIENT_ID},
@@ -594,7 +594,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         var params = [
           {name: 'client_id',             value: Portal.Config.CLIENT_ID},
           {name: 'client_password',       value: Portal.Config.CLIENT_PASSWORD},
-          {name: 'identifier', value: identifier}  
+          {name: 'identifier',            value: $.trim(identifier)}  
         ];
   
         this.set('isLoading', true);

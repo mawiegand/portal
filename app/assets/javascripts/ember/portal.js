@@ -135,7 +135,7 @@ Portal.Cookie = Ember.Object.create({
   saveEmail: function(email, days) {
     var expires = new Date();
     expires.setDate(expires.getDate() + days);
-    var value = escape(email) + ((expires==null) ? "" : "; expires="+expires.toUTCString());
+    var value = escape($.trim(email)) + ((expires==null) ? "" : "; expires="+expires.toUTCString());
     document.cookie= "wackadoo_email=" + value;
     this.set('email', email);
   }, 
