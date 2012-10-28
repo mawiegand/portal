@@ -10,6 +10,8 @@
 Portal = Ember.Application.create({
   ready: function() {
     
+    Portal.DialogController = Portal.DialogControllerClass.create();
+    
     // binding to ajaxSend in order to modify the accept header
     // of outgoing packages (-> accept only json, no html!)
     $(document).bind('ajaxSend', function(event, xhr) {

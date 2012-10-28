@@ -1,7 +1,7 @@
 /** Controls all logic and dialogs on the title page. Also is responsible to
  * switch between the two modes of that page: title (title image and large 
  * login dialog) and details (detailed information about the game). */
-Portal.DialogController = Ember.Object.create(function() {
+Portal.DialogControllerClass = Ember.Object.extend(function() {
   var mainbarMinHeight = 0;
   var origMargin = 0;
   var origPadding = 0;
@@ -34,11 +34,16 @@ Portal.DialogController = Ember.Object.create(function() {
         };
       }(this)), 20000);
       
-      setInterval((function(self) {
-        return function() {
-          self.switchSlogan();
-        }
-      }(this)), 10000);
+      if (Portal.Config.DISPLAY_SLOGAN) {
+        setInterval((function(self) {
+          return function() {
+            self.switchSlogan();
+          }
+        }(this)), 10000);
+      }
+      else {
+        $(".slogan").hide();
+      }
       
       if (this.get('signinContext')) {
         this.hideBetaSubline();
