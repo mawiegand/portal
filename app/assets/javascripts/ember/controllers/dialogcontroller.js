@@ -338,6 +338,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           expiration:  expiration, 
           locale:      window.current_locale,
           client_id:   Portal.Config.CLIENT_ID,
+          referer:     (window.referer !== undefined && window.referer !== null ? window.referer : null),
         });
         window.location = Portal.Config.CLIENT_URL;   
       });
