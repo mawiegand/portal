@@ -324,8 +324,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     },
     
   
-    signin: function() {
+    signin: function(firstSignin) {
       var credentials = this.get('credentials');
+      firstSignin = firstSignin || false;
 
       this.resetError();
       
@@ -340,7 +341,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           client_id:   Portal.Config.CLIENT_ID,
           referer:     (window.referer !== undefined && window.referer !== null ? window.referer : null),
         });
-        window.location = Portal.Config.CLIENT_URL;   
+        window.location = Portal.Config.CLIENT_URL + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");   
       });
     },
   
@@ -391,7 +392,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
                   self.handlePutOnWaitingList();
                 }
                 else if (self.getPath('registrationStatus.canSignin')) {
-                  self.signin();
+                  self.signin(true);
                 }
                 else {  // cannot do anything else (sign in presently disabled), just inform user has been signed up.
                   self.set('isLoading', false);            
