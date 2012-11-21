@@ -338,9 +338,11 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           accessToken: access_token,
           expiration:  expiration, 
           locale:      window.current_locale,
+          retention:   window.retention,
           client_id:   Portal.Config.CLIENT_ID,
           referer:     (window.referer !== undefined && window.referer !== null ? window.referer : null),
         });
+
         window.location = Portal.Config.CLIENT_URL + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");   
       });
     },

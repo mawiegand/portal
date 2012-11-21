@@ -24,6 +24,10 @@
     window.invitation = "<%= @invitation %>";
 <% end %>
 
+<% if !@retention.nil? %>
+    window.retention = "<%= @retention %>";
+<% end %>
+
     // Google Analytics
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33777536-1']);

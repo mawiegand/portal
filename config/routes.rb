@@ -12,6 +12,7 @@ Portal::Application.routes.draw do
 
     match :index, :to => 'home_page#show'
     match '/invitations/:invitation', :to => 'home_page#show'
+    match '/return/:retention', :to => 'home_page#show'
     match '/new_password/:id/:password_token', :to => 'home_page#show'
   end
 
