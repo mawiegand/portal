@@ -4,14 +4,16 @@ class HomePageController < ApplicationController
   layout 'landing_page'
   
   def show
-    @title         = I18n.t('home_page.welcome')
-    @description   = I18n.t('home_page.meta_description') 
+    @title               = I18n.t('home_page.welcome')
+    @description         = I18n.t('home_page.meta_description') 
     
-    @invitation    = params[:invitation]      if params[:invitation]
-    @retention     = params[:retention]       if params[:retention]
-    @referer       = request.referer          unless request.referer.blank?
-    id             = params[:id]              
-    password_token = params[:password_token]
+    @invitation          = params[:invitation]          if params[:invitation]
+    @player_invitation   = params[:player_invitation]   if params[:player_invitation]
+    @alliance_invitation = params[:alliance_invitation] if params[:alliance_invitation]
+    @retention           = params[:retention]           if params[:retention]
+    @referer             = request.referer              unless request.referer.blank?
+    id                   = params[:id]              
+    password_token       = params[:password_token]
 
     if !id.blank? && !password_token.blank?
       response = HTTParty.get(PORTAL_CONFIG['identity_provider_base_url'] + '/' + I18n.locale.to_s + '/send_password', 

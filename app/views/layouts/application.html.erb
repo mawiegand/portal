@@ -24,6 +24,14 @@
     window.invitation = "<%= @invitation %>";
 <% end %>
 
+<% if !@player_invitation.nil? %>
+    window.playerInvitation = "<%= @player_invitation %>";
+<% end %>
+
+<% if !@alliance_invitation.nil? %>
+    window.allianceInvitation = "<%= @alliance_invitation %>";
+<% end %>
+
 <% if !@retention.nil? %>
     window.retention = "<%= @retention %>";
 <% end %>

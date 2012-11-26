@@ -335,12 +335,14 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         Portal.Cookie.saveEmail(credentials.get('email'), 7);
         
         window.name = JSON.stringify({
-          accessToken: access_token,
-          expiration:  expiration, 
-          locale:      window.current_locale,
-          retention:   window.retention,
-          client_id:   Portal.Config.CLIENT_ID,
-          referer:     (window.referer !== undefined && window.referer !== null ? window.referer : null),
+          accessToken:        access_token,
+          expiration:         expiration, 
+          locale:             window.current_locale,
+          retention:          window.retention,
+          playerInvitation:   (window.playerInvitation !== undefined && window.playerInvitation !== null ? window.playerInvitation : null),
+          allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
+          client_id:          Portal.Config.CLIENT_ID,
+          referer:            (window.referer !== undefined && window.referer !== null ? window.referer : null),
         });
 
         window.location = Portal.Config.CLIENT_URL + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");   
