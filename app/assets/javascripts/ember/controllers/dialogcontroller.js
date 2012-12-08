@@ -330,12 +330,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
       this.resetError();
       
-      if (JSON === undefined && window.JSON === undefined) {
-        alert('Your browser is to old. Please update to a newer version that supports HTML5.');
+      if (window.JSON === undefined) {
         window.location = Portal.Config.SERVER_ROOT + (window.locale_path_frag || "") + "/browser.html";
-      }
-      if (JSON === undefined || window.JSON === undefined) {
-        alert('Your browser is to old. Please update to a newer version that supports HTML5.' + JSON + " : " + window.JSON);  
       }
       
       this.obtainAccessToken($.trim(credentials.get('email')), credentials.get('password'), function(access_token, expiration) {
