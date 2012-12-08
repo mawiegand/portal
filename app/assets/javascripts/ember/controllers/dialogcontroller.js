@@ -331,7 +331,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       this.resetError();
       
       if (window.JSON === undefined) {
-        window.location = Portal.Config.SERVER_ROOT + (window.locale_path_frag || "") + "/browser.html";
+        window.location = Portal.Config.SERVER_ROOT + "/browser.html";
       }
       
       this.obtainAccessToken($.trim(credentials.get('email')), credentials.get('password'), function(access_token, expiration) {
