@@ -16,7 +16,8 @@ gem 'httparty'
 
 gem 'will_paginate', '~> 3.0.0'
 
-gem 'therubyracer'          # missing javascript runtime
+gem 'therubyracer', '>= 0.11.0'          # missing javascript runtime
+gem 'libv8'
 
 group :production do
   gem 'pg'
