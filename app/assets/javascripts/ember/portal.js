@@ -4,7 +4,6 @@
 #= require_tree ./views
 #= require_tree ./controllers
 #= require_tree ./helpers
-#= require_tree ./templates
 #= require_tree ./i18n
 
 Portal = Ember.Application.create({
@@ -94,6 +93,13 @@ Portal = Ember.Application.create({
       }
     }
     
+    if (Portal.Cookie.get('referer') == null) {
+      Portal.Cookie.setReferer(window.referer, 28);
+    }
+    else {
+      Portal.Cookie.restoreReferer();
+    }
+    
     // preload hack
     var img1 = new Image(); img1.src = Portal.Config.CLIENT_BASE + '/assets/splashscreen/ladedame_neu.png';
     var img2 = new Image(); img2.src = Portal.Config.CLIENT_BASE + '/assets/splashscreen/crack_color.jpg';
@@ -111,10 +117,12 @@ Portal.DIALOG_TYPE_PASSWORD = 2;
 
 Portal.Cookie = Ember.Object.create({
   email: null,
+  referer: null,
   
   init: function() {
     this._super();
     this.set('email', this.restoreEmail());
+    this.set('referer', this.restoreReferer());
   },
   
   restoreEmail: function() {
@@ -136,8 +144,32 @@ Portal.Cookie = Ember.Object.create({
     var expires = new Date();
     expires.setDate(expires.getDate() + days);
     var value = escape($.trim(email)) + ((expires==null) ? "" : "; expires="+expires.toUTCString());
-    document.cookie= "wackadoo_email=" + value;
+    document.cookie = "wackadoo_email=" + value;
     this.set('email', email);
   }, 
 
+  restoreReferer: function() {
+    console.log('---> restoreReferer', document.cookie, window.referer, this.get('referer'));
+    var i,x,y, cookies=document.cookie.split(";");
+    for (i=0; i< cookies.length; i++) {
+      x=cookies[i].substr(0,cookies[i].indexOf("="));
+      y=cookies[i].substr(cookies[i].indexOf("=")+1);
+      x=x.replace(/^\s+|\s+$/g,"");
+      if (x=='wackadoo_referer') {
+        var referer = unescape(y);
+        this.set('referer', referer)
+        return referer;
+      }
+    }
+    return null;
+  },
+
+  setReferer: function(referer, days) {
+    var expires = new Date();
+    expires.setDate(expires.getDate() + days);
+    var value = escape($.trim(referer)) + ((expires==null) ? "" : "; expires="+expires.toUTCString());
+    document.cookie = "wackadoo_referer=" + value;
+    this.set('referer', referer);
+    console.log('---> saveReferer', document.cookie, window.referer, this.get('referer'));
+  }, 
 });

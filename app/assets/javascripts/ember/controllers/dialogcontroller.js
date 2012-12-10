@@ -342,7 +342,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           playerInvitation:   (window.playerInvitation !== undefined && window.playerInvitation !== null ? window.playerInvitation : null),
           allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
           client_id:          Portal.Config.CLIENT_ID,
-          referer:            (window.referer !== undefined && window.referer !== null ? window.referer : null),
+          referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
         });
 
         window.location = Portal.Config.CLIENT_URL + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");   
@@ -377,8 +377,10 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/identities/',
           data: params,
           beforeSend: function(xhr) {
-            if (window.referer !== undefined && window.referer !== null) {
-              xhr.setRequestHeader('X-Alt-Referer', window.referer);
+            var referer = Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer;
+
+            if (referer !== undefined && referer !== null) {
+              xhr.setRequestHeader('X-Alt-Referer', referer);
             }
           },
           success: function(data, textStatus, jqXHR) {
