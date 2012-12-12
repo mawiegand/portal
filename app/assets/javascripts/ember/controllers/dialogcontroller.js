@@ -346,7 +346,10 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
           client_id:          Portal.Config.CLIENT_ID,
           referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
+          requestUrl:         Portal.Cookie.get('requestUrl'), 
         });
+
+        Portal.Cookie.deleteReferer();
 
         window.location = Portal.Config.CLIENT_URL + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");   
       });
@@ -384,6 +387,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
             if (referer !== undefined && referer !== null) {
               xhr.setRequestHeader('X-Alt-Referer', referer);
+            }
+            if (Portal.Cookie.get('requestUrl') !== null) {
+              xhr.setRequestHeader('X-Alt-Request', Portal.Cookie.get('requestUrl'));
             }
           },
           success: function(data, textStatus, jqXHR) {
@@ -624,7 +630,6 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
-            log('---> error');
             self.set('isLoading', false);
             self.set('passwordTokenNotSent', true);
           }

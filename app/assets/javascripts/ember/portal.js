@@ -93,8 +93,8 @@ Portal = Ember.Application.create({
       }
     }
     
-    if (Portal.Cookie.get('referer') == null) {
-      Portal.Cookie.setReferer(window.referer, 28);
+    if (Portal.Cookie.get('referer') == null && window.referer) {
+      Portal.Cookie.setReferer(window.referer, window.location.href, 28);
     }
     else {
       Portal.Cookie.restoreReferer();
@@ -118,11 +118,12 @@ Portal.DIALOG_TYPE_PASSWORD = 2;
 Portal.Cookie = Ember.Object.create({
   email: null,
   referer: null,
+  urlParams: null,
   
   init: function() {
     this._super();
     this.set('email', this.restoreEmail());
-    this.set('referer', this.restoreReferer());
+    this.restoreReferer();
   },
   
   restoreEmail: function() {
@@ -149,27 +150,46 @@ Portal.Cookie = Ember.Object.create({
   }, 
 
   restoreReferer: function() {
-    console.log('---> restoreReferer', document.cookie, window.referer, this.get('referer'));
+    console.log('---> restoreReferer', document.cookie, window.referer, this.get('referer'), window.location.search, this.get('requestUrl'));
     var i,x,y, cookies=document.cookie.split(";");
     for (i=0; i< cookies.length; i++) {
       x=cookies[i].substr(0,cookies[i].indexOf("="));
       y=cookies[i].substr(cookies[i].indexOf("=")+1);
       x=x.replace(/^\s+|\s+$/g,"");
-      if (x=='wackadoo_referer') {
+      if (x == 'wackadoo_referer') {
         var referer = unescape(y);
         this.set('referer', referer)
-        return referer;
+      }
+      if (x == 'wackadoo_request_url') {
+        var requestUrl = unescape(y);
+        this.set('requestUrl', requestUrl)
       }
     }
-    return null;
   },
 
-  setReferer: function(referer, days) {
+  setReferer: function(referer, requestUrl, days) {
     var expires = new Date();
     expires.setDate(expires.getDate() + days);
+    
     var value = escape($.trim(referer)) + ((expires==null) ? "" : "; expires="+expires.toUTCString());
     document.cookie = "wackadoo_referer=" + value;
     this.set('referer', referer);
-    console.log('---> saveReferer', document.cookie, window.referer, this.get('referer'));
-  }, 
+    
+    if (requestUrl != null) {
+      value = escape($.trim(requestUrl)) + ((expires==null) ? "" : "; expires="+expires.toUTCString());
+      document.cookie = "wackadoo_request_url=" + value;
+      this.set('requestUrl', requestUrl)
+    }
+  },
+  
+  deleteReferer: function() {
+    var expires = new Date();
+    expires.setDate(expires.getDate() - 1);
+    
+    document.cookie = "wackadoo_referer=null; expires="+expires.toUTCString();
+    this.set('referer', null);
+    
+    document.cookie = "wackadoo_request_url=null; expires="+expires.toUTCString();
+    this.set('requestUrl', null)
+  } 
 });
