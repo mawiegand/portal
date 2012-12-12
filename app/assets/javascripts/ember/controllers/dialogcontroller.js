@@ -384,12 +384,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           data: params,
           beforeSend: function(xhr) {
             var referer = Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer;
-
             if (referer !== undefined && referer !== null) {
               xhr.setRequestHeader('X-Alt-Referer', referer);
             }
-            if (Portal.Cookie.get('requestUrl') !== null) {
-              xhr.setRequestHeader('X-Alt-Request', Portal.Cookie.get('requestUrl'));
+            var requestUrl = Portal.Cookie.get('requestUrl');
+            if (requestUrl !== undefined && requestUrl !== null) {
+              xhr.setRequestHeader('X-Alt-Request', requestUrl);
             }
           },
           success: function(data, textStatus, jqXHR) {
