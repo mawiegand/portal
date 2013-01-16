@@ -16,7 +16,7 @@ gem 'httparty'
 
 gem 'will_paginate', '~> 3.0.0'
 
-gem 'therubyracer', '>= 0.11.0'          # missing javascript runtime
+gem 'therubyracer', '>= 0.11.2'          # missing javascript runtime
 gem 'libv8'
 
 group :production do
@@ -31,7 +31,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '1.0.19'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
