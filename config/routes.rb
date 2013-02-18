@@ -18,8 +18,10 @@ Portal::Application.routes.draw do
     match '/invitations/:invitation',                  :to => 'home_page#show'
     match '/player_invitation/:player_invitation',     :to => 'home_page#show'
     match '/alliance_invitation/:alliance_invitation', :to => 'home_page#show'
-    match '/new_password/:id/:password_token',         :to => 'home_page#show'    
-    
+    match '/new_password/:id/:password_token',         :to => 'home_page#show'
+
+    # redirect for setting referer id directly in url http://wack-a-doo.de/r/1234
+    match '/r/:r' => redirect { |p| "?r=#{p[:r]}" }
   end
 
   root :to => 'home_page#show'
