@@ -52,3 +52,18 @@ production:
   redirector_url:   'http://wack-a-doo.de/identity_provider/redirect_to'
 
 
+staging:
+  <<: *defaults
+
+  identity_provider_base_url: 'https://staging-test.wack-a-doo.de/identity_provider'
+  client_base_url: 'https://staging-test.wack-a-doo.de/client'
+
+  client_id:       'WACKADOOHTML5'
+  client_password: 'wacky'
+
+  ingame_news_url:  'https://staging-test.wack-a-doo.de/game_server/fundamental/announcements?language=all'
+
+  redirector_url:   'http://staging-test.wack-a-doo.de/identity_provider/redirect_to'
+
+
+

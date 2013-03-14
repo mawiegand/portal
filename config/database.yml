@@ -32,3 +32,10 @@ production:
   port: 5432
   username: run-po
   host: portal.wack-a-doo.de
+
+staging_test:
+  adapter: postgresql
+  encoding: UTF8
+  database: portal
+  port: 5686
+  username: run-po
