@@ -52,7 +52,7 @@ production:
   redirector_url:   'http://wack-a-doo.de/identity_provider/redirect_to'
 
 
-staging:
+staging_test:
   <<: *defaults
 
   identity_provider_base_url: 'https://staging-test.wack-a-doo.de/identity_provider'
