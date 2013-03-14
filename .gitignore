@@ -16,3 +16,5 @@
 *DS_Store
 
 /config/thin_local.yml
+
+/.idea/
