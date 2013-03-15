@@ -32,8 +32,15 @@ namespace :deploy do
   
   task :precompile do
     run "cd #{release_path}; RAILS_ENV=#{stage} bundle exec rake assets:precompile"
-  end  
-  
+  end
+
+  desc "Reset DB"
+  task :reset do
+    run "cd #{current_path}; bundle exec rake RAILS_ENV=\"#{stage}\" db:reset"
+    restart
+    exit
+  end
+
   desc "Restart Thin"
   task :restart, :roles => :app, :except => { :no_release => true } do
     stop
