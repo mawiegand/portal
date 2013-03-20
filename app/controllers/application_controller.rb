@@ -25,13 +25,20 @@ class ApplicationController < ActionController::Base
     # Set the locale according to the user specified locale or to the default
     # locale, if not specified or specified is not available.
     def set_locale
-      I18n.locale = get_locale_from_params || I18n.default_locale
+      I18n.locale = get_locale_from_params || get_locale_from_domain || I18n.default_locale
+      I18n.locale
     end
-    
+
     # Checks whether the user specified locale is available.
-    def get_locale_from_params 
+    def get_locale_from_params
       return nil unless params[:locale]
       I18n.available_locales.include?(params[:locale].to_sym) ? params[:locale] : nil
     end
-  
+
+    # Checks whether the user specified locale is available.
+    def get_locale_from_domain
+      new_locale = PORTAL_CONFIG['domains_with_locale'][request.host_with_port]
+      I18n.available_locales.include?(new_locale.to_sym) ? new_locale : nil
+    end
+
 end

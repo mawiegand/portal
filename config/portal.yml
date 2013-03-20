@@ -1,24 +1,30 @@
 defaults: &defaults
   
-  identity_provider_base_url: 'https://localhost/identity_provider'
-  client_base_url: 'https://localhost/client'
+  identity_provider_base_url: '/identity_provider'
+  client_base_url: '/client'
   
   client_id:       'WACKADOOHTML5'
   client_password: 'wacky'
   
   requested_scopes: 'payment 5dentity wackadoo'
   
-  ingame_news_url:  'https://localhost/game_server/fundamental/announcements?language=all'
+  ingame_news_url:  '/game_server/fundamental/announcements?language=all'
   
-  redirector_url:   'http://localhost/identity_provider/redirect_to'
+  redirector_url:   'http://testdomain/identity_provider/redirect_to'
 
+  domains_with_locale:
+    'wack-a-doo.de':  de
+    'wack-a-doo.com': en
   
 development:
   <<: *defaults
   
   ingame_news_url:  'https://gs02.wack-a-doo.de/game_server/fundamental/announcements?language=all'
 
-  
+  domains_with_locale:
+    'localhost':  de
+    'testdomain': en
+
 test:
   <<: *defaults
 
@@ -36,7 +42,9 @@ staging:
 
   redirector_url:   'http://test1.wack-a-doo.de/identity_provider/redirect_to'
 
-  
+  domains_with_locale:
+    'test1.wack-a-doo.de':  de
+    'test1.wack-a-doo.com': en
 
 production:
   <<: *defaults
