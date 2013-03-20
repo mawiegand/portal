@@ -150,7 +150,7 @@ Portal.Cookie = Ember.Object.create({
   }, 
 
   restoreReferer: function() {
-    console.log('---> restoreReferer', document.cookie, window.referer, this.get('referer'), window.location.search, this.get('requestUrl'));
+    console.log('---> restoreReferer', Portal.Config, document.cookie, window.referer, this.get('referer'), window.location.search, this.get('requestUrl'));
     var i,x,y, cookies=document.cookie.split(";");
     for (i=0; i< cookies.length; i++) {
       x=cookies[i].substr(0,cookies[i].indexOf("="));

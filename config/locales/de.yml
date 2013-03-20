@@ -62,6 +62,7 @@ de:
       subject: Dein neues Passwort
      
   home_page:
+    test_round_warning: "Achtung, private Testrunde! Zur Hauptrunde geht's hier:"
     processing: Sende...
     welcome: Kostenloses Steinzeitspiel | Willkommen!
     meta_description: Wack-a-Doo ist das brandneue Browser-Strategiespiel mit witzig animierten Einheiten auf der Spielkarte, leicht durchgedrehten Höhlenmenschen und Dinosauriern.    

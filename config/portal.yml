@@ -1,16 +1,16 @@
 defaults: &defaults
   
-  identity_provider_base_url: '/identity_provider'
-  client_base_url: '/client'
+  identity_provider_path:  '/identity_provider'
+  client_base_url:         '/client'
+
+  client_id:               'WACKADOOHTML5'
+  client_password:         'wacky'
   
-  client_id:       'WACKADOOHTML5'
-  client_password: 'wacky'
+  requested_scopes:        'payment 5dentity wackadoo'
   
-  requested_scopes: 'payment 5dentity wackadoo'
+  ingame_news_url:         '/game_server/fundamental/announcements?language=all'
   
-  ingame_news_url:  '/game_server/fundamental/announcements?language=all'
-  
-  redirector_url:   'http://testdomain/identity_provider/redirect_to'
+  redirector_url:          'http://testdomain/identity_provider/redirect_to'
 
   domains_with_locale:
     'wack-a-doo.de':  de
@@ -19,7 +19,7 @@ defaults: &defaults
 development:
   <<: *defaults
   
-  ingame_news_url:  'https://gs02.wack-a-doo.de/game_server/fundamental/announcements?language=all'
+  ingame_news_url:         'https://gs02.wack-a-doo.de/game_server/fundamental/announcements?language=all'
 
   domains_with_locale:
     'localhost':  de
@@ -31,16 +31,13 @@ test:
 staging:
   <<: *defaults
 
-  identity_provider_base_url: 'https://test1.wack-a-doo.de/identity_provider'
-  client_base_url: 'https://test1.wack-a-doo.de/client'
+  client_id:               'WACKADOOHTML5-TESTROUND2'
+  client_password:         'wackytest2'
+  requested_scopes:        'payment 5dentity wackadoo-testround2'
 
-  client_id:        'WACKADOOHTML5-TESTROUND2'
-  client_password:  'wackytest2'
-  requested_scopes: 'payment 5dentity wackadoo-testround2'
+  ingame_news_url:         '/game_server/fundamental/announcements?language=all'
 
-  ingame_news_url:  'https://test1.wack-a-doo.de/game_server/fundamental/announcements?language=all'
-
-  redirector_url:   'http://test1.wack-a-doo.de/identity_provider/redirect_to'
+  redirector_url:          'http://test1.wack-a-doo.de/identity_provider/redirect_to'
 
   domains_with_locale:
     'test1.wack-a-doo.de':  de
@@ -49,7 +46,6 @@ staging:
 production:
   <<: *defaults
 
-  identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
   client_base_url:  'https://gs02.wack-a-doo.de/client'
 
   client_id:        'WACKADOOHTML5-ROUND2'   # this must be also created in the identity provider to assign correct scopes to users
@@ -64,7 +60,6 @@ production:
 staging_test:
   <<: *defaults
 
-  identity_provider_base_url: 'https://staging-test.wack-a-doo.de/identity_provider'
   client_base_url: 'https://staging-test.wack-a-doo.de/client'
 
   client_id:       'WACKADOOHTML5'

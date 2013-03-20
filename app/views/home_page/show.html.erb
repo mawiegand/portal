@@ -50,7 +50,7 @@
   
   <% if Rails.env == "staging" %>
   <div style="position: relative; top: -60px; height: 0px; font-size: 24px;">
-    Achtung, private Testrunde! Zur Hauptrunde geht's hier: <a href="https://wack-a-doo.de">https://wack-a-doo.de</a>
+    <%= raw I18n.t 'home_page.test_round_warning' %> <a href="https://wack-a-doo.de">https://wack-a-doo.de</a>
   </div>
   <% end %>
   
@@ -289,7 +289,9 @@
     <% if I18n.locale == :de %>
       <li><a href="http://forum.uga-agga.de/wack-a-doo-f235/" target="_blank"><%= I18n.t 'menue.forum' %></a></li>
       <li><a href="http://wiki.wack-a-doo.de/" target="_blank"><%= I18n.t 'menue.wiki' %></a></li>
-    <% end %> 
+    <% elsif I18n.locale == :en %>
+      <li><a href="http://wiki.wack-a-doo.com/" target="_blank"><%= I18n.t 'menue.wiki' %></a></li>
+    <% end %>
     <li><a href="/agb.html" target="_blank"><%= I18n.t 'menue.agb' %></a></li>
     <li><a href="/datenschutz.html" target="_blank"><%= I18n.t 'menue.datenschutz' %></a></li>
     <li><a href="/legal.html"><%= I18n.t 'menue.legal' %></a></li>

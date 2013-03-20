@@ -16,7 +16,7 @@ class HomePageController < ApplicationController
     password_token       = params[:password_token]
 
     if !id.blank? && !password_token.blank?
-      response = HTTParty.get(PORTAL_CONFIG['identity_provider_base_url'] + '/' + I18n.locale.to_s + '/send_password', 
+      response = HTTParty.get(PORTAL_CONFIG['identity_provider_path'] + '/' + I18n.locale.to_s + '/send_password',
                    :query   => {:id              => id,
                                 :password_token  => password_token,
                                 :client_id       => PORTAL_CONFIG['client_id'],
