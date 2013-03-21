@@ -340,7 +340,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         window.name = JSON.stringify({
           accessToken:        access_token,
           expiration:         expiration, 
-          locale:             window.current_locale,
+          locale:             window.currentLocale,
           retention:          window.retention,
           playerInvitation:   (window.playerInvitation !== undefined && window.playerInvitation !== null ? window.playerInvitation : null),
           allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
@@ -380,7 +380,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     
         $.ajax({
           type: 'POST',
-          url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/identities/',
+          url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.localePathFrag || "") + '/identities/',
           data: params,
           beforeSend: function(xhr) {
             var referer = Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer;
@@ -499,7 +499,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
   
       $.ajax({
         type: 'POST',
-        url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/oauth2/access_token',
+        url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.localePathFrag || "") + '/oauth2/access_token',
         beforeSend: function(xhr) {
           if (window.referer !== undefined && window.referer !== null) {
             xhr.setRequestHeader('X-Alt-Referer', window.referer);
@@ -576,7 +576,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
       $.ajax({
         type: 'GET',
-        url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/clients/' + Portal.Config.CLIENT_ID,
+        url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.localePathFrag || "") + '/clients/' + Portal.Config.CLIENT_ID,
         data: params,
         beforeSend: function(xhr) {
           if (window.referer !== undefined && window.referer !== null) {
@@ -618,7 +618,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
   
         $.ajax({
           type: 'GET',
-          url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.locale_path_frag || "") + '/send_password_token',
+          url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.localePathFrag || "") + '/send_password_token',
           data: params,
           success: function(data, textStatus, jqXHR) {
             self.set('isLoading', false);

@@ -7,13 +7,13 @@
   <%end%>
   <script>
   
-    var path_fragments = {
+    var pathFragments = {
       'de_DE': '/de',
-      'en_EN': '/en',
+      'en_US': '/en',
     }
   
-    window.current_locale = "<%=I18n.t 'locale' %>";
-    window.locale_path_frag = path_fragments[window.current_locale] || '/de'; // must change this to en as soon as internationalization is working
+    window.currentLocale = "<%= I18n.t 'locale' %>";
+    window.localePathFrag = pathFragments[window.currentLocale] || '/de'; // must change this to en as soon as internationalization is working
     window.startMsg = "<%= @message %>";
     
 <% if @referer %>

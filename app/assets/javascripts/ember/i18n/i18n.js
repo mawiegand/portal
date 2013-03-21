@@ -5,7 +5,7 @@ Portal.I18n = function(module) {
 
   module.lookupTranslation = function(path, index) {
     if (path === undefined || path === null) return "" ;
-    var locale = window.current_locale || Portal.Config.DEFAULT_LOCALE
+    var locale = window.currentLocale || Portal.Config.DEFAULT_LOCALE
     if (!Portal.I18n[locale]) return "(NO TRANSLATION FOR "+locale+" LOADED.)";
     path = "localizedStrings." + path;   
     var string = Ember.getPath(Portal.I18n[locale], path);
