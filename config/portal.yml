@@ -31,9 +31,9 @@ staging:
 
   client_base_url:         'https://test1.wack-a-doo.com/client'
 
-  client_id:               'WACKADOOHTML5-TESTROUND2'
-  client_password:         'wackytest2'
-  requested_scopes:        'payment 5dentity wackadoo-testround2'
+  client_id:               'WACKADOOHTML5-TESTROUND3'
+  client_password:         'wackytest3'
+  requested_scopes:        'payment 5dentity wackadoo-testround3'
 
   ingame_news_url:         '/game_server/fundamental/announcements?language=all'
 
