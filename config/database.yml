@@ -39,3 +39,10 @@ staging_test:
   database: portal_staging_test
   port: 5686
   username: run-po
+
+testround2:
+  adapter: postgresql
+  encoding: UTF8
+  database: portal_testround2
+  port: 5686
+  username: run-po
