@@ -68,8 +68,8 @@ testround2:
 
   client_base_url:         'https://testround2.wack-a-doo.de/client'
 
-  client_id:               'WACKADOOHTML5'
-  client_password:         'wacky'
+  client_id:               'WACKADOOHTML5-TESTROUND2'
+  client_password:         'wackytest2'
 
   ingame_news_url:         'https://testround2.wack-a-doo.de/game_server/fundamental/announcements?language=all'
 
