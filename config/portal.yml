@@ -62,3 +62,14 @@ staging_test:
   client_password:         'wacky'
 
   ingame_news_url:         'https://staging-test.wack-a-doo.de/game_server/fundamental/announcements?language=all'
+
+testround2:
+  <<: *defaults
+
+  client_base_url:         'https://testround2.wack-a-doo.de/client'
+
+  client_id:               'WACKADOOHTML5'
+  client_password:         'wacky'
+
+  ingame_news_url:         'https://testround2.wack-a-doo.de/game_server/fundamental/announcements?language=all'
+
