@@ -64,7 +64,7 @@ staging_test:
   ingame_news_url:         'https://staging-test.wack-a-doo.de/game_server/fundamental/announcements?language=all'
 
 
-production:
+round2:
   <<: *defaults
 
   client_base_url:         'https://backup-round2.wack-a-doo.de/client'
