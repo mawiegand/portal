@@ -1,10 +1,10 @@
-//= require_self
-//= require_tree ./config
-//= require_tree ./models
-//= require_tree ./views
-//= require_tree ./controllers
-//= require_tree ./helpers
-//= require_tree ./i18n
+#= require_self
+#= require_tree ./config
+#= require_tree ./models
+#= require_tree ./views
+#= require_tree ./controllers
+#= require_tree ./helpers
+#= require_tree ./i18n
 
 Portal = Ember.Application.create({
   ready: function() {
