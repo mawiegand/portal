@@ -67,6 +67,8 @@ staging_test:
 round2:
   <<: *defaults
 
+  identity_provider_path:  '/identity_provider'
+
   client_base_url:         'https://backup-round2.wack-a-doo.de/client'
 
   client_id:               'WACKADOOHTML5-ROUND2'   # this must be also created in the identity provider to assign correct scopes to users
