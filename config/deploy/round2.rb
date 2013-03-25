@@ -4,3 +4,5 @@ role :db,  "backup-round2.wack-a-doo.de", :primary => true        # This is wher
 
 set :rails_env, 'round2'
 set :port, 5775                                            # until 5775 is working!
+
+set :deploy_to,  '/var/www/portal_round2'
