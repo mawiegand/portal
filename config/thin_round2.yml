@@ -8,7 +8,7 @@ require: []
 
 environment: round2
 max_persistent_conns: 512
-servers: 8
+servers: 2
 daemonize: true
 chdir: /var/www/portal_round2/current
 socket: /var/run/portal_round2.sock
