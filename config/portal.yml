@@ -62,3 +62,17 @@ staging_test:
   client_password:         'wacky'
 
   ingame_news_url:         'https://staging-test.wack-a-doo.de/game_server/fundamental/announcements?language=all'
+
+
+production:
+  <<: *defaults
+
+  client_base_url:         'https://backup-round2.wack-a-doo.de/client'
+
+  client_id:               'WACKADOOHTML5-ROUND2'   # this must be also created in the identity provider to assign correct scopes to users
+  client_password:         'wacky2'
+  requested_scopes:        'payment 5dentity wackadoo-round2'
+
+  ingame_news_url:         'https://backup-round2.wack-a-doo.de/game_server/fundamental/announcements?language=all'
+
+

@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 
-set :stages, %w(production staging staging_test)
+set :stages, %w(production staging staging_test round2)
 set :default_stage, "staging"
 
 require "capistrano/ext/multistage"
