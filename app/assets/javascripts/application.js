@@ -11,3 +11,6 @@
 //= require ember/portal
 //= require_tree .
 
+//= require jquery.smooth-scroll.min
+//= require lightbox
+
