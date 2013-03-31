@@ -22,7 +22,7 @@
       <div id="invitation-notice" title="Du bist über einen persönlichen Einladungslink gekommen. Solange Du diesen Vermerk hier siehst, kannst Du sicher sein, dass Dir mit der Einladung vermerkte Vorteile bei einer Neuanmeldung gutgeschrieben werden.">
         Aktive Einladung:<br/> <%= @invitation %>
       </div>
-    <% end %>
+    <% end %>    
     <div id="beta-notice">
       <%= raw I18n.t 'home_page.beta_notice' %>
     </div>
@@ -47,6 +47,10 @@
     <h1 id="slogan-seventh" class="slogan" style="display: none;">
       <%= raw I18n.t 'home_page.slogans.seventh' %>
     </h1>
+    
+    <div class="title-screenshot top"><a alt="" href="<%= asset_path 'about/screenshot2large.png' %>" rel="lightbox[screenshots]" ><img class="large-screenshot" alt="" src="<%= asset_path 'lp/title.jpg' %>" /></a><div class="title">screenshots</div></div>
+    <div class="title-screenshot bottom"><a alt="" href="<%= asset_path 'about/screenshot2large.png' %>" rel="lightbox[screenshots]" ><img class="large-screenshot" alt="" src="<%= asset_path 'lp/title.jpg' %>" /></a></div>
+    
   </div>
 </div>
 
@@ -110,12 +114,12 @@
         <div class="panel-row panel-top-ruler">
           <div class="panel-column" id="column-r3c1">
             <h1><%= I18n.t 'home_page.about.box4.title' %></h2>
-            <a alt="" href="<%= asset_path 'about/screenshot2large.png' %>" rel="lightbox" title="world map with visible, animated armies"><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot2.png' %>" /></a>
-            <a alt="" href="<%= asset_path 'about/screenshot3large.png' %>" target="_blank"><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot3.png' %>" /></a>
-            <a alt="" href="<%= asset_path 'about/screenshot4large.png' %>" target="_blank"><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot4.png' %>" /></a>
-            <a alt="" href="<%= asset_path 'about/screenshot5large.png' %>" target="_blank"><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot5.png' %>" /></a>
-            <a alt="" href="<%= asset_path 'about/screenshot6large.png' %>" target="_blank"><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot6.png' %>" /></a>
-            <a alt="" href="<%= asset_path 'about/screenshot8large.png' %>" target="_blank"><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot8.png' %>" /></a>
+            <a alt="" href="<%= asset_path 'about/screenshot2large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot2.png' %>" /></a>
+            <a alt="" href="<%= asset_path 'about/screenshot3large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot3.png' %>" /></a>
+            <a alt="" href="<%= asset_path 'about/screenshot4large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot4.png' %>" /></a>
+            <a alt="" href="<%= asset_path 'about/screenshot5large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot5.png' %>" /></a>
+            <a alt="" href="<%= asset_path 'about/screenshot6large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot6.png' %>" /></a>
+            <a alt="" href="<%= asset_path 'about/screenshot8large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot8.png' %>" /></a>
           </div><div class="panel-column" id="column-r3c2">
             <h1><%= I18n.t 'home_page.about.box5.title' %></h1>
             <p><%=raw(I18n.t 'home_page.about.box5.body') %></p>
@@ -208,20 +212,8 @@
               <span>Arno Möller, Bremerhaven</span>
             </div>              
             
-            <div class="team-member">
-              <a href="http://www.twitter.com/JulianSchmid" target="_blank">
-                <img src="<%= asset_path 'team/julian.jpg' %>" />
-              </a>
-              <span>Julian Schmid, Freiburg</span>
-            </div>
-    
-            <div class="team-member">
-              <a href="#">
-                <img class="selfmade" src="<%= asset_path 'team/max.jpg' %>" />
-              </a>
-              <span>Max Buck, Freiburg</span>
-            </div>   
 
+    
             <div class="team-member">
               <a href="http://www.mohr-media.de" target="_blank">
                 <img src="<%= asset_path 'team/thomas.jpg' %>" />
@@ -243,10 +235,7 @@
               <span>Marcel Wiegand, Osnabrück</span>
             </div>              
             
-            <div class="team-member">
-              <img class="selfmade" src="<%= asset_path 'team/elena.jpg' %>" />
-              <span>Elena, Freiburg</span>
-            </div>              
+             
             
             <div class="team-member">
               <img class="selfmade" src="<%= asset_path 'team/parastou.jpg' %>" />
@@ -260,15 +249,59 @@
               <span>Anand, Freiburg</span>
             </div>              
             
-            <div class="clearfix"></div>
             
-            <h1><%= I18n.t 'home_page.about.team.former_members' %></h1>
+            
             <div class="team-member">
               <a href="http://www.david-canela.com" target="_blank">
                 <img src="<%= asset_path 'team/david.jpg' %>" />
               </a>
               <span>David Canela, Basel</span>
-            </div>   
+            </div>
+            
+            <div class="team-member">
+              <img src="<%= asset_path 'team/sockenpuppe.jpg' %>" />
+              <span>Christian Wansart, Osnabrück</span>
+            </div>
+            
+            <div class="team-member">
+              <img src="<%= asset_path 'team/sockenpuppe.jpg' %>" />
+              <span>Matteo Bottin, Freiburg</span>
+            </div>
+            
+            <div class="team-member">
+              <img src="<%= asset_path 'team/sockenpuppe.jpg' %>" />
+              <span>Jan Hendrik Kegel, Freiburg</span>
+            </div>
+            
+            
+            
+            <div class="clearfix"></div>
+            
+            <h1><%= I18n.t 'home_page.about.team.former_members' %></h1>
+            
+            <div class="team-member">
+              <a href="http://www.twitter.com/JulianSchmid" target="_blank">
+                <img src="<%= asset_path 'team/julian.jpg' %>" />
+              </a>
+              <span>Julian Schmid, Freiburg</span>
+            </div>
+            
+            <div class="team-member">
+              <img class="selfmade" src="<%= asset_path 'team/elena.jpg' %>" />
+              <span>Elena, Freiburg</span>
+            </div>
+            
+            <div class="team-member">
+              <a href="#">
+                <img class="selfmade" src="<%= asset_path 'team/max.jpg' %>" />
+              </a>
+              <span>Max Buck, Freiburg</span>
+            </div>
+            
+
+
+
+
 
             
           </div>

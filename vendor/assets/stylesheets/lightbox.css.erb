@@ -95,6 +95,7 @@
   background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
   /* Trick IE into showing hover */
   display: block;
+  -webkit-transition-property: none;
 }
 
 /* line 72, ../sass/lightbox.sass */
@@ -111,12 +112,12 @@
 
 /* line 81, ../sass/lightbox.sass */
 .lb-prev:hover {
-  background: url(<%= asset_path 'prev.png' %>) left 48% no-repeat;
+ /* background: url('<%= asset_path 'prev.png' %>') left 48% no-repeat;*/
 }
 
 /* line 85, ../sass/lightbox.sass */
 .lb-next:hover {
-  background: url(<%= asset_path 'next.png' %>) right 48% no-repeat;
+ /* background: url('<%= asset_path 'next.png' %>') right 48% no-repeat;*/
 }
 
 /* line 88, ../sass/lightbox.sass */
