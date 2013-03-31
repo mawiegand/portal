@@ -295,10 +295,21 @@ p {
 
 #figures .title-screenshot .title {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  left: 0px;
   color: white;
+  font-size: 22px;
   text-shadow: 1px 1px #777;
+  visibility: hidden;
+}
+
+#figures .title-screenshot.bottom .title {
+  position: absolute;
+  top: 0px;
+  left: -10px;
+  color: #BBB;
+  font-size: 22px;
+  text-shadow: 1px 1px #333;
   visibility: hidden;
 }
 
@@ -718,6 +729,7 @@ img.selfmade {
   position:  absolute;
   top:  0;
   left: 0;
+  z-index: 1000;
 }
 
 /** static stuff **/
