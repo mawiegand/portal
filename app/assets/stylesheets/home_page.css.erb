@@ -732,19 +732,83 @@ img.selfmade {
   z-index: 1000;
 }
 
-/** static stuff **/
-section.static-content {
+
+.static-content-page {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 26px;
+  text-shadow: none;
+  text-align: left;
+    
   margin: 0px auto;
   padding: 0px;
-  color: #555;
   background-color: white;
-  text-align: center;
   max-width: 800px;
 }
 
+
+.static-content-page h1 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  font-weight: lighter;
+  font-size: 24px;
+  line-height: 40px;
+  margin: 48px 0 16px 0;
+  color: #777;
+  border-bottom-color: #EEE;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+
+.static-content-page h2 {
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  margin: 12px 0 9px 0;
+  color: #666;
+  border-bottom-color: #EEE;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+
+#legal-page h1 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#legal-page .abs-positioner {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+}
+
+#legal-page img {
+  position: absolute;
+  top: -4px;
+  width: 160px;
+  left: -180px;
+}
+
+.static-content-page p {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  font-weight: lighter;
+  margin: 9px 0px;
+  font-size: 13px;
+}
+
+
+
+/** static stuff **/
+section.static-content {
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 380px;
+}
+
 .static-content#licenses {
-  margin-top: 100px;
-  margin-bottom: 120px;
+  width: 780px;
 }
 
 
@@ -755,5 +819,9 @@ section.static-content {
 }
 
 .static-content ul li {
+  margin: 0px;
+  padding: 0px;
+  line-height: 15px;
+
 }
 
