@@ -335,7 +335,7 @@
     <li><%= link_to I18n.t('menue.agb'), :controller => :static, :action => :legal, :anchor => :terms %></li>
     <li><%= link_to I18n.t('menue.imprint'), :controller => :static, :action => :legal %></li>
     <li>
-      {{#if controller.context }}
+      {{#if controller.signinContext }}
         <a href="#" {{action "showSignup"}}><%= I18n.t 'menue.signup' %></a>
       {{else}}
         <a href="#" {{action "showSignin"}}><%= I18n.t 'menue.signin' %></a>
