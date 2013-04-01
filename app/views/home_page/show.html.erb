@@ -1,6 +1,8 @@
 <div class="center" id="language-switch">
   <div id="top-controls">
-    <a href="/en">en</a> | <a href="/de">de</a> &nbsp; &nbsp;
+    
+    <%= link_to "en", params.merge(locale: :en) %> |
+    <%= link_to "de", params.merge(locale: :de) %> &nbsp; &nbsp;
     <a href="http://www.facebook.com/pages/Wackadoo/239722582763809" target="_blank" id="facebook-link" >&nbsp;</a>
     <img class="img-preloader" src="<%= asset_path 'lp/fb-hover.png' %>">
   </div>
@@ -330,9 +332,8 @@
     <% elsif I18n.locale == :en %>
       <li><a href="http://wiki.wack-a-doo.com/" target="_blank"><%= I18n.t 'menue.wiki' %></a></li>
     <% end %>
-    <li><a href="/agb.html" target="_blank"><%= I18n.t 'menue.agb' %></a></li>
-    <li><a href="/datenschutz.html" target="_blank"><%= I18n.t 'menue.datenschutz' %></a></li>
-    <li><a href="/legal.html"><%= I18n.t 'menue.legal' %></a></li>
+    <li><%= link_to I18n.t('menue.agb'), :controller => :static, :action => :legal, :anchor => :terms %></li>
+    <li><%= link_to I18n.t('menue.imprint'), :controller => :static, :action => :legal %></li>
     <li>
       {{#if controller.context }}
         <a href="#" {{action "showSignup"}}><%= I18n.t 'menue.signup' %></a>

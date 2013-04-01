@@ -22,9 +22,9 @@ en:
     forum: Forum
     support: Support
     tof: Terms of Use
-    agb: ToS
+    agb: Terms
     datenschutz: Privacy Policy
-    legal: Legal
+    imprint: Imprint
     signin: Sign In
     signup: Sing Up
     signout: Sign Out
@@ -47,7 +47,7 @@ en:
     email: Email
     password: Password
     signup: Free Sign Up
-    accept_terms: accept <a href="agb.html" target="_blank">terms of service</a>
+    accept_terms: accept <a href="/legal#terms">terms of service</a>
     signin: Sign In
     reset: Request Password
     email_or_nickname: Email 

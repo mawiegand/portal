@@ -44,7 +44,7 @@ de:
     forum: Forum
     support: Hilfe
     tof: Nutzungsbedingungen
-    legal: Impressum
+    imprint: Impressum
     agb: AGB
     datenschutz: Datenschutzerklärung
     signin: Login
@@ -69,7 +69,7 @@ de:
     email: Email
     password: Passwort
     signup: Anmelden
-    accept_terms: Ich akzeptiere die <a href="agb.html" target="_blank">AGB</a>
+    accept_terms: Ich akzeptiere die <a href="/legal#terms">AGB</a>
     signin: Login
     reset: Passwort anfordern
     email_or_nickname: Email 
