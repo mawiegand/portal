@@ -221,6 +221,18 @@ en:
         intro: You can find us at these partner sites and social networks. Visit us, like us and vote for us!
         
         
+  legal:
+    imprint_heading: LEGAL NOTICE
+    terms_heading: TERMS OF SERVICE (AGB) OF 5D LAB GMBH
+    privacy_heading: PRIVACY NOTICE
+    software_heading: 3RD PARTY SOFTWARE
+    address_heading: Office
+    contact_heading: Contact
+    representatives: Legal Representatives
+    hrb_heading: Handelsregister
+    vat: VAT Reg No
+    tmg_heading: Responsible Editor      
+        
   announcement:
     title: Latest announcements
     no_news: Currently no latest announcements

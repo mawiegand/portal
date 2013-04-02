@@ -5,10 +5,4 @@ class StaticController < ApplicationController
   def legal
   end
 
-  def agb
-  end
-
-  def privacy
-  end
-
 end

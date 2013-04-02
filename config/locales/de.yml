@@ -230,6 +230,19 @@ de:
       vote:
         title: Besucht uns auf...
         intro: Auf diesen Partnerseiten und sozialen Netzwerken sind wir aktiv. Besucht uns, liked uns und voted für uns!
+      
+  legal:
+    imprint_heading: IMPRESSUM
+    terms_heading: ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB) DER 5D LAB GMBH
+    privacy_heading: DATENSCHUTZERKLÄRUNG
+    software_heading: EINGESETZE FREMDSOFTWARE
+    address_heading: Geschäftsadresse
+    contact_heading: Kontakt
+    representatives: Geschäftsführer
+    hrb_heading: Handelsregister
+    vat: Umsatzsteuer-ID
+    tmg_heading: Inhaltlich verantwortlich
+    
         
   announcement:
     title: Neuste Ankündigungen

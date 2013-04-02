@@ -1,7 +1,7 @@
 <div id="legal-page" class="static-content-page">
   
 
-  <h1>IMPRESSUM</h1>
+  <h1><%= I18n.t 'legal.imprint_heading' %></h1>
 
   <div class="abs-positioner">
     <img src="<%= asset_path '5dlogo.png' %>" />
@@ -9,13 +9,13 @@
 
   <section id="contact" class="static-content">
     
-    <h2>Geschäftsadresse</h2>
+    <h2><%= I18n.t 'legal.address_heading' %></h2>
     <p>
       5D Lab GmbH<br>
       Georges-Köhler-Allee 79<br>
       D-79110 Freiburg</p>
 
-    <h2>Kontakt</h2>
+    <h2><%= I18n.t 'legal.contact_heading' %></h2>
     <p>
       Tel: +49 761 203 8043<br>
       Fax: +49 761 203 8007</p>
@@ -29,19 +29,19 @@
 
   <section id="hrb" class="static-content">
 
-    <h2>Geschätsführer:</h2>
+    <h2><%= I18n.t 'legal.representatives' %></h2>
     <p>
       Dr. Patrick Fox, Dr. Sascha Lange, Hajo Runne</p>
 
-    <h2>Handelsregister</h2>
+    <h2><%= I18n.t 'legal.hrb_heading' %></h2>
     <p>
       Amtsgericht Freiburg, HRB: 708164</p>
     
-    <h2>Umsatzsteuer-ID</h2>
+    <h2><%= I18n.t 'legal.vat' %></h2>
     <p>
       DE282148373</p>
 
-    <h2>Inhaltlich Verantwortlich</h2>
+    <h2><%= I18n.t 'legal.tmg_heading' %></h2>
     <p>
       Hajo Runne <a href="mailto:hajo@5dlab.com">hajo@5dlab.com</a></p>
 
@@ -49,7 +49,7 @@
   
   <div style="clear: both;"></div>
   
-  <h1 id="terms">ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB) DER 5D LAB GMBH</h1>
+  <h1 id="terms"><%= I18n.t 'legal.terms_heading' %></h1>
 
   <section id="agb1" class="static-content">
 
@@ -176,7 +176,7 @@
   <div style="clear: both;"></div>
   
   
-  <h1>DATENSCHUTZERKLÄRUNG</h1>
+  <h1><%= I18n.t 'legal.privacy_heading' %></h1>
 
   <section id="privacy1"  class="static-content">
   
@@ -237,7 +237,7 @@
   <div style="clear: both;"></div>
   
 
-  <h1>EINGESETZTE SOFTWARE</h1>
+  <h1><%= I18n.t 'legal.software_heading' %></h1>
 
   <section id="licenses"  class="static-content">
     <ul>
