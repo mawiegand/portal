@@ -330,8 +330,10 @@
     <% if I18n.locale == :de %>
       <li><a href="http://forum.uga-agga.de/wack-a-doo-f235/" target="_blank"><%= I18n.t 'menue.forum' %></a></li>
       <li><a href="http://wiki.wack-a-doo.de/" target="_blank"><%= I18n.t 'menue.wiki' %></a></li>
+      <li><a href="http://blog.5dlab.com/" target="_blank"><%= I18n.t 'menue.blog' %></a></li>
     <% elsif I18n.locale == :en %>
       <li><a href="http://wiki.wack-a-doo.com/" target="_blank"><%= I18n.t 'menue.wiki' %></a></li>
+      <li><a href="http://blog.5dlab.com/?lang=en" target="_blank"><%= I18n.t 'menue.blog' %></a></li>
     <% end %>
     <li><%= link_to I18n.t('menue.agb'), :controller => :static, :action => :legal, :anchor => :terms %></li>
     <li><%= link_to I18n.t('menue.imprint'), :controller => :static, :action => :legal %></li>
