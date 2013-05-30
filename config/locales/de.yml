@@ -146,17 +146,18 @@ de:
       box1:
         title: Wack-a-was?!
         body: |-
-          Wack-a-Doo ist ein MMO Strategiespiel, mit
+          Wack-A-Doo ist ein MMO Strategiespiel, mit
           leicht durchgedrehten
           Höhlenmenschen. Hilf Deinem Stamm sich auszubreiten; ob friedlich oder
-          kriegerisch entscheidest allein Du. In naher Zukunft wirst Du die Spielwelt
-          von überall zu jederzeit betreten können; mit einem Browser, iPhone oder iPad.
+          kriegerisch entscheidest allein Du. Du kannst die Spielwelt
+          von überall zu jederzeit betreten; mit einem Browser, iPhone, iPad oder
+          iPod touch.
           
       box2:
         title: Was ist anders?
         body: |-
           Bei uns sind die Einheiten auf der Karte sichtbar  und teleportieren
-          nicht einfach von A nach B wie bei anderen MMO Spielen. Es fühlt sich
+          nicht einfach von A nach B wie bei anderen MMO Spielen. Wack-A-Doo fühlt sich
           mehr wie ein Brettspiel an, das Du mit tausend Leuten spielst. Die Community
           steht stärker im Vordergrund als in anderen Spielen.
           Und: Wir haben Dinosaurier. Niemand
@@ -180,6 +181,24 @@ de:
           Du mit kleinen Geldbeträgen Zeit sparen und kleine Boni erhalten.
           Eine faire Balance zwischen diesen Vorteilen und der kostenlosen Teilnahme ist
           dabei unser Leitmotiv.
+          
+      box10:
+        title: Jau! Äh, wie kann ich denn überhaupt mitspielen?
+        body: |-
+          Du kannst jetzt sofort mitspielen, indem Du Dich gleich hier mit Deiner
+          Emailadresse anmeldest oder unsere App für iPhone, iPad und iPhone touch 
+          herunterlädst. Die Anmeldung
+          ist völlig gefahrlos und ohne versteckte Kosten; keine Waschmaschine,
+          kein Abo, kein gar nichts. Wenn Dir das Spiel nicht
+          gefällt, musst Du nichts weiter unternehmen. Dein Account wird nach einiger Zeit
+          Inaktivität automatisch gelöscht.</p>
+          <p>Wir unterstützen alle gängigen Browser - halbwegs aktuelle Versionen von
+          Chrome, Safari und Internet Explorer (ab 9) funktionieren. Wunderbar
+          läuft es auch unter Opera Next. Am Schreibtisch und in der Mittagspause ;-) empfehlen
+          wir den Zugang per Standrechner und Browser - dann sind alle Funktionen
+          inklusive Chat verfügbar. Für einen gemütlichen Abend auf dem Sofa,
+          das Bett, die Vorlesung und natürlich das Klo können wir - nach ausgiebigen Labortests - 
+          unsere iPad App oder ein Notebook mit Browser sehr empfehlen. Unterwegs? iPhone App!</p>
 
       more_details: "Soweit ok, aber erzählt mir mehr Details..."
 
@@ -197,16 +216,19 @@ de:
         title: True Cross-Plattform
         body: |-
             Wack-A-Doo wird von Beginn an als echtes Cross-Plattform-Spiel entwickelt.
-            Befehlige Deine Truppen ab sofort in Deinem Browser. Unser moderner HTML5
-            Client benötigt keine Plugins; kein Flash, kein gar nichts. 
-            In naher Zukunft wirst Du zudem von überall, von jedem Gerät auf die
-            Spielwelt zugreifen können. Ob 
-            PC oder Smartphone ist egal, alle spielen im selben Spiel!</p>
-            <p>Noch in diesem Winter werden wir native Apps für Apple iOS anbieten. 
+            Befehlige Deine Truppen an einem Standrechner oder auf einem Laptop
+            in Deinem Browser. Unser moderner <b>Browser</b>
+            Client benötigt keine Plugins; kein Flash, kein Silverlight, nur reines HTML5. 
+            Außerdem bieten wir eine <b>native App für iPhone, iPad und iPod touch</b> an. 
+            </p><p>
             Wir legen Wert 
-            darauf, dass alle Eigenheiten der einzelnen Geräte berücksichtigt werden,
-            und werden das Gameplay auf das jeweilige Gerät abstimmen, so 
-            dass es sich für Dich unabhängig von der Plattform immer genau richtig anfühlt. 
+            darauf, dass alle Eigenheiten der einzelnen Geräte berücksichtigt werden
+            und stimmen das Gameplay und die Nutzerführung auf das jeweilige Gerät ab, so 
+            dass es sich für Dich unabhängig von der Plattform immer genau richtig anfühlt.
+            </p>
+            <p>Du kannst von überall, von jedem Gerät auf die
+            Spielwelt zugreifen. Ob 
+            Browser am PC, iPhone, iPad oder iPod touch ist egal, <b>alle spielen im selben Spiel!</b>
 
       box8:
         title: What do I need to play?
@@ -218,11 +240,22 @@ de:
       box9:
         title: Wer seid Ihr eigentlich?
         body: |-
-              Wir sind große Fans der Browser-Strategiespiele. Einige von uns waren in 2002 an der Entwicklung des Open-Source Spiels <a href="http://www.uga-agga.com/">Uga Agga</a> beteiligt und haben damals mitgeholfen, das Genre in Deutschland zu definieren. Nach über 10 Jahren hat Uga Agga auch heute noch eine sehr loyale und aktive Talgemeinschaft. 
-              Jetzt haben wir uns wieder <a target="_blank" href="http://www.5dlab.com">zusammen getan</a> und wollen die Entwicklung nicht nur eine Stufe weiter treiben.</p>
-              <p> Wir sind  ein kleines Team, haben  aber einige revolutionäre Features in Planung. 
-              Ihr könnt sicher sein, die
-              Einheiten endlich auf die Karte zu stellen ist dabei nur der erste Schritt. Es bleibt spannend!
+              Im Kern sind wir ein kleines Team von Brwoserspielverrückten, bestehend
+              aus drei Informatik-Nerds, einem ausgebildeten Game Designer
+              und einem Versicherungsvertreter (Yeah!). Einige Artists, Freiberufler, 
+              Praktikanten und Studenten unterstützen uns oder werden von Zeit zu
+              Zeit beauftragt. Wir sind als Spieleentwickler nicht ganz grün hinter 
+              den Ohren, sondern haben bereits in 2002 mit
+              <a href="http://www.uga-agga.com/">Uga Agga</a> ein sehr erfoglreiches
+              Browserspiel entwickelt, als Open Source veröffentlicht und so mitgeholfen,
+              das Genre nach Deutschland zu bringen.</p>
+              <p>Nun haben wir uns entschieden, aus dem Hobby ein 
+              <a href="http://www.5dlab.com" target="_blank">Vollzeitprojekt</a>
+              zu machen und mit dem Cross-Platform Game Wack-A-Doo ein Spiel zu entwickeln, 
+              das wir selber gerne Spielen würden. Wir sind noch ein gutes Stück davon
+              entfernt, dass wir mit dem Spiel unseren Lebensunterhalt bestreiten
+              können, sind aber zuversichtlich, es gemeinsam, mit der Hilfe unserer Unterstützer 
+              und der Community, zu schaffen.
       team:
         title: Team
         former_members: Ehemalige

@@ -49,9 +49,10 @@
     <h1 id="slogan-seventh" class="slogan" style="display: none;">
       <%= raw I18n.t 'home_page.slogans.seventh' %>
     </h1>
-    
+
+<!--    
     <div class="title-screenshot top"><a alt="" href="<%= asset_path 'about/screenshot2large.png' %>" rel="lightbox[screenshots]" ><img class="large-screenshot" alt="" src="<%= asset_path 'lp/title.jpg' %>" /><div class="title">screenshots</div></a></div>
-    <div class="title-screenshot bottom"><a alt="" href="http://youtu.be/ETVnI0SXia4" target="_blank" ><img class="large-screenshot" alt="" src="<%= asset_path 'lp/video.png' %>" /><div class="title">gameplay video</div></a></div>
+    <div class="title-screenshot bottom"><a alt="" href="http://youtu.be/ETVnI0SXia4" target="_blank" ><img class="large-screenshot" alt="" src="<%= asset_path 'lp/video.png' %>" /><div class="title">gameplay video</div></a></div> -->
     
   </div>
 </div>
@@ -128,6 +129,17 @@
           </div>
         </div>
         <div class="panel-row panel-top-ruler">
+          <h1><%= I18n.t 'home_page.about.box10.title' %></h1>
+          <div class="panel-column" id="column-r10c1">
+            <p><%=raw(I18n.t 'home_page.about.box10.body') %></p>
+          </div><div class="panel-column" id="column-r10c2">
+            <img src="<%= asset_path 'about/items.png' %>" alt="" />
+          </div>
+        </div>
+
+
+
+        <div class="panel-row panel-top-ruler">
           <p style="margin-top:-20px;"><%= I18n.t 'home_page.about.more_details' %></p>
 
           <div class="panel-column" id="column-r4c1">
@@ -137,6 +149,7 @@
             <img src="<%= asset_path 'about/items.png' %>" alt="" />
           </div>
         </div>
+
         <div class="panel-row panel-top-ruler larger-font"><div class="panel-column" id="column-r5c2">
             <img src="<%= asset_path 'about/devices.png' %>" alt="" />
           </div><div class="panel-column" id="column-r5c1">
@@ -237,22 +250,6 @@
               <span>Marcel Wiegand, Osnabrück</span>
             </div>              
             
-             
-            
-            <div class="team-member">
-              <img class="selfmade" src="<%= asset_path 'team/parastou.jpg' %>" />
-              <span>Parastou, Freiburg</span>
-            </div>              
-            
-            <div class="team-member">
-              <a href="http://www.facebook.com/anand.baumunk" target="_blank">
-                <img class="selfmade" src="<%= asset_path 'team/anand.png' %>" />
-              </a>
-              <span>Anand, Freiburg</span>
-            </div>              
-            
-            
-            
             <div class="team-member">
               <a href="http://www.david-canela.com" target="_blank">
                 <img src="<%= asset_path 'team/david.jpg' %>" />
@@ -280,6 +277,18 @@
             <div class="clearfix"></div>
             
             <h1><%= I18n.t 'home_page.about.team.former_members' %></h1>
+            
+            <div class="team-member">
+              <a href="http://www.facebook.com/anand.baumunk" target="_blank">
+                <img class="selfmade" src="<%= asset_path 'team/anand.png' %>" />
+              </a>
+              <span>Anand, Freiburg</span>
+            </div>
+            
+            <div class="team-member">
+              <img class="selfmade" src="<%= asset_path 'team/parastou.jpg' %>" />
+              <span>Parastou, Freiburg</span>
+            </div>
             
             <div class="team-member">
               <a href="http://www.twitter.com/JulianSchmid" target="_blank">
@@ -327,10 +336,12 @@
     <li><a href="#" {{action "aboutClicked"}}><%= I18n.t 'menue.about' %></a></li>
 	<li><%= link_to I18n.t('menue.news'), announcements_path %></li>
     <% if I18n.locale == :de %>
-      <li><a href="http://forum.uga-agga.de/wack-a-doo-f235/" target="_blank"><%= I18n.t 'menue.forum' %></a></li>
+      <li><a href="http://forum.wack-a-doo.com/" target="_blank"><%= I18n.t 'menue.forum' %></a></li>
       <li><a href="http://wiki.wack-a-doo.de/" target="_blank"><%= I18n.t 'menue.wiki' %></a></li>
+      <li><a href="http://blog.5dlab.com/" target="_blank"><%= I18n.t 'menue.blog' %></a></li>
     <% elsif I18n.locale == :en %>
       <li><a href="http://wiki.wack-a-doo.com/" target="_blank"><%= I18n.t 'menue.wiki' %></a></li>
+      <li><a href="http://blog.5dlab.com/?lang=en" target="_blank"><%= I18n.t 'menue.blog' %></a></li>
     <% end %>
     <li><%= link_to I18n.t('menue.agb'), :controller => :static, :action => :legal, :anchor => :terms %></li>
     <li><%= link_to I18n.t('menue.imprint'), :controller => :static, :action => :legal %></li>

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>" >
 <head>
   <title>Wack-a-Doo<%= @title.blank? ? "" : " | #{@title}"  %></title>
   <%if @description%>
     <meta name="description" content="<%= @description %>" />
   <%end%>
   <link rel="shortcut icon" href="/assets/logo.ico" type="image/x-icon" />
+  <meta name="google" content="notranslate">
   <script>
   
     var pathFragments = {
