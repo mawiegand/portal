@@ -129,6 +129,17 @@
           </div>
         </div>
         <div class="panel-row panel-top-ruler">
+          <h1><%= I18n.t 'home_page.about.box10.title' %></h1>
+          <div class="panel-column" id="column-r10c1">
+            <p><%=raw(I18n.t 'home_page.about.box10.body') %></p>
+          </div><div class="panel-column" id="column-r10c2">
+            <img src="<%= asset_path 'about/items.png' %>" alt="" />
+          </div>
+        </div>
+
+
+
+        <div class="panel-row panel-top-ruler">
           <p style="margin-top:-20px;"><%= I18n.t 'home_page.about.more_details' %></p>
 
           <div class="panel-column" id="column-r4c1">
@@ -138,6 +149,7 @@
             <img src="<%= asset_path 'about/items.png' %>" alt="" />
           </div>
         </div>
+
         <div class="panel-row panel-top-ruler larger-font"><div class="panel-column" id="column-r5c2">
             <img src="<%= asset_path 'about/devices.png' %>" alt="" />
           </div><div class="panel-column" id="column-r5c1">
@@ -238,22 +250,6 @@
               <span>Marcel Wiegand, Osnabrück</span>
             </div>              
             
-             
-            
-            <div class="team-member">
-              <img class="selfmade" src="<%= asset_path 'team/parastou.jpg' %>" />
-              <span>Parastou, Freiburg</span>
-            </div>              
-            
-            <div class="team-member">
-              <a href="http://www.facebook.com/anand.baumunk" target="_blank">
-                <img class="selfmade" src="<%= asset_path 'team/anand.png' %>" />
-              </a>
-              <span>Anand, Freiburg</span>
-            </div>              
-            
-            
-            
             <div class="team-member">
               <a href="http://www.david-canela.com" target="_blank">
                 <img src="<%= asset_path 'team/david.jpg' %>" />
@@ -281,6 +277,18 @@
             <div class="clearfix"></div>
             
             <h1><%= I18n.t 'home_page.about.team.former_members' %></h1>
+            
+            <div class="team-member">
+              <a href="http://www.facebook.com/anand.baumunk" target="_blank">
+                <img class="selfmade" src="<%= asset_path 'team/anand.png' %>" />
+              </a>
+              <span>Anand, Freiburg</span>
+            </div>
+            
+            <div class="team-member">
+              <img class="selfmade" src="<%= asset_path 'team/parastou.jpg' %>" />
+              <span>Parastou, Freiburg</span>
+            </div>
             
             <div class="team-member">
               <a href="http://www.twitter.com/JulianSchmid" target="_blank">
