@@ -183,17 +183,17 @@ de:
           dabei unser Leitmotiv.
           
       box10:
-        title: Jau! Äh, wie kann ich denn überhaupt mitspielen?
+        title: Wie kann ich denn überhaupt mitspielen?
         body: |-
           Du kannst jetzt sofort mitspielen, indem Du Dich gleich hier mit Deiner
           Emailadresse anmeldest oder unsere App für iPhone, iPad und iPhone touch 
           herunterlädst. Die Anmeldung
           ist völlig gefahrlos und ohne versteckte Kosten; keine Waschmaschine,
-          kein Abo, kein gar nichts. Wenn Dir das Spiel nicht
+          kein Abo, kein Risiko. Wenn Dir das Spiel nicht
           gefällt, musst Du nichts weiter unternehmen. Dein Account wird nach einiger Zeit
           Inaktivität automatisch gelöscht.</p>
           <p>Wir unterstützen alle gängigen Browser - halbwegs aktuelle Versionen von
-          Chrome, Safari und Internet Explorer (ab 9) funktionieren. Wunderbar
+          Chrome, Safari, Firefox und Internet Explorer (ab 9) funktionieren. Wunderbar
           läuft es auch unter Opera Next. Am Schreibtisch und in der Mittagspause ;-) empfehlen
           wir den Zugang per Standrechner und Browser - dann sind alle Funktionen
           inklusive Chat verfügbar. Für einen gemütlichen Abend auf dem Sofa,
@@ -231,11 +231,41 @@ de:
             Browser am PC, iPhone, iPad oder iPod touch ist egal, <b>alle spielen im selben Spiel!</b>
 
       box8:
-        title: What do I need to play?
+        title: Steuern und Gebietsherrschaft
         body: |-
-            The current release of Whack-a-doo it as a html5 browser game
-            (Internet Explorer, Firefox, Chrome, Safari). A native iOS
-            Client is next.
+            Schon mal davon geträumt, von Deinem Chef Steuern zu kassieren? Bei
+            Wack-A-Doo geht das!</p><p>In Wack-A-Doo kannst Du Gebiete (Spielfelder)
+            wie bei einem Brettspiel
+            erobern und besitzen. Dies erlaubt Dir, den Zugang zu darin liegenden
+            Siedlungen zu kontrollieren und Steuern von ihren Besitzern zu erheben.
+            Du kannst zusammen mit Deiner Allianz große Flächen 
+            erobern und ein Reich begründen, dessen Außengrenzen auf der Karte
+            sichtbar sind. Ist Euer Reich groß genug, gewinnt Ihr die Runde.
+
+      box11:
+        title: Unglaubliche Community
+        body: |-
+          Wack-A-Doo umgibt eine kleine aber feine, in über 10 Jahren gereifte 
+          Community. Der Umgangston in Chat und Forum ist - fast Steinzeit 
+          untypisch - freundlich, oft auch unter Gegnern. Noch kann man sich
+          ohne Helm in den "Global"-Chat trauen. Viele Spieler sind 
+          sehr hilfsbereit und Niederlagen werden - nach einem kurzen Urschrei - 
+          sportlich und mit Humor genommen. Ein paar Trolle sind natürlich auch
+          bei uns zu finden; sie sind schnell identifiziert und eignen sich hervorragend
+          zum gemeinsamen Knüppeleinschlagen. 
+            
+      box12:
+        title: Ständige Weiterentwicklung
+        body: |-
+          Wack-A-Doo wird ständig weiterentwickelt und erhält laufend neue Spielinhalte.
+          Du nimmst also an einem ständig wachsenden Spiel teil, das Dir immer
+          wieder Neues bieten wird und so über Monate keine Langeweile aufkommen
+          lassen wird. Gerade geplant sind z.B. die Einführung von Abenteuern und Helden,
+          mit denen Du Dich höchstpersönlich in der Spielwelt bewegen kannst.</p><p>
+          Und das Beste an Allem ist: Du kannst unmittelbar an der Entwicklung
+          teilhaben. Die Entwickler von Wack-A-Doo stehen sind in Spiel und Chat
+          anzutreffen und halten ständigen Kontakt zu den Spielern.
+    
 
       box9:
         title: Wer seid Ihr eigentlich?
