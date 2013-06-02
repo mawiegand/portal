@@ -50,6 +50,8 @@ de:
     signin: Login
     signup: Registrieren
     signout: Abmelden
+    annals: Annalen
+    
      
   mailing:
     validation:
@@ -294,6 +296,52 @@ de:
         title: Besucht uns auf...
         intro: Auf diesen Partnerseiten und sozialen Netzwerken sind wir aktiv. Besucht uns, liked uns und voted für uns!
       
+
+  annals:
+    heading: Annalen von Wack-A-Doo
+    introduction: |-
+      <p>Dies sind die Annalen von Wack-a-Doo. In jeder Spielrunde haben alle Spieler
+         und alle Allianzen die Chance, eine herausragende spielerische Leistung an 
+         den Tag zu legen, die Community aktiv zu unterstützen und die Runde zu Gewinnen.
+         Hier sammeln wir alle solchen außergewöhnlichen Beiträge und Ereignisse. Dies
+         geschieht in 
+         Bewunderung vor der Leistung einzelner, aber auch um diese einzigartige
+         Community als Ganzes zu ehren.
+      <p>Fang jetzt an zu spielen, werde Teil der Community und gehe eines Tages selbst
+         in die Annalen des Spiels ein.</p>
+    round: Runde
+    legends:
+      heading: Legenden
+      explanation: |-
+        Jede Runde wird (mindestens) ein Spieler oder eine Spielerin in den Rang
+        einer unsterblichen Legende erhoben - seit Runde 2 Du öffentliche Abstimmung.
+    winners:
+      heading: Gewinner vergangener Runden
+      explanation: |-
+        Jede Spielrunde von Wack-A-Doo wird von mindestens einer Allianz gewonnen, indem
+        sie als erste Allianz eine der alternativen Siegbedingungen erreicht.
+    supporters:
+      heading: Unterstützer
+      explanation: |-
+        Spieler und Allianzen können den "Unterstützer" Status erhalten. Dieser
+        Ehrentitel wird für herausragende Leistungen in der Community, für monetäre
+        oder ideelle Hilfe bei der Spielentwicklung verliehen. Du möchtest ein 
+        Unterstützer von Wack-A-Doo werden?
+           <a href="mailto:info@5dlab.com">Kontaktiere uns!</a>
+    customize:
+      heading: Bestimme das Aussehen Deines Eintrages! 
+      intro: Du oder Deine Allianz erscheint auf dieser Seite? Gestalte Deinen Eintrag
+      image: |-
+        Du erscheinst automatisch mit dem Avatar den Du zur Zeit der Eintragserstellung
+        verwendet hast. Alternativ kannst Du uns ein Bild zusenden, das in Deinem 
+        Eintrag erscheinen soll. 256x256 Pixel, PNG, Du musst der Urheber sein und uns
+        die Verwendung auf unbestimmte Zeit erlauben.
+      name: Wähle den Namen (InGame oder real) mit dem Du erscheinen möchtest.
+      link: |-
+        Wähle eine Webseite, ein Profil (facebook, twitter, ...) oder eine Emailaddresse, die wir verlinken sollen.
+      contact_us: Kontaktiere uns einfach mit Deinen Wünschen.
+      disclaimer: Alle Materialien müssen zum Spiel passen; die abschließende Entscheidung über die Veröffentlichung trifft das Wack-A-Doo Team.
+
   legal:
     imprint_heading: IMPRESSUM
     terms_heading: ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB) DER 5D LAB GMBH

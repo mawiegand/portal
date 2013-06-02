@@ -11,6 +11,7 @@ Portal::Application.routes.draw do
     resources :home_page,     :only => [ :show ]
 
     match '/legal',                                    :to => 'static#legal'
+    match '/annals',                                   :to => 'static#annals'
 
     match :index,                                      :to => 'home_page#show'
     match '/invitations/:invitation',                  :to => 'home_page#show'

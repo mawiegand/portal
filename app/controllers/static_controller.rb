@@ -4,5 +4,8 @@ class StaticController < ApplicationController
   
   def legal
   end
+  
+  def annals
+  end
 
 end

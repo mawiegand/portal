@@ -28,6 +28,7 @@ en:
     signin: Sign In
     signup: Sing Up
     signout: Sign Out
+    annals: Annals
     
   mailing:
     validation:
@@ -219,7 +220,44 @@ en:
       vote:
         title: Visit us on...
         intro: You can find us at these partner sites and social networks. Visit us, like us and vote for us!
-        
+   
+  annals:
+    heading: Annals of Wack-A-Doo
+    introduction: |-
+      <p>These are the annals of Wack-A-Doo. Each round players and alliances have the
+         oppotunity to show exceptional performances, support the community and team
+         or simply win the game. Here, we collect all such achievements in awe of
+         individual behavior and to honor this great community as a whole.</p>
+      <p>Start playing now, join the community, and-one day-become part of these Annals yourself!</p>
+    round: Round
+    legends:
+      heading: Legends
+      explanation: |-
+        Each round (at least) one player is promoted to being an immortal "Legend"; since round 2 by popular vote.
+    winners:
+      heading: Past Winners
+      explanation: |-
+        Each round of Wack-A-Doo is won by at least one alliance reaching one of several
+           alternative victory conditions.
+    supporters:
+      heading: Supporters
+      explanation: |-
+        Players and Alliance can be granted the status of being "supporters". 
+           This honour title is granted for exceptional community service, monetary or
+           ideal help to the developers. You wanna become a Wack-A-Doo supporter?
+           <a href="mailto:info@5dlab.com">Contact us!</a>
+    customize:
+      heading: Customize Your Entry! 
+      intro: You or your alliance are on this page? You can customize your entry
+      image: |-
+        As default, you will appear with the avatar as used at the time your
+        entry was generated. Alternatively, you can send-in an image you want to appear with your entry. 256x256 pixels, PNG, you most
+        hold the copyright and allow us to publish it for an idefinite time.
+      name: Choose the name (InGame or real) you want to appear with.
+      link: |-
+        Choose a website, profile (facebook, twitter, ...) or email-address we should link your entry to.
+      contact_us: Just contact us with your wishes.
+      disclaimer: All material must fit into the game; the last decision about publication is on the Wack-A-Doo team.
         
   legal:
     imprint_heading: LEGAL NOTICE
