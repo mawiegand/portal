@@ -24,7 +24,10 @@
       <div id="invitation-notice" title="Du bist über einen persönlichen Einladungslink gekommen. Solange Du diesen Vermerk hier siehst, kannst Du sicher sein, dass Dir mit der Einladung vermerkte Vorteile bei einer Neuanmeldung gutgeschrieben werden.">
         Aktive Einladung:<br/> <%= @invitation %>
       </div>
-    <% end %>    
+    <% end %>
+    <div id="app-store-button">
+      <img src="<%= asset_path 'lp/appstore.png' %>">
+    </div>
     <div id="beta-notice">
       <%= raw I18n.t 'home_page.beta_notice' %>
     </div>
