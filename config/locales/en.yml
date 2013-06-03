@@ -187,12 +187,16 @@ en:
               for its individual properties. We adapt the gameplay carefully
               to every single platform, so it'll feel just right to you.
       box8:
-        title: What do I need to play?
+        title: Taxes and Areas of Control
         body: |-
-              The current release of Whack-a-doo it as a html5 browser game
-              (Internet Explorer, Firefox, Chrome, Safari). A native iOS
-              Client is next.
-
+          Have you ever dreamed of taxing your boss? In Wack-A-Doo this dream
+          comes true!</p><p>In Wack-A-Doo squares can be conquered and possessed
+          like in a board game. This allows you to control access to all
+          settlements residing inside your square ('region') and to 
+          tax their owners. You can conquer and hold large areas of the map
+          together with your allies, found a realm and see its outer borders
+          on the map. With your empire being large enough, you win the round.  
+                    
       box9:
         title: Who are you guys, anyway?
         body: |-
@@ -238,7 +242,7 @@ en:
               afterwards. Of course we also have some trolls lurking around, but they
               are easy to spot and are a great target for a joint truncheon attack.
       box12:
-        title: How can I play along?
+        title: Regular Content Updates and Improvements
         body: |-
               Wack-A-Doo is being permanently developed and receives new game
               content all the time. So you participate in a constantly growing
