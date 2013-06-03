@@ -55,9 +55,9 @@ de:
      
   mailing:
     validation:
-      subject: Willkommen bei Wack-a-Doo
+      subject: Willkommen bei Wack-A-Doo
     waiting_list:
-      subject: Du bist bei Wack-a-Doo auf der Warteliste
+      subject: Du bist bei Wack-A-Doo auf der Warteliste
     password_token:
       subject: Dein Passwort-Link
     password:
@@ -67,7 +67,7 @@ de:
     test_round_warning: "Achtung, private Testrunde! Zur Hauptrunde geht's hier:"
     processing: Sende...
     welcome: Kostenloses Steinzeitspiel | Willkommen!
-    meta_description: Wack-a-Doo ist das brandneue Browser-Strategiespiel mit witzig animierten Einheiten auf der Spielkarte, leicht durchgedrehten Höhlenmenschen und Dinosauriern.    
+    meta_description: Wack-A-Doo ist das brandneue Browser-Strategiespiel mit witzig animierten Einheiten auf der Spielkarte, leicht durchgedrehten Höhlenmenschen und Dinosauriern.    
     email: Email
     password: Passwort
     signup: Anmelden
@@ -146,7 +146,7 @@ de:
       whatdoido: whatdoido_de_DE.jpeg
 
       box1:
-        title: Wack-a-was?!
+        title: Wack-A-was?!
         body: |-
           Wack-A-Doo ist ein MMO Strategiespiel, mit
           leicht durchgedrehten
@@ -175,7 +175,7 @@ de:
         title: Überzeugt. Was kostet das?
         body: |-
           Spielen kostet bei uns <b>NIX</b>. 
-          Um es klar zu machen: Wack-a-Doo zu spielen war kostenlos, ist kostenlos
+          Um es klar zu machen: Wack-A-Doo zu spielen war kostenlos, ist kostenlos
           und wird kostenlos sein. Es kostet: gar nichts, nada, zero. </p>
           <p>Nichtsdestotrotz müssen auch wir irgendwie unsere Dinosaurier füttern.
           Das ist der Grund, warum es einen <b>optionalen</b> Premium-Zugang mit einigen
@@ -212,7 +212,7 @@ de:
             sich nicht durch feindliches Gebiet wie in den meisten anderen Spielen dieses Genres. 
             Durch die Sichtbarkeit jeder Bewegung wird eine neue taktische Spieldimension erreicht.  
             Zum ersten Mal ist der erste Schritt bzw. die zu passierenden Orte wichtiger als die bloße 
-            Reisezeit. Darin ähnelt Wack-a-Doo einem Brettspiel.
+            Reisezeit. Darin ähnelt Wack-A-Doo einem Brettspiel.
 
       box7:
         title: True Cross-Plattform
@@ -300,7 +300,7 @@ de:
   annals:
     heading: Ruhmeshalle von Wack-A-Doo
     introduction: |-
-      <p>Dies ist die Ruhmeshalle von Wack-a-Doo. In jeder Spielrunde haben alle Spieler
+      <p>Dies ist die Ruhmeshalle von Wack-A-Doo. In jeder Spielrunde haben alle Spieler
          und alle Allianzen die Chance, eine herausragende spielerische Leistung an 
          den Tag zu legen, die Community aktiv zu unterstützen und die Runde zu gewinnen.
          Hier sammeln wir alle solchen außergewöhnlichen Beiträge und Ereignisse. Dies
