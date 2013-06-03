@@ -150,16 +150,14 @@ en:
       box5:
         title: How much does it cost?
         body: |-
-          You can play for the great price of <b>free</b>. 
-          To make this clear: playing Wack-a-Doo was free of charge, is free 
-          of charge and will be free of charge; it costs nothing, nada, zero.</p>
-          <p>However, we, too, have
-          to feed our dinosaurs somehow. That's why there's an optional premium account 
-          offering comfort features and why you'll also have the
-          opportunity to give us small amounts of money and benefit from
-          convenience features, time-savers and small boosts. We are
-          however firm believers that multiplayer games should always be
-          balanced and should never turn into auctions.
+          You can play for free. To make this clear: playing Wack-a-Doo was free of charge, is free
+          of charge and always will be free of charge; it costs nothing, nada, zero.</p>
+          <p>However, we have to feed our dinosaurs somehow, too. That's why there's an optional
+          platinum account offering comfort features. You also have the opportunity
+          to pay small amounts of money and benefit from convenient features, time
+          saving and small boosts. However, we truly believe that multiplayer games
+          should always be balanced and never turn into auctions.
+
 
       more_details: "Yeah, alright, I still wanna know more details..."
 
@@ -177,42 +175,80 @@ en:
       box7:
         title: True cross-platform
         body: |-
-              Whack-a-doo is being developed as a true cross-platform game
-              from the very beginning. Starting now, command your
-              tribe from your browser.  Our modern HTML5 client does not
-              require any plugins, no flash, no nothing. In the near future
-              you'll be able to access the world from anywhere at any time.
-              Whether you're using a desktop computer, notebook or smartphone;
-              everybody accesses and plays in the same virtual world.
-              </p>
-              <p>Furthermore, starting this winter,
-               we will offer native clients for the iOS platform.
-              We take extra 
-              care that each platform's
-              interface is specifically tailored to its individual properties. 
-              We'll adapt the gameplay carefully to every single
-              platform, so that it'll always feel just right to you.
-
+              We are developing Wack-A-Doo as a true cross-platform game right
+              from the very beginning. You can command your tribe from your
+              browser: Our modern HTML5 client does not require any plugins,
+              no flash, no nothing. You are are also able to access the game
+              from anywhere at any time. Whether you use a desktop computer,
+              a notebook or an iPhone - everybody accesses and plays in the
+              same virtual world.</p>
+              <p>We offer you a native client for the iOS platform. We take
+              extra care of each platform so it has the right look and feel
+              for its individual properties. We adapt the gameplay carefully
+              to every single platform, so it'll feel just right to you.
       box8:
         title: What do I need to play?
         body: |-
-            The current release of Whack-a-doo it as a html5 browser game
-            (Internet Explorer, Firefox, Chrome, Safari). A native iOS
-            Client is next.
+              The current release of Whack-a-doo it as a html5 browser game
+              (Internet Explorer, Firefox, Chrome, Safari). A native iOS
+              Client is next.
 
       box9:
         title: Who are you guys, anyway?
         body: |-
               We're avid fans of the genre and some of us were heavily
-              involved in one of its first games in Germany, 
-              <a href="http://www.uga-agga.com">Uga-Agga</a>, 
+              involved in one of its first games in Germany,
+              <a href="http://www.uga-agga.com">Uga-Agga</a>,
               which even today,
-              after more than 10 years, still has a loyal, active fanbase. 
+              after more than 10 years, still has a loyal, active fanbase.
               Now <a href="http://www.5dlab.com">we rejoined</a>   in order to take it one step further.
               </p>
               <p> We're a small team based in Freiburg, Germany, but we're already planning a bunch of
               revolutionary innovations to the genre. Leveraging the armies
               to be visible on the world map is just the very first step. Stay put!
+      box10:
+        title: How can I play along?
+        body: |-
+              You can start playing right away. You can log in right here
+              with your e-mail address or you download our app for iPhone,
+              iPad and iPod touch. The registration is safe and without any
+              hidden costs: You won't end up buying a washing machine or a
+              subscription - no risks, all fun! If you don't like the game,
+              don't sweat it, you don't have to do a thing. Your account
+              will be deleted automatically if you haven't been active for a
+              longer time.</p>
+              <p>We support every current browser: Reasonably updated
+              versions of Chrome, Safari, Firefox and Internet Explorer (version 9)
+              work. It also runs very smoothly with Opera Next. We recommend
+              to use a desktop computer and a browser while working or during your
+              lunch break ;-) for the full availability of all functions, including
+              chat. After several tests at our lab we can recommend to use your iPad
+              or laptop with browser for several more laid back locations: Kick back
+              on your couch or your bed, play the app in boring lectures and of course
+              on the loo. Waiting for the morning commute? iPhone App!
+      box11:
+        title: Amazing Community
+        body: |-
+              Wack-A-Doo encloses a small but nice community that has been
+              growing for the past 10 years. The atmosphere in the chat and
+              the forum are friendly, even beyond enemy lines - quite untypical
+              for the Stone Age! You can enter the "global" chat without armor.
+              Many gamers are very helpful and cooperative. There might be a short
+              primal scream after defeat, but everyone is a sport and has a good laugh
+              afterwards. Of course we also have some trolls lurking around, but they
+              are easy to spot and are a great target for a joint truncheon attack.
+      box12:
+        title: How can I play along?
+        body: |-
+              Wack-A-Doo is being permanently developed and receives new game
+              content all the time. So you participate in a constantly growing
+              game that will always come up with something new and won't get
+              boring for months. Right now we are planing to introduce adventures
+              and heroes (and heroines): Take on their role and move through the
+              game world yourself.</p>
+              <p>And the best of it is: You can take immediate part in the development.
+              You can meet the developers of Wack-A-Doo in the game and in the chat
+              where they are in contact with the gamers at all times.
       team:
         title: Team
         former_members: Former Team Members
