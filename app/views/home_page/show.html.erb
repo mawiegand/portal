@@ -179,7 +179,11 @@
 
 
         <div class="panel-row panel-top-ruler larger-font"><div class="panel-column" id="column-r5c2">
-            <img src="<%= asset_path 'about/devices.png' %>" alt="" />
+            <img id="img-devices" src="<%= asset_path 'about/devices.png' %>" alt="" /><br/>
+            <a href="http://itunes.com/app/wackadoo/id" target="_blank">
+              <img class="app-logo" src="<%= asset_path 'about/app_logo.png' %>" alt="" />
+              <img class="app-store-button" src="<%= asset_path 'about/Available_on_the_App_Store_Badge_DE_135x40.png' %>" alt="" />
+            </a>
           </div><div class="panel-column" id="column-r5c1">
             <h1><%= I18n.t 'home_page.about.box7.title' %></h1>
             <p><%=raw(I18n.t 'home_page.about.box7.body') %></p>
