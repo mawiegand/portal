@@ -50,7 +50,7 @@ de:
     signin: Login
     signup: Registrieren
     signout: Abmelden
-    annals: Annalen
+    annals: Ruhmeshalle
     
      
   mailing:
@@ -298,9 +298,9 @@ de:
       
 
   annals:
-    heading: Annalen von Wack-A-Doo
+    heading: Ruhmeshalle von Wack-A-Doo
     introduction: |-
-      <p>Dies sind die Annalen von Wack-a-Doo. In jeder Spielrunde haben alle Spieler
+      <p>Dies ist die Ruhmeshalle von Wack-a-Doo. In jeder Spielrunde haben alle Spieler
          und alle Allianzen die Chance, eine herausragende spielerische Leistung an 
          den Tag zu legen, die Community aktiv zu unterstützen und die Runde zu Gewinnen.
          Hier sammeln wir alle solchen außergewöhnlichen Beiträge und Ereignisse. Dies
