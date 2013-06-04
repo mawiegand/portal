@@ -464,12 +464,12 @@ input {
   box-shadow: inset 0px 1px 0px rgba(0,0,0,.6), 0px 1px 0px rgba(255,255,255,.2);
   background-color: #DEF;
   font-size: 18px;
-  width: 189px;
+  width: 212px;
   padding: 2px 0px 1px 0px;
   color: #ABC;
   border-radius: 5px;
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  height: 30px;
+  height: 35px;
 }
 
 
@@ -493,8 +493,8 @@ button.submit-button {
   background-image: url('<%= asset_path 'lp/main_button.png' %>');
   background-repeat: no-repeat;
   background-position: 0px 0px;
-  width: 197px;
-  height: 41px;
+  width: 220px;
+  height: 44px;
     
   color: #FFF;
   text-shadow: inset rgba(0,0,0,.5) -1px -1px 0px;
@@ -502,13 +502,17 @@ button.submit-button {
   cursor: pointer;
 
   line-height: 20px;
-  font-size: 18px;
+  font-size: 17px;
   
   margin-left: 3px;
 }
 
 button.submit-button:hover {
-  background-position: 0px -44px;
+  background-position: 0 -45px;
+}
+
+button.submit-button:active {
+  background-position: 0 -90px;
 }
 
 
@@ -855,12 +859,21 @@ img.selfmade {
 #sitemap {
   background-image: url('<%= asset_path 'about/footerback.jpg' %>');
   background-position: center top;
-  height: 232px;
-  margin-top: 0px;
+  height: 100px;
+  margin-top: 0;
   width: 100%;
   font-size: 12px;
+  padding-top: 0;
+}
+
+#footerbar {
+  background-image: url('<%= asset_path 'about/footerbar.png' %>');
+  background-position: center top;
+  height: 232px;
+  margin: 0 auto 0 auto;
+  width: 1024px;
+  font-size: 12px;
   text-align: center;
-  background-color: #eee;
   padding-top: 56px;
 }
 
