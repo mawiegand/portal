@@ -14,7 +14,12 @@ class StaticController < ApplicationController
     @hostname = request.host
     
     response = HTTParty.get("https://#{@hostname}/identity_provider/resource/results.json?game_id=#{ @game_id }&round_number=#{ @round_number }")
-    @content = response || [];
+    
+    if (response.code != 200 && response.code != 304) || response.empty?
+      render :text => 'Page not Found', :status => 404
+    else
+      @content = response || [];
+    end
   end
 
 end

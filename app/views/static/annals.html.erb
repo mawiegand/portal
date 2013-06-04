@@ -40,10 +40,42 @@
    <div class="caption">Dave | DW<br/><%= I18n.t 'annals.round' %> 0</div>
  </div>
 
-
 <div class="clearfix"></div>
 <p>&nbsp;</p>
-   
+
+<h2><%= I18n.t 'annals.rounds.heading' %></h2>
+
+
+<table>
+  <tr>
+    <th><%= I18n.t 'annals.round' %></th>
+    <th><%= I18n.t 'annals.rounds.name' %></th>
+    <th><%= I18n.t 'annals.rounds.ranking' %></th>
+    <th><%= I18n.t 'annals.rounds.timespan' %></th>
+  </tr>
+  <tr>
+    <td> 0</td>
+    <td><%= I18n.t 'annals.rounds.zero.name' %></td>
+    <td><%= link_to (I18n.t 'annals.rounds.ranking'), annals_results_path(:round_number => 0) %></td>
+    <td><%= I18n.t 'annals.rounds.zero.timespan' %></td>
+  </tr>
+  <tr>
+    <td> 1</td>
+    <td><%= I18n.t 'annals.rounds.one.name' %></td>
+    <td><%= link_to (I18n.t 'annals.rounds.ranking'), annals_results_path(:round_number => 1) %></td>
+    <td><%= I18n.t 'annals.rounds.one.timespan' %></td>
+  </tr>
+  <tr>
+    <td> 2</td>
+    <td><%= I18n.t 'annals.rounds.two.name' %></td>
+    <td><%= link_to (I18n.t 'annals.rounds.ranking'), annals_results_path(:round_number => 2) %></td>
+    <td><%= I18n.t 'annals.rounds.two.timespan' %></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
    
 <h2><%= I18n.t 'annals.supporters.heading' %></h2>
 <p><%= raw(I18n.t 'annals.supporters.explanation') %></p>

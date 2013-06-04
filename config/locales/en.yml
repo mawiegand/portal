@@ -298,12 +298,30 @@ en:
         Choose a website, profile (facebook, twitter, ...) or email-address we should link your entry to.
       contact_us: Just contact us with your wishes.
       disclaimer: All material must fit into the game; the last decision about publication is on the Wack-A-Doo team.
+     
+
+    rounds: 
+      heading: Past Rounds of Wack-A-Doo
+      name: Name
+      ranking: Final Results
+      timespan: Timespan
+      zero:
+        name: Darkness (Intern)
+        timespan: 3rd of July 2012 till 26th of July 2012
+      one:
+        name: Light (Closed Beta)
+        timespan: 27th of July 2012 till 4th of October 2012
+      two:
+        name: Sky (Public Beta 1)
+        timespan: 4th of October 2012 till 26th of March 2013
       
     results:
       heading: Results of Round
       rank: Rank
       character: Demigod
       winner: Winner
+      
+      
         
   legal:
     imprint_heading: LEGAL NOTICE
