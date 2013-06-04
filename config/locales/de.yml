@@ -342,6 +342,12 @@ de:
       contact_us: Kontaktiere uns einfach mit Deinen Wünschen.
       disclaimer: Alle Materialien müssen zum Spiel passen; die abschließende Entscheidung über die Veröffentlichung trifft das Wack-A-Doo Team.
 
+    results:
+      heading: Abschlusstabelle der Runde
+      rank: Platz
+      character: Halbgott
+      winner: Sieger
+
   legal:
     imprint_heading: IMPRESSUM
     terms_heading: ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB) DER 5D LAB GMBH
