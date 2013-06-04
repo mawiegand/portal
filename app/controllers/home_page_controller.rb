@@ -7,6 +7,8 @@ class HomePageController < ApplicationController
     @title               = I18n.t('home_page.welcome')
     @description         = I18n.t('home_page.meta_description') 
     
+    @display_app_icon    = true
+    
     @invitation          = params[:invitation]          if params[:invitation]
     @player_invitation   = params[:player_invitation]   if params[:player_invitation]
     @alliance_invitation = params[:alliance_invitation] if params[:alliance_invitation]
