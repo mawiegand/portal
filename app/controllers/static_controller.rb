@@ -14,7 +14,7 @@ class StaticController < ApplicationController
     @hostname = request.host
     
     
-    response = HTTParty.get("https://#{hostname}/identity_provider/resource/results.json?game_id=#{ @game_id }&round_number=#{ @round_number }")
+    response = HTTParty.get("https://#{@hostname}/identity_provider/resource/results.json?game_id=#{ @game_id }&round_number=#{ @round_number }")
     @content = response || [];
   end
 
