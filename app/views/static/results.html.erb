@@ -1,0 +1,21 @@
+<div id="results-page" class="static-content-page">
+  
+  <%= @hostname || "unknown"%>
+  <%= @content %>
+  
+  <h1><%= I18n.t 'annals.results.heading' %> <%= @round_number.to_i %></h1>
+   
+  <table>
+    <tr><th><%= I18n.t 'annals.results.rank' %></th>
+        <th><%= I18n.t 'annals.results.character' %></th>
+        <th><%= I18n.t 'annals.results.winner' %></th>
+    </tr>
+  <% @content.each do |entry| %>
+    <tr class="rank<%= entry["individual_rank"] || 0 %>"><th><%= entry["individual_rank"] %>.</th>
+        <td><%= entry["character_name"] %> <%= entry["alliance_tag"].blank? ? "" : " | #{ entry["alliance_tag"] }" %></td>
+        <td><%= entry["won"] == true ? "X" : "" %></td>
+    </tr>
+  <% end %>
+  </table>
+   
+</div>

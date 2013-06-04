@@ -298,6 +298,12 @@ en:
         Choose a website, profile (facebook, twitter, ...) or email-address we should link your entry to.
       contact_us: Just contact us with your wishes.
       disclaimer: All material must fit into the game; the last decision about publication is on the Wack-A-Doo team.
+      
+    results:
+      heading: Results of Round
+      rank: Rank
+      character: Demigod
+      winner: Winner
         
   legal:
     imprint_heading: LEGAL NOTICE
