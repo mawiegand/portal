@@ -136,17 +136,25 @@ p {
   background: url('<%= asset_path 'lp/switch_down_btn_mouseover.png' %>');
 }
 
+#switchbar:active .arrow-down {
+  background: url('<%= asset_path 'lp/switch_down_btn_pressed.png' %>');
+}
+
 .arrow-up {
   background: url('<%= asset_path 'lp/switch_up_btn_normal.png' %>');
   width: 58px;
   height: 58px;
-  top: 13px;
+  margin-top: 13px;
   margin-right: 71px;
   display: inline-block;
 }
 
 #switchbar:hover .arrow-up {
   background: url('<%= asset_path 'lp/switch_up_btn_mouseover.png' %>');
+}
+
+#switchbar:active .arrow-up {
+  background: url('<%= asset_path 'lp/switch_up_btn_pressed.png' %>');
 }
 
 #switchbar-bottom {
@@ -470,6 +478,7 @@ input[type=text], input[type=password] {
   border-radius: 5px;
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   height: 37px;
+  margin-bottom: 4px;
 }
 
 
@@ -480,7 +489,7 @@ input[type=submit] {
   text-shadow: rgba(255,255,255,.5) 0px 1px 0px;
   font-weight: bold;
   cursor: pointer;
-
+  margin-bottom: 4px;
 }
 
 input[type=submit]#hover {
@@ -504,7 +513,7 @@ button.submit-button {
   line-height: 20px;
   font-size: 17px;
   
-  margin-left: 3px;
+  margin-left: 1px;
 }
 
 button.submit-button:hover {
