@@ -342,6 +342,22 @@ de:
       contact_us: Kontaktiere uns einfach mit Deinen Wünschen.
       disclaimer: Alle Materialien müssen zum Spiel passen; die abschließende Entscheidung über die Veröffentlichung trifft das Wack-A-Doo Team.
 
+    rounds: 
+      heading: Vergangene Runden von Wack-A-Doo
+      name: Name
+      ranking: Abschlusstabelle
+      timespan: Laufzeit
+      zero:
+        name: Dunkelheit (Intern)
+        timespan: 3. Juli 2012 bis 26. Julí 2012
+      one:
+        name: Licht (Closed Beta)
+        timespan:  27. Juli 2012 bis 4. Oktober 2012
+      two:
+        name: Himmel (Public Beta 1)
+        timespan: 4. Oktober 2012 bis 26. März 2013
+          
+          
     results:
       heading: Abschlusstabelle der Runde
       rank: Platz
