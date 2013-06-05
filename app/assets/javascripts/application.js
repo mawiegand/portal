@@ -5,6 +5,8 @@
 // the compiled file. 
 //
 //= require jquery
+//= require jquery.placeholder.min
+
 //= require ember-0.9.8.1
 //= require jquery_ujs
 //= require ember-rest
