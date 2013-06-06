@@ -4,7 +4,7 @@ Portal.TextField = Ember.TextField.extend({
 
   templateName: 'portal-textfield',
 
-  enablePlaceholder: true, // Portal.Config.ENABLE_IE_PLACEHOLDER,
+  enablePlaceholder: Portal.Config.ENABLE_IE_PLACEHOLDER,
 
   empty: false,
 
