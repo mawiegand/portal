@@ -21,7 +21,7 @@ Portal.TextField = Ember.TextField.extend({
   }.observes('value', 'empty'),
 
   isVisible: function() {
-    return this.get('enablePlaceholder') && !this.get('empty');
+    return !this.get('enablePlaceholder') || !this.get('empty');
   }.property('value', 'empty'),
 
   shadowIsVisible: true,
@@ -65,7 +65,7 @@ Portal.ShadowTextField = Ember.TextField.extend({
 //  classNames: ["red"],
 
   isVisible: function() {
-    return this.getPath('parentView.empty');
+    return this.getPath('parentView.enablePlaceholder') && this.getPath('parentView.empty');
   }.property('parentView.empty'),
 
   init: function() {
