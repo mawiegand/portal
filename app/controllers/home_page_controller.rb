@@ -18,12 +18,12 @@ class HomePageController < ApplicationController
     password_token       = params[:password_token]
 
     if !id.blank? && !password_token.blank?
-      response = HTTParty.get(PORTAL_CONFIG['identity_provider_path'] + '/' + I18n.locale.to_s + '/send_password',
+      response = HTTParty.get('https://wack-a-doo.de' + PORTAL_CONFIG['identity_provider_path'] + '/' + I18n.locale.to_s + '/send_password',
                    :query   => {:id              => id,
                                 :password_token  => password_token,
                                 :client_id       => PORTAL_CONFIG['client_id'],
                                 :client_password => PORTAL_CONFIG['client_password'] },
-                   :headers => { 'Accept' => 'application/json'})
+                   :headers => { :Accept => 'application/json'})
       if response.code == 200
         @message = 'passwordSent'
       else
