@@ -12,7 +12,7 @@ gem 'thin'
 gem 'ember-rails'
 gem 'ember-rest-rails'
 
-gem 'httparty'
+gem 'httparty' , '0.10.2'
 
 gem 'will_paginate', '~> 3.0.0'
 
