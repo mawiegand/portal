@@ -18,7 +18,8 @@ class HomePageController < ApplicationController
     password_token       = params[:password_token]
 
     if !id.blank? && !password_token.blank?
-      response = HTTParty.get('https://wack-a-doo.de' + PORTAL_CONFIG['identity_provider_path'] + '/' + I18n.locale.to_s + '/send_password',
+      logger.debug 'https://wack-a-doo.de' + PORTAL_CONFIG['identity_provider_path'] + '/' + (I18n.locale.to_s || 'de') + '/send_password'
+      response = HTTParty.get('https://wack-a-doo.de' + PORTAL_CONFIG['identity_provider_path'] + '/' + (I18n.locale.to_s || 'de') + '/send_password',
                    :query   => {:id              => id,
                                 :password_token  => password_token,
                                 :client_id       => PORTAL_CONFIG['client_id'],
