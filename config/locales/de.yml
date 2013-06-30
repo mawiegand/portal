@@ -51,6 +51,7 @@ de:
     signup: Registrieren
     signout: Abmelden
     annals: Ruhmeshalle
+    special_offers: Spezialangebote
     
      
   mailing:
@@ -375,8 +376,52 @@ de:
     hrb_heading: Handelsregister
     vat: Umsatzsteuer-ID
     tmg_heading: Inhaltlich verantwortlich
-    
-        
+
+  special_offer:
+    heading: Unterstütze Wack-A-Doo
+    introduction: |-
+      <p>Wir von 5d lab sind als junges Independent Game Studio angetreten, ein neues Spielerlebnis für Strategiespiele im Bereich der Massively Multiplayer Online Spiele zu gestalten. Auf diesem Weg haben wir bereits einiges auf die Beine gestellt und denken, bereits jetzt mit Wack-A-Doo ein interessantes Spiel gestaltet zu haben.</p>
+      <p>Dennoch liegt immer noch ein weiter Weg vor uns bei dem wir auch auf Eure Unterstützung hoffen.</p>
+      <p>Nach dem Vorbild von Kickstarter möchten wir Euch ein paar Möglichkeiten geben uns gezielt zu unterstützen.
+        Wir haben unser Lifetime-Paket neu aufgelegt und werden zukünftig weitere Pakete anbieten, mit denen ihr Einfluss aufb die Entwicklung nehmen könnt und Euch auch direkt im Spiel verweigen könnt.</p>
+      <p>Die hier erhaltene Unterstützung werden wir direkt in die Entwicklung von Wack-A-Doo stecken. Alle Unterstützung kommt direkt dem Spiel und damit der Community zu Gute.</p>
+    lifetime:
+      heading: Lifetime-Account
+      explanation: |-
+        <p>Der Lifetime-Account bietet Euch dauerhaft für alle Runden den Platinum-Account.</p>
+        <p>Der Platinum-Account umfasst aktuell 5 Plätze in der Bauschleifen für Gebäude und 4 Plätze in der Trainingsschleife für die Rekrutierung von Einheiten sowie eine Benachrichtigung per EMail, wenn Du angegriffen wirst, und ein Nachrichtenarchiv. Weitere Funktionen werden folgen und sind natürlich im Angebot enthalten.</p>
+      package1:
+        heading: Lifetime-Platinum-Account
+        body: |-
+          <ul>
+            <li>Lebenslanger Platinum-Account</li>
+            <li>mit allen zukünftigen Updates</li>
+            <li>gültig ab sofort und für alle kommenden Runden</li>
+            <li>Wack-A-Doo Insider</li>
+            <li>Wack-A-Doo Supporter</li>
+            <li>Eintrag in Spielerprofil</li>
+            <li>Eintrag in die Ruhmeshalle</li>
+            <li>Eintrag in die Special Thanks der App</li>
+          </ul>
+        price: "Preis: 99 EUR"
+      package2:
+        heading: Lifetime-Platinum-Account mit Wack-A-Doo Tasse
+        body: |-
+          <ul>
+            <li>Lebenslanger Platinum-Account</li>
+            <li>mit allen zukünftigen Updates</li>
+            <li>gültig ab sofort und für alle kommenden Runden</li>
+            <li>Wack-A-Doo Insider</li>
+            <li>Wack-A-Doo Supporter</li>
+            <li>Eintrag in Spielerprofil</li>
+            <li>Eintrag in die Ruhmeshalle</li>
+            <li>Eintrag in die Special Thanks der App</li>
+            <li>Teilnahme an allen internen Testrunden</li>
+            <li>1.500 Credits</li>
+            <li>Wack-A-Doo Tasse</li>
+          </ul>
+        price: "Preis: 159 EUR"
+
   announcement:
     title: Neuste Ankündigungen
     no_news: Derzeit keine aktuellen Ankündigungen

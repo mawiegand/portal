@@ -1,0 +1,27 @@
+<div id="special-offer-page" class="static-content-page">
+
+<h1><%= I18n.t 'special_offer.heading' %></h1>
+<img style="float:right; width:400px;" src="<%= asset_path 'lp/group_800.png' %>" alt="" />
+<%= raw(I18n.t 'special_offer.introduction') %>
+
+<h2 style="margin-top: 40px;"><%= I18n.t 'special_offer.lifetime.heading' %></h2>
+<%= raw(I18n.t 'special_offer.lifetime.explanation') %>
+
+<table style="width: 100%; margin-top: 40px;">
+  <tr>
+    <th style=""><%= I18n.t 'special_offer.lifetime.package1.heading' %></th>
+    <th style="width: 50%;"><%= I18n.t 'special_offer.lifetime.package2.heading' %></th>
+  </tr>
+  <tr>
+    <td style="width: 50%; vertical-align: top;">
+        <%= raw(I18n.t 'special_offer.lifetime.package1.body') %>
+      <p><b><%= I18n.t 'special_offer.lifetime.package1.price' %></b></p>
+    </td>
+    <td style="width: 50%; vertical-align: top;">
+      <%= raw(I18n.t 'special_offer.lifetime.package2.body') %>
+      <p><b><%= I18n.t 'special_offer.lifetime.package2.price' %></b></p>
+    </td>
+  </tr>
+</table>
+
+</div>

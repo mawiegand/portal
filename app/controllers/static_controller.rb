@@ -3,10 +3,13 @@ class StaticController < ApplicationController
   
   def legal
   end
-  
+
   def annals
   end
-  
+
+  def special_offers
+  end
+
   def results
     @game_id      = 1
     @round_number = params[:round_number] || 0

@@ -13,6 +13,7 @@ Portal::Application.routes.draw do
     match '/legal',                                    :to => 'static#legal'
     match '/annals',                                   :to => 'static#annals'
     match '/annals/results',                           :to => 'static#results', :as => 'annals_results'
+    match '/special_offers',                           :to => 'static#special_offers'
 
     match :index,                                      :to => 'home_page#show'
     match '/invitations/:invitation',                  :to => 'home_page#show'
