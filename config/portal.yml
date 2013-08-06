@@ -11,9 +11,11 @@ defaults: &defaults
   ingame_news_url:         '/game_server/fundamental/announcements?language=all'
   
   domains_with_locale:
-    'wack-a-doo.de':  de
-    'wack-a-doo.com': en
-  
+    'wack-a-doo.de':         de
+    'wack-a-doo.com':        en
+    'test1.wack-a-doo.de':   de
+    'test1.wack-a-doo.com':  en
+
 development:
   <<: *defaults
   
