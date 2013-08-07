@@ -90,7 +90,11 @@ en:
       forgotten_password_help: Forgot your password?
       forgotten_password_link: Reset it here.
       need_help: Need help? 
-      contact_link: Please contact support. 
+      contact_link: Please contact support.
+
+    video:
+      subline: Croudfunding with
+      subline_link: Startnext
       
     slogans:
       first: |-  

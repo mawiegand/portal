@@ -141,8 +141,12 @@ de:
       forgotten_password_help: Passwort vergessen?
       forgotten_password_link: Setze es hier zurück.
       need_help: Du brauchst Hilfe? 
-      contact_link: Bitte kontaktiere den Support.    
-  
+      contact_link: Bitte kontaktiere den Support.
+
+    video:
+      subline: Croudfunding bei
+      subline_link: Startnext
+
     about:
       whatdoido: whatdoido_de_DE.jpeg
 
