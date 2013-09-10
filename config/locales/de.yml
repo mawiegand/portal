@@ -325,14 +325,18 @@ de:
       explanation: |-
         Jede Spielrunde von Wack-A-Doo wird von mindestens einer Allianz gewonnen, indem
         sie als erste Allianz eine der alternativen Siegbedingungen erreicht.
+    divine_supporters:
+      heading: Göttliche Unterstützer
+      explanation: |-
+        Spieler und Allianzen können den Status "Göttliche Supporter" erhalten. Dieser
+        Ehrentitel wird für herausragende Leistungen in der Community, für monetäre oder
+        ideelle Hilfe bei der Spielentwicklung verliehen. Du möchtest ein Unterstützer
+        von Wack-A-Doo werden? <a href="mailto:info@5dlab.com">Kontaktiere uns!</a>
     supporters:
       heading: Unterstützer
       explanation: |-
-        Spieler und Allianzen können den "Unterstützer" Status erhalten. Dieser
-        Ehrentitel wird für herausragende Leistungen in der Community, für monetäre
-        oder ideelle Hilfe bei der Spielentwicklung verliehen. Du möchtest ein 
-        Unterstützer von Wack-A-Doo werden?
-           <a href="mailto:info@5dlab.com">Kontaktiere uns!</a>
+        Spieler und Allianzen können den "Unterstützer" Status erhalten. Du möchtest ein
+        Unterstützer von Wack-A-Doo werden? <a href="mailto:info@5dlab.com">Kontaktiere uns!</a>
     customize:
       heading: Bestimme das Aussehen Deines Eintrages! 
       intro: Du oder Deine Allianz erscheint auf dieser Seite? Gestalte Deinen Eintrag

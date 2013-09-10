@@ -283,10 +283,22 @@ en:
       explanation: |-
         Each round of Wack-A-Doo is won by at least one alliance reaching one of several
            alternative victory conditions.
+    divine_supporters:
+      heading: Divine Supporters
+      explanation: |-
+        Players and Alliance can be granted the status of being "Divine Supporters". This honour
+        title is granted for exceptional community service, monetary or ideal help to the developers.
+        You wanna become a Wack-A-Doo supporter? Contact us!
+        <a href="mailto:info@5dlab.com">Contact us!</a>
     supporters:
       heading: Supporters
       explanation: |-
-        Players and Alliance can be granted the status of being "supporters". 
+        Players and Alliance can be granted the status of being "Supporters". You wanna become a
+        Wack-A-Doo supporter? <a href="mailto:info@5dlab.com">Contact us!</a>
+    supporters:
+      heading: Supporters
+      explanation: |-
+        Players and Alliance can be granted the status of being "supporters".
            This honour title is granted for exceptional community service, monetary or
            ideal help to the developers. You wanna become a Wack-A-Doo supporter?
            <a href="mailto:info@5dlab.com">Contact us!</a>

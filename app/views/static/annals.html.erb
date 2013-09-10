@@ -24,7 +24,12 @@
 
 <h2><%= I18n.t 'annals.winners.heading' %></h2>
 <p><%= I18n.t 'annals.winners.explanation' %></p>
-   
+
+ <!-- div class="annals-alliance">
+   <div class="alliance-color"></div>
+   <div class="caption"><br/><%= I18n.t 'annals.round' %> 3</div>
+ </div -->
+
  <div class="annals-alliance">
    <div class="alliance-color aa">AA</div>
    <div class="caption">Army Ants <br/><%= I18n.t 'annals.round' %> 2</div>
@@ -77,10 +82,8 @@
 <p>&nbsp;</p>
 
    
-<h2><%= I18n.t 'annals.supporters.heading' %></h2>
-<p><%= raw(I18n.t 'annals.supporters.explanation') %></p>
-   
-   
+<h2><%= I18n.t 'annals.divine_supporters.heading' %></h2>
+<p><%= raw(I18n.t 'annals.divine_supporters.explanation') %></p>
 
   <div class="annals-player">
     <a href="https://www.facebook.com/carsten.lavan" target="_blank">
@@ -130,11 +133,38 @@
     <img class="annals-avatar" src="<%= asset_path 'annals/Wilma_exp.png' %>" alt="Wilma!" />
     <div class="caption">Wilma!</div>
   </div>
+  <div class="annals-player">
+    <a href="http://www.youtube.com/watch?v=YicoMVyY6A0" target="_blank">
+      <img class="annals-avatar border" src="<%= asset_path 'annals/neandercoach.png' %>" alt="Neandercoach" />
+    </a>
+    <div class="caption">Neandercoach</div>
+  </div>
+  <div class="annals-player">
+    <img class="annals-avatar" src="<%= asset_path 'annals/pfandi.png' %>" alt="Pfandzurück" />
+    <div class="caption">Pfandzurück</div>
+  </div>
+  <div class="annals-alliance">
+    <div class="alliance-color ao">AO</div>
+    <div class="caption">Alles Opfer</div>
+  </div>
+  <div class="annals-alliance">
+    <div class="alliance-color hau">HAU</div>
+    <div class="caption">Hauruck</div>
+  </div>
 
- <div class="clearfix"></div>
- <p>&nbsp;</p>
+<div class="clearfix"></div>
+<p>&nbsp;</p>
 
-   
+<h2><%= I18n.t 'annals.supporters.heading' %></h2>
+<p><%= raw(I18n.t 'annals.supporters.explanation') %></p>
+<p>Gregor Heilmaier, PaNik, MessiAas, kawumm, neff, Eisenbeiss,
+  Elliscout, Wowbagger, Helmtraeger, Mytor, madpat, Longfellow,
+  Stubsnase, Sup, Vortex, Cuilenn, wilma6666, Quokka, Wurscht,
+  BimmelBammel, Steinheimer, nixe, inu, Plimpf, Bluemoonch</p>
+
+<div class="clearfix"></div>
+<p>&nbsp;</p>
+
 <h2><%= I18n.t 'annals.customize.heading' %></h2>
 
 <p><%= I18n.t 'annals.customize.intro' %>:
