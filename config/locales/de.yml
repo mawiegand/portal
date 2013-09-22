@@ -333,10 +333,11 @@ de:
         ideelle Hilfe bei der Spielentwicklung verliehen. Du möchtest ein Unterstützer
         von Wack-A-Doo werden? <a href="mailto:info@5dlab.com">Kontaktiere uns!</a>
     supporters:
-      heading: Unterstützer
+      heading: Startnext-Unterstützer
       explanation: |-
-        Spieler und Allianzen können den "Unterstützer" Status erhalten. Du möchtest ein
-        Unterstützer von Wack-A-Doo werden? <a href="mailto:info@5dlab.com">Kontaktiere uns!</a>
+        Die folgenden Spieler haben an unserer Crowdfunding-Kampagne auf
+        <a target="_blank" href="http://www.startnext.de/wack-a-doo">Startnext</a> teilgenommen und damit die Weiterentwicklung von Wack-A-Doo
+        unterstützt.
     customize:
       heading: Bestimme das Aussehen Deines Eintrages! 
       intro: Du oder Deine Allianz erscheint auf dieser Seite? Gestalte Deinen Eintrag

@@ -291,17 +291,11 @@ en:
         You wanna become a Wack-A-Doo supporter? Contact us!
         <a href="mailto:info@5dlab.com">Contact us!</a>
     supporters:
-      heading: Supporters
+      heading: Startnext Supporters
       explanation: |-
-        Players and Alliance can be granted the status of being "Supporters". You wanna become a
-        Wack-A-Doo supporter? <a href="mailto:info@5dlab.com">Contact us!</a>
-    supporters:
-      heading: Supporters
-      explanation: |-
-        Players and Alliance can be granted the status of being "supporters".
-           This honour title is granted for exceptional community service, monetary or
-           ideal help to the developers. You wanna become a Wack-A-Doo supporter?
-           <a href="mailto:info@5dlab.com">Contact us!</a>
+        The following players participated in our crowdfunfing campaign on
+        <a target="_blank" href="http://www.startnext.de/wack-a-doo">Startnext</a> and supported the further development
+        of Wack-A-Doo.
     customize:
       heading: Customize Your Entry! 
       intro: You or your alliance are on this page? You can customize your entry
