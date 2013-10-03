@@ -324,6 +324,9 @@ en:
       two:
         name: Sky (Public Beta 1)
         timespan: 4th of October 2012 till 26th of March 2013
+      three:
+        name: Earth (Public Beta 2)
+        timespan: 26th of March 2013 till 3rd of October 2013
       
     results:
       heading: Results of Round
