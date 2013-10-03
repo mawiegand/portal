@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
     # Checks whether the user specified locale is available.
     def get_locale_from_domain
       new_locale = PORTAL_CONFIG['domains_with_locale'][request.host_with_port]
-      I18n.available_locales.include?(new_locale.to_sym) ? new_locale : nil
+      I18n.available_locales.include?(new_locale.nil? ? nil : new_locale.to_sym) ? new_locale : nil
     end
 
 end
