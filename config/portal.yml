@@ -54,6 +54,9 @@ production:
   
   ingame_news_url:         'https://gs02.wack-a-doo.de/game_server/fundamental/announcements?language=all'
 
+  domains_with_locale:
+    'gs02.wack-a-doo.de':   de
+    'gs02.wack-a-doo.com':  en
 
 staging_test:
   <<: *defaults
