@@ -192,3 +192,24 @@ Portal.Cookie = Ember.Object.create({
     this.set('requestUrl', null)
   } 
 });
+
+window.fbAsyncInit = function() {
+
+  FB.init({
+    appId      : '127037377498922',          // App ID from the app dashboard
+    channelUrl : '//'+Portal.Config.SERVER_ROOT+'client/channel.html', // Channel file for x-domain comms
+    status     : true,                       // Check Facebook Login status
+    xfbml      : false                       // Don't look for social plugins on the page
+  }); 
+
+};
+
+var sdkLocale = window.currentLocale || Portal.Config.DEFAULT_LOCALE || "en_US";
+(function(d, s, id){
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; 
+  js.src = "//connect.facebook.net/"+sdkLocale+"/all.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
