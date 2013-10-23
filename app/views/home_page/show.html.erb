@@ -464,6 +464,7 @@
           <%= I18n.t 'home_page.signin' %>
           </button>
       {{/if}}
+      <div class="fb-login-button" data-width="200" onclick="Portal.DialogController.signin_fb()"></div>
     {{else}}
       <%= I18n.t 'home_page.no_signin_message' %>
     {{/if}}
