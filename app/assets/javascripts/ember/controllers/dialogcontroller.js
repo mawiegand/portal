@@ -324,6 +324,59 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     },
     
   
+    signin_fb: function(firstSignin) {
+      log('FACEBOOK: now call login');
+      FB.login(function(response) {
+        log('FACEBOOK: login response', response);
+        if (response.authResponse) {
+          var authResponse = response.authResponse;
+
+          FB.api('/me', function(response) {    // check, it's really connected
+            if (!response || response.error) {
+              // TODO: do something on login errors?
+            }
+            else {
+              var fbPlayerId    = authResponse.userID;
+              var fbAccessToken = authResponse.accessToken;
+
+              log('FACEBOOK: everything seems, fine, sending information to server. Me:', response);
+              
+              // TODO: 
+              var credentials = this.get('credentials');
+              firstSignin = firstSignin || false;
+
+              this.resetError();
+
+              if (window.JSON === undefined) {
+                window.location = Portal.Config.SERVER_ROOT + "/browser.html";
+              }
+
+              this.obtainFbAccessToken($.trim(credentials.get('email')), credentials.get('password'), function(access_token, expiration) {
+                Portal.Cookie.saveEmail(credentials.get('email'), 7);
+
+                window.name = JSON.stringify({
+                  fb_access_token:    access_token, // this is not the access token from line 340!!!
+                  fb_player_id:       fbPlayerId,
+                  expiration:         expiration, 
+                  locale:             window.currentLocale,
+                  retention:          window.retention,
+                  playerInvitation:   (window.playerInvitation !== undefined && window.playerInvitation !== null ? window.playerInvitation : null),
+                  allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
+                  client_id:          Portal.Config.CLIENT_ID,
+                  referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
+                  requestUrl:         Portal.Cookie.get('requestUrl'), 
+                });
+
+                Portal.Cookie.deleteReferer();
+
+                window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
+              });
+            }   
+          }); 
+        }
+      });
+    },
+  
     signin: function(firstSignin) {
       var credentials = this.get('credentials');
       firstSignin = firstSignin || false;
@@ -473,6 +526,99 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       }     
     },
     
+    
+    obtainFbAccessToken: function(username, password, onSuccess, onError) {
+      var self = this;
+
+      var params = [
+        { name: 'username',
+          value: username },
+        { name: 'password',
+          value: password },
+        { name: 'client_id',             
+          value: Portal.Config.CLIENT_ID}, 
+        { name: 'client_password',       
+          value: Portal.Config.CLIENT_PASSWORD},
+        { name: 'scope',
+          value: Portal.Config.REQUESTED_SCOPES},
+        { name: 'grant_type',
+          value: 'password' }
+      ];
+
+      if (window.invitation) {
+        params.push({name: 'invitation', value: window.invitation});
+      }
+
+      this.set('isLoading', true);
+  
+      $.ajax({
+        type: 'POST',
+        url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.localePathFrag || "") + '/oauth2/fb_access_token',
+        beforeSend: function(xhr) {
+          if (window.referer !== undefined && window.referer !== null) {
+            xhr.setRequestHeader('X-Alt-Referer', window.referer);
+          }
+        },
+        data: params,
+        success: function(data, textStatus, jqXHR) {
+          switch(jqXHR.status) {
+          case 200:
+            if (onSuccess && data['access_token']) {
+              onSuccess(data.access_token, data.expires_in);
+            }
+            else if (! data['access_token']){
+              self.set('isLoading', false);
+
+              self.set('lastError', {
+                type: 'signin',
+                statusCode: jqXHR.status,
+                msg: 'Access token missing.',
+              });     
+              if (onError) {
+                onError(jqXHR, textStatus,'Access token missing.');
+              }        
+            }
+            break;
+          default:
+            self.set('isLoading', false);
+
+            var msgObj = $.parseJSON(jqXHR.responseText);
+            
+            self.set('lastError', {
+              type: 'signin',
+              statusCode: jqXHR.status,
+              msg: msgObj.error_description,
+            });
+            
+            log('ERORR during sign in: ' + msgObj.error_description);
+            
+            if (onError) {
+              onError(jqXHR, textStatus, 'Unexpected server response.');
+            }
+          }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          self.set('isLoading', false);
+
+          switch(jqXHR.status) {
+          case 400:
+          case 500:
+          default:
+            var msgObj = $.parseJSON(jqXHR.responseText);
+            self.set('lastError', {
+              type: 'signin',
+              statusCode: jqXHR.status,
+              msg: msgObj.error_description,
+            });
+            log('ERORR during sign in: ' + msgObj.error_description);
+            if (onError) {
+              onError(jqXHR, textStatus, errorThrown);
+            }
+          }                          
+        }
+      }); 
+    },
+
     obtainAccessToken: function(username, password, onSuccess, onError) {
       var self = this;
       
