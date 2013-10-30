@@ -356,8 +356,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
               self.obtainFbAccessToken(fbAccessToken, fbPlayerId, function(access_token, expiration) {
                 window.name = JSON.stringify({
-                  accessToken:       access_token, // this is not the access token from line 340!!!
-                  fb_player_id:       fbPlayerId,
+                  accessToken:        access_token, // this is not the access token from line 340!!!
+                  fbPlayerId:         fbPlayerId,
                   expiration:         expiration, 
                   locale:             window.currentLocale,
                   retention:          window.retention,
@@ -528,14 +528,14 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     },
     
     
-    obtainFbAccessToken: function(fbAccessToken, fbUserId, onSuccess, onError) {
+    obtainFbAccessToken: function(fbAccessToken, fbPlayerId, onSuccess, onError) {
       var self = this;
 
       var params = [
         { name: 'fb_access_token',
           value: fbAccessToken },
         { name: 'fb_player_id',
-          value: fbUserId },
+          value: fbPlayerId },
         { name: 'client_id',             
           value: 'WACKADOO-FBCANVAS'},  // Portal.Config.CLIENT_ID},
         { name: 'client_password',
