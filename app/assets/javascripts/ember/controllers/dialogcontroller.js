@@ -534,7 +534,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       var params = [
         { name: 'fb_access_token',
           value: fbAccessToken },
-        { name: 'fb_user_id',
+        { name: 'fb_player_id',
           value: fbUserId },
         { name: 'client_id',             
           value: 'WACKADOO-FBCANVAS'},  // Portal.Config.CLIENT_ID},
