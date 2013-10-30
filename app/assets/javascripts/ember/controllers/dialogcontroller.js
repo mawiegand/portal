@@ -322,9 +322,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       this.set('bartype', Portal.DIALOG_TYPE_SIGNIN);
       this.set('showWaitingListNotice', true);
     },
-    
-  
-    signin_fb: function(firstSignin) {
+
+
+    signinFacebook: function(firstSignin) {
       log('FACEBOOK: now call login');
       FB.login(function(response) {
         log('FACEBOOK: login response', response);
@@ -351,11 +351,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
                 window.location = Portal.Config.SERVER_ROOT + "/browser.html";
               }
 
-              this.obtainFbAccessToken($.trim(credentials.get('email')), credentials.get('password'), function(access_token, expiration) {
-                Portal.Cookie.saveEmail(credentials.get('email'), 7);
-
+              this.obtainFbAccessToken(fbAccessToken, fbPlayerId, function(access_token, expiration) {
                 window.name = JSON.stringify({
-                  fb_access_token:    access_token, // this is not the access token from line 340!!!
+                  access_token:       access_token, // this is not the access token from line 340!!!
                   fb_player_id:       fbPlayerId,
                   expiration:         expiration, 
                   locale:             window.currentLocale,
@@ -527,14 +525,14 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     },
     
     
-    obtainFbAccessToken: function(username, password, onSuccess, onError) {
+    obtainFbAccessToken: function(fbAccessToken, fbUserId, onSuccess, onError) {
       var self = this;
 
       var params = [
-        { name: 'username',
-          value: username },
-        { name: 'password',
-          value: password },
+        { name: 'fbAccessToken',
+          value: fbAccessToken },
+        { name: 'fbUserId',
+          value: fbUserId },
         { name: 'client_id',             
           value: Portal.Config.CLIENT_ID}, 
         { name: 'client_password',       

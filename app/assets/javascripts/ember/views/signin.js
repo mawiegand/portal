@@ -42,4 +42,8 @@ Portal.SigninBarView = Ember.View.extend({
   submit: function(event) {
     Portal.DialogController.signin();
   },
+
+  facebook: function() {
+    Portal.DialogController.signinFacebook();
+  }
 });

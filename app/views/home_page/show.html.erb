@@ -462,9 +462,11 @@
       {{else}}
         <button {{action "submit"}} title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
           <%= I18n.t 'home_page.signin' %>
-          </button>
+        </button>
       {{/if}}
-      <div class="fb-login-button" data-width="200" onclick="Portal.DialogController.signin_fb()"></div>
+      <button {{action "facebook"}} type="submit" class="submit-button">
+      Facebook
+      </button>
     {{else}}
       <%= I18n.t 'home_page.no_signin_message' %>
     {{/if}}
