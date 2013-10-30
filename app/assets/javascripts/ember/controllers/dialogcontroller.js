@@ -537,13 +537,13 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         { name: 'fbUserId',
           value: fbUserId },
         { name: 'client_id',             
-          value: Portal.Config.CLIENT_ID}, 
-        { name: 'client_password',       
-          value: Portal.Config.CLIENT_PASSWORD},
+          value: 'WACKADOO-FBCANVAS'},  // Portal.Config.CLIENT_ID},
+        { name: 'client_password',
+          value: '2638-AF67-260D-17AA-FA02'},
         { name: 'scope',
           value: Portal.Config.REQUESTED_SCOPES},
         { name: 'grant_type',
-          value: 'password' }
+          value: 'fb-player-id' }
       ];
 
       if (window.invitation) {
