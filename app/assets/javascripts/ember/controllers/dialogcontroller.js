@@ -326,6 +326,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
     signinFacebook: function() {
       log('FACEBOOK: now call login');
+
+      var self = this;
+
       FB.login(function(response) {
         log('FACEBOOK: login response', response);
         if (response.authResponse) {
@@ -345,7 +348,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 //              var credentials = this.get('credentials');
 //              firstSignin = firstSignin || false;
 
-              this.resetError();
+              self.resetError();
 
               if (window.JSON === undefined) {
                 window.location = Portal.Config.SERVER_ROOT + "/browser.html";
