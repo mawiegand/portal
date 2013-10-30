@@ -324,7 +324,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     },
 
 
-    signinFacebook: function(firstSignin) {
+    signinFacebook: function() {
       log('FACEBOOK: now call login');
       FB.login(function(response) {
         log('FACEBOOK: login response', response);
@@ -342,8 +342,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
               log('FACEBOOK: everything seems, fine, sending information to server. Me:', response);
               
               // TODO: 
-              var credentials = this.get('credentials');
-              firstSignin = firstSignin || false;
+//              var credentials = this.get('credentials');
+//              firstSignin = firstSignin || false;
 
               this.resetError();
 
