@@ -363,7 +363,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
                   retention:          window.retention,
                   playerInvitation:   (window.playerInvitation !== undefined && window.playerInvitation !== null ? window.playerInvitation : null),
                   allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
-                  client_id:          Portal.Config.CLIENT_ID,
+                  client_id:          'WACKADOO-FBCANVAS',
                   referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
                   requestUrl:         Portal.Cookie.get('requestUrl'), 
                 });
