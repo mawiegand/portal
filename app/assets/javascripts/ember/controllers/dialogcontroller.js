@@ -356,7 +356,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
               self.obtainFbAccessToken(fbAccessToken, fbPlayerId, function(access_token, expiration) {
                 window.name = JSON.stringify({
-                  access_token:       access_token, // this is not the access token from line 340!!!
+                  accessToken:       access_token, // this is not the access token from line 340!!!
                   fb_player_id:       fbPlayerId,
                   expiration:         expiration, 
                   locale:             window.currentLocale,
