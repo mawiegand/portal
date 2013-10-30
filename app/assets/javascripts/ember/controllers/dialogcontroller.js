@@ -370,7 +370,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
                 Portal.Cookie.deleteReferer();
 
-                window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
+                window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000));
               });
             }   
           }); 
@@ -405,7 +405,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
         Portal.Cookie.deleteReferer();
 
-        window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000));
+        window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
       });
     },
   
