@@ -378,7 +378,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
             }   
           }); 
         }
-      });
+      }, {scope: 'email,publish_actions'});
     },
   
     signin: function(firstSignin) {
