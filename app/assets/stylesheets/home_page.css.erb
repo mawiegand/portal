@@ -559,8 +559,29 @@ button.submit-button {
 
   line-height: 20px;
   font-size: 17px;
-  
+
   margin-left: 1px;
+}
+
+button.fb-button {
+  background-color: rgba(255,255,255,0.0);
+  border: none;
+  background-image: url('<%= asset_path 'lp/fb-button.png' %>');
+  background-repeat: no-repeat;
+  background-position: 0px -1px;
+  width: 220px;
+  height: 44px;
+
+  color: #FFF;
+  text-shadow: inset rgba(0,0,0,.5) -1px -1px 0px;
+  font-weight: bold;
+  cursor: pointer;
+
+  line-height: 15px;
+  font-size: 12px;
+
+  margin-left: 1px;
+  padding-left: 50px;
 }
 
 button.submit-button:hover {
@@ -976,6 +997,13 @@ img.slim-border {
   height: 16px;
   display: inline-block;
   background-image: url('<%= asset_path 'activityindicator_small.svg' %>');
+}
+
+.activity-indicator-small-white {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-image: url('<%= asset_path 'activityindicator_small_white.svg' %>');
 }
 
 .img-preloader {

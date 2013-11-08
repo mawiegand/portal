@@ -71,9 +71,11 @@ de:
     meta_description: Wack-A-Doo ist das brandneue Browser-Strategiespiel mit witzig animierten Einheiten auf der Spielkarte, leicht durchgedrehten Höhlenmenschen und Dinosauriern.    
     email: Email
     password: Passwort
-    signup: kostenlos registrieren
+    signup: Kostenlos registrieren
+    signup_with_facebook: Mit Facebook registrieren
     accept_terms: Ich akzeptiere die <a href="/legal#terms">AGB</a>
     signin: Login
+    signin_with_facebook: Login mit Facebook
     reset: Passwort anfordern
     email_or_nickname: Email 
     signup_tooltip: Gib Deine Emailadresse ein und wähle ein Passwort, um Dich beim Spiel anzumelden.

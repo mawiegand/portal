@@ -3,6 +3,7 @@ Portal.SigninDialog = Ember.View.extend({
   templateName: 'signin-dialog',
   
   isLoadingBinding: 'Portal.DialogController.isLoading',
+  isFbLoadingBinding: 'Portal.DialogController.isFbLoading',
 
   registrationStatusBinding: 'Portal.DialogController.registrationStatus',
 
@@ -13,13 +14,18 @@ Portal.SigninDialog = Ember.View.extend({
   showPasswordReset: function() {
     this.get('controller').resetPasswordClicked();
   },
+
+  facebook: function() {
+    Portal.DialogController.signinFacebook();
+  },
 });
 
 Portal.SigninBarView = Ember.View.extend({
   templateName: 'signin-form',
-  
+
   isLoadingBinding: 'Portal.DialogController.isLoading',
-  
+  isFbLoadingBinding: 'Portal.DialogController.isFbLoading',
+
   registrationStatusBinding: 'Portal.DialogController.registrationStatus',
   
   didInsertElement: function() {

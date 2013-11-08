@@ -20,9 +20,10 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     passwordTokenNotSent: false,
     passwordSent: false,
     passwordNotSent: false,
-  
+
     isLoading: false,
-    
+    isFbLoading: false,
+
     slogans: ['first', 'second', 'third', 'forth', 'fifth', 'sixth', 'seventh'],
     presentSlogan: 0,
     
@@ -329,6 +330,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
       var self = this;
 
+      this.set('isFbLoading', true);
+
       FB.login(function(response) {
         log('FACEBOOK: login response', response);
         if (response.authResponse) {
@@ -550,7 +553,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         params.push({name: 'invitation', value: window.invitation});
       }
 
-      this.set('isLoading', true);
+      this.set('isFbLoading', true);
   
       $.ajax({
         type: 'POST',
@@ -568,7 +571,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
               onSuccess(data.access_token, data.expires_in);
             }
             else if (! data['access_token']){
-              self.set('isLoading', false);
+              self.set('isFbLoading', false);
 
               self.set('lastError', {
                 type: 'signin',
@@ -581,7 +584,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
             }
             break;
           default:
-            self.set('isLoading', false);
+            self.set('isFbLoading', false);
 
             var msgObj = $.parseJSON(jqXHR.responseText);
             
@@ -599,7 +602,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           }
         },
         error: function(jqXHR, textStatus, errorThrown) {
-          self.set('isLoading', false);
+          self.set('isFbLoading', false);
 
           switch(jqXHR.status) {
           case 400:

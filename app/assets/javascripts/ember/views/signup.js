@@ -2,7 +2,8 @@ Portal.SignupDialog = Ember.View.extend({
   templateName: 'signup-dialog',
   
   isLoadingBinding: 'Portal.DialogController.isLoading',
-  
+  isFbLoadingBinding: 'Portal.DialogController.isFbLoading',
+
   registrationStatusBinding: 'Portal.DialogController.registrationStatus',
   showWaitingListNoticeBinding: 'Portal.DialogController.showWaitingListNotice',
   
@@ -17,7 +18,10 @@ Portal.SignupDialog = Ember.View.extend({
   showSupport: function() {
     alert ('Sorry, not yet implemented.');
   },
-  
+
+  facebook: function() {
+    Portal.DialogController.signinFacebook();
+  },
 });
 
 
@@ -25,6 +29,7 @@ Portal.SignupBarView = Ember.View.extend({
   templateName: 'signup-form',
   
   isLoadingBinding: 'Portal.DialogController.isLoading',
+  isFbLoadingBinding: 'Portal.DialogController.isFbLoading',
 
   registrationStatusBinding: 'Portal.DialogController.registrationStatus',
   
@@ -39,5 +44,9 @@ Portal.SignupBarView = Ember.View.extend({
 
   submit: function(event) {
     Portal.DialogController.signup();
+  },
+
+  facebook: function() {
+    Portal.DialogController.signinFacebook();
   },
 });
