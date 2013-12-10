@@ -439,17 +439,6 @@
         </button>
       {{/if}}
       </div>
-      <div class="form-div">
-        {{#if isFbLoading}}
-          <button type="submit" class="fb-button">
-            {{view Portal.ActivityIndicatorView classNames="activity-indicator-small-white"}} <%= I18n.t 'home_page.processing' %>
-          </button>
-        {{else}}
-          <button {{action "facebook"}} type="submit" class="fb-button">
-            <%= I18n.t 'home_page.signup_with_facebook' %>
-          </button>
-        {{/if}}
-      </div>
     {{else}}
       <%= I18n.t 'home_page.no_signup_message' %>
     {{/if}}  
@@ -473,15 +462,6 @@
       {{else}}
         <button {{action "submit"}} title="<%= I18n.t 'home_page.signin_tooltip' %>" type="submit" class="submit-button">
           <%= I18n.t 'home_page.signin' %>
-        </button>
-      {{/if}}
-      {{#if isFbLoading}}
-        <button type="submit" class="fb-button">
-          {{view Portal.ActivityIndicatorView classNames="activity-indicator-small-white"}} <%= I18n.t 'home_page.processing' %>
-        </button>
-      {{else}}
-        <button {{action "facebook"}} type="submit" class="fb-button">
-          <%= I18n.t 'home_page.signin_with_facebook' %>
         </button>
       {{/if}}
     {{else}}
