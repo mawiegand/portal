@@ -1,3 +1,6 @@
+
+/** represents an instance of the game; that is a particular round of wack-a-doo.
+ * does also hold information about the servers the client should connect to. */
 Portal.GameInstance = Ember.Object.extend({
   
   isDefaultGame: function() {
@@ -42,6 +45,7 @@ Portal.GameInstance = Ember.Object.extend({
 });
 
 
+/** fetches and manages the list of available games. */
 Portal.GameListManager = Ember.Object.extend({
   
   defaultGame: null,

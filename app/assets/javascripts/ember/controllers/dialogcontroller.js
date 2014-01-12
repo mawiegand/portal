@@ -385,6 +385,34 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       }, {scope: 'email,publish_actions'});
     },
   
+    connectToGame: function(game, data) {
+      
+      if (game === undefined || game === null) {
+        self.set('isLoading', false);            
+        self.set('lastError', {
+          type: 'signin',
+          statusCode: 404,
+          msg: "Presently, there is no game available. Please check back later.",
+        });   
+      }
+      
+      window.name = JSON.stringify({
+        accessToken:        data.access_token,
+        expiration:         data.expiration, 
+        locale:             window.currentLocale,
+        retention:          window.retention,
+        playerInvitation:   (window.playerInvitation !== undefined && window.playerInvitation !== null ? window.playerInvitation : null),
+        allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
+        client_id:          Portal.Config.CLIENT_ID,
+        referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
+        requestUrl:         Portal.Cookie.get('requestUrl'), 
+      });
+
+      Portal.Cookie.deleteReferer();
+
+      window.location = game.get('clientBaseUrl') + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (data.firstSignin ? "&signup=1" : "");
+    },
+  
     signin: function(firstSignin) {
       var credentials = this.get('credentials');
       var self = this;
@@ -403,22 +431,17 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
         gameListManager.updateGameList(access_token, function(success, jqXHR) {
           
-          window.name = JSON.stringify({
-            accessToken:        access_token,
-            expiration:         expiration, 
-            locale:             window.currentLocale,
-            retention:          window.retention,
-            playerInvitation:   (window.playerInvitation !== undefined && window.playerInvitation !== null ? window.playerInvitation : null),
-            allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
-            client_id:          Portal.Config.CLIENT_ID,
-            referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
-            requestUrl:         Portal.Cookie.get('requestUrl'), 
-          });
-
-          Portal.Cookie.deleteReferer();
-
-          window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
+          var game = null;
           
+          if (firstSignin) {
+            game = gameListManager.gameForSignup();
+            this.connectToGame(game, { access_token: access_token, expiration: expiration, firstSignin: true });
+          }
+          else {
+            game = gameListManager.get('defaultGame');
+            this.connectToGame(game, { access_token: access_token, expiration: expiration, firstSignin: false });            
+          }
+
         });
         
       });
