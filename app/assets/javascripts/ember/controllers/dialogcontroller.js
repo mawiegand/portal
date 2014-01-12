@@ -385,15 +385,18 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       }, {scope: 'email,publish_actions'});
     },
   
+    informNoGameAvailable : function() {
+      this.set('isLoading', false);            
+      this.set('lastError', {
+        type: 'signin',
+        statusCode: 404,
+        msg: "Presently, there is no game available. Please check back later.",
+      });
+    },
+  
     connectToGame: function(game, data) {
-      
       if (game === undefined || game === null) {
-        self.set('isLoading', false);            
-        self.set('lastError', {
-          type: 'signin',
-          statusCode: 404,
-          msg: "Presently, there is no game available. Please check back later.",
-        });   
+        this.informNoGameAvailable();   
       }
       
       window.name = JSON.stringify({
@@ -412,6 +415,19 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
       window.location = game.get('clientBaseUrl') + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (data.firstSignin ? "&signup=1" : "");
     },
+    
+    chooseGame: function(gameListManager, callback) {
+      
+      var view = Portal.GamelistDialog.create({
+        gameListManager: gameListManager,
+      });
+      
+      view.appendTo($("body"));
+      
+      // choose a game from gameListManager and then hand-it over to the callback
+    },
+    
+    
   
     signin: function(firstSignin) {
       var credentials = this.get('credentials');
@@ -431,20 +447,33 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
         gameListManager.updateGameList(access_token, function(success, jqXHR) {
           
-          var game = null;
-          
           if (firstSignin) {
-            game = gameListManager.gameForSignup();
+            var game = gameListManager.gameForSignup();
             self.connectToGame(game, { access_token: access_token, expiration: expiration, firstSignin: true });
           }
           else {
-            game = gameListManager.get('defaultGame');
-            self.connectToGame(game, { access_token: access_token, expiration: expiration, firstSignin: false });            
+            var defaultGame = gameListManager.get('defaultGame');
+            var gameList = gameListManager.get('gameList') || [];
+            
+            var numGames = (defaultGame ? 1 : 0) + gameList.length;
+            
+            if (numGames == 0) {
+              self.informNoGameAvailable();
+            }
+            else if (numGames == 0) { // 1 , use 0 just for testing
+              var game = defaultGame || gameList[0];
+              self.connectToGame(game, { access_token: access_token, expiration: expiration, firstSignin: false });            
+            }
+            else {
+              self.set('isLoading', false);
+              self.chooseGame(gameListManager, function(game) {
+                this.set('isLoading', true);
+                self.connectToGame(game, { access_token: access_token, expiration: expiration, firstSignin: false });            
+              });
+            }
           }
-
-        });
-        
-      });
+        });   // end loading game list
+      });  // end getting access token
     },
   
     signup: function() {
