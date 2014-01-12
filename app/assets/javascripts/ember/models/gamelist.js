@@ -19,7 +19,7 @@ Portal.GameInstance = Ember.Object.extend({
     var namespace = this.getPath('serverConfig.html.namespace') || "";
     
     return protocol + hostname + (port ? ":"+port : "") + "/" + namespace;
-  }.property('serverConfig.html.hostname', 'serverConfig.html.protocol', 'serverConfig.html.port', 'serverConfig.html.namespace')
+  }.property('serverConfig.html.hostname', 'serverConfig.html.protocol', 'serverConfig.html.port', 'serverConfig.html.namespace'),
 
 
   isOnline: function() {
@@ -41,6 +41,10 @@ Portal.GameInstance = Ember.Object.extend({
   canBeJoined: function() {
     return this.get('signupEnabled') == true && this.get('isOnline') == true && this.get('playable') == true;
   }.property('signupEnabled', 'isOnline', 'playable').cacheable(),
+  
+  serverConfig: function() {
+    return this.get('random_selected_servers') || {};
+  }.property('random_selected_servers').cacheable(),
   
 });
 

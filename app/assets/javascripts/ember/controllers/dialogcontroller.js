@@ -435,11 +435,11 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           
           if (firstSignin) {
             game = gameListManager.gameForSignup();
-            this.connectToGame(game, { access_token: access_token, expiration: expiration, firstSignin: true });
+            self.connectToGame(game, { access_token: access_token, expiration: expiration, firstSignin: true });
           }
           else {
             game = gameListManager.get('defaultGame');
-            this.connectToGame(game, { access_token: access_token, expiration: expiration, firstSignin: false });            
+            self.connectToGame(game, { access_token: access_token, expiration: expiration, firstSignin: false });            
           }
 
         });
