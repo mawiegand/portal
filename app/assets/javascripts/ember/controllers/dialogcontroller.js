@@ -23,12 +23,16 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
     isLoading: false,
     isFbLoading: false,
+    
+    gameListManager: Portal.GameListManager.create(),
 
     slogans: ['first', 'second', 'third', 'forth', 'fifth', 'sixth', 'seventh'],
     presentSlogan: 0,
     
     init: function() {
+      
       this.fetchRegistrationStatus();
+      
       setInterval((function(self) {
         return function() {
           self.fetchRegistrationStatus()
@@ -383,6 +387,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
   
     signin: function(firstSignin) {
       var credentials = this.get('credentials');
+      var self = this;
+      var gameListManager = this.get('gameListManager');
+      
       firstSignin = firstSignin || false;
 
       this.resetError();
@@ -393,22 +400,27 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       
       this.obtainAccessToken($.trim(credentials.get('email')), credentials.get('password'), function(access_token, expiration) {
         Portal.Cookie.saveEmail(credentials.get('email'), 7);
-        
-        window.name = JSON.stringify({
-          accessToken:        access_token,
-          expiration:         expiration, 
-          locale:             window.currentLocale,
-          retention:          window.retention,
-          playerInvitation:   (window.playerInvitation !== undefined && window.playerInvitation !== null ? window.playerInvitation : null),
-          allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
-          client_id:          Portal.Config.CLIENT_ID,
-          referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
-          requestUrl:         Portal.Cookie.get('requestUrl'), 
+
+        gameListManager.updateGameList(access_token, function(success, jqXHR) {
+          
+          window.name = JSON.stringify({
+            accessToken:        access_token,
+            expiration:         expiration, 
+            locale:             window.currentLocale,
+            retention:          window.retention,
+            playerInvitation:   (window.playerInvitation !== undefined && window.playerInvitation !== null ? window.playerInvitation : null),
+            allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
+            client_id:          Portal.Config.CLIENT_ID,
+            referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
+            requestUrl:         Portal.Cookie.get('requestUrl'), 
+          });
+
+          Portal.Cookie.deleteReferer();
+
+          window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
+          
         });
-
-        Portal.Cookie.deleteReferer();
-
-        window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
+        
       });
     },
   
