@@ -534,6 +534,15 @@ Authors: Valérian Saliou, Julien, hunterjm, Kloadut
 	color: #801e1e;
 }
 
+#jappix_mini div.jm_received-messages div.jm_group b {
+	color: #007703;
+}
+
+#jappix_mini div.jm_received-messages div.jm_5d_staff_user b,
+#jappix_mini div.jm_received-messages div.jm_5d_staff_user p {
+	color: blue !important;
+}
+
 #jappix_mini div.jm_received-messages span.jm_date {
 	font-size: 0.8em;
 	float: right;
@@ -646,6 +655,10 @@ Authors: Valérian Saliou, Julien, hunterjm, Kloadut
 	padding: 4px 8px 0;
 	font-weight: bold;
 	color: #FFFFFF;
+}
+
+#jappix_mini div.jm_roster div.jm_grouped a.jm_5d_staff_user {
+	color: blue;
 }
 
 #jappix_mini a.jm_friend {
