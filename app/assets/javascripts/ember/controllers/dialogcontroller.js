@@ -577,8 +577,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         success: function(data, textStatus, jqXHR) {
           switch(jqXHR.status) {
           case 200:
-            if (data['user_identifier']) {
-              Sample.setUserId(data['user_identifier']);
+            if (data['user_identifer']) {
+              Sample.setUserId(data['user_identifer']);
             }
             if (onSuccess && data['access_token']) {
               onSuccess(data.access_token, data.expires_in);
@@ -671,9 +671,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         data: params,
         success: function(data, textStatus, jqXHR) {
           switch(jqXHR.status) {
-          case 200: 
-            if (data['user_identifier']) {
-              Sample.setUserId(data['user_identifier']);
+          case 200:
+            if (data['user_identifer']) {
+              Sample.setUserId(data['user_identifer']);
             }
             if (onSuccess && data['access_token']) {
               onSuccess(data.access_token, data.expires_in);
