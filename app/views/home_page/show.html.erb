@@ -439,7 +439,17 @@
         </button>
       {{/if}}
       </div>
-    {{else}}
+        <div class="form-div">
+        {{#if isFbLoading}}
+          <button type="submit" class="fb-button">
+            {{view Portal.ActivityIndicatorView classNames="activity-indicator-small-white"}} <%= I18n.t 'home_page.processing' %>
+          </button>
+        {{else}}
+          <button {{action "facebook"}} type="submit" class="fb-button">
+            <%= I18n.t 'home_page.signup_with_facebook' %>
+          </button>
+        {{/if}}
+      </div>    {{else}}
       <%= I18n.t 'home_page.no_signup_message' %>
     {{/if}}  
   {{/if}}  
@@ -464,7 +474,15 @@
           <%= I18n.t 'home_page.signin' %>
         </button>
       {{/if}}
-    {{else}}
+        {{#if isFbLoading}}
+        <button type="submit" class="fb-button">
+          {{view Portal.ActivityIndicatorView classNames="activity-indicator-small-white"}} <%= I18n.t 'home_page.processing' %>
+        </button>
+      {{else}}
+        <button {{action "facebook"}} type="submit" class="fb-button">
+          <%= I18n.t 'home_page.signin_with_facebook' %>
+        </button>
+      {{/if}}    {{else}}
       <%= I18n.t 'home_page.no_signin_message' %>
     {{/if}}
   {{/if}}
