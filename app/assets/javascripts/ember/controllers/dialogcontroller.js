@@ -346,7 +346,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
               var fbAccessToken = authResponse.accessToken;
 
               log('FACEBOOK: everything seems, fine, sending information to server. Me:', response);
-              
+                            
               // TODO: 
 //              var credentials = this.get('credentials');
 //              firstSignin = firstSignin || false;
@@ -372,6 +372,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
                 });
 
                 Portal.Cookie.deleteReferer();
+                
+                Sample.setFacebookId(fbPlayerId);
+                Sample.signIn();
 
                 window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000));
               });
@@ -407,6 +410,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         });
 
         Portal.Cookie.deleteReferer();
+        
+        Sample.signIn();
 
         window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
       });
@@ -419,10 +424,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       this.resetError();
     
       if (credentials.validate() && credentials.termsAccepted()) {
+        
+        var email = $.trim(credentials.get('email'));
       
         var params = [
           {name: 'nickname_base',         value: 'WackyUser'},
-          {name: 'email',                 value: $.trim(credentials.get('email'))},
+          {name: 'email',                 value: email},
           {name: 'password',              value: credentials.get('password')},
           {name: 'password_confirmation', value: credentials.get('password')},
           {name: 'client_id',             value: Portal.Config.CLIENT_ID},
@@ -458,6 +465,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
               var user = $.parseJSON(jqXHR.responseText)
               
               if (user.identifier) {
+                Sample.setEmail(email);
+                Sample.registration(user.identifier);
+                
                 var signup_mode = self.getPath('registrationStatus.signup_mode');
                 if (signup_mode === 2 && window.invitation === undefined) {    // invitation only
                   self.set('isLoading', false);            
@@ -567,6 +577,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         success: function(data, textStatus, jqXHR) {
           switch(jqXHR.status) {
           case 200:
+            if (data['user_identifer']) {
+              Sample.setUserId(data['user_identifer']);
+            }
             if (onSuccess && data['access_token']) {
               onSuccess(data.access_token, data.expires_in);
             }
@@ -659,6 +672,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         success: function(data, textStatus, jqXHR) {
           switch(jqXHR.status) {
           case 200:
+            if (data['user_identifer']) {
+              Sample.setUserId(data['user_identifer']);
+            }
             if (onSuccess && data['access_token']) {
               onSuccess(data.access_token, data.expires_in);
             }
