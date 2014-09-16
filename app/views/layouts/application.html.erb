@@ -75,12 +75,12 @@
     var vars  = getQueryVars(window.location.search.substring(1));
     var refid = vars['refid'] || vars['ref_id'];
     var subid = vars['subid'] || vars['sub_id'];
-  
+    
     Sample.setEndpoint("/psiori/event")
     Sample.setAppToken("wad-rt82-fhjk-18");
     Sample.setModule("web-portal");
     Sample.setLocale(window.currentLocale || "unknown");
-    Sample.setReferer(window.referer, refid, subid);
+    Sample.setReferer(window.referer || "", refid, subid);
     Sample.sessionStart();
     Sample.autoPing(30);
   </script>
