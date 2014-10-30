@@ -58,11 +58,29 @@
   <%= csrf_meta_tags %>
   
   <script>
+    var getQueryVars = function(search)
+    {
+      var result = {};
+    
+      var parts = search.split('&');
+      for (var i=0; i < parts.length; i++) {
+        var item = parts[i].split("=");
+        if (item.length === 2) {
+          result[item[0].toLowerCase()] = decodeURIComponent(item[1]);
+        }
+      }
+      return result;
+    };
+    
+    var vars  = getQueryVars(window.location.search.substring(1));
+    var refid = vars['refid'] || vars['ref_id'];
+    var subid = vars['subid'] || vars['sub_id'];
+    
     Sample.setEndpoint("/psiori/event")
     Sample.setAppToken("wad-rt82-fhjk-18");
     Sample.setModule("web-portal");
     Sample.setLocale(window.currentLocale || "unknown");
-    Sample.setReferer(window.referer);
+    Sample.setReferer(refid, subid);
     Sample.sessionStart();
     Sample.autoPing(30);
   </script>

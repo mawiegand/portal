@@ -165,17 +165,17 @@ Portal.Cookie = Ember.Object.create({
       }
     }
   },
-
+  
   setReferer: function(referer, requestUrl, days) {
     var expires = new Date();
     expires.setDate(expires.getDate() + days);
     
-    var value = escape($.trim(referer)) + ((expires==null) ? "" : "; expires="+expires.toUTCString());
+    var value = escape($.trim(referer)) + ((expires===null) ? "" : "; expires="+expires.toUTCString());
     document.cookie = "wackadoo_referer=" + value;
     this.set('referer', referer);
     
     if (requestUrl != null) {
-      value = escape($.trim(requestUrl)) + ((expires==null) ? "" : "; expires="+expires.toUTCString());
+      value = escape($.trim(requestUrl)) + ((expires===null) ? "" : "; expires="+expires.toUTCString());
       document.cookie = "wackadoo_request_url=" + value;
       this.set('requestUrl', requestUrl)
     }
