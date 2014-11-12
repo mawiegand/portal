@@ -81,7 +81,7 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.8.1)
-    libv8 (3.16.14.3)
+    libv8 (3.16.14.7)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -167,7 +167,7 @@ DEPENDENCIES
   ember-rest-rails
   httparty (= 0.10.2)
   jquery-rails (= 1.0.19)
-  libv8
+  libv8 (~> 3.16.14.4)
   pg
   rails (= 3.1.12)
   sass-rails (~> 3.1.5)
