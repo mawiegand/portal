@@ -259,6 +259,15 @@ en:
               <p>And the best of it is: You can take immediate part in the development.
               You can meet the developers of Wack-A-Doo in the game and in the chat
               where they are in contact with the gamers at all times.
+              
+      beta2:
+        title: What are you working on right now?
+        body: |-
+              Perhaps you were already wondering, why there hasn't been many 
+              public updates and new features during the last months. The reason
+              is us being working on a completely new version for iOS, Android,
+              Browser and Facebook. Please find two screenshots from the soon to
+              be published new version below. 
       team:
         title: Team
         former_members: Former Team Members
