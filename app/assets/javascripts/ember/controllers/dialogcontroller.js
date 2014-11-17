@@ -436,6 +436,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           {name: 'client_password',       value: Portal.Config.CLIENT_PASSWORD},
         ];
         
+        if (typeof window.refid !== "undefined")
+        {
+          params['ref_id'] = window.refid || "";
+          params['sub_id'] = window.subid || "";
+        }
+        
         if (window.invitation) {
           params.push({name: 'invitation', value: window.invitation});
         }
