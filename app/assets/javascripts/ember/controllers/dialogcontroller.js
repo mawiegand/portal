@@ -568,6 +568,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       if (window.invitation) {
         params.push({name: 'invitation', value: window.invitation});
       }
+      
+      if (typeof window.refid !== "undefined")
+      {
+        params['ref_id'] = window.refid || "";
+        params['sub_id'] = window.subid || "";
+      }
 
       this.set('isFbLoading', true);
   
@@ -662,6 +668,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
       if (window.invitation) {
         params.push({name: 'invitation', value: window.invitation});
+      }
+      
+      if (typeof window.refid !== "undefined")
+      {
+        params['ref_id'] = window.refid || "";
+        params['sub_id'] = window.subid || "";
       }
 
       this.set('isLoading', true);
