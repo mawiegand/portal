@@ -436,6 +436,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           {name: 'client_password',       value: Portal.Config.CLIENT_PASSWORD},
         ];
         
+        if (typeof window.refid !== "undefined")
+        {
+          params.push({name: 'ref_id', value: window.refid || ""});
+          params.push({name: 'sub_id', value: window.subid || ""});
+        }
+        
         if (window.invitation) {
           params.push({name: 'invitation', value: window.invitation});
         }
@@ -562,6 +568,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       if (window.invitation) {
         params.push({name: 'invitation', value: window.invitation});
       }
+      
+      if (typeof window.refid !== "undefined")
+      {
+        params.push({name: 'ref_id', value: window.refid || ""});
+        params.push({name: 'sub_id', value: window.subid || ""});
+      }
 
       this.set('isFbLoading', true);
   
@@ -656,6 +668,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
       if (window.invitation) {
         params.push({name: 'invitation', value: window.invitation});
+      }
+      
+      if (typeof window.refid !== "undefined")
+      {
+        params.push({name: 'ref_id', value: window.refid || ""});
+        params.push({name: 'sub_id', value: window.subid || ""});
       }
 
       this.set('isLoading', true);
