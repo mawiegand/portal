@@ -3,7 +3,7 @@ defaults: &defaults
   identity_provider_path:  '/identity_provider'
   client_base_url:         '/client'
 
-  client_id:               'WACKADOOHTML5'
+  client_id:               'WACKADOO-HTML5'
   client_password:         'wacky'
   
   requested_scopes:        'payment 5dentity wackadoo'
