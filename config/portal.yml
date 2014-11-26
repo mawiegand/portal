@@ -48,8 +48,8 @@ production:
 
   client_base_url:         'https://gs07.wack-a-doo.com/client'
 
-  client_id:               'WACKADOOHTML5-ROUND7'   # this must be also created in the identity provider to assign correct scopes to users
-  client_password:         'wacky3'
+  client_id:               'WACKADOO-HTML5'   # this must be also created in the identity provider to assign correct scopes to users
+  client_password:         'htmlwad'
   requested_scopes:        'payment 5dentity wackadoo-round7'
   
   ingame_news_url:         'https://gs07.wack-a-doo.de/game_server/fundamental/announcements?language=all'
