@@ -145,6 +145,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     /** toggles the state of the UI from sign in to sign up and vice versa.
      * Also displays the dialog-view if not presently visible. */
     toggleViewClicked: function() {
+      
+      Sample.contentUsage('toggleView', 'interaction');
+      
       if (this.get('visibility') === Portal.DIALOG_STATE_HIDDEN) {
         this.toggleVisibility();
       }
@@ -190,6 +193,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         return ; // can not start a second switch before the first is finished
       }
       this.set('animating', true);
+      
+      Sample.contentUsage('switchbar', 'interaction');
       
       if (!this.get('detailsVisible')) {      
         mainbarMinHeight = $('#mainbar').css('min-height')
