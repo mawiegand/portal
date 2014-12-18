@@ -146,8 +146,6 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
      * Also displays the dialog-view if not presently visible. */
     toggleViewClicked: function() {
       
-      Sample.contentUsage('toggleView', 'interaction');
-      
       if (this.get('visibility') === Portal.DIALOG_STATE_HIDDEN) {
         this.toggleVisibility();
       }
@@ -155,10 +153,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       if (this.get('dialogtype') === Portal.DIALOG_TYPE_SIGNIN) {
         this.set('dialogtype', Portal.DIALOG_TYPE_SIGNUP);
         this.set('bartype', Portal.DIALOG_TYPE_SIGNUP);
+        Sample.openPage(2);
       }
       else {
         this.set('dialogtype', Portal.DIALOG_TYPE_SIGNIN);
         this.set('bartype', Portal.DIALOG_TYPE_SIGNIN);
+        Sample.openPage(3);
       }
       this.resetError();
 
@@ -194,8 +194,6 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       }
       this.set('animating', true);
       
-      Sample.contentUsage('switchbar', 'interaction');
-      
       if (!this.get('detailsVisible')) {      
         mainbarMinHeight = $('#mainbar').css('min-height')
         origMargin = $('#loginbar').css('margin-bottom');
@@ -217,6 +215,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           $('#arrow').removeClass('arrow-down');
           $('#arrow').addClass('arrow-up');
           self.set('animating', false);
+          
+          Sample.contentUsage(1, 'content', {'page_id': 1});
+          
         });
         $('#loginbar').animate({'margin-bottom': '-100px', 'padding-top': '10px'});
         $('#logo-small').fadeOut();
@@ -242,6 +243,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         $('#loginbar').animate({'margin-bottom': origMargin, 'padding-top': origPadding});
 
         this.set('detailsVisible', false);
+        
+        Sample.contentUsage(2, 'content', {'page_id': 1});
       }
     },
 
