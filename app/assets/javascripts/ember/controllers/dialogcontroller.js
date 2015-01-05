@@ -145,9 +145,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     /** toggles the state of the UI from sign in to sign up and vice versa.
      * Also displays the dialog-view if not presently visible. */
     toggleViewClicked: function() {
-      
-      Sample.contentUsage('toggleView', 'interaction');
-      
+            
       if (this.get('visibility') === Portal.DIALOG_STATE_HIDDEN) {
         this.toggleVisibility();
       }
@@ -193,9 +191,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         return ; // can not start a second switch before the first is finished
       }
       this.set('animating', true);
-      
-      Sample.contentUsage('switchbar', 'interaction');
-      
+            
       if (!this.get('detailsVisible')) {      
         mainbarMinHeight = $('#mainbar').css('min-height')
         origMargin = $('#loginbar').css('margin-bottom');
@@ -222,6 +218,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         $('#logo-small').fadeOut();
         $('#teaser-text').fadeOut();
     
+        Sample.pageStart(2); // page-2: info page (clicked switch bar)
+        
         this.set('detailsVisible', true);
       }
       else {
@@ -240,6 +238,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           });
         });
         $('#loginbar').animate({'margin-bottom': origMargin, 'padding-top': origPadding});
+
+        Sample.pageStart(1); // page-1: landing page (clicked switch bar again)
 
         this.set('detailsVisible', false);
       }
@@ -380,6 +380,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
                 
                 Sample.setFacebookId(fbPlayerId);
                 Sample.signIn();
+                Sample.pageEnd();
 
                 window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000));
               });
@@ -417,6 +418,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         Portal.Cookie.deleteReferer();
         
         Sample.signIn();
+        Sample.pageEnd();
 
         window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
       });

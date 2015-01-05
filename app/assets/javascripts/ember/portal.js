@@ -9,6 +9,8 @@
 Portal = Ember.Application.create({
   ready: function() {
     
+    Sample.pageStart(1); // page-1: langing page
+    
     Portal.DialogController = Portal.DialogControllerClass.create();
     
     // binding to ajaxSend in order to modify the accept header
