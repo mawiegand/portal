@@ -374,6 +374,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
                   client_id:          'WACKADOO-FBCANVAS',
                   referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
                   requestUrl:         Portal.Cookie.get('requestUrl'), 
+                  installToken:       Sample.installToken(),
+                  sessionToken:       Sample.sessionToken()
                 });
 
                 Portal.Cookie.deleteReferer();
@@ -413,6 +415,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           client_id:          Portal.Config.CLIENT_ID,
           referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
           requestUrl:         Portal.Cookie.get('requestUrl'), 
+          installToken:       Sample.installToken(),
+          sessionToken:       Sample.sessionToken()
         });
 
         Portal.Cookie.deleteReferer();
