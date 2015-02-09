@@ -383,8 +383,10 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
                 Sample.setFacebookId(fbPlayerId);
                 Sample.signIn();
                 Sample.pageEnd();
-
-                window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000));
+                
+                setTimeout(function() {
+                  window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000));
+                }, 200);
               });
             }   
           }); 
@@ -423,8 +425,11 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         
         Sample.signIn();
         Sample.pageEnd();
-
-        window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
+        
+        setTimeout(function() {
+          window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
+        }, 200);
+        
       });
     },
   
