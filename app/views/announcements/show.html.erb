@@ -25,3 +25,11 @@
     <%= link_to_unless(@announcement.next.nil?, I18n.t('announcement.next'), @announcement.next) %>
   </div>
 </section>
+
+<script>
+  if (typeof window.Sample !== "undefined")
+  {
+    Sample.pageStart("a"+<%= @announcement.id || 0 %>);
+    Sample.contentView(<%= @announcement.id || 0 %>, "announcement");
+  }
+</script>

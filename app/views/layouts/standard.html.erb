@@ -1,3 +1,7 @@
+<% content_for :javascript do %>
+  <%= javascript_include_tag "application-libs" %>
+<% end %>
+
 <% content_for :content do %>
   <div id="top-controls" class="announcements">
     <%= link_to "en", params.merge(locale: :en) %> |

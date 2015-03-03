@@ -44,6 +44,16 @@
 
 <%= will_paginate @announcements %>
 
+
 </section>
+
+<script>
+  var ids = <%= @announcements.map { |a| a.id }.to_json %>; 
+  if (typeof window.Sample !== "undefined")
+  {
+    Sample.pageStart(3);
+    Sample.contentView(ids, "announcement");
+  }
+</script>
 
 

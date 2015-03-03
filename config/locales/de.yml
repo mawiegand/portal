@@ -132,7 +132,7 @@ de:
         <p class="line2">und kassiere Steuern von anderen Spielern.</p>
         
     beta_notice: |-
-      Aktuell: <span class="public-beta">Runde 6</span>&nbsp;&nbsp;beta<br/>
+      Aktuell: <span class="public-beta">Runde 8</span>&nbsp;&nbsp;beta<br/>
       <span class="subline">Jetzt testen und kostenlos mitspielen!</span>
       
     dialog:
@@ -275,6 +275,15 @@ de:
           teilhaben. Die Entwickler von Wack-A-Doo stehen sind in Spiel und Chat
           anzutreffen und halten ständigen Kontakt zu den Spielern.
     
+      beta2:
+        title: Was machen wir gerade?
+        body: |-
+          Sicherlich haben sich einige von Euch schon gefragt, warum es in den letzten
+          Monaten keine großen Änderungen und Neuerungen gab. Nun, wir arbeiten 
+          mit Hochdruck an einer neuen Version; sozusagen Wack-A-Doo 2.0 für iOS,
+          Android, Browser und Facebook. Um Euch noch ein bisschen weiter auf die Folter
+          zu spannen, zeigen wir Euch hier schon mal einen kleinen Ausblick auf das, 
+          was Euch innerhalb der nächsten Runde erwartet.
 
       box9:
         title: Wer seid Ihr eigentlich?

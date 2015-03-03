@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-ruby "1.9.3"
+#ruby "1.9.3"
 
 gem 'rails', '3.1.12'
 
@@ -18,7 +18,7 @@ gem 'httparty' , '0.10.2'
 gem 'will_paginate', '~> 3.0.0'
 
 gem 'therubyracer', '>= 0.11.2'          # missing javascript runtime
-gem 'libv8'
+gem 'libv8', '~> 3.16.14.4'
 
 group :production do
   gem 'pg'

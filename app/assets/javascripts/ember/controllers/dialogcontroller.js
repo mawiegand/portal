@@ -145,6 +145,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     /** toggles the state of the UI from sign in to sign up and vice versa.
      * Also displays the dialog-view if not presently visible. */
     toggleViewClicked: function() {
+            
       if (this.get('visibility') === Portal.DIALOG_STATE_HIDDEN) {
         this.toggleVisibility();
       }
@@ -190,7 +191,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         return ; // can not start a second switch before the first is finished
       }
       this.set('animating', true);
-      
+            
       if (!this.get('detailsVisible')) {      
         mainbarMinHeight = $('#mainbar').css('min-height')
         origMargin = $('#loginbar').css('margin-bottom');
@@ -217,6 +218,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         $('#logo-small').fadeOut();
         $('#teaser-text').fadeOut();
     
+        Sample.pageStart(2); // page-2: info page (clicked switch bar)
+        
         this.set('detailsVisible', true);
       }
       else {
@@ -235,6 +238,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           });
         });
         $('#loginbar').animate({'margin-bottom': origMargin, 'padding-top': origPadding});
+
+        Sample.pageStart(1); // page-1: landing page (clicked switch bar again)
 
         this.set('detailsVisible', false);
       }
@@ -369,14 +374,19 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
                   client_id:          'WACKADOO-FBCANVAS',
                   referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
                   requestUrl:         Portal.Cookie.get('requestUrl'), 
+                  installToken:       Sample.installToken(),
+                  sessionToken:       Sample.sessionToken()
                 });
 
                 Portal.Cookie.deleteReferer();
                 
                 Sample.setFacebookId(fbPlayerId);
                 Sample.signIn();
-
-                window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000));
+                Sample.pageEnd();
+                
+                setTimeout(function() {
+                  window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000));
+                }, 200);
               });
             }   
           }); 
@@ -407,13 +417,19 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           client_id:          Portal.Config.CLIENT_ID,
           referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
           requestUrl:         Portal.Cookie.get('requestUrl'), 
+          installToken:       Sample.installToken(),
+          sessionToken:       Sample.sessionToken()
         });
 
         Portal.Cookie.deleteReferer();
         
         Sample.signIn();
-
-        window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
+        Sample.pageEnd();
+        
+        setTimeout(function() {
+          window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
+        }, 200);
+        
       });
     },
   
@@ -435,6 +451,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           {name: 'client_id',             value: Portal.Config.CLIENT_ID},
           {name: 'client_password',       value: Portal.Config.CLIENT_PASSWORD},
         ];
+        
+        if (typeof window.refid !== "undefined")
+        {
+          params.push({name: 'ref_id', value: window.refid || ""});
+          params.push({name: 'sub_id', value: window.subid || ""});
+        }
         
         if (window.invitation) {
           params.push({name: 'invitation', value: window.invitation});
@@ -562,6 +584,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       if (window.invitation) {
         params.push({name: 'invitation', value: window.invitation});
       }
+      
+      if (typeof window.refid !== "undefined")
+      {
+        params.push({name: 'ref_id', value: window.refid || ""});
+        params.push({name: 'sub_id', value: window.subid || ""});
+      }
 
       this.set('isFbLoading', true);
   
@@ -656,6 +684,12 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
       if (window.invitation) {
         params.push({name: 'invitation', value: window.invitation});
+      }
+      
+      if (typeof window.refid !== "undefined")
+      {
+        params.push({name: 'ref_id', value: window.refid || ""});
+        params.push({name: 'sub_id', value: window.subid || ""});
       }
 
       this.set('isLoading', true);

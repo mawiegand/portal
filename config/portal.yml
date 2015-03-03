@@ -3,8 +3,8 @@ defaults: &defaults
   identity_provider_path:  '/identity_provider'
   client_base_url:         '/client'
 
-  client_id:               'WACKADOOHTML5'
-  client_password:         'wacky'
+  client_id:               'WACKADOO-HTML5'
+  client_password:         'htmlwad'
   
   requested_scopes:        'payment 5dentity wackadoo'
   
@@ -33,8 +33,8 @@ staging:
 
   client_base_url:         'https://test1.wack-a-doo.com/client'
 
-  client_id:               'WACKADOOHTML5-TESTROUND3'
-  client_password:         'wackytest3'
+  client_id:               'WACKADOO-HTML5-TEST'
+  client_password:         'htmlwad-test'
   requested_scopes:        'payment 5dentity wackadoo-testround3'
 
   ingame_news_url:         '/game_server/fundamental/announcements?language=all'
@@ -46,13 +46,13 @@ staging:
 production:
   <<: *defaults
 
-  client_base_url:         'https://gs06.wack-a-doo.com/client'
+  client_base_url:         'https://gs08.wack-a-doo.com/client'
 
-  client_id:               'WACKADOOHTML5-ROUND6'   # this must be also created in the identity provider to assign correct scopes to users
-  client_password:         'wacky3'
-  requested_scopes:        'payment 5dentity wackadoo-round6'
+  client_id:               'WACKADOO-HTML5'   # this must be also created in the identity provider to assign correct scopes to users
+  client_password:         'htmlwad'
+  requested_scopes:        'payment 5dentity wackadoo-round8'
   
-  ingame_news_url:         'https://gs06.wack-a-doo.de/game_server/fundamental/announcements?language=all'
+  ingame_news_url:         'https://gs08.wack-a-doo.de/game_server/fundamental/announcements?language=all'
 
 
 staging_test:
