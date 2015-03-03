@@ -357,7 +357,10 @@ en:
     representatives: Legal Representatives
     hrb_heading: Handelsregister
     vat: VAT Reg No
-    tmg_heading: Responsible Editor      
+    tmg_heading: Responsible Editor  
+
+    marketing_heading: worldwide marketing
+    representatives_ag: Board of Directors    
         
   announcement:
     title: Latest announcements
