@@ -6,8 +6,8 @@ Portal.PasswordCredentials = Ember.Object.extend({
   
   validate: function() {
     log('validate');
-    if (this.get('email') === undefined || this.get('email') === '' ||
-        this.get('password') === undefined  || this.get('password') === null || this.get('password').length < 6) {
+    if (typeof this.get('email') === "undefined" || this.get('email') === '' ||
+        typeof this.get('password') === "undefined"  || this.get('password') === null || this.get('password').length < 6) {
       return false;
     }
     return true;

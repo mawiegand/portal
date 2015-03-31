@@ -394,9 +394,10 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       }, {scope: 'email,publish_actions'});
     },
   
-    signin: function(firstSignin) {
+    signin: function(firstSignin, password) {
       var credentials = this.get('credentials');
       firstSignin = firstSignin || false;
+      password = password || credentials.get('password');
 
       this.resetError();
       
@@ -404,7 +405,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         window.location = Portal.Config.SERVER_ROOT + "/browser.html";
       }
       
-      this.obtainAccessToken($.trim(credentials.get('email')), credentials.get('password'), function(access_token, expiration) {
+      this.obtainAccessToken($.trim(credentials.get('email')), password, function(access_token, expiration) {
         Portal.Cookie.saveEmail(credentials.get('email'), 7);
         
         window.name = JSON.stringify({
@@ -442,12 +443,13 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       if (credentials.validate() && credentials.termsAccepted()) {
         
         var email = $.trim(credentials.get('email'));
+        var password = credentials.get('password');
       
         var params = [
           {name: 'nickname_base',         value: 'WackyUser'},
           {name: 'email',                 value: email},
-          {name: 'password',              value: credentials.get('password')},
-          {name: 'password_confirmation', value: credentials.get('password')},
+          {name: 'password',              value: password },
+          {name: 'password_confirmation', value: password },
           {name: 'client_id',             value: Portal.Config.CLIENT_ID},
           {name: 'client_password',       value: Portal.Config.CLIENT_PASSWORD},
         ];
@@ -496,7 +498,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
                   self.handlePutOnWaitingList();
                 }
                 else if (self.getPath('registrationStatus.canSignin')) {
-                  self.signin(true);
+                  self.signin(true, password);
                 }
                 else {  // cannot do anything else (sign in presently disabled), just inform user has been signed up.
                   self.set('isLoading', false);            
