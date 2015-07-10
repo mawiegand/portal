@@ -892,7 +892,6 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
             self.set('isLoading', false);
             switch(jqXHR.status) {
               case 200:
-                debugger;
                 credentials.set_new_password($.trim(password_new))
                 self.set('passwordChanged', true);
                 break;
