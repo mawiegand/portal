@@ -68,6 +68,10 @@ Portal = Ember.Application.create({
         return Portal.DialogController.get('bartype') === Portal.DIALOG_TYPE_PASSWORD;
       }.property('Portal.DialogController.bartype').cacheable(),
       
+      passwordChangeType: function() {
+        return Portal.DialogController.get('bartype') === Portal.DIALOG_TYPE_PASSWORD_CHANGE;
+      }.property('Portal.DialogController.bartype').cacheable(),
+      
       hiddenBinding: 'Portal.DialogController.visibility',
       
     }).appendTo('#loginbar');
@@ -116,6 +120,7 @@ Portal.DIALOG_STATE_VISIBLE = 1;
 Portal.DIALOG_TYPE_SIGNUP   = 0;
 Portal.DIALOG_TYPE_SIGNIN   = 1;
 Portal.DIALOG_TYPE_PASSWORD = 2;
+Portal.DIALOG_TYPE_PASSWORD_CHANGE = 3;
 
 Portal.Cookie = Ember.Object.create({
   email: null,
