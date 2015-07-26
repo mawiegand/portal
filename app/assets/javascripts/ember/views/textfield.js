@@ -38,13 +38,13 @@ Portal.TextField = Ember.TextField.extend({
   }.property('type'),
 
   switchToShadow: function() {
-    log("switchToShadow", $(this.get('element')).next('input'));
+    //log("switchToShadow", $(this.get('element')).next('input'));
     this.set('empty', true);
     $(this.get('element')).next('input').focus();
   },
 
   switchToOriginal: function() {
-    log("switchToOriginal");
+    //log("switchToOriginal");
     this.set('empty', false);
     $(this.get('element')).focus();
   },
@@ -71,7 +71,7 @@ Portal.ShadowTextField = Ember.TextField.extend({
   init: function() {
     this._super();
 
-    log(this.getPath('parentView.placeholder'), "val: " + this.get('value'));
+    //log(this.getPath('parentView.placeholder'), "val: " + this.get('value'));
     this.set('value', this.getPath('parentView.placeholder'));
   },
 

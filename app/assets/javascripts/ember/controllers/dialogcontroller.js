@@ -160,14 +160,14 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       }
       this.resetError();
 
-        log("BARTYPE === SIGNIN", this.get('bartype'), this.get('dialogtype'), 
-                    Ember.getPath("Portal.DialogController.credentials.email"), Ember.getPath("Portal.DialogController.credentials.password"))
+        //log("BARTYPE === SIGNIN", this.get('bartype'), this.get('dialogtype'),
+        //            Ember.getPath("Portal.DialogController.credentials.email"), Ember.getPath("Portal.DialogController.credentials.password"))
 
 
       if (this.get('bartype') === Portal.DIALOG_TYPE_SIGNIN) { // reset email
         //this.get('credentials').set('email', "gucki");
-        log("BARTYPE === SIGNIN", this.get('bartype'), this.get('dialogtype'), 
-                    Ember.getPath("Portal.DialogController.credentials.email"), Ember.getPath("Portal.DialogController.credentials.password"))
+        //log("BARTYPE === SIGNIN", this.get('bartype'), this.get('dialogtype'),
+        //            Ember.getPath("Portal.DialogController.credentials.email"), Ember.getPath("Portal.DialogController.credentials.password"))
       }
     },
     
@@ -331,14 +331,14 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
 
     signinFacebook: function() {
-      log('FACEBOOK: now call login');
+      //log('FACEBOOK: now call login');
 
       var self = this;
 
       this.set('isFbLoading', true);
 
       FB.login(function(response) {
-        log('FACEBOOK: login response', response);
+        //log('FACEBOOK: login response', response);
         if (response.authResponse) {
           var authResponse = response.authResponse;
 
@@ -350,7 +350,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
               var fbPlayerId    = authResponse.userID;
               var fbAccessToken = authResponse.accessToken;
 
-              log('FACEBOOK: everything seems, fine, sending information to server. Me:', response);
+              //log('FACEBOOK: everything seems, fine, sending information to server. Me:', response);
                             
               // TODO: 
 //              var credentials = this.get('credentials');
@@ -485,7 +485,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
             switch(jqXHR.status) {
             case 200:
             case 201:  // created
-              log(jqXHR, data, textStatus);
+              //log(jqXHR, data, textStatus);
               var user = $.parseJSON(jqXHR.responseText)
               
               if (user.identifier) {
@@ -522,7 +522,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
             default:
               self.set('isLoading', false);            
               var msgObj = $.parseJSON(jqXHR.responseText);
-              log('ERORR during sign up: ' + msgObj.error_description);
+              //log('ERORR during sign up: ' + msgObj.error_description);
               self.set('lastError', {
                 type: 'signup',
                 statusCode: jqXHR.status,
@@ -533,7 +533,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           error: function(jqXHR, textStatus, errorThrown) {
             self.set('isLoading', false);
             var msgObj = $.parseJSON(jqXHR.responseText);
-            log('ERORR during sign up: ' + msgObj.error_description);
+            //log('ERORR during sign up: ' + msgObj.error_description);
             
             switch(jqXHR.status) {
             case 409: // CONFLICT               
@@ -637,7 +637,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
               msg: msgObj.error_description,
             });
             
-            log('ERORR during sign in: ' + msgObj.error_description);
+            //log('ERORR during sign in: ' + msgObj.error_description);
             
             if (onError) {
               onError(jqXHR, textStatus, 'Unexpected server response.');
@@ -657,7 +657,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
               statusCode: jqXHR.status,
               msg: msgObj.error_description,
             });
-            log('ERORR during sign in: ' + msgObj.error_description);
+            //log('ERORR during sign in: ' + msgObj.error_description);
             if (onError) {
               onError(jqXHR, textStatus, errorThrown);
             }
@@ -738,7 +738,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
               msg: msgObj.error_description,
             });
             
-            log('ERORR during sign in: ' + msgObj.error_description);
+            //log('ERORR during sign in: ' + msgObj.error_description);
             
             if (onError) {
               onError(jqXHR, textStatus, 'Unexpected server response.');
@@ -758,7 +758,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
               statusCode: jqXHR.status,
               msg: msgObj.error_description,
             });
-            log('ERORR during sign in: ' + msgObj.error_description);
+            //log('ERORR during sign in: ' + msgObj.error_description);
             if (onError) {
               onError(jqXHR, textStatus, errorThrown);
             }
