@@ -76,8 +76,7 @@ Portal.ShadowTextField = Ember.TextField.extend({
   },
 
   keyDown: function(event) {
-    log('event', event);
-    this.setPath('parentView.value', String.fromCharCode(event.charCode));
+    //this.setPath('parentView.value', String.fromCharCode(event.charCode));
   },
 
 });
