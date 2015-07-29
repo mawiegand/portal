@@ -46,13 +46,13 @@ staging:
 production:
   <<: *defaults
 
-  client_base_url:         'https://gs08.wack-a-doo.com/client'
+  client_base_url:         'https://gs09.wack-a-doo.com/client'
 
   client_id:               'WACKADOO-HTML5'   # this must be also created in the identity provider to assign correct scopes to users
   client_password:         'htmlwad'
-  requested_scopes:        'payment 5dentity wackadoo-round8'
+  requested_scopes:        'payment 5dentity wackadoo-round9'
   
-  ingame_news_url:         'https://gs08.wack-a-doo.de/game_server/fundamental/announcements?language=all'
+  ingame_news_url:         'https://gs09.wack-a-doo.de/game_server/fundamental/announcements?language=all'
 
 
 staging_test:
