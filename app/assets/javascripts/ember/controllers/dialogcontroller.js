@@ -448,6 +448,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           sessionToken:       Sample.sessionToken()
         });
 
+        console.log('name', window.name);
+
         Portal.Cookie.deleteReferer();
         
         Sample.signIn();
