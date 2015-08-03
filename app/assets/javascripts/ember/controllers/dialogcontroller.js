@@ -448,7 +448,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         
         Sample.signIn();
         Sample.pageEnd();
-        
+        debugger
         setTimeout(function() {
           window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "") + ((firstSignin && typeof window.refid !== "undefined") ? ("&ref_id=" + window.refid) : "") + ((firstSignin && typeof window.subid !== "undefined") ? ("&sub_id=" + window.subid) : "");
         }, 200);
