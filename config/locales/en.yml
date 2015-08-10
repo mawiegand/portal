@@ -77,6 +77,12 @@ en:
     password_token_not_sent: The email could not be found.
     password_sent: We sent a new password to your mail address. You can log in with it once again. 
     password_not_sent: The password link is not valid. 
+    
+    password_current: current password
+    password_new: new password
+    password_change: Change Password
+    password_changed: Password has been changed successfully.
+    
     switchbar:
       teaser: Wanna know more about the game?
       
@@ -93,7 +99,8 @@ en:
       forgotten_password_link: Reset it here.
       need_help: Need help? 
       contact_link: Please contact support.
-
+      change_password_help: Change password?
+      change_password_link: Change your password here.
     video:
       subline: Crowdfunding with
       subline_link: Startnext!

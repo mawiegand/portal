@@ -15,6 +15,10 @@ Portal.SigninDialog = Ember.View.extend({
     this.get('controller').resetPasswordClicked();
   },
 
+  showPasswordChange: function() {
+    this.get('controller').changePasswordClicked();
+  },
+  
   facebook: function() {
     Portal.DialogController.signinFacebook();
   },

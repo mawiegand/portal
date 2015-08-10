@@ -21,6 +21,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     passwordSent: false,
     passwordNotSent: false,
 
+    passwordChanged: false,
+    passwordNotChanged: false,
+    
     isLoading: false,
     isFbLoading: false,
 
@@ -113,6 +116,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       this.set('passwordTokenNotSent', false);
       this.set('passwordSent', false);
       this.set('passwordNotSent', false);
+      this.set('passwordChanged', false);
+      this.set('passwordNotChanged', false);      
     },
   
     signinContext: function() {
@@ -139,6 +144,15 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       }
       else {
         return this.get('dialogtype') == Portal.DIALOG_TYPE_PASSWORD;
+      }
+    }.property('visibility', 'dialogtype'),
+    
+    passwordChangeContext: function() {
+      if (this.get('visibility') === Portal.DIALOG_STATE_HIDDEN) {
+        return this.get('bartype') == Portal.DIALOG_TYPE_PASSWORD_CHANGE;
+      }
+      else {
+        return this.get('dialogtype') == Portal.DIALOG_TYPE_PASSWORD_CHANGE;
       }
     }.property('visibility', 'dialogtype'),
   
@@ -176,6 +190,14 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         this.toggleVisibility();
       }
       this.set('dialogtype', Portal.DIALOG_TYPE_PASSWORD);
+      this.resetError();
+    },
+    
+    changePasswordClicked: function() {
+      if (this.get('visibility') === Portal.DIALOG_STATE_HIDDEN) {
+        this.toggleVisibility();
+      }
+      this.set('dialogtype', Portal.DIALOG_TYPE_PASSWORD_CHANGE);
       this.resetError();
     },
   
@@ -373,6 +395,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
                   allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
                   client_id:          'WACKADOO-FBCANVAS',
                   referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
+                  refid:              window.refid || null,
+                  subid:              window.subid || null,
                   requestUrl:         Portal.Cookie.get('requestUrl'), 
                   installToken:       Sample.installToken(),
                   sessionToken:       Sample.sessionToken()
@@ -417,6 +441,8 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           allianceInvitation: (window.allianceInvitation !== undefined && window.allianceInvitation !== null ? window.allianceInvitation : null),
           client_id:          Portal.Config.CLIENT_ID,
           referer:            (Portal.Cookie.get('referer') != null ? Portal.Cookie.get('referer') : window.referer),
+          refid:              window.refid || null,
+          subid:              window.subid || null,
           requestUrl:         Portal.Cookie.get('requestUrl'), 
           installToken:       Sample.installToken(),
           sessionToken:       Sample.sessionToken()
@@ -426,9 +452,9 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         
         Sample.signIn();
         Sample.pageEnd();
-        
+        debugger
         setTimeout(function() {
-          window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "");
+          window.location = Portal.Config.CLIENT_BASE + '?t=' + (Math.round(Math.random().toString() * 100000000)) + (firstSignin ? "&signup=1" : "") + ((firstSignin && typeof window.refid !== "undefined") ? ("&ref_id=" + window.refid) : "") + ((firstSignin && typeof window.subid !== "undefined") ? ("&sub_id=" + window.subid) : "");
         }, 200);
         
       });
@@ -837,6 +863,61 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
           }
         });
       }
-    },    
+    },  
+    
+    changePassword: function() {
+      var credentials = this.getPath('credentials');
+      var identifier = credentials.email;
+      var password_old = credentials.password;
+      var password_new = credentials.password_new;
+      
+      var credentials_valid = credentials.validate();
+      var params_valid = (identifier && identifier != '') && (password_old && password_old != '') && (password_new && password_new != '')
+      
+      //if (credentials_valid && params_valid) {
+        var self = this;
+  
+        var params = [
+          {name: 'client_id',             value: Portal.Config.CLIENT_ID},
+          {name: 'client_password',       value: Portal.Config.CLIENT_PASSWORD},
+          {name: 'password_old',          value: $.trim(password_old)},
+          {name: 'password_new',          value: $.trim(password_new)},
+          {name: 'identifier',            value: $.trim(identifier)}  
+        ];
+  
+        credentials.reset_new_password();
+        
+        this.set('isLoading', true);
+        $.ajax({
+          type: 'GET',
+          url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.localePathFrag || "") + '/change_password',
+          data: params,
+          success: function(data, textStatus, jqXHR) {
+            self.set('isLoading', false);
+            switch(jqXHR.status) {
+              case 200:
+                credentials.set_new_password($.trim(password_new))
+                self.set('passwordChanged', true);
+                break;
+              default:
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            
+            var msgObj = $.parseJSON(jqXHR.responseText);
+            self.set('lastError', {
+              type: 'changepassword',
+              statusCode: jqXHR.status,
+              msg: msgObj.error_description,
+            });
+            
+            self.set('isLoading', false);
+            self.set('passwordNotChanged', true);
+          }
+        });
+      
+    }, 
+    
+      
   };
 }());

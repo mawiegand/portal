@@ -3,6 +3,7 @@ Portal.PasswordCredentials = Ember.Object.extend({
   email: null,
   password: null,
   terms: false,
+  password_new: null,
   
   validate: function() {
     log('validate');
@@ -18,4 +19,19 @@ Portal.PasswordCredentials = Ember.Object.extend({
     return this.get('terms');
   },
   
+  validate_password_change: function() {
+    if (validate() === false ||
+        typeof this.get('password_new') === "undefined"  || this.get('password_new') === null || this.get('password_new').length < 6) {
+      return false;
+    }
+    return true;
+  },
+  
+  reset_new_password: function(){
+    this.set('password_new', null);
+  },
+  
+  set_new_password: function(password){
+    this.set('password', password);
+  }
 });

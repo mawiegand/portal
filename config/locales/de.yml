@@ -100,7 +100,12 @@ de:
     password_token_not_sent: Die Emailadresse wurde nicht gefunden.
     password_sent: Wir haben dir ein neues Passwort an deine Mail-Adresse geschickt. Du kannst dich damit wieder einloggen. 
     password_not_sent: Der Passwort Link ist ungültig. 
-     
+ 
+    password_current: Aktuelles Passwort
+    password_new: Neues Passwort
+    password_change: Passwort ändern
+    password_changed: Passwort wurde erfolgreich geändert.
+            
     togglebar:
       signup: Registrieren
       signin: Login
@@ -142,6 +147,8 @@ de:
       signup_link: Jetzt zum Spiel anmelden und sofort loslegen!
       forgotten_password_help: Passwort vergessen?
       forgotten_password_link: Setze es hier zurück.
+      change_password_help: Passwort ändern?
+      change_password_link: Ändere hier dein Passwort
       need_help: Du brauchst Hilfe? 
       contact_link: Bitte kontaktiere den Support.
 
