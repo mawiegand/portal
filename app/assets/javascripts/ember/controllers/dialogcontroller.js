@@ -575,13 +575,13 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       else if (credentials.validate()) { // did not validate
         self.set('lastError', {
           type: 'signup',
-          msg: 'Du musst die AGB akzeptieren, um dich zu registrieren.',
+          msg: Portal.I18n.lookupTranslation("","").error.termsofservice,
         });
       }     
       else { // did not validate
         self.set('lastError', {
           type: 'signup',
-          msg: 'Gib eine gültige E-Mailadresse und ein Passwort mit mindestens sechs Zeichen an.',
+          msg: Portal.I18n.lookupTranslation("","").error.input,
         });
       }     
     },
