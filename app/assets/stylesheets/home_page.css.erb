@@ -285,7 +285,8 @@ p {
 }
 
 #facebook-link:hover {
-  background-color: rgba(255,255,255,0.7);
+  transform: scale(1.1);
+  transition: transform .25s ease;
 }
 
 
@@ -549,7 +550,7 @@ input[type=text].red, input[type=password].red {
 
 
 input[type=submit] {
-  box-shadow: inset 0px 1px 0px rgba(255,255,255,.4), 0px 1px 0px rgba(255,255,255,.2);  
+  box-shadow: inset 0px 1px 0px rgba(255,255,255,.4), 0px 1px 0px rgba(255,255,255,.2);
   background-color: #F80;
   color: #444;
   text-shadow: rgba(255,255,255,.5) 0px 1px 0px;
@@ -582,6 +583,15 @@ button.submit-button {
   margin-left: 1px;
 }
 
+button.submit-button:hover {
+  transform: scale(1.1);
+  transition: transform .25s ease;
+}
+
+button.submit-button:active {
+  background-position: 0 -90px;
+}
+
 button.fb-button {
   background-color: rgba(255,255,255,0.0);
   border: none;
@@ -603,14 +613,10 @@ button.fb-button {
   padding-left: 50px;
 }
 
-button.submit-button:hover {
-  background-position: 0 -45px;
+button.fb-button:hover {
+  transform: scale(1.1);
+  transition: transform .25s ease;
 }
-
-button.submit-button:active {
-  background-position: 0 -90px;
-}
-
 
 #detailsbar {
   width: 100%;
