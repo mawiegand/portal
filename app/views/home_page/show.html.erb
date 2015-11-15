@@ -607,24 +607,24 @@
 <script type="text/x-handlebars" data-template-name="signin-dialog">
   <div class="dialog">
     {{#if registrationStatus.canSignin}}
-    <div class="dialog-image">&nbsp;</div>
-    <div class="dialog-left-column">
-      {{view Portal.SigninBarView}}
-    </div>
-    <div class="dialog-right-column">
-      <ul>
-        {{#if Portal.DialogController.lastError}}
-          <li class="error">
-          {{#unless Portal.DialogController.lastError.notAnError}}
-            <%= I18n.t('Error')%>:
-          {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
-        {{/if}}
-        <li><%= I18n.t 'home_page.signin_tooltip' %></li>
-        <li><%= I18n.t 'home_page.dialog.signup_help' %> <a href="#" {{action "showSignup" }} ><%= I18n.t 'home_page.dialog.signup_link' %></a></li>
-        <li><%= I18n.t 'home_page.dialog.forgotten_password_help' %> <a href="#" {{action "showPasswordReset" }} ><%= I18n.t 'home_page.dialog.forgotten_password_link' %></a></li>
-                
-        <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
-      </ul>
+    <div class="dialog-bg">
+      <div class="dialog-left-column">
+        {{view Portal.SigninBarView}}
+      </div>
+      <div class="dialog-right-column">
+        <ul>
+          {{#if Portal.DialogController.lastError}}
+            <li class="error">
+            {{#unless Portal.DialogController.lastError.notAnError}}
+              <%= I18n.t('Error')%>:
+            {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
+          {{/if}}
+          <li><%= I18n.t 'home_page.signin_tooltip' %></li>
+          <li><%= I18n.t 'home_page.dialog.signup_help' %> <a href="#" {{action "showSignup" }} ><%= I18n.t 'home_page.dialog.signup_link' %></a></li>
+          <li><%= I18n.t 'home_page.dialog.forgotten_password_help' %> <a href="#" {{action "showPasswordReset" }} ><%= I18n.t 'home_page.dialog.forgotten_password_link' %></a></li>
+          <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
+        </ul>
+      </div>
     </div>
     {{else}}
       <%= I18n.t 'home_page.no_signin_message' %>
@@ -640,7 +640,7 @@
       </div>
     {{else}}
       {{#if registrationStatus.canSignup}}
-        <div class="dialog-image">&nbsp;</div>
+      <div class="dialog-bg">
         <div class="dialog-left-column">
           {{view Portal.SignupBarView}}
         </div>
@@ -649,20 +649,21 @@
             {{#if Portal.DialogController.lastError}}
               <li class="error">
               {{#unless Portal.DialogController.lastError.notAnError}}
-                <%= I18n.t('Error')%>: 
+                <%= I18n.t('Error')%>:
               {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
             {{/if}}
             <li><%= I18n.t 'home_page.signup_tooltip' %></li>
             <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
             <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
-            
+
             <% if !@invitation.blank? %>
               <li title="Du bist über einen persönlichen Einladungslink gekommen. Solange Du diesen Vermerk hier siehst, kannst Du sicher sein, dass Dir mit der Einladung vermerkte Vorteile bei einer Neuanmeldung gutgeschrieben werden.">
                 Aktive Einladung: <a href="/invitations/<%= @invitation %>"><%= @invitation %></a>
               </li>
-            <% end %>            
+            <% end %>
           </ul>
         </div>
+      </div>
       {{else}}
         <%= I18n.t('home_page.no_signup_message') %>
       {{/if}}

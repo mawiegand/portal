@@ -199,6 +199,14 @@ p {
   padding: 10px;
 }
 
+.dialog-bg {
+  display: block;
+  background-image: url('<%= asset_path 'lp/central_bg.png' %>');
+  margin-top: -129px;
+  width: 769px;
+  height: 755px;
+}
+
 .dialog-left-column, .dialog-right-column {
   float: left;
 }
@@ -214,7 +222,9 @@ p {
 
 .dialog-left-column {
   width: 260px;
-  right-margin: 10px;
+  position: relative;
+  top: 250px;
+  left: 178px;
 }
 
 .dialog-right-column {
@@ -555,11 +565,11 @@ input[type=submit]#hover {
 button.submit-button {
   background-color: rgba(255,255,255,0.0);
   border: none;
-  background-image: url('<%= asset_path 'lp/main_button.png' %>');
+  background-image: url('<%= asset_path 'lp/play_button.png' %>');
   background-repeat: no-repeat;
   background-position: 0px 0px;
-  width: 220px;
-  height: 44px;
+  width: 285px;
+  height: 64px;
     
   color: #FFF;
   text-shadow: inset rgba(0,0,0,.5) -1px -1px 0px;
@@ -575,11 +585,11 @@ button.submit-button {
 button.fb-button {
   background-color: rgba(255,255,255,0.0);
   border: none;
-  background-image: url('<%= asset_path 'lp/fb-button.png' %>');
+  background-image: url('<%= asset_path 'lp/fb_login.png' %>');
   background-repeat: no-repeat;
-  background-position: 0px -1px;
-  width: 220px;
-  height: 44px;
+  background-position: 0px 0px;
+  width: 285px;
+  height: 64px;
 
   color: #FFF;
   text-shadow: inset rgba(0,0,0,.5) -1px -1px 0px;
