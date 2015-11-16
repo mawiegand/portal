@@ -223,7 +223,7 @@ p {
 .dialog-left-column {
   width: 260px;
   position: relative;
-  top: 250px;
+  top: 220px;
   left: 178px;
 }
 
@@ -502,7 +502,7 @@ a.minor-link:link,a.minor-link:visited{color:#388da2}
   font-size: 14px;
   font-family: hvd_comic_serif_proregular;
   text-align: left;
-  padding: 3px 0px 0px 4px;
+  display: inline;
   width: 199px;
 }
 
@@ -525,13 +525,14 @@ input[type=text], input[type=password] {
   box-shadow: inset 0px 1px 0px rgba(0,0,0,.6), 0px 1px 0px rgba(255,255,255,.2);
   background-color: #DEF;
   font-size: 18px;
-  width: 212px;
+  width: 260px;
   padding: 2px 0px 1px 0px;
   color: #ABC;
   border-radius: 5px;
   font-family: hvd_comic_serif_proregular;
   height: 37px;
   margin-bottom: 4px;
+  margin-left: 10px;
 }
 
 input[type=text].red, input[type=password].red {
@@ -539,13 +540,14 @@ input[type=text].red, input[type=password].red {
   box-shadow: inset 0px 1px 0px rgba(0,0,0,.6), 0px 1px 0px rgba(255,255,255,.2);
   background-color: #f00;
   font-size: 18px;
-  width: 212px;
+  width: 260px;
   padding: 2px 0px 1px 0px;
   color: #ABC;
   border-radius: 5px;
   font-family: hvd_comic_serif_proregular;
   height: 37px;
   margin-bottom: 4px;
+  margin-left: 10px;
 }
 
 
@@ -581,6 +583,7 @@ button.submit-button {
   line-height: 20px;
   font-size: 22px;
 
+  margin-top: 10px;
   margin-left: 1px;
 }
 
@@ -590,7 +593,7 @@ button.submit-button:hover {
 }
 
 button.submit-button:active {
-  background-position: 0 -90px;
+  color: rgba(255, 255, 255, .8);
 }
 
 button.fb-button {
@@ -611,6 +614,7 @@ button.fb-button {
   line-height: 15px;
   font-size: 16px;
 
+  margin-top: 20px;
   margin-left: 1px;
   padding-left: 50px;
 }
@@ -618,6 +622,10 @@ button.fb-button {
 button.fb-button:hover {
   transform: scale(1.1);
   transition: transform .25s ease;
+}
+
+button.fb-button:active {
+  color: rgba(255, 255, 255, .8);
 }
 
 #detailsbar {
