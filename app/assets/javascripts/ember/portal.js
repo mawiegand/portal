@@ -53,7 +53,7 @@ Portal = Ember.Application.create({
       },
     }).appendTo('#menubar');
 
-    Portal.BarView = Ember.View.create({
+    /*Portal.BarView = Ember.View.create({
       templateName: 'bar-view',
       
       signupType: function() {
@@ -73,8 +73,8 @@ Portal = Ember.Application.create({
       }.property('Portal.DialogController.bartype').cacheable(),
       
       hiddenBinding: 'Portal.DialogController.visibility',
-      
-    }).appendTo('#loginbar');
+
+    }).appendTo('#loginbar');*/
 
     Portal.ToggleView = Ember.View.create({
       templateName: 'toggle-view',
