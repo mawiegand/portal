@@ -84,7 +84,7 @@ Portal = Ember.Application.create({
     Portal.DialogView = Ember.View.create({
       templateName: 'dialog',
       controllerBinding: 'Portal.DialogController',
-    });
+    }).appendTo('#mainbar');
 
     if (window.startMsg) {
       if (window.startMsg == 'passwordSent') {

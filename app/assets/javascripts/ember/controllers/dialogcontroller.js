@@ -3,11 +3,11 @@
  * login dialog) and details (detailed information about the game). */
 Portal.DialogControllerClass = Ember.Object.extend(function() {
   var mainbarMinHeight = 0;
-  var origMargin = 0;
-  var origPadding = 0;
+  //var origMargin = 0;
+  //var origPadding = 0;
   
   return {  
-    visibility: Portal.DIALOG_STATE_HIDDEN, ///< visibility of the dialog view. In case it's hidden, the title image will be shown instead.
+    visibility: Portal.DIALOG_STATE_VISIBLE, ///< visibility of the dialog view. In case it's hidden, the title image will be shown instead.
     credentials: Portal.PasswordCredentials.create(),  ///< holding user-entered credentials
     registrationStatus: Portal.RegistrationStatus.create(),  ///< holding the current registration status fetched from identity provider
     bartype: Portal.DIALOG_TYPE_SIGNUP,     ///< state of the input fields in the bar-view; either sign in or sign up
@@ -216,27 +216,25 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
             
       if (!this.get('detailsVisible')) {      
         mainbarMinHeight = $('#mainbar').css('min-height')
-        origMargin = $('#loginbar').css('margin-bottom');
-        origPadding = $('#loginbar').css('padding-top');
+        //origMargin = $('#loginbar').css('margin-bottom');
+        //origPadding = $('#loginbar').css('padding-top');
     
         $('#detailsbar').show();
         $('#switchbar-bottom').show();
     
-        $('#mainbar')
-        .css('min-height', '0')
-        .slideUp(); 
+        $('#mainbar').css('min-height', '0').slideUp();
         $('#togglebar').fadeOut();
         $('#top-controls').fadeOut();
     
         $('#menubar').slideUp(function() {
-          if (Portal.DialogController.get('visibility') === Portal.DIALOG_STATE_VISIBLE) {
-            Portal.DialogController.toggleVisibility(false);
-          };
           $('#arrow').removeClass('arrow-down');
           $('#arrow').addClass('arrow-up');
           self.set('animating', false);
         });
-        $('#loginbar').animate({'margin-bottom': '-100px', 'padding-top': '10px'});
+        if (Portal.DialogController.get('visibility') === Portal.DIALOG_STATE_VISIBLE) {
+          Portal.DialogController.toggleVisibility(true);
+        };
+        //$('#loginbar').animate({'margin-bottom': '-100px', 'padding-top': '10px'});
         $('#logo-small').fadeOut();
         $('#teaser-text').fadeOut();
     
@@ -259,7 +257,10 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
             self.set('animating', false);
           });
         });
-        $('#loginbar').animate({'margin-bottom': origMargin, 'padding-top': origPadding});
+        if (Portal.DialogController.get('visibility') === Portal.DIALOG_STATE_HIDDEN) {
+          Portal.DialogController.toggleVisibility(true);
+        };
+        //$('#loginbar').animate({'margin-bottom': origMargin, 'padding-top': origPadding});
 
         Sample.pageStart(1); // page-1: landing page (clicked switch bar again)
 
