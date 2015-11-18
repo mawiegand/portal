@@ -188,6 +188,49 @@ p {
   z-index: 100;
 }
 
+.language {
+  cursor: pointer;
+  background-image: url('<%= asset_path 'lp/language.png' %>');
+  background-repeat: no-repeat;
+  float: left;
+  position: relative;
+  top: 0px;
+  margin-left: -60px;
+  height: 49px;
+  width: 126px;
+}
+
+.language span {
+  margin-right: 65px;
+  margin-left: 25px;
+}
+
+#language-dropdown {
+  display: none;
+}
+
+.language ul {
+  cursor: default;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 76px;
+  position: relative;
+  top: 10px;
+  left: 25px;
+}
+
+.language li {
+  margin-left: 17.5px;
+}
+
+.flag {
+  height: 21px;
+  width: 35px;
+  margin: 5px 3px;
+  box-shadow: 3px 3px;
+}
 
 .dialog {
   position: relative;

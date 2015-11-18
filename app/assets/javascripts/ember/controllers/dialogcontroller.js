@@ -184,7 +184,11 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
                     Ember.getPath("Portal.DialogController.credentials.email"), Ember.getPath("Portal.DialogController.credentials.password"))
       }
     },
-    
+
+    languageSwitchClicked: function() {
+      $('#language-dropdown').toggle();
+    },
+
     resetPasswordClicked: function() {
       if (this.get('visibility') === Portal.DIALOG_STATE_HIDDEN) {
         this.toggleVisibility();

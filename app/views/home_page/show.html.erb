@@ -1,8 +1,13 @@
 <div class="center" id="language-switch">
   <div id="top-controls">
-    
-    <%= link_to "en", params.merge(locale: :en) %> |
-    <%= link_to "de", params.merge(locale: :de) %> &nbsp; &nbsp;
+    <div class="language" id="langswitch">
+      <span><img alt="<%= I18n.locale.to_s %>" src="<%= asset_path 'lp/flags/' + I18n.locale.to_s + '.png' %>" class="flag"></span>
+      <ul id="language-dropdown">
+        <li><%= link_to image_tag('lp/flags/en.png', class: 'flag'), params.merge(locale: :en) %></li>
+        <li><%= link_to image_tag('lp/flags/de.png', class: 'flag'), params.merge(locale: :de) %></li>
+      </ul>
+    </div>
+
     <a href="http://www.facebook.com/pages/Wackadoo/239722582763809" target="_blank" id="facebook-link" >&nbsp;</a>
   </div>
 </div>

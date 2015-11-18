@@ -30,6 +30,10 @@ Portal = Ember.Application.create({
     $('#togglebar').click(function() {
       Portal.DialogController.toggleViewClicked();
     });
+
+    $('#langswitch').click(function() {
+      Portal.DialogController.languageSwitchClicked();
+    });
     
     $('#switchbar').click(function() {
       Portal.DialogController.switchBarClicked();
