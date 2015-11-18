@@ -3,8 +3,9 @@
     <div class="language" id="langswitch">
       <span><img alt="<%= I18n.locale.to_s %>" src="<%= asset_path 'lp/flags/' + I18n.locale.to_s + '.png' %>" class="flag"></span>
       <ul id="language-dropdown">
-        <li><%= link_to image_tag('lp/flags/en.png', class: 'flag'), params.merge(locale: :en) %></li>
-        <li><%= link_to image_tag('lp/flags/de.png', class: 'flag'), params.merge(locale: :de) %></li>
+        <% I18n.available_locales.each do |locale| %>
+        <li><%= link_to image_tag('lp/flags/' + locale.to_s + '.png', class: 'flag'), params.merge(locale: locale) %></li>
+        <% end %>
       </ul>
     </div>
 
