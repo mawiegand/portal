@@ -29,6 +29,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
 
     slogans: ['first', 'second', 'third', 'forth', 'fifth', 'sixth', 'seventh'],
     presentSlogan: 0,
+    languageDropdownVisible: false,
     
     init: function() {
       this.fetchRegistrationStatus();
@@ -186,7 +187,18 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     },
 
     languageSwitchClicked: function() {
-      $('#language-dropdown').toggle();
+      var self = this;
+
+      if (!this.get('languageDropdownVisible')) {
+        $('#language-dropdown').slideDown(function() {
+          self.set('languageDropdownVisible', true);
+        });
+      }
+      else {
+        $('#language-dropdown').slideUp(function() {
+          self.set('languageDropdownVisible', false);
+        });
+      }
     },
 
     resetPasswordClicked: function() {
