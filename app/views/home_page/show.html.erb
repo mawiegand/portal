@@ -685,47 +685,52 @@
 
 <script type="text/x-handlebars" data-template-name="password-dialog">
   <div class="dialog">
-    <div class="dialog-image">&nbsp;</div>
-    {{#if Portal.DialogController.passwordTokenSent }}
-      <div class="dialog-right-column">
-        <%= raw(I18n.t('home_page.password_hint')) %>
-      </div>
-    {{else}}
-      {{#if Portal.DialogController.passwordTokenNotSent }}
-        <div class="dialog-right-column">
-          <%= raw(I18n.t('home_page.password_token_not_sent')) %>
+    <div class="dialog-bg">
+      {{#if Portal.DialogController.passwordTokenSent }}
+        <div class="dialog-left-column password-dialog-font">
+          <%= raw(I18n.t('home_page.password_hint')) %>
         </div>
       {{else}}
-        {{#if Portal.DialogController.passwordSent }}
-          <div class="dialog-right-column">
-            <%= raw(I18n.t('home_page.password_sent')) %>
+        {{#if Portal.DialogController.passwordTokenNotSent }}
+          <div class="dialog-left-column password-dialog-font error">
+            <%= image_tag 'lp/error_icon.png', class: 'error-icon' %>
+            <%= raw(I18n.t('home_page.password_token_not_sent')) %>
           </div>
         {{else}}
-          {{#if Portal.DialogController.passwordNotSent }}
-            <div class="dialog-right-column">
-              <%= raw(I18n.t('home_page.password_not_sent')) %>
+          {{#if Portal.DialogController.passwordSent }}
+            <div class="dialog-left-column password-dialog-font">
+              <%= raw(I18n.t('home_page.password_sent')) %>
             </div>
           {{else}}
-            <div class="dialog-left-column">
-              {{view Portal.PasswordBarView}}
-            </div>
-            {{#if Portal.DialogController.lastError}}
-              <div class="dialog-right-column">
-                <ul>
-                  <li class="error">
-                    {{#unless Portal.DialogController.lastError.notAnError}}
-                      <%= I18n.t('Error')%>:
-                    {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
-                  <li><%= I18n.t 'home_page.password_tooltip' %></li>
-                  <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
-                  <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
-                </ul>
+            {{#if Portal.DialogController.passwordNotSent }}
+              <div class="dialog-left-column password-dialog-font error">
+                <%= image_tag 'lp/error_icon.png', class: 'error-icon' %>
+                <%= raw(I18n.t('home_page.password_not_sent')) %>
               </div>
+            {{else}}
+              <div class="dialog-left-column">
+                {{view Portal.PasswordBarView}}
+              </div>
+              {{#if Portal.DialogController.lastError}}
+                <div class="dialog-right-column">
+                  <ul>
+                    <li class="error">
+                      {{#unless Portal.DialogController.lastError.notAnError}}
+                        <%= I18n.t('Error')%>:
+                      {{/unless}}
+                      <%= image_tag 'lp/error_icon.png', class: 'error-icon' %>
+                      {{ Portal.DialogController.lastError.msg }}</li>
+                    <li><%= I18n.t 'home_page.password_tooltip' %></li>
+                    <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
+                    <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
+                  </ul>
+                </div>
+              {{/if}}
             {{/if}}
           {{/if}}
         {{/if}}
       {{/if}}
-    {{/if}}
+    </div>
   </div>
 </script>
 
