@@ -623,7 +623,9 @@
             <li class="error">
               {{#unless Portal.DialogController.lastError.notAnError}}
                 <%= I18n.t('Error')%>:
-              {{/unless}} {{ Portal.DialogController.lastError.msg }}
+              {{/unless}}
+              <%= image_tag 'lp/error_icon.png', class: 'error-icon' %>
+              {{ Portal.DialogController.lastError.msg }}
             </li>
             <li><%= I18n.t 'home_page.signin_tooltip' %></li>
             <li><%= I18n.t 'home_page.dialog.signup_help' %> <a href="#" {{action "showSignup" }} ><%= I18n.t 'home_page.dialog.signup_link' %></a></li>
@@ -657,7 +659,9 @@
               <li class="error">
                 {{#unless Portal.DialogController.lastError.notAnError}}
                   <%= I18n.t('Error')%>:
-                {{/unless}} {{ Portal.DialogController.lastError.msg }}
+                {{/unless}}
+                <%= image_tag 'lp/error_icon.png', class: 'error-icon' %>
+                {{ Portal.DialogController.lastError.msg }}
               </li>
               <li><%= I18n.t 'home_page.signup_tooltip' %></li>
               <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
