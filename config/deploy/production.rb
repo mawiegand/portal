@@ -4,3 +4,5 @@ role :db,  "portal.wack-a-doo.de", :primary => true        # This is where Rails
 
 set :rails_env, 'production'
 set :port, 5775                                            # until 5775 is working!
+
+set :branch, "master"
