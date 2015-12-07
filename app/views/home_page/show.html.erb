@@ -500,7 +500,7 @@
           {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
         </button>
       {{else}}
-        <button {{action "submit"}} title="<%= I18n.t 'home_page.signup_tooltip' %>" type="submit" class="submit-button">
+        <button {{action "submit"}} title="<%= I18n.t 'home_page.signup_tooltip' %>" type="submit" class="submit-button" id="signup-button">
           <%= I18n.t 'home_page.signup' %>
         </button>
       {{/if}}

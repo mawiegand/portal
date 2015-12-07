@@ -13,7 +13,16 @@ Portal.PasswordCredentials = Ember.Object.extend({
     }
     return true;
   },
-  
+
+  validateEmail: function() {
+    var mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+[^_]$/;
+    if (this.get('email').match(mailFormat))
+    {
+      return true;
+    }
+    return false;
+  },
+
   termsAccepted: function() {
     log('termsAccepted');
     return this.get('terms');

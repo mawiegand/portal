@@ -231,7 +231,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       this.set('animating', true);
             
       if (!this.get('detailsVisible')) {      
-        mainbarMinHeight = $('#mainbar').css('min-height')
+        mainbarMinHeight = $('#mainbar').css('min-height');
         //origMargin = $('#loginbar').css('margin-bottom');
         //origPadding = $('#loginbar').css('padding-top');
     
@@ -472,7 +472,20 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         
       });
     },
-  
+
+    changeSignupButton: function() {
+      if(this.get('signupContext')) {
+        var credentials = this.get('credentials');
+
+        if (credentials.validate() && credentials.validateEmail() && credentials.termsAccepted()) {
+          $('#signup-button').css("background-image", "url(<%= asset_path('lp/play_button_green.png') %>)");
+        }
+        else {
+          $('#signup-button').css("background-image", "url(<%= asset_path('lp/play_button.png') %>)");
+        }
+      }
+    }.observes('credentials.email', 'credentials.password', 'credentials.terms'),
+
     signup: function() {
       var self = this;
       var credentials = this.get('credentials');
