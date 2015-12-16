@@ -17,7 +17,7 @@
             <tr>
               <td><%= image_tag announcement.image_url, :class => 'icon' %></td>
               <td>
-                <h1><%= link_to announcement.title, announcement %></h1>
+                <h2><%= link_to announcement.title, announcement %></h2>
                 <div class="author first"><span class="name"><%= announcement.author %></span> <span class="date"><%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.created_at || announcement.edited_at %></span></div>
                 <p><%= raw announcement.content_teaser %> <%= link_to I18n.t('announcement.show_more'), announcement %></p>
               </td>
