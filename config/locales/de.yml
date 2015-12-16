@@ -73,7 +73,7 @@ de:
     password: Passwort
     signup: KOSTENLOS SPIELEN
     signup_with_facebook: MIT FACEBOOK SPIELEN
-    accept_terms: Ich akzeptiere die <a href="/legal#terms">AGB</a>
+    accept_terms: Es gelten unsere <a href="/legal#terms">AGBs</a>
     signin: ANMELDEN
     signin_with_facebook: MIT FACEBOOK ANMELDEN
     reset: Passwort anfordern

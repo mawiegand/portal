@@ -481,14 +481,14 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       if(this.get('signupContext')) {
         var credentials = this.get('credentials');
 
-        if (credentials.validate() && credentials.validateEmail() && credentials.termsAccepted()) {
+        if (credentials.validate() && credentials.validateEmail()) {
           $('#signup-button').css("background-image", "url(<%= asset_path('lp/play_button_green.png') %>)");
         }
         else {
           $('#signup-button').css("background-image", "url(<%= asset_path('lp/play_button.png') %>)");
         }
       }
-    }.observes('credentials.email', 'credentials.password', 'credentials.terms'),
+    }.observes('credentials.email', 'credentials.password'),
 
     signup: function() {
       var self = this;
@@ -496,7 +496,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
       
       this.resetError();
     
-      if (credentials.validate() && credentials.termsAccepted()) {
+      if (credentials.validate()) {
         
         var email = $.trim(credentials.get('email'));
         var password = credentials.get('password');
@@ -606,12 +606,6 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         });      
       
       }
-      else if (credentials.validate()) { // did not validate
-        self.set('lastError', {
-          type: 'signup',
-          msg: Portal.I18n.lookupTranslation("","").error.termsofservice,
-        });
-      }     
       else { // did not validate
         self.set('lastError', {
           type: 'signup',

@@ -2,7 +2,6 @@
 Portal.PasswordCredentials = Ember.Object.extend({
   email: null,
   password: null,
-  terms: false,
   password_new: null,
   
   validate: function() {
@@ -21,11 +20,6 @@ Portal.PasswordCredentials = Ember.Object.extend({
       return true;
     }
     return false;
-  },
-
-  termsAccepted: function() {
-    log('termsAccepted');
-    return this.get('terms');
   },
   
   validate_password_change: function() {

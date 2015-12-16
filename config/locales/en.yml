@@ -49,7 +49,7 @@ en:
     password: Password
     signup: Free Sign Up
     signup_with_facebook: Sign Up with Facebook
-    accept_terms: accept <a href="/legal#terms">terms of service</a>
+    accept_terms: Our <a href="/legal#terms">terms of service</a> apply
     signin: Sign In
     signin_with_facebook: Sign In with Facebook
     reset: Request Password
