@@ -86,7 +86,8 @@ article {
   margin: 40px 0px;
 }
 
-article h1, h2 {
+article h1,
+article h2 {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
   font-weight: lighter;
   font-size: 48px;
@@ -95,13 +96,17 @@ article h1, h2 {
   color: #EC8A43;
 }
 
-article h1, h2 a:visited,
-article h1, h2 a:link {
+article h1 a:visited,
+article h2 a:visited,
+article h1 a:link,
+article h2 a:link {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
   color: #EC8A43;
 }
 
-article td h1, h2 {
+article td h1,
+article td h2
+{
   margin-top: 0px;
 }
 
