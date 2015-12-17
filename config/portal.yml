@@ -9,7 +9,9 @@ defaults: &defaults
   requested_scopes:        'payment 5dentity wackadoo'
   
   ingame_news_url:         '/game_server/fundamental/announcements?language=all'
-  
+
+  base_url: 'http://www.wack-a-doo.com'
+
   domains_with_locale:
     'wack-a-doo.de':         de
     'wack-a-doo.com':        en

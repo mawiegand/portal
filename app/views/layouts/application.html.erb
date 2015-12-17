@@ -10,6 +10,11 @@
   <%if @display_app_icon %>
     <meta name="apple-itunes-app" content="app-id=558781257">
   <%end%>
+
+  <% I18n.available_locales.each do |locale| %>
+    <link rel="alternate" hreflang="<%= locale.to_s %>" href="<%= (PORTAL_CONFIG['base_url'] || 'http://www.wack-a-doo.com') + '/' + locale.to_s %>" />
+  <% end %>
+
   <script>
   
     var pathFragments = {
