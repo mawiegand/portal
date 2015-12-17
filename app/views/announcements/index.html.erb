@@ -5,7 +5,7 @@
     <h1><%= I18n.t 'announcement.no_news' %></h1>
   <% else %>
     <% @announcements.each do |announcement| %>
-      <article>
+      <article id="announcement<%= announcement.id %>">
         <% if @announcements.first == announcement %>
           <%= image_tag announcement.get_image_url, :class => 'icon first' %>
           <h1><%= link_to announcement.title, announcement %></h1>
