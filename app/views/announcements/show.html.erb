@@ -20,9 +20,9 @@
   </article>
   
   <div class="article-navigation">
-    <%= link_to_unless(@announcement.previous.nil?, I18n.t('announcement.previous'), @announcement.previous) %> |
+    <%= link_to_unless(@announcement.previous.nil?, I18n.t('announcement.previous'), @announcement.previous, rel: 'prev') %> |
     <%= link_to I18n.t('announcement.back'), announcements_path %> |
-    <%= link_to_unless(@announcement.next.nil?, I18n.t('announcement.next'), @announcement.next) %>
+    <%= link_to_unless(@announcement.next.nil?, I18n.t('announcement.next'), @announcement.next, rel: 'next') %>
   </div>
 </section>
 
