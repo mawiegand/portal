@@ -7,7 +7,7 @@
     <% @announcements.each do |announcement| %>
       <article>
         <% if @announcements.first == announcement %>
-          <%= image_tag announcement.image_url, :class => 'icon first' %>
+          <%= image_tag announcement.get_image_url, :class => 'icon first' %>
           <h1><%= link_to announcement.title, announcement %></h1>
           <div class="author first"><span class="name"><%= announcement.author %></span> <span class="date"><%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.created_at ||  announcement.edited_at  %></span></div>
           <p><%= raw announcement.content %></p>
@@ -15,7 +15,7 @@
         <% else %>
           <table>
             <tr>
-              <td><%= image_tag announcement.image_url, :class => 'icon' %></td>
+              <td><%= image_tag announcement.get_image_url, :class => 'icon' %></td>
               <td>
                 <h2><%= link_to announcement.title, announcement %></h2>
                 <div class="author first"><span class="name"><%= announcement.author %></span> <span class="date"><%= I18n.t 'announcement.time_prefix' %> <%= I18n.l announcement.created_at || announcement.edited_at %></span></div>
