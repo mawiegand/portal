@@ -31,7 +31,7 @@ production:
   database: portal
   port: 5432
   username: run-po
-  host: gs09.wack-a-doo.de
+  host: gs10.wack-a-doo.de
 
 staging_test:
   adapter: postgresql
