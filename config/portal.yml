@@ -10,7 +10,7 @@ defaults: &defaults
   
   ingame_news_url:         '/game_server/fundamental/announcements?language=all'
 
-  base_url: 'http://www.wack-a-doo.com'
+  base_url: 'https://www.wack-a-doo.com'
 
   domains_with_locale:
     'wack-a-doo.de':         de
@@ -40,6 +40,8 @@ staging:
   requested_scopes:        'payment 5dentity wackadoo-testround3'
 
   ingame_news_url:         '/game_server/fundamental/announcements?language=all'
+
+  base_url: 'https://test1.wack-a-doo.com'
 
   domains_with_locale:
     'test1.wack-a-doo.de':  de
