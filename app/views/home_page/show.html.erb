@@ -30,30 +30,6 @@
         Aktive Einladung:<br/> <%= @invitation %>
       </div>
     <% end %>
-    <!--<div id="beta-notice">
-      <%= raw I18n.t 'home_page.beta_notice' %>
-    </div>-->
-    <!--<h1 id="slogan-first" class="slogan">
-      <%= raw I18n.t 'home_page.slogans.first' %>
-    </h1>
-    <h1 id="slogan-second" class="slogan" style="display: none;">
-      <%= raw I18n.t 'home_page.slogans.second' %>
-    </h1>
-    <h1 id="slogan-third" class="slogan" style="display: none;">
-      <%= raw I18n.t 'home_page.slogans.third' %>
-    </h1>
-    <h1 id="slogan-forth" class="slogan" style="display: none;">
-      <%= raw I18n.t 'home_page.slogans.forth' %>
-    </h1>
-    <h1 id="slogan-fifth" class="slogan" style="display: none;">
-      <%= raw I18n.t 'home_page.slogans.fifth' %>
-    </h1>
-    <h1 id="slogan-sixth" class="slogan" style="display: none;">
-      <%= raw I18n.t 'home_page.slogans.sixth' %>
-    </h1>
-    <h1 id="slogan-seventh" class="slogan" style="display: none;">
-      <%= raw I18n.t 'home_page.slogans.seventh' %>
-    </h1>-->
 
     <!--<div class="title-screenshot video">-->
       <!--<iframe src="http://player.vimeo.com/video/71450595?portrait=0&byline=0&title=0" width="240" height="135" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>-->
@@ -108,7 +84,7 @@
             <h1><%= I18n.t 'home_page.about.box1.title' %></h1>
             <p><%= raw(I18n.t 'home_page.about.box1.body') %></p>
           </div><div class="panel-column" id="column-r1c2">
-            <h1><%= I18n.t 'home_page.about.box2.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box2.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box2.body') %></p>
           </div><div class="panel-column" id="column-r1c3">
             <img src="<%= asset_path 'about/warrior_pose_3_256_shadow.png' %>"  alt="" />
@@ -116,13 +92,13 @@
         </div>
         <div class="panel-row">
           <div class="panel-column" id="column-r2c1">
-            <h1><%= I18n.t 'home_page.about.box3.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box3.title' %></h2>
             <img alt="" src="<%= asset_path "about/#{I18n.t 'home_page.about.whatdoido'}" %>" />
           </div>
         </div>
         <div class="panel-row panel-top-ruler">
           <div class="panel-column" id="column-r3c1">
-            <h1><%= I18n.t 'home_page.about.box4.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box4.title' %></h2>
             <a alt="" href="<%= asset_path 'about/screenshot2large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot2.png' %>" /></a>
             <a alt="" href="<%= asset_path 'about/screenshot3large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot3.png' %>" /></a>
             <a alt="" href="<%= asset_path 'about/screenshot4large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot4.png' %>" /></a>
@@ -130,12 +106,12 @@
             <a alt="" href="<%= asset_path 'about/screenshot6large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot6.png' %>" /></a>
             <a alt="" href="<%= asset_path 'about/screenshot8large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot8.png' %>" /></a>
           </div><div class="panel-column" id="column-r3c2">
-            <h1><%= I18n.t 'home_page.about.box5.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box5.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box5.body') %></p>
           </div>
         </div>
         <div class="panel-row panel-top-ruler r10">
-          <h1 id="title-r10"><%= I18n.t 'home_page.about.box10.title' %></h1>
+          <h2 id="title-r10"><%= I18n.t 'home_page.about.box10.title' %></h2>
           <div class="panel-column" id="column-r10c1">
             <p><%=raw(I18n.t 'home_page.about.box10.body') %></p>
           </div><div class="panel-column" id="column-r10c2">
@@ -157,7 +133,7 @@
             <img src="<%= asset_path 'about/items.png' %>" alt="" />
           </div>
           <div class="panel-column" id="column-r4c1">
-            <h1><%= I18n.t 'home_page.about.box6.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box6.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box6.body') %></p>
           </div>
         </div>
@@ -165,7 +141,7 @@
         
         <div class="panel-row panel-top-ruler">
           <div class="panel-column" id="column-r13c1">
-            <h1><%= I18n.t 'home_page.about.box8.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box8.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box8.body') %></p>
           </div><div class="panel-column" id="column-r13c2">
             <img src="<%= asset_path 'about/region.png' %>" alt="" />
@@ -177,7 +153,7 @@
           <img src="<%= asset_path 'about/community.png' %>" alt="" />
         </div>
           <div class="panel-column" id="column-r14c1">
-            <h1><%= I18n.t 'home_page.about.box11.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box11.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box11.body') %></p>
           </div>
         </div>
@@ -191,14 +167,14 @@
               <img class="app-store-button" src="<%= asset_path 'about/Available_on_the_App_Store_Badge_DE_135x40.png' %>" alt="" />
             </a>
           </div><div class="panel-column" id="column-r5c1">
-            <h1><%= I18n.t 'home_page.about.box7.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box7.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box7.body') %></p>
           </div>
         </div>
         
         <div class="panel-row panel-top-ruler">
           <div class="panel-column" id="column-r12">
-            <h1><%= I18n.t 'home_page.about.beta2.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.beta2.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.beta2.body') %></p>
             <img src="<%= asset_path 'about/beta2_buildings.png' %>" alt="" style="width: 536px; padding-left: 80px;" />
             <img src="<%= asset_path 'about/beta2_dialog.png' %>" alt="" style="width: 536px; padding-left: 80px;" />
@@ -209,14 +185,14 @@
             <img src="<%= asset_path 'about/profil.png' %>" alt="" />
           </div>
           <div class="panel-column" id="column-r7c2">
-            <h1><%= I18n.t 'home_page.about.box9.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box9.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box9.body') %></p>
           </div>
         </div>
         
         <div class="panel-row panel-top-ruler">
           <div class="panel-column" id="column-social">
-            <h1><%= I18n.t 'home_page.about.vote.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.vote.title' %></h2>
             <p>
               <span style="width:88px; height:31px; display:inline-block; overflow:hidden; background-image:url(<%= asset_path 'partners/bgbutton.gif' %>); background-repeat:no-repeat; text-align:left;"><a href="http://www.kostenlose-browsergames.de/index.php?username=Wack-A-Doo" target="_blank" style="width:87px; height:27px; display:inline-block; margin: 4px 0 0 1px; font-family:Arial,sans-serif; font-size:11px; font-weight:bold; line-height:12px; letter-spacing:0px; color:#ffffff; text-decoration:none;">kostenlose browsergames</a></span>
               <span><a href="http://www.xbrowsergames.de" title="Browsergames"><img src="<%= asset_path 'partners/xbg_red.gif' %>" alt="Browsergames" /></a></span>
@@ -232,7 +208,7 @@
         
         <div class="panel-row panel-top-ruler">
           <div class="panel-column" id="column-r8c1">
-            <h1><%= I18n.t 'home_page.about.team.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.team.title' %></h2>
 
             <div class="team-member">
               <a href="http://www.facebook.com/patrickfox.de" target="_blank">
@@ -352,7 +328,7 @@
 
             <div class="clearfix"></div>
             
-            <h1><%= I18n.t 'home_page.about.team.former_members' %></h1>
+            <h2><%= I18n.t 'home_page.about.team.former_members' %></h2>
             
             <div class="team-member">
               <img class="selfmade" src="<%= asset_path 'team/maggie.jpg' %>" />
@@ -504,8 +480,8 @@
           <%= I18n.t 'home_page.signup' %>
         </button>
       {{/if}}
-        <div class="checkbox-div">
-          {{view Ember.Checkbox classNames="checkbox" checkedBinding="Portal.DialogController.credentials.terms" }} <%= raw I18n.t 'home_page.accept_terms' %>
+        <div class="terms-div">
+          <%= raw I18n.t 'home_page.accept_terms' %>
         </div>
       </div>
         <div class="form-div">
