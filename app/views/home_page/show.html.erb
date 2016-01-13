@@ -555,11 +555,11 @@
   {{view Portal.TextField id="password" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password_current' %>" type="password" valueBinding="Portal.DialogController.credentials.password"}}
   {{view Portal.TextField id="password_new" class="rounded-corners-4" placeholder="<%= I18n.t 'home_page.password_new' %>" type="password" valueBinding="Portal.DialogController.credentials.password_new"}}
   {{#if isLoading}}
-    <button title="<%= I18n.t 'home_page.password_tooltip' %>" type="submit" class="submit-button">
+    <button title="<%= I18n.t 'home_page.password_change_tooltip' %>" type="submit" class="submit-button">
       {{view Portal.ActivityIndicatorView classNames="activity-indicator-small"}} <%= I18n.t 'home_page.processing' %>
     </button>
   {{else}}
-    <button {{action "submit"}} title="<%= I18n.t 'home_page.password_tooltip' %>" type="submit" class="submit-button">
+    <button {{action "submit"}} title="<%= I18n.t 'home_page.password_change_tooltip' %>" type="submit" class="submit-button">
       <%= I18n.t 'home_page.password_change' %>
       </button>
   {{/if}}
@@ -606,6 +606,7 @@
             <li><%= I18n.t 'home_page.signin_tooltip' %></li>
             <li><%= I18n.t 'home_page.dialog.signup_help' %> <a href="#" {{action "showSignup" }} ><%= I18n.t 'home_page.dialog.signup_link' %></a></li>
             <li><%= I18n.t 'home_page.dialog.forgotten_password_help' %> <a href="#" {{action "showPasswordReset" }} ><%= I18n.t 'home_page.dialog.forgotten_password_link' %></a></li>
+            <li><%= I18n.t 'home_page.dialog.change_password_help' %> <a href="#" {{action "showPasswordChange" }} ><%= I18n.t 'home_page.dialog.change_password_link' %></a></li>
             <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
           </ul>
         </div>
@@ -712,35 +713,34 @@
 
 <script type="text/x-handlebars" data-template-name="password-change-dialog">
   <div class="dialog">
-    <div class="dialog-image">&nbsp;</div>
-    
-    {{#if Portal.DialogController.passwordChanged }}
-      <div class="dialog-right-column">
-        <%= raw(I18n.t('home_page.password_changed')) %>
-        <li><a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
-      </div>
-    {{else}}  
-      <div class="dialog-left-column">
-        {{view Portal.PasswordChangeBarView}}
-      </div>
-      <div class="dialog-right-column">
-        <ul>
-          {{#if Portal.DialogController.passwordNotChanged }}
-            <div class="dialog-right-column">
-              {{#if Portal.DialogController.lastError}}
-                <li class="error">
-                {{#unless Portal.DialogController.lastError.notAnError}}
-                  <%= I18n.t('Error')%>: 
-                {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
-              {{/if}}
-            </div>
-          {{/if}}
-          <li><%= I18n.t 'home_page.password_tooltip' %></li>
-          <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
-          <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
-        </ul>
-      </div>
-    {{/if}}
+    <div class="dialog-bg">
+      {{#if Portal.DialogController.passwordChanged }}
+        <div class="dialog-left-column password-dialog-font">
+          <p><%= raw(I18n.t('home_page.password_changed')) %></p>
+          <p><a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></p>
+        </div>
+      {{else}}
+        <div class="dialog-left-column">
+          {{view Portal.PasswordChangeBarView}}
+        </div>
+        <div class="dialog-right-column">
+          <ul>
+            {{#if Portal.DialogController.passwordNotChanged }}
+                {{#if Portal.DialogController.lastError}}
+                  <li class="error">
+                  {{#unless Portal.DialogController.lastError.notAnError}}
+                    <%= I18n.t('Error')%>:
+                  {{/unless}} {{ Portal.DialogController.lastError.msg }}</li>
+                {{/if}}
+                <%= image_tag 'lp/error_icon.png', class: 'error-icon' %>
+            {{/if}}
+            <li><%= I18n.t 'home_page.password_change_tooltip' %></li>
+            <li><%= I18n.t 'home_page.dialog.signin_help' %> <a href="#" {{action "showSignin" }} ><%= I18n.t 'home_page.dialog.signin_link' %></a></li>
+            <li><%= I18n.t 'home_page.dialog.need_help' %> <a href="mailto:support@5dlab.com" ><%= I18n.t 'home_page.dialog.contact_link' %></a></li>
+          </ul>
+        </div>
+      {{/if}}
+    </div>
   </div>
 </script>
 

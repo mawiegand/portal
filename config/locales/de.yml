@@ -82,7 +82,8 @@ de:
     signin_tooltip: Gib Email und Passwort ein, um Dich einzuloggen.
     password_tooltip: |-
       Gib deine Emailadresse, ein um dein Passwort zurückzusetzen. Du bekommst dann eine Mail an deine Adresse gesendet, die einen Link enthält,
-      mit dem du dir ein neues Passwort anfordern kannst. 
+      mit dem du dir ein neues Passwort anfordern kannst.
+    password_change_tooltip: Gib deine Emailadresse, dein aktuelles Passwort und ein neues Passwort ein, um dein Passwort zu ändern.
     no_signin_message: Das Einloggen ist wegen Wartungsarbeiten vorübergehend abgeschaltet.
     no_signup_message: Momentan ist keine Registrierung möglich.
     waiting_list_notice: |-
