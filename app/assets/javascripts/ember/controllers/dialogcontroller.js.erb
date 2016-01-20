@@ -913,7 +913,7 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         
         this.set('isLoading', true);
         $.ajax({
-          type: 'GET',
+          type: 'POST',
           url: Portal.Config.IDENTITY_PROVIDER_BASE + (window.localePathFrag || "") + '/change_password',
           data: params,
           success: function(data, textStatus, jqXHR) {

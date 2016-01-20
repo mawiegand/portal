@@ -58,6 +58,7 @@ en:
     signin_tooltip: Enter your email and password to sign in to your existing account.
     password_tooltip: |-
       Enter your email to reset your password. We will then send you a mail with a link to request a new password.
+    password_change_tooltip: Enter your email, your current password and your new password, to change your password.
     no_signin_message: Login is currently disabled due to maintenance.
     no_signup_message: Sign up is disabled. Please check back later.
     waiting_list_notice: |-
