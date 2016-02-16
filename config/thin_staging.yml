@@ -1,5 +1,5 @@
 ---
-pid: /var/run/portal.pid
+pid: /var/run/portal/portal.pid
 timeout: 30
 wait: 30
 log: log/thin/portal.log
@@ -11,4 +11,4 @@ max_persistent_conns: 512
 servers: 3
 daemonize: true
 chdir: /var/www/portal/current
-socket: /var/run/portal.sock
+socket: /var/run/portal/portal.sock
