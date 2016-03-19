@@ -41,6 +41,13 @@ Portal = Ember.Application.create({
       }
     });
 
+    $('.scroll-up').click(function() {
+      $("html, body").animate({
+        scrollTop: 0
+      }, 600);
+      return false;
+    });
+
     // create those ember views that are visible at the start of the
     // application
     Portal.MenueView = Ember.View.create({
