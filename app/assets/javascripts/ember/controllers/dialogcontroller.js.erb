@@ -160,11 +160,15 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
     /** toggles the state of the UI from sign in to sign up and vice versa.
      * Also displays the dialog-view if not presently visible. */
     toggleViewClicked: function() {
-            
+
       if (this.get('visibility') === Portal.DIALOG_STATE_HIDDEN) {
         this.toggleVisibility();
       }
       
+      if (this.get('detailsVisible')) {
+        this.switchBarClicked();
+      }
+
       if (this.get('dialogtype') === Portal.DIALOG_TYPE_SIGNIN) {
         this.set('dialogtype', Portal.DIALOG_TYPE_SIGNUP);
         this.set('bartype', Portal.DIALOG_TYPE_SIGNUP);
@@ -241,25 +245,25 @@ Portal.DialogControllerClass = Ember.Object.extend(function() {
         $('#mainbar').css('min-height', '0').slideUp();
         $('#togglebar').fadeOut();
         $('#top-controls').fadeOut();
-    
-        $('#menubar').slideUp(function() {
-          $('#arrow').removeClass('arrow-down');
-          $('#arrow').addClass('arrow-up');
-          self.set('animating', false);
-        });
+
+        $('#menubar').appendTo($('#switchbar-teaser'));
+        $('#arrow').removeClass('arrow-down');
+        $('#arrow').addClass('arrow-up');
+        self.set('animating', false);
+
         if (Portal.DialogController.get('visibility') === Portal.DIALOG_STATE_VISIBLE) {
           Portal.DialogController.toggleVisibility(true);
         };
         //$('#loginbar').animate({'margin-bottom': '-100px', 'padding-top': '10px'});
         $('#logo-small').fadeOut();
         $('#teaser-text').fadeOut();
-    
+
         Sample.pageStart(2); // page-2: info page (clicked switch bar)
         
         this.set('detailsVisible', true);
       }
       else {
-        $('#menubar').slideDown();
+        $('#menubar').insertBefore($('#switchbar'));
         $('#mainbar').slideDown(function() {
           $('#detailsbar').hide(); 
           $('#switchbar-bottom').hide();

@@ -22,7 +22,7 @@ staging:      # use the local postgres db
   adapter: postgresql
   encoding: UTF8
   database: portal
-  port: 5686
+  port: 5432
   username: run-po
 
 production:

@@ -35,8 +35,17 @@ Portal = Ember.Application.create({
       Portal.DialogController.languageSwitchClicked();
     });
     
-    $('#switchbar').click(function() {
-      Portal.DialogController.switchBarClicked();
+    $('#switchbar').click(function(e) {
+      if (e.target.tagName !== "A") {
+        Portal.DialogController.switchBarClicked();
+      }
+    });
+
+    $('.scroll-up').click(function() {
+      $("html, body").animate({
+        scrollTop: 0
+      }, 600);
+      return false;
     });
 
     // create those ember views that are visible at the start of the
