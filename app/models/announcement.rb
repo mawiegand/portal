@@ -41,6 +41,14 @@ class Announcement < ActiveRecord::Base
     return self.id
   end
 
+  def get_image_url
+    if Rails.application.assets.find_asset(self.image_url).nil?
+      return "team/sockenpuppe.jpg"
+    else
+      return self.image_url
+    end
+  end
+
   def get_global
     if self.original_id.nil?
       return Announcement.visible.where('id = ? or original_id = ?', self.id, self.id)

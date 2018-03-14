@@ -2,7 +2,6 @@
 Portal.PasswordCredentials = Ember.Object.extend({
   email: null,
   password: null,
-  terms: false,
   password_new: null,
   
   validate: function() {
@@ -13,10 +12,14 @@ Portal.PasswordCredentials = Ember.Object.extend({
     }
     return true;
   },
-  
-  termsAccepted: function() {
-    log('termsAccepted');
-    return this.get('terms');
+
+  validateEmail: function() {
+    var mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+[^_]$/;
+    if (this.get('email').match(mailFormat))
+    {
+      return true;
+    }
+    return false;
   },
   
   validate_password_change: function() {

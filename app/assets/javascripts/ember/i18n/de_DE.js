@@ -12,8 +12,8 @@ Portal.I18n.de_DE = function(module) {
     
     error: {
       stringMissing: "(error: text missing!)",
-    },
-    
+      input: "Gib eine gültige E-Mailadresse und ein Passwort mit mindestens sechs Zeichen an.",
+    },    
   };
   
   return module;

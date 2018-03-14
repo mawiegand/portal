@@ -44,8 +44,8 @@
   </div>
   <% end %>
   
-  <div id="loginbar">
-  </div>
+  <!--<div id="loginbar">
+  </div>-->
 
   
   <div id="menubar">
@@ -79,38 +79,42 @@
           <div class="panel-column" id="column-r1c1">
             <h1><%= I18n.t 'home_page.about.box1.title' %></h1>
             <p><%= raw(I18n.t 'home_page.about.box1.body') %></p>
-          </div><div class="panel-column" id="column-r1c2">
-            <h1><%= I18n.t 'home_page.about.box2.title' %></h1>
+          </div>
+          <div class="panel-column" id="column-r1c2">
+            <h2><%= I18n.t 'home_page.about.box2.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box2.body') %></p>
-          </div><div class="panel-column" id="column-r1c3">
+          </div>
+          <div class="panel-column" id="column-r1c3">
             <img src="<%= asset_path 'about/warrior_pose_3_256_shadow.png' %>"  alt="" />
           </div>
         </div>
         <div class="panel-row">
           <div class="panel-column" id="column-r2c1">
-            <h1><%= I18n.t 'home_page.about.box3.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box3.title' %></h2>
             <img alt="" src="<%= asset_path "about/#{I18n.t 'home_page.about.whatdoido'}" %>" />
           </div>
         </div>
         <div class="panel-row panel-top-ruler">
           <div class="panel-column" id="column-r3c1">
-            <h1><%= I18n.t 'home_page.about.box4.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box4.title' %></h2>
             <a alt="" href="<%= asset_path 'about/screenshot2large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot2.png' %>" /></a>
             <a alt="" href="<%= asset_path 'about/screenshot3large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot3.png' %>" /></a>
             <a alt="" href="<%= asset_path 'about/screenshot4large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot4.png' %>" /></a>
             <a alt="" href="<%= asset_path 'about/screenshot5large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot5.png' %>" /></a>
             <a alt="" href="<%= asset_path 'about/screenshot6large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot6.png' %>" /></a>
             <a alt="" href="<%= asset_path 'about/screenshot8large.png' %>" rel="lightbox[screenshots]" ><img class="screenshot" alt="" src="<%= asset_path 'about/screenshot8.png' %>" /></a>
-          </div><div class="panel-column" id="column-r3c2">
-            <h1><%= I18n.t 'home_page.about.box5.title' %></h1>
+          </div>
+          <div class="panel-column" id="column-r3c2">
+            <h2><%= I18n.t 'home_page.about.box5.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box5.body') %></p>
           </div>
         </div>
         <div class="panel-row panel-top-ruler r10">
-          <h1 id="title-r10"><%= I18n.t 'home_page.about.box10.title' %></h1>
+          <h2 id="title-r10"><%= I18n.t 'home_page.about.box10.title' %></h2>
           <div class="panel-column" id="column-r10c1">
             <p><%=raw(I18n.t 'home_page.about.box10.body') %></p>
-          </div><div class="panel-column" id="column-r10c2">
+          </div>
+          <div class="panel-column" id="column-r10c2">
             <img class="browser-icon" src="/images/chrome.png" alt="" />
             <img class="browser-icon" src="/images/ie.png" alt="" />
             <img class="browser-icon" src="/images/safari.png" alt="" />
@@ -129,7 +133,7 @@
             <img src="<%= asset_path 'about/items.png' %>" alt="" />
           </div>
           <div class="panel-column" id="column-r4c1">
-            <h1><%= I18n.t 'home_page.about.box6.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box6.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box6.body') %></p>
           </div>
         </div>
@@ -137,19 +141,20 @@
         
         <div class="panel-row panel-top-ruler">
           <div class="panel-column" id="column-r13c1">
-            <h1><%= I18n.t 'home_page.about.box8.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box8.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box8.body') %></p>
-          </div><div class="panel-column" id="column-r13c2">
+          </div>
+          <div class="panel-column" id="column-r13c2">
             <img src="<%= asset_path 'about/region.png' %>" alt="" />
           </div>
         </div>
 
         <div class="panel-row panel-top-ruler">
-        <div class="panel-column" id="column-r14c2">
-          <img src="<%= asset_path 'about/community.png' %>" alt="" />
-        </div>
+          <div class="panel-column" id="column-r14c2">
+            <img src="<%= asset_path 'about/community.png' %>" alt="" />
+          </div>
           <div class="panel-column" id="column-r14c1">
-            <h1><%= I18n.t 'home_page.about.box11.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box11.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box11.body') %></p>
           </div>
         </div>
@@ -158,10 +163,11 @@
 
         <div class="panel-row panel-top-ruler">
           <div class="panel-column" id="column-r12">
-            <h1><%= I18n.t 'home_page.about.beta2.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.beta2.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.beta2.body') %></p>
             <img src="<%= asset_path 'about/beta2_buildings.png' %>" alt="" style="width: 536px; padding-left: 80px;" />
             <img src="<%= asset_path 'about/beta2_dialog.png' %>" alt="" style="width: 536px; padding-left: 80px;" />
+          </div>
         </div>
 
         <div class="panel-row panel-top-ruler">
@@ -169,203 +175,16 @@
             <img src="<%= asset_path 'about/profil.png' %>" alt="" />
           </div>
           <div class="panel-column" id="column-r7c2">
-            <h1><%= I18n.t 'home_page.about.box9.title' %></h1>
+            <h2><%= I18n.t 'home_page.about.box9.title' %></h2>
             <p><%=raw(I18n.t 'home_page.about.box9.body') %></p>
           </div>
         </div>
-        
-        <div class="panel-row panel-top-ruler">
-          <div class="panel-column" id="column-r8c1">
-            <h1><%= I18n.t 'home_page.about.team.title' %></h1>
-
-            <div class="team-member">
-              <a href="http://www.facebook.com/patrickfox.de" target="_blank">
-                <img src="<%= asset_path 'team/patrick.jpg' %>" />
-              </a>
-              <span>Patrick Fox, Osnabrück</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="http://www.facebook.com/sascha77" target="_blank">
-                <img src="<%= asset_path 'team/sascha.jpg' %>" />
-              </a>
-              <span class="black">Sascha Lange, Freiburg</span>
-            </div>            
-            
-            <div class="team-member">
-              <a href="http://www.facebook.com/hajo.runne" target="_blank">
-                <img src="<%= asset_path 'team/hajo.jpg' %>" />
-              </a>
-              <span>Hajo Runne, Marburg</span>
-            </div>             
-
-            <div class="team-member">
-              <a href="http://www.christiane-ott.com/" target="_blank">
-                <img src="<%= asset_path 'team/otti.jpg' %>" />
-              </a>
-              <span>Otti, Freiburg</span>
-            </div>            
-            
-            <div class="team-member">
-              <img src="<%= asset_path 'team/arno.jpg' %>" />
-              <span>Arno Möller, Bremerhaven</span>
-            </div>              
-            
-
-    
-            <div class="team-member">
-              <a href="http://www.alexanderpierschel.de/" target="_blank">
-                <img src="<%= asset_path 'team/pikomi.jpg' %>" />
-              </a>
-              <span>Pikomi, Berlin</span>
-            </div>              
-            
-            <div class="team-member">
-              <a href="https://plus.google.com/101483300659068546027" target="_blank">
-                <img class="selfmade" src="<%= asset_path 'team/marcel.jpg' %>" />
-              </a>
-              <span>Marcel Wiegand, Osnabrück</span>
-            </div>              
-            
-            <div class="team-member">
-              <img src="<%= asset_path 'team/sockenpuppe.jpg' %>" />
-              <span>Matteo Bottin, Freiburg</span>
-            </div>
-
-            <div class="team-member">
-              <img class="selfmade" src="<%= asset_path 'team/jan.jpg' %>" />
-              <span>Jan Hendrik Kegel, Freiburg</span>
-            </div>
-
-            <div class="team-member">
-              <a href="http://www.mohr-media.de" target="_blank">
-                <img class="selfmade" src="<%= asset_path 'team/daniel.jpg' %>" />
-              </a>
-              <span>Daniel Band, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="http://www.mohr-media.de" target="_blank">
-                <img src="<%= asset_path 'team/sockenpuppe.jpg' %>" />
-              </a>
-              <span>Radik Yusupov, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="http://www.mohr-media.de" target="_blank">
-                <img src="<%= asset_path 'team/sockenpuppe.jpg' %>" />
-              </a>
-              <span>Artur Susdorf, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="http://www.mohr-media.de" target="_blank">
-                <img src="<%= asset_path 'team/sockenpuppe.jpg' %>" />
-              </a>
-              <span>Marc Wissler, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="http://www.mohr-media.de" target="_blank">
-                <img src="<%= asset_path 'team/sockenpuppe.jpg' %>" />
-              </a>
-              <span>Kevin Steinle, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="http://www.mohr-media.de" target="_blank">
-                <img class="selfmade" src="<%= asset_path 'team/christian_s.jpg' %>" />
-              </a>
-              <span>Christian Seidel, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="http://www.mohr-media.de" target="_blank">
-                <img src="<%= asset_path 'team/sockenpuppe.jpg' %>" />
-              </a>
-              <span>Wolfram Müller, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="http://www.mohr-media.de" target="_blank">
-                <img src="<%= asset_path 'team/sockenpuppe.jpg' %>" />
-              </a>
-              <span>Jona Böddinghaus, Freiburg</span>
-            </div>
-
-
-            <div class="clearfix"></div>
-            
-            <h1><%= I18n.t 'home_page.about.team.former_members' %></h1>
-            
-            <div class="team-member">
-              <img class="selfmade" src="<%= asset_path 'team/maggie.jpg' %>" />
-              <span>Maggie, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="http://www.mohr-media.de" target="_blank">
-                <img class="selfmade" src="<%= asset_path 'team/robin.jpg' %>" />
-              </a>
-              <span>Robin Kaltenbach, Freiburg</span>
-            </div>
-
-            <div class="team-member">
-              <img class="selfmade" src="<%= asset_path 'team/christian.jpg' %>" />
-              <span>Christian Wansart, Osnabrück</span>
-            </div>
-
-            <div class="team-member">
-              <a href="http://www.mohr-media.de" target="_blank">
-                <img src="<%= asset_path 'team/thomas.jpg' %>" />
-              </a>
-              <span>Thomas Mohr, Waldkirch</span>
-            </div>
-                        
-            <div class="team-member">
-              <a href="http://www.david-canela.com" target="_blank">
-                <img src="<%= asset_path 'team/david.jpg' %>" />
-              </a>
-              <span>David Canela, Basel</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="http://www.facebook.com/anand.baumunk" target="_blank">
-                <img class="selfmade" src="<%= asset_path 'team/anand.png' %>" />
-              </a>
-              <span>Anand, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <img class="selfmade" src="<%= asset_path 'team/parastou.jpg' %>" />
-              <span>Parastou, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="http://www.twitter.com/JulianSchmid" target="_blank">
-                <img src="<%= asset_path 'team/julian.jpg' %>" />
-              </a>
-              <span>Julian Schmid, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <img class="selfmade" src="<%= asset_path 'team/elena.jpg' %>" />
-              <span>Elena, Freiburg</span>
-            </div>
-            
-            <div class="team-member">
-              <a href="#">
-                <img class="selfmade" src="<%= asset_path 'team/max.jpg' %>" />
-              </a>
-              <span>Max Buck, Freiburg</span>
-            </div>
-          </div>
-        </div>        
+                
       </div>
-    </div>  
-</div>
+    </div>
 
-<div id="sitemap" class>
+  <div id="sitemap" class>
+  </div>
 </div>
 
     <!-- add for preloading hover images -->

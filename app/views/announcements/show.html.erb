@@ -2,7 +2,7 @@
   <p id="notice"><%= notice %></p>
 
   <article class="single">
-    <%= image_tag @announcement.image_url, :class => 'icon' %>
+    <%= image_tag @announcement.get_image_url, :class => 'icon' %>
     
     <h1><%= @announcement.title %></h1>
     <div class="author first"><span class="name"><%= @announcement.author %></span> <span class="date"><%= I18n.t 'announcement.time_prefix' %> <%= I18n.l @announcement.created_at || @announcement.edited_at  %></span></div>
@@ -20,9 +20,9 @@
   </article>
   
   <div class="article-navigation">
-    <%= link_to_unless(@announcement.previous.nil?, I18n.t('announcement.previous'), @announcement.previous) %> |
+    <%= link_to_unless(@announcement.previous.nil?, I18n.t('announcement.previous'), @announcement.previous, rel: 'prev') %> |
     <%= link_to I18n.t('announcement.back'), announcements_path %> |
-    <%= link_to_unless(@announcement.next.nil?, I18n.t('announcement.next'), @announcement.next) %>
+    <%= link_to_unless(@announcement.next.nil?, I18n.t('announcement.next'), @announcement.next, rel: 'next') %>
   </div>
 </section>
 

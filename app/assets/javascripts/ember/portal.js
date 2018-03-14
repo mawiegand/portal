@@ -30,6 +30,10 @@ Portal = Ember.Application.create({
     $('#togglebar').click(function() {
       Portal.DialogController.toggleViewClicked();
     });
+
+    $('#langswitch').click(function() {
+      Portal.DialogController.languageSwitchClicked();
+    });
     
     $('#switchbar').click(function() {
       Portal.DialogController.switchBarClicked();
@@ -53,7 +57,7 @@ Portal = Ember.Application.create({
       },
     }).appendTo('#menubar');
 
-    Portal.BarView = Ember.View.create({
+    /*Portal.BarView = Ember.View.create({
       templateName: 'bar-view',
       
       signupType: function() {
@@ -73,8 +77,8 @@ Portal = Ember.Application.create({
       }.property('Portal.DialogController.bartype').cacheable(),
       
       hiddenBinding: 'Portal.DialogController.visibility',
-      
-    }).appendTo('#loginbar');
+
+    }).appendTo('#loginbar');*/
 
     Portal.ToggleView = Ember.View.create({
       templateName: 'toggle-view',
@@ -84,7 +88,7 @@ Portal = Ember.Application.create({
     Portal.DialogView = Ember.View.create({
       templateName: 'dialog',
       controllerBinding: 'Portal.DialogController',
-    });
+    }).appendTo('#mainbar');
 
     if (window.startMsg) {
       if (window.startMsg == 'passwordSent') {

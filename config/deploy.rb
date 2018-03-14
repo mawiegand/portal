@@ -12,6 +12,8 @@ set :ssh_options, :forward_agent => true           # ssh forwarding
 
 set :application, "portal"
 set :repository,  "git@github.com:wackadoo/portal.git"
+set :branch, "staging"
+
 
 set :scm, :git
 

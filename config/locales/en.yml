@@ -49,7 +49,7 @@ en:
     password: Password
     signup: Free Sign Up
     signup_with_facebook: Sign Up with Facebook
-    accept_terms: accept <a href="/legal#terms">terms of service</a>
+    accept_terms: Our <a href="/legal#terms">terms of service</a> apply
     signin: Sign In
     signin_with_facebook: Sign In with Facebook
     reset: Request Password
@@ -58,6 +58,7 @@ en:
     signin_tooltip: Enter your email and password to sign in to your existing account.
     password_tooltip: |-
       Enter your email to reset your password. We will then send you a mail with a link to request a new password.
+    password_change_tooltip: Enter your email, your current password and your new password, to change your password.
     no_signin_message: Login is currently disabled due to maintenance.
     no_signup_message: Sign up is disabled. Please check back later.
     waiting_list_notice: |-
@@ -130,7 +131,7 @@ en:
 
 
     beta_notice: |-
-      Currently: <span class="public-beta">Round 9</span>&nbsp;&nbsp;beta<br/>
+      Currently: <span class="public-beta">Round 11</span>&nbsp;&nbsp;beta<br/>
       <span class="subline">Sing up now, test and play for free!</span>             
       
     about:

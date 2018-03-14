@@ -177,6 +177,3 @@ DEPENDENCIES
   turn (~> 0.8.3)
   uglifier (>= 1.0.3)
   will_paginate (~> 3.0.0)
-
-BUNDLED WITH
-   1.10.3

@@ -9,7 +9,9 @@ defaults: &defaults
   requested_scopes:        'payment 5dentity wackadoo'
   
   ingame_news_url:         '/game_server/fundamental/announcements?language=all'
-  
+
+  base_url: 'https://www.wack-a-doo.com'
+
   domains_with_locale:
     'wack-a-doo.de':         de
     'wack-a-doo.com':        en
@@ -39,6 +41,8 @@ staging:
 
   ingame_news_url:         '/game_server/fundamental/announcements?language=all'
 
+  base_url: 'https://test1.wack-a-doo.com'
+
   domains_with_locale:
     'test1.wack-a-doo.de':  de
     'test1.wack-a-doo.com': en
@@ -46,13 +50,13 @@ staging:
 production:
   <<: *defaults
 
-  client_base_url:         'https://gs09.wack-a-doo.com/client'
+  client_base_url:         'https://gs11.wack-a-doo.com/client'
 
   client_id:               'WACKADOO-HTML5'   # this must be also created in the identity provider to assign correct scopes to users
   client_password:         'htmlwad'
-  requested_scopes:        'payment 5dentity wackadoo-round9'
+  requested_scopes:        'payment 5dentity wackadoo-round11'
   
-  ingame_news_url:         'https://gs09.wack-a-doo.de/game_server/fundamental/announcements?language=all'
+  ingame_news_url:         'https://gs11.wack-a-doo.de/game_server/fundamental/announcements?language=all'
 
 
 staging_test:
